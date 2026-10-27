@@ -535,57 +535,104 @@ button{font-family:inherit;color:inherit}
 @media (prefers-reduced-motion: reduce){.pdots.shake{animation:none}}
 
 /* green messenger */
-[data-app="talk"],[data-app^="k-"]{--tk:#06c755;--tkbg:#8ca9cd;--tkline:#e6e6e6}
-[data-app="talk"]{background:#fff;color:#111}
+.p-jun{--tkbg:#fff;--tkfg:#111;--tksub:#8a8a8e;--tkfield:#f1f2f4;--tkline:#ececee;--tkchat:#8ca9cd;--tkrecv:#fff;--tkrecvfg:#111;--tkname:#2b3a52;--tkmeta:#3d4b60;--tkday:rgba(0,0,0,.18)}
+.p-ibara{--tkbg:#111113;--tkfg:#f2f2f4;--tksub:#8e8d93;--tkfield:#232327;--tkline:#232327;--tkchat:#1d2531;--tkrecv:#30363f;--tkrecvfg:#f2f2f4;--tkname:#aab6c8;--tkmeta:#8d97a6;--tkday:rgba(255,255,255,.12)}
+[data-app="talk"],[data-app="k-article"]{background:var(--tkbg);color:var(--tkfg)}
+.tk-pane{flex:1;min-height:0;display:flex;flex-direction:column}
 .tk-top{display:flex;align-items:center;justify-content:space-between;padding:8px 16px 6px}
 .tk-top b{font-size:22px;font-weight:700}
 .tk-icons{display:flex;gap:16px;align-items:center}
-.tk-search{margin:2px 14px 8px;border-radius:9px;background:#f1f2f4;color:#999;font-size:14px;display:flex;gap:6px;align-items:center;padding:8px 10px}
+.tk-search{margin:2px 14px 8px;border-radius:9px;background:var(--tkfield);color:var(--tksub);font-size:14px;display:flex;gap:6px;align-items:center;padding:8px 10px}
+.tk-search svg{width:16px;height:16px}
 .tk-chips{display:flex;gap:6px;padding:0 14px 8px}
-.tk-chips span{font-size:13px;padding:5px 12px;border-radius:16px;border:1px solid #ddd;color:#555}
-.tk-chips span.on{background:#111;color:#fff;border-color:#111}
-.tk-li{width:100%;border:0;background:none;display:flex;gap:12px;align-items:center;padding:9px 16px;text-align:left;cursor:pointer;color:#111}
-.tk-li:focus-visible{outline:2px solid var(--tk);outline-offset:-2px}
+.tk-chips span{font-size:13px;padding:5px 12px;border-radius:16px;border:1px solid var(--tkline);color:var(--tksub)}
+.tk-chips span.on{background:var(--tkfg);color:var(--tkbg);border-color:var(--tkfg)}
+.tk-li,.tk-nw{width:100%;border:0;background:none;display:flex;gap:12px;align-items:center;padding:9px 16px;text-align:left;cursor:pointer;color:var(--tkfg)}
+.tk-li:focus-visible,.tk-nw:focus-visible,.tk-ch:focus-visible,.tk-tabs button:focus-visible{outline:2px solid #06c755;outline-offset:-2px}
 .tk-lav{width:50px;height:50px;border-radius:19px;overflow:hidden;flex-shrink:0;display:block}
-.tk-lav .iav{border-radius:0}
+.tk-lav.xl{width:64px;height:64px;border-radius:24px}.tk-lav.sm{width:42px;height:42px;border-radius:16px}
+.tk-lav .iav,.tk-av .iav{border-radius:0}
+.iav svg{max-width:60%;max-height:60%}
 .tk-lm{flex:1;min-width:0;display:flex;flex-direction:column;gap:3px}
 .tk-lm b{font-size:15.5px;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.tk-lm b small{color:#999;font-weight:500;font-size:14px}
-.tk-lm>span{font-size:13.5px;color:#888;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.tk-lm b small{color:var(--tksub);font-weight:500;font-size:14px}
+.tk-ok{display:inline-grid;place-items:center;width:15px;height:15px;border-radius:50%;background:#06c755;color:#fff;font-size:9px;vertical-align:1px}
+.tk-lm>span{font-size:13.5px;color:var(--tksub);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .tk-lr{display:flex;flex-direction:column;align-items:flex-end;gap:6px;align-self:flex-start;padding-top:3px}
-.tk-lr small{font-size:11.5px;color:#aaa;white-space:nowrap}
-.tk-lr i{font-style:normal;background:var(--tk);color:#fff;font-size:11.5px;font-weight:700;min-width:20px;height:20px;border-radius:10px;display:grid;place-items:center;padding:0 6px}
-.tk-tabs{margin-top:auto;display:flex;justify-content:space-around;padding:8px 4px 30px;border-top:1px solid #eee;background:#fff}
-.tk-tabs span{display:flex;flex-direction:column;align-items:center;gap:2px;font-size:10px;color:#9a9a9a}
-.tk-tabs span.on{color:#111}
-[data-app^="k-"]{background:var(--tkbg);color:#111}
-.tk-bar{display:flex;align-items:center;gap:6px;padding:4px 12px 8px;background:var(--tkbg);color:#111}
-.tk-bar .back{color:#111}
+.tk-lr small{font-size:11.5px;color:var(--tksub);white-space:nowrap}
+.tk-lr i{font-style:normal;background:#06c755;color:#fff;font-size:11.5px;font-weight:700;min-width:20px;height:20px;border-radius:10px;display:grid;place-items:center;padding:0 6px}
+.tk-tabs{display:flex;justify-content:space-around;padding:8px 4px 30px;border-top:1px solid var(--tkline);background:var(--tkbg)}
+.tk-tabs button{background:none;border:0;display:flex;flex-direction:column;align-items:center;gap:2px;font-size:10.5px;color:var(--tksub);cursor:pointer;font-family:inherit;min-width:60px}
+.tk-tabs button.on{color:var(--tkfg)}
+.tk-me{display:flex;gap:14px;align-items:center;padding:8px 16px 14px;border-bottom:1px solid var(--tkline)}
+.tk-me b{display:block;font-size:18px}.tk-me small{font-size:13px;color:var(--tksub)}.tk-me small.tkph{opacity:.6}
+.tk-sec{font-size:13px;color:var(--tksub);padding:14px 16px 6px}
+.tk-rec,.tk-fr{display:flex;gap:12px;align-items:center;padding:7px 16px}
+.tk-rec>span:nth-child(2),.tk-fr>span:last-child{flex:1;min-width:0;display:flex;flex-direction:column}
+.tk-rec b,.tk-fr b{font-size:15px;font-weight:500}.tk-rec small,.tk-fr small{font-size:12.5px;color:var(--tksub)}
+.tk-rec button{border:1px solid var(--tkline);background:none;color:var(--tkfg);border-radius:8px;padding:5px 12px;font-size:13px;cursor:pointer;font-family:inherit}
+.tk-more{font-size:13px;color:var(--tksub);padding:6px 16px 20px}
+.tk-nw{align-items:flex-start;border-bottom:1px solid var(--tkline);padding:12px 16px}
+.tk-nw>span:first-child{flex:1;min-width:0;display:flex;flex-direction:column;gap:3px}
+.tk-nw small{font-size:11.5px;color:#06c755;font-weight:600}.tk-nw b{font-size:15px;font-weight:600;line-height:1.35}.tk-nw em{font-style:normal;font-size:12px;color:var(--tksub)}
+.tk-nth{width:76px;height:58px;border-radius:8px;flex-shrink:0}
+.tk-art{padding:6px 18px 40px}
+.tk-art small{color:#06c755;font-weight:600;font-size:12.5px}
+.tk-art h2{font-size:21px;line-height:1.35;margin:4px 0 6px}
+.tk-art em{font-style:normal;font-size:12.5px;color:var(--tksub)}
+.tk-aimg{height:170px;border-radius:10px;margin:14px 0}
+.tk-art p{font-size:16px;line-height:1.65;margin:0 0 12px}
+[data-app^="k-"]:not([data-app="k-article"]){background:var(--tkchat);color:var(--tkfg)}
+.tk-bar{display:flex;align-items:center;gap:6px;padding:4px 12px 8px;color:var(--tkfg)}
+.tk-bar .back{color:var(--tkfg)}
 .tk-bar b{flex:1;font-size:16.5px;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.tk-bar b span{font-weight:500;color:#333}
+.tk-bar b span{font-weight:500;opacity:.75}
+.tk-banner{margin:0 12px 4px;padding:7px 12px;border-radius:10px;background:rgba(0,0,0,.25);color:#fff;font-size:12.5px;text-align:center}
 .tk-thread{flex:1;overflow-y:auto;padding:4px 10px 12px;display:flex;flex-direction:column;gap:3px;scrollbar-width:none;min-height:0}
 .tk-thread::-webkit-scrollbar{display:none}
-.tk-day{align-self:center;font-size:11.5px;color:#fff;background:rgba(0,0,0,.18);padding:3px 12px;border-radius:12px;margin:12px 0 6px}
+.tk-day{align-self:center;font-size:11.5px;color:#fff;background:var(--tkday);padding:3px 12px;border-radius:12px;margin:12px 0 6px}
+.tk-sys{align-self:center;font-size:11.5px;color:#fff;background:var(--tkday);padding:5px 12px;border-radius:12px;margin:8px 0;text-align:center}
 .tk-row{display:flex;align-items:flex-end;gap:5px}
 .tk-row.first{margin-top:8px}
 .tk-row.me{justify-content:flex-end}
 .tk-av{width:38px;height:38px;border-radius:15px;overflow:hidden;flex-shrink:0;align-self:flex-start;display:block}
-.tk-av .iav{border-radius:0;font-size:15px}
+.tk-av .iav{font-size:15px}
 .tk-col{display:flex;flex-direction:column;gap:3px;min-width:0;max-width:74%}
-.tk-name{font-size:12px;color:#2b3a52}
+.tk-name{font-size:12px;color:var(--tkname)}
 .tk-line{display:flex;align-items:flex-end;gap:5px}
-.tk-bub{background:#fff;color:#111;border-radius:16px;padding:8px 12px;font-size:15px;line-height:1.38;white-space:pre-line;word-break:keep-all;overflow-wrap:anywhere;max-width:100%}
+.tk-bub{background:var(--tkrecv);color:var(--tkrecvfg);border-radius:16px;padding:8px 12px;font-size:15px;line-height:1.38;white-space:pre-line;word-break:keep-all;overflow-wrap:anywhere;max-width:100%}
 .tk-row.first:not(.me) .tk-bub{border-top-left-radius:4px}
-.tk-row.me .tk-bub{background:#86e57f;max-width:72%}
+.tk-row.me .tk-bub{background:#86e57f;color:#111;max-width:72%}
 .tk-row.me.first .tk-bub{border-top-right-radius:4px}
 .tk-bub b{color:#2f6fd6;font-weight:500}
-.tk-meta{display:flex;flex-direction:column;font-size:10px;color:#3d4b60;white-space:nowrap;line-height:1.25;flex-shrink:0}
+.tk-meta{display:flex;flex-direction:column;font-size:10px;color:var(--tkmeta);white-space:nowrap;line-height:1.25;flex-shrink:0}
 .tk-row.me .tk-meta{align-items:flex-end}
-.tk-meta em{font-style:normal;color:#2a6b2a}
-.tk-input{display:flex;align-items:center;gap:12px;padding:8px 12px 30px;background:#fff;color:#777}
+.tk-meta em{font-style:normal;color:#e8b400;font-weight:600}
+.tk-card{border:0;padding:0;text-align:left;font-family:inherit;cursor:default;display:block;background:var(--tkrecv);color:var(--tkrecvfg);border-radius:14px;overflow:hidden;width:230px;max-width:100%}
+.tk-card[data-open]{cursor:pointer}
+.tk-card[data-open]:focus-visible{outline:2px solid #06c755}
+.tk-cimg{height:110px;display:grid;place-items:center}.tk-cimg svg{width:44px;height:44px}
+.tk-cb{padding:10px 12px;display:flex;flex-direction:column;gap:4px}
+.tk-cb b{font-size:14.5px;line-height:1.35}.tk-cb span{font-size:12px;color:var(--tksub)}
+.tk-cb i{font-style:normal;margin-top:4px;border-top:1px solid var(--tkline);padding-top:8px;text-align:center;font-size:13.5px;font-weight:600;color:#06c755}
+.tk-typing .tk-bub{display:flex;gap:4px;padding:12px 14px}
+.tk-typing .tk-bub i{width:6px;height:6px;border-radius:50%;background:var(--tksub);animation:tkdot 1s infinite}
+.tk-typing .tk-bub i:nth-child(2){animation-delay:.15s}.tk-typing .tk-bub i:nth-child(3){animation-delay:.3s}
+@keyframes tkdot{0%,60%,100%{opacity:.3}30%{opacity:1}}
+.tk-choices{display:flex;flex-direction:column;gap:6px;padding:8px 12px;background:var(--tkbg)}
+.tk-choices:empty{display:none}
+.tk-choices small{font-size:11.5px;color:var(--tksub)}
+.tk-ch{border:1px solid #06c755;background:none;color:var(--tkfg);border-radius:18px;padding:8px 14px;font-size:14.5px;text-align:left;cursor:pointer;font-family:inherit}
+.tk-ch:active{background:rgba(6,199,85,.15)}
+.tk-end{border:0;background:none;color:var(--tksub);font-size:13px;padding:6px;cursor:pointer;font-family:inherit}
+.tk-input{display:flex;align-items:center;gap:12px;padding:8px 12px 30px;background:var(--tkbg);color:var(--tksub)}
 .tk-input>span{font-size:24px;line-height:1;font-weight:300}
-.tk-field{flex:1;background:#f1f2f4;border-radius:18px;padding:7px 12px;font-size:14px;color:#aaa;display:flex;justify-content:space-between;align-items:center}
+.tk-input.off{justify-content:center;font-size:13px}
+.tk-field{flex:1;background:var(--tkfield);border-radius:18px;padding:7px 12px;font-size:14px;color:var(--tksub)}
+@media (prefers-reduced-motion: reduce){.tk-typing .tk-bub i{animation:none}}
 [hidden]{display:none!important}
+.tabs button{position:relative}
+.tbadge{position:absolute;top:-3px;left:calc(50% + 6px);min-width:17px;height:17px;border-radius:9px;background:#ff3b30;color:#fff;font-size:10.5px;font-weight:600;display:grid;place-items:center;padding:0 4px}
 /* toast */
 .toast{position:absolute;bottom:90px;left:50%;transform:translate(-50%,10px);background:rgba(40,40,44,.92);color:#fff;font-size:13px;padding:8px 16px;border-radius:18px;z-index:45;opacity:0;pointer-events:none;transition:opacity .2s,transform .2s;white-space:nowrap}
 .toast.on{opacity:1;transform:translate(-50%,0)}
@@ -716,39 +763,39 @@ const ibaraBoss=[
  T('o','15:20','좀 더 넣었으니까 그걸로 병원 한번 가봐라'),
  T('me','15:26','병원이요?'),
  T('o','15:27','정신과. 잔말 말고 가라'),
- T('me','15:41','...알겠습니다. 감사합니다.'),
+ T('me','15:41','...알겠습니다. 신경 써주셔서 감사합니다.'),
  {day:'2026년 6월 18일 목요일'},
- T('me','14:10','사장님, 이번 달도 미리 받을 수 있을까요. 죄송합니다.'),
+ T('me','14:10','사장님, 염치없지만 이번 달도 좀 당겨 받을 수 있겠습니까.'),
  T('o','14:32','죄송할 거 없다. 보냈다'),
  T('o','14:32','병원은 다니냐'),
- T('me','14:40','네. 다니고 있습니다.'),
+ T('me','14:40','아아, 다니고 있습니다. 2주에 한 번이요.'),
  T('o','14:41','밥도 먹고'),
- T('me','14:41','네.'),
+ T('me','14:41','네, 챙겨 먹겠습니다. 사장님도 끼니 거르지 마세요.'),
  {day:'2026년 7월 24일 금요일'},
  T('o','11:05','사에구사 내일 오후 대타 되냐'),
- T('me','11:20','됩니다.'),
+ T('me','11:20','네, 됩니다.'),
  T('o','11:21','맨날 너만 찾아서 미안하다'),
- T('me','11:21','괜찮습니다. 시급이 나오니까요.'),
+ T('me','11:21','괜찮습니다. 자신도 일이 있는 편이 낫습니다.'),
  {day:'2026년 9월 18일 금요일'},
  T('me','16:12','사장님, 죄송하지만 이번 달 월급을 미리 받을 수 있을까요?'),
  T('o','16:20','그래 보냈다. 이번 달도 잘 부탁한다'),
- T('me','16:21','감사합니다.'),
+ T('me','16:21','감사합니다. 이번 달도 신세 지겠습니다.'),
  {day:'2026년 10월 16일 금요일'},
  T('o','17:20','오늘 마감하고 애들이랑 회식한다'),
  T('o','17:20','너도 빠지지 마라'),
  T('me','17:31','내일 출근은요?'),
  T('o','17:32','내일 쉬어라. 오늘은 마셔'),
- T('me','17:32','네.'),
+ T('me','17:32','알겠습니다. 감사합니다.'),
  {day:'2026년 10월 17일 토요일'},
  T('o','13:05','살아있냐'),
  T('o','13:05','어제 데리러 온 친구한테 고맙다고 꼭 해라'),
  T('o','13:06','물 많이 마시고'),
- T('me','14:30','네. 폐를 끼쳐 죄송합니다.'),
+ T('me','14:30','네, 괜찮습니다. 어젯밤엔 폐를 끼쳐서 죄송했습니다.'),
  T('o','14:31','죄송은 무슨'),
  {day:'2026년 10월 30일 금요일'},
  T('o','12:40','사에구사 미안한데 오늘 대타 되냐'),
  T('o','12:40','한 명이 독감이라 미안하다 진짜'),
- T('me','12:52','괜찮습니다. 몇 시까지 가면 됩니까?'),
+ T('me','12:52','괜찮습니다. 독감이면 어쩔 수 없죠. 몇 시까지 가면 됩니까?'),
  T('o','12:53','두 시. 미안하다'),
  {day:'2026년 10월 31일 토요일'},
  T('o','02:14','오늘 고생했다. 푹 쉬어라'),
@@ -931,7 +978,7 @@ const st=document.createElement('style');st.textContent='.status.inapp{--sb:var(
 /* thread app html */
 const threadApp=(title,backTo,draft)=>`<div class="bar tbar"><button type="button" class="back" data-back="${backTo}">${I.back}</button><div class="thead"><span class="tav">${avFor(title)}</span><span class="tname">${esc(title)} <svg width="6" height="10" viewBox="0 0 6 10" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M1 1l4 4-4 4"/></svg></span></div><span class="tright"><svg width="26" height="20" viewBox="0 0 26 18" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="1" y="2" width="16" height="14" rx="3.5"/><path d="M17 7.5l7-4v11l-7-4"/></svg></span></div><div class="threadwrap"><div class="thread"></div></div><div class="inputbar"><span class="plus"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span><div class="field ${draft?'draft':''}">${draft?esc(draft):'메시지'}${draft?'<button type="button" class="sendb" aria-label="보내기"><svg width="14" height="16" viewBox="0 0 14 16" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7 14V2M2 7l5-5 5 5"/></svg></button>':'<svg width="16" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5.5 11a6.5 6.5 0 0 0 13 0M12 17.5V21"/></svg>'}</div></div>`;
 const listApp=(rows)=>`<div class="bar"><button type="button" class="back" data-back>${I.back}홈</button><span style="flex:1"></span><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="1.8" stroke-linecap="round"><path d="M14 4H6a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"/><path d="M18.5 3.5l2 2L12 14l-3 1 1-3z"/></svg></div><div class="big">메시지</div><div class="sbox msearch">${I.search.replace('#fff','currentColor')}<span>검색</span></div><div class="scroll"><div class="mlist">${rows}</div></div>`;
-const chatRow=(o)=>`<button type="button" class="row-btn" ${o.open?`data-open="${o.open}"`:`data-toast="권한이 없습니다"`}><span class="udot">${o.cnt?'<i class="cnt"></i>':''}</span><span class="av">${avFor(o.n)}</span><span class="mid"><span class="top"><b class="nm">${o.n}</b><span class="rt">${ampm(o.w)}<svg width="7" height="12" viewBox="0 0 6 10" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M1 1l4 4-4 4"/></svg></span></span><span class="pv">${esc(o.pv)}</span></span></button>`;
+const chatRow=(o)=>`<button type="button" class="row-btn" data-cnt="${o.cnt||0}" ${o.open?`data-open="${o.open}"`:`data-toast="권한이 없습니다"`}><span class="udot">${o.cnt?'<i class="cnt"></i>':''}</span><span class="av">${avFor(o.n)}</span><span class="mid"><span class="top"><b class="nm">${o.n}</b><span class="rt">${ampm(o.w)}<svg width="7" height="12" viewBox="0 0 6 10" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M1 1l4 4-4 4"/></svg></span></span><span class="pv">${esc(o.pv)}</span></span></button>`;
 /* ================= extra apps: memo, photos, alarms, search, contacts ================= */
 I.clock='<svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="8.5"/><path d="M12 7v5l3.5 2"/></svg>';
 I.contacts='<svg width="28" height="28" viewBox="0 0 24 24" fill="#fff"><circle cx="12" cy="9" r="3.6"/><path d="M5 19.5c1.2-3.5 3.8-5 7-5s5.8 1.5 7 5z"/></svg>';
@@ -1142,7 +1189,7 @@ const TABI={
  calls:'<svg width="24" height="24" viewBox="0 0 24 24" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2" stroke-linecap="round"/></svg>',
  contacts:'<svg width="24" height="24" viewBox="0 0 24 24" stroke-width="1.8"><circle cx="12" cy="9" r="4"/><path d="M4 20c1.5-4 4.5-5 8-5s6.5 1 8 5"/></svg>',
  vm:'<svg width="24" height="24" viewBox="0 0 24 24" stroke-width="1.8"><circle cx="7" cy="12" r="3.5"/><circle cx="17" cy="12" r="3.5"/><path d="M7 15.5h10"/></svg>'};
-const callTabs=on=>`<nav class="tabs">${[['favs','즐겨찾기'],['calls','최근 통화'],['contacts','연락처'],['vm','음성 사서함']].map(([k,l])=>`<button type="button" class="${k===on?'on':''}" data-open="${k}" data-arg="calls">${TABI[k]}${l}</button>`).join('')}</nav>`;
+const callTabs=on=>`<nav class="tabs">${[['favs','즐겨찾기'],['calls','최근 통화'],['contacts','연락처'],['vm','음성 사서함']].map(([k,l])=>`<button type="button" class="${k===on?'on':''}" data-open="${k}" data-arg="calls">${TABI[k]}${l}${k==='vm'||k==='calls'?`<span class="tbadge t-${k}"></span>`:''}</button>`).join('')}</nav>`;
 const mkFavs=list=>({favs:{html:`<div class="bar"><button type="button" class="back" data-back>${I.back}홈</button></div><div class="big">즐겨찾기</div><div class="scroll">${list.map(f=>`<div class="call"><div class="av" style="overflow:hidden;padding:0">${f.av||initialAv(f.n)}</div><div class="main"><div class="who"><div class="nm">${f.n}</div><div class="sub">휴대전화</div></div><span style="color:var(--accent);display:flex">${I.info}</span></div></div>`).join('')}</div>${callTabs('favs')}`}});
 const mkVM=list=>({vm:{html:`<div class="bar"><button type="button" class="back" data-back>${I.back}홈</button></div><div class="big">음성 사서함</div><div class="scroll">${list.length?list.map(v=>`<div class="vm"><div class="vm-top"><span class="vm-dot ${v.unread?'on':''}"></span><b>${v.n}</b><span class="vm-w">${v.w}</span></div><div class="vm-sub">${v.sub} · ${v.len}</div><div class="vm-play"><span class="vm-btn"><svg width="12" height="14" viewBox="0 0 12 14"><path d="M1 1l10 6-10 6z" fill="currentColor"/></svg></span><span class="vm-bar"><i></i></span><span class="vm-t">-${v.len}</span></div><div class="vm-tx"><small>받아쓰기</small>${esc(v.tx)}</div></div>`).join(''):'<p class="empty">음성 메시지 없음</p>'}</div>${callTabs('vm')}`}});
 
@@ -1167,58 +1214,291 @@ const mapSVG=pins=>`<svg viewBox="0 0 390 330" preserveAspectRatio="xMidYMid sli
 const mkMap=cfg=>({map:{html:`<div class="mapv">${mapSVG(cfg.pins)}<button type="button" class="back mapback" data-back>${I.back}홈</button></div><div class="sheet"><div class="grab"></div><div class="sbox msb">${I.search.replace('#fff','currentColor')}<span>지도 검색</span></div>
   <div class="msec">즐겨찾기</div><div class="favs">${cfg.favs.map(f=>`<button type="button" class="fav" data-toast="경로를 불러올 수 없습니다"><span style="background:${f.c}">${f.i}</span><b>${f.n}</b><small>${f.d}</small></button>`).join('')}</div>
   <div class="msec">최근 항목</div><div class="mrec">${cfg.recent.map(r=>`<button type="button" class="mr" data-toast="경로를 불러올 수 없습니다"><span class="mri" style="background:${r.c}">${r.i}</span><span><b>${r.n}</b><small>${r.d}</small></span></button>`).join('')}</div></div>`}});
-/* ---- Jun: green messenger app ("토키") ---- */
+/* ---- green messenger app ("LIME"), both phones ---- */
 I.talk='<svg width="34" height="34" viewBox="0 0 24 24"><path d="M12 4.2c-4.9 0-8.8 3.1-8.8 7 0 3.4 3 6.3 7.1 6.9.4.1.6.4.5.8l-.3 1.6c-.1.4.3.7.7.5 2.6-1.3 6.9-4.1 8.6-6.6.6-.9.9-2 .9-3.2 0-3.9-3.9-7-8.7-7z" fill="#fff"/><g fill="#06c755"><circle cx="8.2" cy="11.3" r="1.15"/><circle cx="12" cy="11.3" r="1.15"/><circle cx="15.8" cy="11.3" r="1.15"/></g></svg>';
 const TALKBG='linear-gradient(#22d36c,#06b74c)';
-const junNotice=[
- {day:'2026년 10월 1일 목요일'},
- G('체육교육과 학생회','10:00','[공지] 2학기 중간 실기 평가 일정 안내\n- 육상: 10/13(화)\n- 구기(배구): 11/6(금)\n자세한 사항은 학과 게시판을 확인해 주세요.'),
- {day:'2026년 10월 26일 월요일'},
- G('체육교육과 학생회','09:00','[공지] 배구 실기 조 편성 확정\n조별 연습은 제2체육관 예약 후 사용 바랍니다.\n예약은 과대표에게 문의해 주세요.'),
-];
-const junMori=[
- {day:'2026년 10월 13일 화요일'},
- G('모리','15:44','야 진짜 오늘 기록 뭐야'),
- G('모리','15:44','너 수영 다시 하냐?'),
- T('j','16:02','그냥 요즘 조금 다녀'),
- G('모리','16:03','오 누구랑?'),
- T('j','16:10','비밀'),
- G('모리','16:10','???'),
- {day:'2026년 10월 31일 토요일'},
- G('모리','11:06','쥰 할로윈 안 와?'),
- G('모리','13:41','야 답장 좀'),
-];
+const NOW='17:48';
+const isMine=s=>s==='j'||s==='me';
+const sq=(txt,bg)=>`<span class="iav" style="background:${bg}">${txt}</span>`;
 function talkThreadHTML(data,group){
-  let h='',lastDay='';
+  let h='';
   data.forEach((m,i)=>{
     if(m.day){const r=/(\d+)년 (\d+)월 (\d+)일 (.)요일/.exec(m.day);h+=`<div class="tk-day">${r?`${r[1]}. ${r[2]}. ${r[3]}. (${r[4]})`:m.day}</div>`;return}
-    const me=m.s==='j',prev=data[i-1]||{},next=data[i+1]||{};
-    const k=x=>x.day||!x.s?'#':x.s+'|'+(x.who||'');
+    if(m.sys){h+=`<div class="tk-sys">${esc(m.sys)}</div>`;return}
+    const me=isMine(m.s),prev=data[i-1]||{},next=data[i+1]||{};
+    const k=x=>x.day||x.sys||!x.s?'#':x.s+'|'+(x.who||'');
     const first=k(prev)!==k(m),showTime=!(k(next)===k(m)&&next.time===m.time);
-    const t=`<span class="tk-meta">${me&&group?`<em>읽음 ${m.read||31}</em>`:me?'<em>읽음</em>':''}${showTime?ampm(m.time):''}</span>`;
-    const bub=`<div class="tk-bub">${esc(m.text).replace(/@(\S+ \S+)/,'<b>@$1</b>')}</div>`;
+    const rd=me&&!m.unread?(group?`<em>읽음 ${m.read||group}</em>`:'<em>읽음</em>'):'';
+    const t=`<span class="tk-meta">${rd}${showTime?ampm(m.time):''}</span>`;
+    let bub;
+    if(m.card)bub=`<${m.card.open?`button type="button" data-open="k-article" data-arg="${m.card.open}"`:'div'} class="tk-card">${m.card.img?`<div class="tk-cimg" style="background:${m.card.img}">${m.card.icon||''}</div>`:''}<div class="tk-cb"><b>${esc(m.card.t)}</b>${m.card.d?`<span>${esc(m.card.d)}</span>`:''}${m.card.btn?`<i>${esc(m.card.btn)}</i>`:''}</div></${m.card.open?'button':'div'}>`;
+    else bub=`<div class="tk-bub">${esc(m.text).replace(/@(\S+ \S+)/,'<b>@$1</b>')}</div>`;
     if(me)h+=`<div class="tk-row me ${first?'first':''}">${t}${bub}</div>`;
-    else h+=`<div class="tk-row ${first?'first':''}"><span class="tk-av">${first?initialAv((m.who||'').replace(/^과대표\\s*/,'')):''}</span><div class="tk-col">${first?`<span class="tk-name">${esc(m.who)}</span>`:''}<div class="tk-line">${bub}${t}</div></div></div>`;
+    else h+=`<div class="tk-row ${first?'first':''}"><span class="tk-av">${first?(m.av||initialAv((m.who||'?').replace(/^과대표\s*/,''))):''}</span><div class="tk-col">${first?`<span class="tk-name">${esc(m.who||'')}</span>`:''}<div class="tk-line">${bub}${t}</div></div></div>`;
   });
   return h;
 }
-const talkThread=(title,count)=>`<div class="tk-bar"><button type="button" class="back" data-back="talk">${I.back}</button><b>${esc(title)}${count?` <span>(${count})</span>`:''}</b><span class="tk-icons"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="6"/><path d="M20 20l-4.5-4.5"/></svg><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6.6 3.5c.6-.3 1.3 0 1.6.6l1.5 3.3c.3.6.1 1.2-.4 1.6l-1.6 1.2c.9 2 2.6 3.8 4.7 4.8l1.2-1.6c.4-.5 1.1-.7 1.6-.4l3.3 1.5c.6.3.9 1 .6 1.6l-.8 1.9c-.4.9-1.3 1.4-2.3 1.3C9.6 19.8 4.2 14.4 3.7 7.9c-.1-1 .4-1.9 1.3-2.3z"/></svg><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg></span></div><div class="tk-thread"></div><div class="tk-input"><span>+</span><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 8h3l1.5-2h7L17 8h3v11H4z"/><circle cx="12" cy="13" r="3.4"/></svg><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="4" y="4" width="16" height="16" rx="3"/><circle cx="9" cy="9.5" r="1.6"/><path d="M5 18l5-5 4 4 2-2 4 4"/></svg><div class="tk-field">메시지 입력<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><circle cx="9" cy="10" r="1" fill="currentColor"/><circle cx="15" cy="10" r="1" fill="currentColor"/><path d="M8.5 14.5c2 2 5 2 7 0" stroke-linecap="round"/></svg></div><svg width="20" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5.5 11a6.5 6.5 0 0 0 13 0M12 17.5V21"/></svg></div>`;
-const talkRow=o=>`<button type="button" class="tk-li" data-open="${o.open}"><span class="tk-lav">${o.av}</span><span class="tk-lm"><b>${esc(o.n)}${o.c?` <small>${o.c}</small>`:''}</b><span>${esc(o.pv)}</span></span><span class="tk-lr"><small>${o.w}</small>${o.cnt?`<i>${o.cnt}</i>`:''}</span></button>`;
-const talkThreadApp=(id,title,count,data,group)=>({[id]:{html:talkThread(title,count),onOpen:v=>{const t=v.querySelector('.tk-thread');if(!t.innerHTML)t.innerHTML=talkThreadHTML(data,group);t.scrollTop=t.scrollHeight;const r=v.closest('.screen').querySelector(`.tk-li[data-open="${id}"] i`);if(r)r.remove()}}});
-const talkApps={
- talk:{html:`<div class="tk-top"><b>대화</b><span class="tk-icons"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="3"/><path d="M12 3v3M12 18v3M3 12h3M18 12h3M5.6 5.6l2.1 2.1M16.3 16.3l2.1 2.1M5.6 18.4l2.1-2.1M16.3 7.7l2.1-2.1"/></svg></span></div>
-  <div class="tk-search"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="11" cy="11" r="6"/><path d="M20 20l-4.5-4.5"/></svg>검색</div>
-  <div class="tk-chips"><span class="on">전체</span><span>친구</span><span>그룹</span><span>공식계정</span></div>
-  <div class="scroll">${
-   talkRow({open:'k-group',av:`<span class="iav grp" style="background:linear-gradient(#7fb4e6,#5b8fd0)">${I.group}</span>`,n:'체육교육과 2학년',c:32,pv:'과대표 나카무라: 금요일 배구 실기 조 편성 올렸습니다…',w:'오후 2:02',cnt:27})+
-   talkRow({open:'k-mori',av:initialAv('모'),n:'모리',pv:'야 답장 좀',w:'오후 1:41',cnt:2})+
-   talkRow({open:'k-notice',av:`<span class="iav" style="background:linear-gradient(#5aa25a,#3c7f3c)">공</span>`,n:'체육교육과 학생회',pv:'[공지] 배구 실기 조 편성 확정',w:'10. 26.'})
-  }</div>
-  <nav class="tk-tabs"><span>${'<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 11l8-7 8 7v9h-5v-6H9v6H4z" stroke-linejoin="round"/></svg>'}홈</span><span class="on">${'<svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 4.2c-4.9 0-8.8 3.1-8.8 7 0 3.4 3 6.3 7.1 6.9.4.1.6.4.5.8l-.3 1.6c-.1.4.3.7.7.5 2.6-1.3 6.9-4.1 8.6-6.6.6-.9.9-2 .9-3.2 0-3.9-3.9-7-8.7-7z"/></svg>'}대화</span><span>${'<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="4" y="4" width="16" height="16" rx="3"/><path d="M8 12h8M12 8v8" stroke-linecap="round"/></svg>'}스토리</span><span>${'<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="8.5"/><path d="M12 7v5l3 2" stroke-linecap="round"/></svg>'}뉴스</span><span>${'<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="6" width="18" height="13" rx="2"/><path d="M3 10h18"/></svg>'}지갑</span></nav>`},
- ...talkThreadApp('k-group','체육교육과 2학년',32,junGroup,true),
- ...talkThreadApp('k-mori','모리',0,junMori,false),
- ...talkThreadApp('k-notice','체육교육과 학생회',0,junNotice,false),
+const TK={
+ back:'<svg width="12" height="21" viewBox="0 0 13 22" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M11 2L2 11l9 9"/></svg>',
+ search:'<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="6"/><path d="M20 20l-4.5-4.5"/></svg>',
+ menu:'<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>',
+ home:'<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="M4 11l8-7 8 7v9h-5v-6H9v6H4z"/></svg>',
+ chat:'<svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 4.2c-4.9 0-8.8 3.1-8.8 7 0 3.4 3 6.3 7.1 6.9.4.1.6.4.5.8l-.3 1.6c-.1.4.3.7.7.5 2.6-1.3 6.9-4.1 8.6-6.6.6-.9.9-2 .9-3.2 0-3.9-3.9-7-8.7-7z"/></svg>',
+ news:'<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="4" y="4" width="16" height="16" rx="2.5"/><path d="M8 9h8M8 13h8M8 17h5" stroke-linecap="round"/></svg>',
 };
+const typingRow='<div class="tk-row first tk-typing"><span class="tk-av"></span><div class="tk-col"><div class="tk-line"><div class="tk-bub"><i></i><i></i><i></i></div></div></div></div>';
+function mkTalk(cfg){
+  const apps={};
+  const row=r=>`<button type="button" class="tk-li" data-open="${r.id}"><span class="tk-lav">${r.av}</span><span class="tk-lm"><b>${esc(r.n)}${r.c?` <small>${r.c}</small>`:''}${r.official?' <span class="tk-ok">✓</span>':''}</b><span>${esc(r.pv)}</span></span><span class="tk-lr"><small>${r.w}</small>${r.cnt?`<i>${r.cnt}</i>`:''}</span></button>`;
+  const tabs=`<nav class="tk-tabs">${[['home','홈',TK.home],['chats','대화',TK.chat],['news','뉴스',TK.news]].map(([k,l,ic])=>`<button type="button" data-tab="${k}" class="${k==='chats'?'on':''}">${ic}${l}</button>`).join('')}</nav>`;
+  const home=cfg.home;
+  apps.talk={html:`
+  <section class="tk-pane" data-pane="home" hidden>
+   <div class="tk-top"><b>홈</b><span class="tk-icons">${TK.search}</span></div>
+   <div class="scroll">
+    <div class="tk-me"><span class="tk-lav xl">${home.av}</span><span><b>${esc(home.name)}</b><small class="${home.status?'':'tkph'}">${esc(home.status||'상태메시지를 입력해 주세요')}</small></span></div>
+    ${home.rec?`<div class="tk-sec">알 수도 있는 친구</div><div class="tk-rec"><span class="tk-lav">${home.rec.av}</span><span><b>${esc(home.rec.n)}</b><small>${esc(home.rec.sub)}</small></span><button type="button" data-toast="${esc(home.rec.toast)}">추가</button></div>`:''}
+    <div class="tk-sec">친구 ${home.friends.length+(home.more||0)}</div>
+    ${home.friends.map(f=>`<div class="tk-fr"><span class="tk-lav sm">${f.av||initialAv(f.n)}</span><span><b>${esc(f.n)}</b>${f.s?`<small>${esc(f.s)}</small>`:''}</span></div>`).join('')}
+    ${home.more?`<div class="tk-more">외 ${home.more}명</div>`:''}
+   </div>
+  </section>
+  <section class="tk-pane" data-pane="chats">
+   <div class="tk-top"><b>대화</b><span class="tk-icons">${TK.search}${TK.menu}</span></div>
+   <div class="tk-search">${TK.search}검색</div>
+   <div class="tk-chips"><span class="on">전체</span><span>친구</span><span>그룹</span><span>공식계정</span></div>
+   <div class="scroll">${cfg.rooms.map(row).join('')}</div>
+  </section>
+  <section class="tk-pane" data-pane="news" hidden>
+   <div class="tk-top"><b>뉴스</b><span class="tk-icons">${TK.search}</span></div>
+   <div class="tk-chips"><span class="on">주요</span><span>지역</span><span>연예</span><span>스포츠</span></div>
+   <div class="scroll">${cfg.news.map((n,i)=>`<button type="button" class="tk-nw" data-open="k-article" data-arg="${i}"><span><small>${esc(n.cat)}</small><b>${esc(n.t)}</b><em>${esc(n.src)} · ${n.w}</em></span><span class="tk-nth" style="background:${n.c}"></span></button>`).join('')}</div>
+  </section>${tabs}`,
+   init:api=>{const v=api.scr.querySelector('[data-app="talk"]');v.querySelectorAll('[data-tab]').forEach(b=>b.onclick=()=>{v.querySelectorAll('[data-tab]').forEach(x=>x.classList.toggle('on',x===b));v.querySelectorAll('.tk-pane').forEach(p=>p.hidden=p.dataset.pane!==b.dataset.tab)})}};
+  apps['k-article']={html:`<div class="tk-bar"><button type="button" class="back" data-back="talk">${TK.back}</button><b>뉴스</b></div><div class="scroll tk-art"></div>`,
+   onOpen:(v,arg)=>{const [ix,bk]=String(arg||'0').split('|');const n=cfg.news[+ix||0];const b=v.querySelector('.back');b.dataset.back=bk||'talk';v.querySelector('.tk-art').innerHTML=`<small>${esc(n.cat)}</small><h2>${esc(n.t)}</h2><em>${esc(n.src)} · 2026. 10. 31. ${n.w}</em><div class="tk-aimg" style="background:${n.c}"></div>${n.body.split('\n').map(p=>`<p>${esc(p)}</p>`).join('')}`}};
+  cfg.rooms.forEach(r=>{
+    const choice=!!r.tree;
+    apps[r.id]={html:`<div class="tk-bar"><button type="button" class="back" data-back="talk">${TK.back}</button><b>${esc(r.n)}${r.c?` <span>(${r.c})</span>`:''}</b><span class="tk-icons">${TK.search}${TK.menu}</span></div>${r.banner?`<div class="tk-banner">${esc(r.banner)}</div>`:''}<div class="tk-thread"></div>${choice?'<div class="tk-choices"></div>':''}${r.noInput?`<div class="tk-input off">${esc(r.noInput)}</div>`:`<div class="tk-input"><span>+</span><div class="tk-field">메시지 입력</div></div>`}`,
+     init:api=>{if(!choice)return;
+       const v=api.scr.querySelector(`[data-app="${r.id}"]`),th=v.querySelector('.tk-thread'),box=v.querySelector('.tk-choices');
+       let arr=[...r.data],busy=false;
+       const draw=()=>{th.innerHTML=talkThreadHTML(arr,r.c);th.scrollTop=th.scrollHeight};
+       const show=nid=>{
+         if(!nid){box.innerHTML='<button type="button" class="tk-end">대화가 끝났어요 · 처음부터 다시</button>';box.querySelector('button').onclick=()=>{arr=[...r.data];draw();show(r.tree.start)};return}
+         box.innerHTML='<small>답장 고르기</small>'+r.tree[nid].map((c,i)=>`<button type="button" class="tk-ch" data-i="${i}">${esc(c.me[c.me.length-1])}</button>`).join('');
+         box.querySelectorAll('.tk-ch').forEach(b=>b.onclick=()=>{if(busy)return;busy=true;const c=r.tree[nid][+b.dataset.i];box.innerHTML='';
+           c.me.forEach(t=>arr.push({s:'me',time:NOW,text:t}));draw();
+           let k=0;const step=()=>{if(k>=c.reply.length){busy=false;show(c.next);return}
+             th.insertAdjacentHTML('beforeend',typingRow);th.scrollTop=th.scrollHeight;
+             setTimeout(()=>{arr.push({s:'o',who:r.who,av:r.av,time:NOW,text:c.reply[k++]});draw();setTimeout(step,450)},1000)};
+           setTimeout(step,600)})};
+       apps[r.id]._draw=draw;show(r.tree.start)},
+     onOpen:v=>{const th=v.querySelector('.tk-thread');if(r.tree){apps[r.id]._draw&&!th.innerHTML&&apps[r.id]._draw()}else if(!th.innerHTML)th.innerHTML=talkThreadHTML(r.data,r.c);th.scrollTop=th.scrollHeight;
+       const sc=v.closest('.screen'),b=sc.querySelector(`.tk-li[data-open="${r.id}"] .tk-lr i`);if(b){b.remove();const left=[...sc.querySelectorAll('.tk-lr i')].reduce((a,x)=>a+(+x.textContent||0),0),ab=sc.querySelector('.app[data-open="talk"] .badge');if(ab){if(left)ab.textContent=left;else ab.remove()}}}};
+  });
+  return apps;
+}
+const O=(who,time,text,extra)=>({s:'o',who,time,text,...(extra||{})});
+const M=(time,text,extra)=>({s:'me',time,text,...(extra||{})});
+
+/* ===== Jun's rooms ===== */
+const momAv=sq('?','linear-gradient(#b6b6bb,#8e8e93)');
+const junMom=[
+ {sys:'알 수 없음 · 이 계정은 더 이상 사용되지 않습니다.'},
+ {day:'2022년 7월 23일 토요일'},
+ O('알 수 없음','21:14','내일 엄마 제일 앞자리에 앉아 있을게',{av:momAv}),
+ O('알 수 없음','21:14','긴장하지 말고 평소처럼만 해',{av:momAv}),
+ M('21:30','응 알았어'),
+ M('21:30','일찍 자'),
+ {day:'2022년 7월 24일 일요일'},
+ O('알 수 없음','11:52','다리는 좀 어때',{av:momAv}),
+ O('알 수 없음','11:53','엄마는 쥰이 끝까지 헤엄친 게 제일 자랑스러워',{av:momAv}),
+ M('13:20','괜찮아'),
+ {day:'2022년 9월 14일 수요일'},
+ O('알 수 없음','15:02','1층 안내데스크에 사탕 병 있더라 ㅎㅎ',{av:momAv}),
+ O('알 수 없음','15:02','딸기맛. 너 어릴 때 그것만 먹었잖아',{av:momAv}),
+ M('15:40','올라갈 때 몇 개 가져갈게'),
+ {day:'2022년 10월 2일 일요일'},
+ O('알 수 없음','18:10','사탕 한 봉지나 사 왔어? ㅎㅎ 간호사 선생님들이랑 나눠 먹었어',{av:momAv}),
+ M('18:22','또 사 올게'),
+ {day:'2022년 10월 28일 금요일'},
+ O('알 수 없음','22:41','쥰아',{av:momAv}),
+ O('알 수 없음','22:43','수영 다시 하고 싶어지면 그때 하면 돼. 엄마는 기다리는 거 잘해',{av:momAv}),
+ M('23:05','응'),
+ {day:'2022년 10월 30일 일요일'},
+ M('21:58','내일 학교 끝나고 바로 갈게'),
+ {day:'2023년 10월 31일 화요일'},
+ M('00:03','엄마 나 대학 붙었어. 체육교육과',{unread:true}),
+ {day:'2024년 10월 31일 목요일'},
+ M('00:01','아직도 그 사탕 먹어',{unread:true}),
+ {day:'2025년 10월 31일 금요일'},
+ M('00:00','벌써 3년이래',{unread:true}),
+ {day:'2026년 10월 31일 토요일'},
+ M('00:12','오늘은 못 갈 것 같아. 아빠가 꽃 대신 놓고 온대',{unread:true}),
+ M('00:14','요즘은 좀 괜찮아. 진짜로',{unread:true}),
+];
+const junDadTalk=[
+ {day:'2026년 8월 16일 일요일'},
+ O('아빠','08:02','생일 축하한다.'),
+ O('아빠','08:03','용돈 조금 보냈다. 밥 사 먹어라.'),
+ M('10:40','감사합니다'),
+ {day:'2026년 10월 29일 목요일'},
+ O('아빠','21:15','',{card:{open:'0|k-dad',t:'현 수영 선수권, 고교부 접영 100m 대회 신기록',d:'kenshin-sports.jp',img:'linear-gradient(135deg,#1d6aa6,#7cc4e8)',icon:I.swim}}),
+ O('아빠','21:16','너 생각나서 보냈다.'),
+];
+const swimClub=[
+ {day:'2022년 7월 24일 일요일'},
+ O('하루토','18:30','다들 오늘 수고했다'),
+ O('사쿠라','18:31','쥰 다리 괜찮아??'),
+ M('19:02','괜찮아 ㅋㅋ'),
+ M('19:02','다들 수고했어'),
+ O('코치님','20:10','사자나미, 오늘 끝까지 간 거 잊지 마라. 푹 쉬고.'),
+ {day:'2022년 11월 2일 수요일'},
+ O('사쿠라','09:12','쥰 힘내… 우리 다 기다릴게'),
+ O('하루토','09:14','언제든 연락해라'),
+ {day:'2023년 3월 1일 수요일'},
+ O('하루토','14:00','졸업 축하한다 다들!!'),
+ O('사쿠라','14:01','대학 가서도 수영하자!!'),
+ M('15:22','졸업 축하해'),
+ {day:'2026년 10월 24일 토요일'},
+ O('사쿠라','20:11','다음 주 일요일 현 대회 나 나간다!!'),
+ O('하루토','20:12','오 응원 간다'),
+ O('유이','20:15','나도나도'),
+ O('사쿠라','20:20','@사자나미 쥰 너도 와 ㅋㅋ 오랜만에 얼굴 보자'),
+ O('하루토','20:21','쥰 요즘 뭐 하고 사냐'),
+ O('하루토','20:21','물에는 들어가냐?'),
+];
+const sweetAds=[
+ {day:'2026년 10월 20일 화요일'},
+ O('달콤상점','14:00','',{av:sq('달','linear-gradient(#ff8fa6,#ff5a7d)'),card:{t:'주문하신 상품이 발송되었습니다',d:'새콤달콤 딸기맛 캔디 (100입) · 1개',btn:'배송 조회'}}),
+ {day:'2026년 10월 31일 토요일'},
+ O('달콤상점','10:00','',{av:sq('달','linear-gradient(#ff8fa6,#ff5a7d)'),card:{t:'🎃 할로윈 한정 오늘까지! 딸기맛 캔디 300입 20% 할인',d:'자주 구매하신 상품이 할인 중이에요',img:'radial-gradient(circle at 30% 45%,#ff7d9a 0 16px,transparent 17px),radial-gradient(circle at 58% 60%,#ff9fb4 0 14px,transparent 15px),radial-gradient(circle at 75% 35%,#ff6a8a 0 12px,transparent 13px),#ffe6ec',btn:'지금 보러 가기'}}),
+];
+const junMoriTalk=[
+ {day:'2026년 10월 13일 화요일'},
+ O('모리','15:44','야 진짜 오늘 기록 뭐야'),
+ O('모리','15:44','너 수영 다시 하냐?'),
+ M('16:02','그냥 요즘 조금 다녀'),
+ O('모리','16:03','오 누구랑?'),
+ M('16:10','비밀'),
+ O('모리','16:10','???'),
+ {day:'2026년 10월 31일 토요일'},
+ O('모리','11:06','쥰 할로윈 안 와?'),
+ O('모리','13:41','야 답장 좀'),
+];
+const moriTree={start:'a',
+ a:[{me:['미안 오늘은 못 가'],reply:['왜?'],next:null},
+    {me:['나 오늘 선약 있어'],reply:['오 누구랑?'],next:'b'},
+    {me:['몇 시까지 가면 돼?'],reply:['8시! 역 앞 이자카야','분장 꼭 하고 와라 ㅋㅋ'],next:'c'}],
+ b:[{me:['다음에 말해줄게'],reply:['와 뭐냐?','여친 생김?'],next:'b2'},
+    {me:['비밀'],reply:['너 요즘 비밀 왜 이렇게 많냐 ㅋㅋ','수영 같이 다닌다는 그 사람이지?'],next:'b3'}],
+ b2:[{me:['아니거든'],reply:['ㅋㅋㅋ 반응 수상한데'],next:null},
+     {me:['...비슷한 거?'],reply:['헐','대박','사진 보여줘 사진'],next:'b4'}],
+ b3:[{me:['...어떻게 알았어'],reply:['너 요즘 폰 보면서 웃잖아 ㅋㅋㅋ','다 티 나'],next:null},
+     {me:['아니야'],reply:['아니긴 뭐가 아니야 ㅋㅋ'],next:null}],
+ b4:[{me:['싫어'],reply:['치사한 놈 ㅋㅋ 잘해봐라'],next:null},
+     {me:['나중에 직접 소개해줄게'],reply:['오 ㅋㅋㅋ 약속했다?'],next:null}],
+ c:[{me:['...아 미안 역시 못 가겠다'],reply:['??? 뭐야 ㅋㅋㅋ','너 지금 어딘데'],next:'c2'},
+    {me:['분장은 안 해'],reply:['그럼 첫 잔은 니 돈 ㅋㅋ'],next:null}],
+ c2:[{me:['옥상'],reply:['옥상?? 이 추운데?','누구랑 있구나 너'],next:null},
+     {me:['그냥 밖'],reply:['수상해… 내일 다 불어라'],next:null}],
+};
+const junTalk=mkTalk({
+ home:{name:'사자나미 쥰',av:junAvatar,status:'',rec:{n:'사에구사 이바라',av:initialAv('사'),sub:'연락처에서 추천',toast:'아직 추가하지 않았어요'},
+  friends:[{n:'아빠'},{n:'모리',s:'할로윈 이자카야 갈 사람 🎃'},{n:'사쿠라',s:'D-8 현 대회'},{n:'하루토'},{n:'과대표 나카무라',s:'과제 마감 11/6'},{n:'이토'},{n:'하야시'}],more:39},
+ rooms:[
+  {id:'k-group',n:'체육교육과 2학년',c:32,av:sq(I.group,'linear-gradient(#7fb4e6,#5b8fd0)'),pv:'과대표 나카무라: 금요일 배구 실기 조 편성 올렸습니다…',w:'오후 2:02',cnt:27,data:junGroup},
+  {id:'k-mori',n:'모리',av:initialAv('모'),pv:'야 답장 좀',w:'오후 1:41',cnt:2,data:junMoriTalk,who:'모리',tree:moriTree},
+  {id:'k-sweet',n:'달콤상점',official:true,av:sq('달','linear-gradient(#ff8fa6,#ff5a7d)'),pv:'🎃 할로윈 한정 오늘까지! 딸기맛 캔디 300입 20% 할인',w:'오전 10:00',cnt:1,data:sweetAds,noInput:'공식계정에는 답장할 수 없습니다'},
+  {id:'k-mom',n:'알 수 없음',av:momAv,pv:'요즘은 좀 괜찮아. 진짜로',w:'오전 12:14',data:junMom,banner:'대화 상대가 없습니다'},
+  {id:'k-dad',n:'아빠',av:initialAv('아'),pv:'너 생각나서 보냈다.',w:'10. 29.',data:junDadTalk},
+  {id:'k-swim',n:'고교 수영부',c:9,av:sq(I.swim,'linear-gradient(#1d6aa6,#7cc4e8)'),pv:'하루토: 물에는 들어가냐?',w:'10. 24.',cnt:14,data:swimClub},
+  {id:'k-notice',n:'체육교육과 학생회',official:true,av:sq('공','linear-gradient(#5aa25a,#3c7f3c)'),pv:'[공지] 배구 실기 조 편성 확정',w:'10. 26.',data:[
+   {day:'2026년 10월 1일 목요일'},O('체육교육과 학생회','10:00','[공지] 2학기 실기 평가 일정 안내\n- 육상: 10/13(화)\n- 구기(배구): 11/6(금)\n자세한 사항은 학과 게시판을 확인해 주세요.',{av:sq('공','linear-gradient(#5aa25a,#3c7f3c)')}),
+   {day:'2026년 10월 26일 월요일'},O('체육교육과 학생회','09:00','[공지] 배구 실기 조 편성 확정\n조별 연습은 제2체육관 예약 후 사용 바랍니다.',{av:sq('공','linear-gradient(#5aa25a,#3c7f3c)')})],noInput:'공식계정에는 답장할 수 없습니다'},
+ ],
+ news:[
+  {cat:'스포츠',t:'현 수영 선수권 개막… 고교부 접영 100m 대회 신기록',src:'켄신스포츠',w:'09:12',c:'linear-gradient(135deg,#1d6aa6,#7cc4e8)',body:'현 수영 선수권 대회가 개막한 가운데, 고교부 남자 접영 100m에서 대회 신기록이 나왔다.\n기존 기록은 4년 전 세워진 것으로, 당시 기록 보유자는 부상으로 국가대표 선발전 결승을 마치지 못한 바 있다.\n대회는 다음 주 일요일까지 시립 수영장에서 열린다.'},
+  {cat:'사회',t:'할로윈 앞둔 역 앞 번화가, 오후 6시부터 일부 도로 통제',src:'오늘의 지역',w:'11:30',c:'linear-gradient(135deg,#ff9f43,#7a3b0f)',body:'할로윈 당일 인파가 몰릴 것에 대비해 역 앞 번화가 일부 도로가 오후 6시부터 통제된다.\n시는 이자카야 밀집 지역에 안전 요원을 배치한다고 밝혔다.'},
+  {cat:'날씨',t:'오늘 해 질 무렵 맑음… “올가을 가장 붉은 노을 예상”',src:'날씨온',w:'14:05',c:'linear-gradient(135deg,#4f437e,#ff7e8f,#ffb36b)',body:'오늘 오후 늦게부터 구름이 걷히면서 해 질 무렵 선명한 노을을 볼 수 있을 것으로 보인다.\n일몰 시각은 오후 4시 50분 전후로 예상되며, 밤부터는 기온이 크게 떨어지겠다.'},
+  {cat:'교육',t:'교원 임용 실기시험, 내년부터 수영 과목 비중 확대',src:'에듀데일리',w:'08:40',c:'linear-gradient(135deg,#5856d6,#a29bfe)',body:'체육 교원 임용 실기시험에서 내년부터 수영 과목의 배점이 확대된다.\n교육청은 학교 수영 교육 강화를 이유로 들었다.'},
+ ],
+});
+
+/* ===== Ibara's rooms ===== */
+const teacherAv=sq('미','linear-gradient(#f2c14e,#d99a1e)');
+const teacherData=[
+ {day:'2026년 4월 20일 월요일'},
+ O('미즈노 선생님','19:02','이바라, 병원은 다녀왔니?',{av:teacherAv}),
+ M('21:40','네, 다녀왔습니다. 약도 잘 받아 왔어요.'),
+ O('미즈노 선생님','21:41','잘했다. 힘들면 언제든 연락하고.',{av:teacherAv}),
+ M('21:45','감사합니다. 선생님도 무리하지 마세요.'),
+ {day:'2026년 9월 1일 화요일'},
+ O('미즈노 선생님','08:10','날이 많이 선선해졌다. 감기 조심하고.',{av:teacherAv}),
+ M('12:30','네, 조심하겠습니다. 선생님도 감기 조심하세요.'),
+ O('미즈노 선생님','12:41','ㅎㅎ 그래. 따뜻하게 입고 다니고.',{av:teacherAv}),
+ {day:'2026년 10월 31일 토요일'},
+ O('미즈노 선생님','16:58','이바라, 다음 달이 생일이지? 올해도 작은 케이크 보내려고 하는데 괜찮니?',{av:teacherAv}),
+ O('미즈노 선생님','17:02','그리고 요즘은 어떻게 지내? 소식 들은 지 오래됐다.',{av:teacherAv}),
+];
+const teacherTree={start:'a',
+ a:[{me:['매년 감사합니다. 올해도 잘 먹겠습니다.'],reply:['ㅎㅎ 그래.','주소는 그대로지?'],next:'k'},
+    {me:['그럭저럭 지내고 있습니다.'],reply:['그럭저럭이면 다행이다.','밥은 잘 챙겨 먹고?'],next:'f'}],
+ k:[{me:['네, 그대로입니다.'],reply:['...그래. 14일에 맞춰 보낼게.','밥 꼭 챙겨 먹고.'],next:null},
+    {me:['...올해는 두 개 보내주실 수 있습니까?'],reply:['어머, 두 개? ㅎㅎ','누구랑 먹으려고?'],next:'k2'}],
+ k2:[{me:['같이 먹을 사람이 생겨서요.'],reply:['이바라 입에서 그런 말이 나오다니','선생님 좀 울 것 같다'],next:'k3'},
+     {me:['그건 비밀입니다.'],reply:['ㅎㅎ 알았어. 크게 두 개 보낼게.'],next:null}],
+ k3:[{me:['우실 일까진 아닌 것 같습니다만···.'],reply:['ㅎㅎ 그래.','다음엔 그 사람이랑 같이 와.'],next:null}],
+ f:[{me:['주로 편의점 도시락을 먹습니다.'],reply:['또 도시락이야!','케이크 보낼 때 반찬도 같이 넣을게.'],next:null},
+    {me:['요즘은 가끔 챙겨주는 사람이 있어서요.'],reply:['어머, 누가?'],next:'f2'}],
+ f2:[{me:['...친구라고 해야 하나. 그런 사람이 생겼습니다.'],reply:['정말? 어떤 사람이야?'],next:'f3'},
+     {me:['뭐, 아는 사람입니다.'],reply:['ㅎㅎ 그래. 그 아는 사람한테 고맙다고 전해줘.'],next:null}],
+ f3:[{me:['늘 딸기 사탕을 들고 다니는 사람입니다.'],reply:['ㅎㅎ 좋은 사람이구나.','이바라 말투가 좀 달라졌다.'],next:null},
+     {me:['자신한테 수영을 가르쳐 줍니다.'],reply:['이바라가 수영을? 물 싫어했잖아.'],next:'f4'}],
+ f4:[{me:['지금도 좋아하진 않습니다. 그런데 이상하게 가게 되네요.'],reply:['...그래.','다음에 꼭 데려와. 선생님도 보고 싶다.'],next:null}],
+};
+const facilityGroup=[
+ {day:'2019년 12월 25일 수요일'},
+ O('렌','16:20','오늘 사진 누가 찍었어?? 단톡에 올려줘'),
+ O('미오','16:22','나나 눈사람 앞에서 찍은 거 있어'),
+ O('렌','16:23','이바라 웃는 사진 있냐 ㅋㅋㅋ'),
+ M('16:40','그런 게 있을 리가요.'),
+ {day:'2023년 3월 15일 수요일'},
+ O('소타','11:00','나 오늘 시설 나간다'),
+ O('미오','11:02','다들 잘 살아라 진짜로'),
+ O('렌','11:05','가끔 연락하고 살자'),
+ M('12:10','뭐, 다들 알아서 잘 살겠죠. 건강들 하세요.'),
+ {day:'2024년 11월 14일 목요일'},
+ O('미오','00:01','이바라 생일 축하해!!'),
+ M('09:30','감사합니다. 기억하고 있을 줄은 몰랐네요.'),
+];
+const poolAds=[
+ {day:'2026년 9월 28일 월요일'},
+ O('역 앞 실내 수영장','10:00','',{av:sq('≈','linear-gradient(#30b0c7,#1d6aa6)'),card:{t:'[이벤트] 친구와 함께라면 무료! 2인 체험권',d:'10월 한 달 · 친구 추천 시 2인 무료',img:'linear-gradient(135deg,#1d6aa6,#7cc4e8)',icon:I.swim,btn:'쿠폰 받기'}}),
+ {day:'2026년 10월 30일 금요일'},
+ O('역 앞 실내 수영장','10:00','',{av:sq('≈','linear-gradient(#30b0c7,#1d6aa6)'),card:{t:'11월 회원 등록 시 첫 달 50% 할인',d:'성인 초급반 · 화 목 저녁 반 신설',btn:'자세히 보기'}}),
+];
+const cvsAds=[
+ {day:'2026년 10월 31일 토요일'},
+ O('매일편의점','09:00','',{av:sq('매','linear-gradient(#ff9f0a,#e0580b)'),card:{t:'도시락 2개 구매 시 음료 1개 증정',d:'자주 구매한 상품: 도시락 · 이번 달 11회',btn:'쿠폰 받기'}}),
+];
+const ibTalk=mkTalk({
+ home:{name:'사에구사 이바라',av:initialAv('사'),status:'',rec:{n:'쥰',av:junAvatar,sub:'연락처에서 추천',toast:'아직 추가하지 않았어요'},
+  friends:[{n:'미즈노 선생님',av:teacherAv,s:'오늘도 수고했어요'},{n:'렌'},{n:'미오',s:'졸업했다!!'},{n:'소타'}],more:3},
+ rooms:[
+  {id:'k-teacher',n:'미즈노 선생님',av:teacherAv,pv:'그리고 요즘은 어떻게 지내? 소식 들은 지 오래됐다.',w:'오후 5:02',cnt:2,data:teacherData,who:'미즈노 선생님',tree:teacherTree},
+  {id:'k-cvs',n:'매일편의점',official:true,av:sq('매','linear-gradient(#ff9f0a,#e0580b)'),pv:'도시락 2개 구매 시 음료 1개 증정',w:'오전 9:00',cnt:1,data:cvsAds,noInput:'공식계정에는 답장할 수 없습니다'},
+  {id:'k-pool',n:'역 앞 실내 수영장',official:true,av:sq('≈','linear-gradient(#30b0c7,#1d6aa6)'),pv:'11월 회원 등록 시 첫 달 50% 할인',w:'10. 30.',cnt:1,data:poolAds,noInput:'공식계정에는 답장할 수 없습니다'},
+  {id:'k-fac',n:'햇살원 친구들',c:6,av:sq(I.group,'linear-gradient(#f2c14e,#e09a3e)'),pv:'감사합니다. 기억하고 있을 줄은 몰랐네요.',w:'2024. 11. 14.',data:facilityGroup},
+ ],
+ news:[
+  {cat:'경제',t:'내년 최저임금 3.1% 인상… 아르바이트 시급 반영은 4월부터',src:'경제나침반',w:'08:00',c:'linear-gradient(135deg,#2fbf9b,#164a45)',body:'내년도 최저임금이 3.1% 오른다.\n다만 상당수 사업장은 4월 이후에야 시급 인상을 반영할 것으로 보인다.'},
+  {cat:'생활',t:'대학가 원룸 월세 1년 새 9% 올라… “관리비 인상분 전가”',src:'오늘의 지역',w:'10:12',c:'linear-gradient(135deg,#6c6a72,#2c2b2f)',body:'대학가 원룸과 다세대 주택의 월세가 1년 새 평균 9% 올랐다.\n세입자들은 관리비 인상분이 그대로 월세에 반영되고 있다고 호소했다.'},
+  {cat:'건강',t:'“마음의 감기, 혼자 버티지 마세요”… 지역 상담센터 무료 상담 확대',src:'헬스온',w:'13:30',c:'linear-gradient(135deg,#7fd3a0,#3c7f5a)',body:'지역 상담센터들이 청년 대상 무료 상담을 확대한다.\n전문가들은 증상이 가벼울 때 도움을 받는 것이 회복에 중요하다고 조언했다.'},
+  {cat:'날씨',t:'오늘 해 질 무렵 맑음… “올가을 가장 붉은 노을 예상”',src:'날씨온',w:'14:05',c:'linear-gradient(135deg,#4f437e,#ff7e8f,#ffb36b)',body:'오늘 오후 늦게부터 구름이 걷히면서 해 질 무렵 선명한 노을을 볼 수 있을 것으로 보인다.\n일몰 시각은 오후 4시 50분 전후로 예상된다.'},
+ ],
+});
 const junAlarms=alarmsApp([
  {ap:'오전',t:'5:00',n:'훈련 · 매일',on:false},
  {ap:'오전',t:'7:40',n:'1교시 · 월, 수',on:true},
@@ -1305,12 +1585,12 @@ const junHome=`<div class="pages">
 <div class="dock">
   ${icon('calls','전화','linear-gradient(#5be07a,#2fbf55)',I.phone)}
   ${icon('msgs','메시지','linear-gradient(#6fdc8c,#30b356)',I.msg)}
-  ${icon('talk','토키',TALKBG,I.talk,'<span class="badge">29</span>')}
+  ${icon('talk','LIME',TALKBG,I.talk,'<span class="badge">44</span>')}
   ${icon('photos','사진','#fff',I.photo)}
 </div>`;
 const jun=makePhone({key:'jun',code:'0816',cls:'p-jun',time:'17:48',batt:'8',label:'쥰의 폰',homeHTML:junHome,lock:[
   {open:'calls',app:'전화',w:'16:50',t:'이바라',b:'부재중 전화 2통',bg:'linear-gradient(#5be07a,#2fbf55)',icon:I.phone},
-  {open:'k-group',app:'토키',w:'14:02',t:'체육교육과 2학년 (32)',b:'과대표 나카무라: 금요일 배구 실기 조 편성 올렸습니다 외 26개',bg:TALKBG,icon:I.talk},
+  {open:'k-group',app:'LIME',w:'14:02',t:'체육교육과 2학년 (32)',b:'과대표 나카무라: 금요일 배구 실기 조 편성 올렸습니다 외 26개',bg:TALKBG,icon:I.talk},
   {open:'t-dad',app:'메시지',w:'어제',t:'아빠',b:'내일 엄마 보러 갈 거냐',bg:'linear-gradient(#6fdc8c,#30b356)',icon:I.msg},
  ],apps:{
   msgs:{html:listApp(
@@ -1322,7 +1602,7 @@ const jun=makePhone({key:'jun',code:'0816',cls:'p-jun',time:'17:48',batt:'8',lab
   't-dad':{html:threadApp('아빠','msgs'),onOpen:v=>{const t=v.querySelector('.thread');if(!t.innerHTML)t.innerHTML=threadHTML(junDad,s=>s==='j','아빠',blankAvatar('#b8b2bc'));t.scrollTop=t.scrollHeight}},
   't-center':{html:threadApp('코모레비 상담소','msgs'),onOpen:v=>{const t=v.querySelector('.thread');if(!t.innerHTML)t.innerHTML=threadHTML(junCenter,s=>s==='j','코모레비 상담소',blankAvatar('#a5c9b5'));t.scrollTop=t.scrollHeight}},
   calls:{html:callsApp(),init:a=>initCalls(a,junCalls)},
-  ...junPhotos,...junAlarms,...searchApp,...contactApps,...talkApps,...junNoteApps,...healthApp,...shopApp,...musicApps,
+  ...junPhotos,...junAlarms,...searchApp,...contactApps,...junTalk,...junNoteApps,...healthApp,...shopApp,...musicApps,
   ...mkFavs([{n:'이바라'},{n:'아빠'}]),
   ...mkVM([{n:'아빠',w:'오늘',sub:'휴대전화',len:'0:42',unread:true,tx:'쥰아. 아빠다. ……오늘 엄마한테 다녀왔다. 꽃은 네 몫까지 사서 놓고 왔어. 다리는 괜찮냐. 바쁘면 안 와도 된다. 그래도 밥은 챙겨 먹고. ……그래. 끊는다.'}]),
   ...mkSettings('사자나미 쥰',junAvatar,{avgLabel:'일일 평균 · 이번 주',avg:'5시간 31분',delta:'지난주 대비 ↑ 24%',up:true,
@@ -1418,6 +1698,7 @@ const ibHome=`<div class="pages"><div class="page">
   ${ibWidget}
   <div class="apps">
     ${icon('msgs','메시지','linear-gradient(#6fdc8c,#30b356)',I.msg)}
+    ${icon('talk','LIME',TALKBG,I.talk,'<span class="badge">4</span>')}
     ${icon('cal','캘린더','#fff',`<span style="display:flex;flex-direction:column;align-items:center;line-height:1"><small style="color:#ff3b30;font-size:9px;font-weight:700">토요일</small><b style="font-size:24px;color:#1d1a1f;font-weight:500">31</b></span>`)}
     ${icon('bank','새벽은행','linear-gradient(#4fe0bb,#2fbf9b)',I.bank,'<span class="badge" data-badge>1</span>')}
     ${icon('photos','사진','#fff',I.photo)}
@@ -1438,7 +1719,7 @@ const ibHome=`<div class="pages"><div class="page">
   ${icon('photos','사진','#fff',I.photo)}
 </div>
 <button type="button" class="noti" data-open="bank" data-arg="flash" aria-label="새벽은행 출금 알림 열기"><span class="ic" style="background:linear-gradient(#4fe0bb,#2fbf9b)">${I.bank}</span><span class="ntx"><b>새벽은행<small>지금</small></b>[출금] ${yen(1980)} 달콤상점<br><span style="opacity:.7">잔액 ${yen(END)}</span></span></button>`;
-const ibara=makePhone({key:'ibara',code:'1114',cls:'p-ibara',time:'17:48',batt:'5',label:'이바라의 폰',homeHTML:ibHome,onHome:a=>a.scr.querySelector('.noti').classList.remove('on'),apps:{
+const ibara=makePhone({key:'ibara',code:'1114',lock:[{open:'k-teacher',app:'LIME',w:'17:02',t:'미즈노 선생님',b:'그리고 요즘은 어떻게 지내? 소식 들은 지 오래됐다.',bg:TALKBG,icon:I.talk}],cls:'p-ibara',time:'17:48',batt:'5',label:'이바라의 폰',homeHTML:ibHome,onHome:a=>a.scr.querySelector('.noti').classList.remove('on'),apps:{
   msgs:{html:listApp(
     chatRow({open:'t-jun',av:junAvatar,n:'쥰',pv:'저 지금 옥상이에요',w:'16:48'})+
     chatRow({open:'t-boss',av:blankAvatar('#55545a'),n:'사장님',pv:'오늘 고생했다. 푹 쉬어라',w:'02:14'})+
@@ -1459,6 +1740,7 @@ const ibara=makePhone({key:'ibara',code:'1114',cls:'p-ibara',time:'17:48',batt:'
    {n:'쥰',av:junAvatar,ph:'080-2207-1129',memo:'딸기 사탕\n접영 지역 기록 보유 (본인 주장, 확인함)\n집 반대 방향',log:[['9월 21일 19:58',"'사자나미'로 저장"],['10월 3일 20:44',"이름 변경 · '사자나미' → '쥰'"],['10월 4일 13:10','메모 추가'],['10월 31일 17:52','메모 수정']]},
    {n:'집주인',ph:'090-5531-0877'},{n:'코모레비 상담소',ph:'03-5521-0480'},
   ],'사에구사 이바라',initialAv('사'),{ph:'090-3107-1218',bd:'2005년 11월 14일'}),
+  ...ibTalk,
   ...mkFavs([{n:'쥰',av:junAvatar}]),
   ...mkVM([]),
   ...mkSettings('사에구사 이바라',initialAv('사'),{avgLabel:'메시지 · 일일 평균',avg:'1시간 52분',delta:'지난달 대비 ↑ 310%',up:true,
@@ -1488,6 +1770,21 @@ if(openApp){const ph=only==='jun'?jun:ibara;ph.unlock(null,true);ph.open(openApp
 let notified=false;
 const io=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting&&!notified){notified=true;setTimeout(bankArrives,2200)}})},{threshold:.5});
 io.observe(ibara.scr);
+/* home-screen badges for Messages and Phone */
+function setupBadges(ph,st){
+  const put=(sel,n)=>ph.scr.querySelectorAll(sel).forEach(a=>{let b=a.querySelector(':scope > .badge');if(n){if(!b){b=document.createElement('span');b.className='badge';a.appendChild(b)}b.textContent=n}else if(b)b.remove()});
+  const paint=()=>{
+    const m=[...ph.scr.querySelectorAll('[data-app="msgs"] .row-btn')].reduce((a,r)=>a+(r.querySelector('.udot i')?(+r.dataset.cnt||1):0),0);
+    put('.app[data-open="msgs"]',m);put('.app[data-open="calls"]',st.missed+st.vm);
+    ph.scr.querySelectorAll('.t-calls').forEach(b=>{b.textContent=st.missed||'';b.hidden=!st.missed});
+    ph.scr.querySelectorAll('.t-vm').forEach(b=>{b.textContent=st.vm||'';b.hidden=!st.vm});
+  };
+  const orig=ph.open;
+  ph.open=(id,arg)=>{orig(id,arg);if(ph.passing)return;if(id==='calls')st.missed=0;if(id==='vm')st.vm=0;paint()};
+  ph.paintBadges=paint;paint();
+}
+setupBadges(jun,{missed:3,vm:1});
+setupBadges(ibara,{missed:0,vm:0});
 /* the reader can send Jun's unsent draft; Ibara's phone receives it (this viewer only, resets on reload) */
 (function(){
   const btn=jun.scr.querySelector('[data-app="t-ibara"] .sendb');if(!btn)return;
@@ -1499,7 +1796,7 @@ io.observe(ibara.scr);
     jt.innerHTML=threadHTML(junIbara,s=>s==='j','이바라').replace(/<b>읽음<\/b> 오후 5:48/,'전송됨');jt.scrollTop=jt.scrollHeight;
     const it=ibara.scr.querySelector('[data-app="t-jun"] .thread');
     if(it.innerHTML){it.innerHTML=threadHTML(junIbara,s=>s==='i','쥰',junAvatar,'jun');it.scrollTop=it.scrollHeight}
-    const setRow=(ph,id,unread)=>{const r=ph.scr.querySelector(`.row-btn[data-open="${id}"]`);if(!r)return;r.querySelector('.pv').textContent=text;r.querySelector('.rt').firstChild.textContent='오후 5:48';if(unread)r.querySelector('.udot').innerHTML='<i class="cnt"></i>'};
+    const setRow=(ph,id,unread)=>{const r=ph.scr.querySelector(`.row-btn[data-open="${id}"]`);if(!r)return;r.querySelector('.pv').textContent=text;r.querySelector('.rt').firstChild.textContent='오후 5:48';if(unread){r.querySelector('.udot').innerHTML='<i class="cnt"></i>';r.dataset.cnt=1;ph.paintBadges&&ph.paintBadges()}};
     setRow(jun,'t-ibara');setRow(ibara,'t-jun',true);
     setTimeout(()=>{
       if(ibara.locked){ibara.lockNotify(lnoti({open:'t-jun',app:'메시지',w:'지금',t:'쥰',b:text,bg:'linear-gradient(#6fdc8c,#30b356)',icon:I.msg}));return}
