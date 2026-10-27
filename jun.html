@@ -533,6 +533,59 @@ button{font-family:inherit;color:inherit}
 .pass-foot{margin-top:auto;width:100%;display:flex;justify-content:space-between;padding:0 52px}
 .pass-foot button{background:none;border:0;color:#fff;font-size:17px;cursor:pointer;font-family:inherit}
 @media (prefers-reduced-motion: reduce){.pdots.shake{animation:none}}
+
+/* green messenger */
+[data-app="talk"],[data-app^="k-"]{--tk:#06c755;--tkbg:#8ca9cd;--tkline:#e6e6e6}
+[data-app="talk"]{background:#fff;color:#111}
+.tk-top{display:flex;align-items:center;justify-content:space-between;padding:8px 16px 6px}
+.tk-top b{font-size:22px;font-weight:700}
+.tk-icons{display:flex;gap:16px;align-items:center}
+.tk-search{margin:2px 14px 8px;border-radius:9px;background:#f1f2f4;color:#999;font-size:14px;display:flex;gap:6px;align-items:center;padding:8px 10px}
+.tk-chips{display:flex;gap:6px;padding:0 14px 8px}
+.tk-chips span{font-size:13px;padding:5px 12px;border-radius:16px;border:1px solid #ddd;color:#555}
+.tk-chips span.on{background:#111;color:#fff;border-color:#111}
+.tk-li{width:100%;border:0;background:none;display:flex;gap:12px;align-items:center;padding:9px 16px;text-align:left;cursor:pointer;color:#111}
+.tk-li:focus-visible{outline:2px solid var(--tk);outline-offset:-2px}
+.tk-lav{width:50px;height:50px;border-radius:19px;overflow:hidden;flex-shrink:0;display:block}
+.tk-lav .iav{border-radius:0}
+.tk-lm{flex:1;min-width:0;display:flex;flex-direction:column;gap:3px}
+.tk-lm b{font-size:15.5px;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.tk-lm b small{color:#999;font-weight:500;font-size:14px}
+.tk-lm>span{font-size:13.5px;color:#888;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.tk-lr{display:flex;flex-direction:column;align-items:flex-end;gap:6px;align-self:flex-start;padding-top:3px}
+.tk-lr small{font-size:11.5px;color:#aaa;white-space:nowrap}
+.tk-lr i{font-style:normal;background:var(--tk);color:#fff;font-size:11.5px;font-weight:700;min-width:20px;height:20px;border-radius:10px;display:grid;place-items:center;padding:0 6px}
+.tk-tabs{margin-top:auto;display:flex;justify-content:space-around;padding:8px 4px 30px;border-top:1px solid #eee;background:#fff}
+.tk-tabs span{display:flex;flex-direction:column;align-items:center;gap:2px;font-size:10px;color:#9a9a9a}
+.tk-tabs span.on{color:#111}
+[data-app^="k-"]{background:var(--tkbg);color:#111}
+.tk-bar{display:flex;align-items:center;gap:6px;padding:4px 12px 8px;background:var(--tkbg);color:#111}
+.tk-bar .back{color:#111}
+.tk-bar b{flex:1;font-size:16.5px;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.tk-bar b span{font-weight:500;color:#333}
+.tk-thread{flex:1;overflow-y:auto;padding:4px 10px 12px;display:flex;flex-direction:column;gap:3px;scrollbar-width:none;min-height:0}
+.tk-thread::-webkit-scrollbar{display:none}
+.tk-day{align-self:center;font-size:11.5px;color:#fff;background:rgba(0,0,0,.18);padding:3px 12px;border-radius:12px;margin:12px 0 6px}
+.tk-row{display:flex;align-items:flex-end;gap:5px}
+.tk-row.first{margin-top:8px}
+.tk-row.me{justify-content:flex-end}
+.tk-av{width:38px;height:38px;border-radius:15px;overflow:hidden;flex-shrink:0;align-self:flex-start;display:block}
+.tk-av .iav{border-radius:0;font-size:15px}
+.tk-col{display:flex;flex-direction:column;gap:3px;min-width:0;max-width:74%}
+.tk-name{font-size:12px;color:#2b3a52}
+.tk-line{display:flex;align-items:flex-end;gap:5px}
+.tk-bub{background:#fff;color:#111;border-radius:16px;padding:8px 12px;font-size:15px;line-height:1.38;white-space:pre-line;word-break:keep-all;overflow-wrap:anywhere;max-width:100%}
+.tk-row.first:not(.me) .tk-bub{border-top-left-radius:4px}
+.tk-row.me .tk-bub{background:#86e57f;max-width:72%}
+.tk-row.me.first .tk-bub{border-top-right-radius:4px}
+.tk-bub b{color:#2f6fd6;font-weight:500}
+.tk-meta{display:flex;flex-direction:column;font-size:10px;color:#3d4b60;white-space:nowrap;line-height:1.25;flex-shrink:0}
+.tk-row.me .tk-meta{align-items:flex-end}
+.tk-meta em{font-style:normal;color:#2a6b2a}
+.tk-input{display:flex;align-items:center;gap:12px;padding:8px 12px 30px;background:#fff;color:#777}
+.tk-input>span{font-size:24px;line-height:1;font-weight:300}
+.tk-field{flex:1;background:#f1f2f4;border-radius:18px;padding:7px 12px;font-size:14px;color:#aaa;display:flex;justify-content:space-between;align-items:center}
+[hidden]{display:none!important}
 /* toast */
 .toast{position:absolute;bottom:90px;left:50%;transform:translate(-50%,10px);background:rgba(40,40,44,.92);color:#fff;font-size:13px;padding:8px 16px;border-radius:18px;z-index:45;opacity:0;pointer-events:none;transition:opacity .2s,transform .2s;white-space:nowrap}
 .toast.on{opacity:1;transform:translate(-50%,0)}
@@ -1114,6 +1167,58 @@ const mapSVG=pins=>`<svg viewBox="0 0 390 330" preserveAspectRatio="xMidYMid sli
 const mkMap=cfg=>({map:{html:`<div class="mapv">${mapSVG(cfg.pins)}<button type="button" class="back mapback" data-back>${I.back}홈</button></div><div class="sheet"><div class="grab"></div><div class="sbox msb">${I.search.replace('#fff','currentColor')}<span>지도 검색</span></div>
   <div class="msec">즐겨찾기</div><div class="favs">${cfg.favs.map(f=>`<button type="button" class="fav" data-toast="경로를 불러올 수 없습니다"><span style="background:${f.c}">${f.i}</span><b>${f.n}</b><small>${f.d}</small></button>`).join('')}</div>
   <div class="msec">최근 항목</div><div class="mrec">${cfg.recent.map(r=>`<button type="button" class="mr" data-toast="경로를 불러올 수 없습니다"><span class="mri" style="background:${r.c}">${r.i}</span><span><b>${r.n}</b><small>${r.d}</small></span></button>`).join('')}</div></div>`}});
+/* ---- Jun: green messenger app ("토키") ---- */
+I.talk='<svg width="34" height="34" viewBox="0 0 24 24"><path d="M12 4.2c-4.9 0-8.8 3.1-8.8 7 0 3.4 3 6.3 7.1 6.9.4.1.6.4.5.8l-.3 1.6c-.1.4.3.7.7.5 2.6-1.3 6.9-4.1 8.6-6.6.6-.9.9-2 .9-3.2 0-3.9-3.9-7-8.7-7z" fill="#fff"/><g fill="#06c755"><circle cx="8.2" cy="11.3" r="1.15"/><circle cx="12" cy="11.3" r="1.15"/><circle cx="15.8" cy="11.3" r="1.15"/></g></svg>';
+const TALKBG='linear-gradient(#22d36c,#06b74c)';
+const junNotice=[
+ {day:'2026년 10월 1일 목요일'},
+ G('체육교육과 학생회','10:00','[공지] 2학기 중간 실기 평가 일정 안내\n- 육상: 10/13(화)\n- 구기(배구): 11/6(금)\n자세한 사항은 학과 게시판을 확인해 주세요.'),
+ {day:'2026년 10월 26일 월요일'},
+ G('체육교육과 학생회','09:00','[공지] 배구 실기 조 편성 확정\n조별 연습은 제2체육관 예약 후 사용 바랍니다.\n예약은 과대표에게 문의해 주세요.'),
+];
+const junMori=[
+ {day:'2026년 10월 13일 화요일'},
+ G('모리','15:44','야 진짜 오늘 기록 뭐야'),
+ G('모리','15:44','너 수영 다시 하냐?'),
+ T('j','16:02','그냥 요즘 조금 다녀'),
+ G('모리','16:03','오 누구랑?'),
+ T('j','16:10','비밀'),
+ G('모리','16:10','???'),
+ {day:'2026년 10월 31일 토요일'},
+ G('모리','11:06','쥰 할로윈 안 와?'),
+ G('모리','13:41','야 답장 좀'),
+];
+function talkThreadHTML(data,group){
+  let h='',lastDay='';
+  data.forEach((m,i)=>{
+    if(m.day){const r=/(\d+)년 (\d+)월 (\d+)일 (.)요일/.exec(m.day);h+=`<div class="tk-day">${r?`${r[1]}. ${r[2]}. ${r[3]}. (${r[4]})`:m.day}</div>`;return}
+    const me=m.s==='j',prev=data[i-1]||{},next=data[i+1]||{};
+    const k=x=>x.day||!x.s?'#':x.s+'|'+(x.who||'');
+    const first=k(prev)!==k(m),showTime=!(k(next)===k(m)&&next.time===m.time);
+    const t=`<span class="tk-meta">${me&&group?`<em>읽음 ${m.read||31}</em>`:me?'<em>읽음</em>':''}${showTime?ampm(m.time):''}</span>`;
+    const bub=`<div class="tk-bub">${esc(m.text).replace(/@(\S+ \S+)/,'<b>@$1</b>')}</div>`;
+    if(me)h+=`<div class="tk-row me ${first?'first':''}">${t}${bub}</div>`;
+    else h+=`<div class="tk-row ${first?'first':''}"><span class="tk-av">${first?initialAv((m.who||'').replace(/^과대표\\s*/,'')):''}</span><div class="tk-col">${first?`<span class="tk-name">${esc(m.who)}</span>`:''}<div class="tk-line">${bub}${t}</div></div></div>`;
+  });
+  return h;
+}
+const talkThread=(title,count)=>`<div class="tk-bar"><button type="button" class="back" data-back="talk">${I.back}</button><b>${esc(title)}${count?` <span>(${count})</span>`:''}</b><span class="tk-icons"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="6"/><path d="M20 20l-4.5-4.5"/></svg><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6.6 3.5c.6-.3 1.3 0 1.6.6l1.5 3.3c.3.6.1 1.2-.4 1.6l-1.6 1.2c.9 2 2.6 3.8 4.7 4.8l1.2-1.6c.4-.5 1.1-.7 1.6-.4l3.3 1.5c.6.3.9 1 .6 1.6l-.8 1.9c-.4.9-1.3 1.4-2.3 1.3C9.6 19.8 4.2 14.4 3.7 7.9c-.1-1 .4-1.9 1.3-2.3z"/></svg><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg></span></div><div class="tk-thread"></div><div class="tk-input"><span>+</span><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 8h3l1.5-2h7L17 8h3v11H4z"/><circle cx="12" cy="13" r="3.4"/></svg><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="4" y="4" width="16" height="16" rx="3"/><circle cx="9" cy="9.5" r="1.6"/><path d="M5 18l5-5 4 4 2-2 4 4"/></svg><div class="tk-field">메시지 입력<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><circle cx="9" cy="10" r="1" fill="currentColor"/><circle cx="15" cy="10" r="1" fill="currentColor"/><path d="M8.5 14.5c2 2 5 2 7 0" stroke-linecap="round"/></svg></div><svg width="20" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5.5 11a6.5 6.5 0 0 0 13 0M12 17.5V21"/></svg></div>`;
+const talkRow=o=>`<button type="button" class="tk-li" data-open="${o.open}"><span class="tk-lav">${o.av}</span><span class="tk-lm"><b>${esc(o.n)}${o.c?` <small>${o.c}</small>`:''}</b><span>${esc(o.pv)}</span></span><span class="tk-lr"><small>${o.w}</small>${o.cnt?`<i>${o.cnt}</i>`:''}</span></button>`;
+const talkThreadApp=(id,title,count,data,group)=>({[id]:{html:talkThread(title,count),onOpen:v=>{const t=v.querySelector('.tk-thread');if(!t.innerHTML)t.innerHTML=talkThreadHTML(data,group);t.scrollTop=t.scrollHeight;const r=v.closest('.screen').querySelector(`.tk-li[data-open="${id}"] i`);if(r)r.remove()}}});
+const talkApps={
+ talk:{html:`<div class="tk-top"><b>대화</b><span class="tk-icons"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="3"/><path d="M12 3v3M12 18v3M3 12h3M18 12h3M5.6 5.6l2.1 2.1M16.3 16.3l2.1 2.1M5.6 18.4l2.1-2.1M16.3 7.7l2.1-2.1"/></svg></span></div>
+  <div class="tk-search"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="11" cy="11" r="6"/><path d="M20 20l-4.5-4.5"/></svg>검색</div>
+  <div class="tk-chips"><span class="on">전체</span><span>친구</span><span>그룹</span><span>공식계정</span></div>
+  <div class="scroll">${
+   talkRow({open:'k-group',av:`<span class="iav grp" style="background:linear-gradient(#7fb4e6,#5b8fd0)">${I.group}</span>`,n:'체육교육과 2학년',c:32,pv:'과대표 나카무라: 금요일 배구 실기 조 편성 올렸습니다…',w:'오후 2:02',cnt:27})+
+   talkRow({open:'k-mori',av:initialAv('모'),n:'모리',pv:'야 답장 좀',w:'오후 1:41',cnt:2})+
+   talkRow({open:'k-notice',av:`<span class="iav" style="background:linear-gradient(#5aa25a,#3c7f3c)">공</span>`,n:'체육교육과 학생회',pv:'[공지] 배구 실기 조 편성 확정',w:'10. 26.'})
+  }</div>
+  <nav class="tk-tabs"><span>${'<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 11l8-7 8 7v9h-5v-6H9v6H4z" stroke-linejoin="round"/></svg>'}홈</span><span class="on">${'<svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 4.2c-4.9 0-8.8 3.1-8.8 7 0 3.4 3 6.3 7.1 6.9.4.1.6.4.5.8l-.3 1.6c-.1.4.3.7.7.5 2.6-1.3 6.9-4.1 8.6-6.6.6-.9.9-2 .9-3.2 0-3.9-3.9-7-8.7-7z"/></svg>'}대화</span><span>${'<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="4" y="4" width="16" height="16" rx="3"/><path d="M8 12h8M12 8v8" stroke-linecap="round"/></svg>'}스토리</span><span>${'<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="8.5"/><path d="M12 7v5l3 2" stroke-linecap="round"/></svg>'}뉴스</span><span>${'<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="6" width="18" height="13" rx="2"/><path d="M3 10h18"/></svg>'}지갑</span></nav>`},
+ ...talkThreadApp('k-group','체육교육과 2학년',32,junGroup,true),
+ ...talkThreadApp('k-mori','모리',0,junMori,false),
+ ...talkThreadApp('k-notice','체육교육과 학생회',0,junNotice,false),
+};
 const junAlarms=alarmsApp([
  {ap:'오전',t:'5:00',n:'훈련 · 매일',on:false},
  {ap:'오전',t:'7:40',n:'1교시 · 월, 수',on:true},
@@ -1191,6 +1296,7 @@ const junHome=`<div class="pages">
       ${icon('shop','쇼핑','linear-gradient(#ffb340,#ff8a00)',I.bag)}
       ${icon('music','음악','linear-gradient(#ff6b81,#fa2d48)',I.music)}
       ${icon('map','지도','linear-gradient(#7ed7a0,#3fae6a)',I.map2)}
+      ${icon('cam','카메라','linear-gradient(#8a8890,#5f5d64)',I.cam)}
       ${icon('set','설정','linear-gradient(#9a98a0,#6c6a72)',I.gear)}
     </div>
   </div>
@@ -1199,17 +1305,16 @@ const junHome=`<div class="pages">
 <div class="dock">
   ${icon('calls','전화','linear-gradient(#5be07a,#2fbf55)',I.phone)}
   ${icon('msgs','메시지','linear-gradient(#6fdc8c,#30b356)',I.msg)}
-  ${icon('cam','카메라','linear-gradient(#8a8890,#5f5d64)',I.cam)}
+  ${icon('talk','토키',TALKBG,I.talk,'<span class="badge">29</span>')}
   ${icon('photos','사진','#fff',I.photo)}
 </div>`;
 const jun=makePhone({key:'jun',code:'0816',cls:'p-jun',time:'17:48',batt:'8',label:'쥰의 폰',homeHTML:junHome,lock:[
   {open:'calls',app:'전화',w:'16:50',t:'이바라',b:'부재중 전화 2통',bg:'linear-gradient(#5be07a,#2fbf55)',icon:I.phone},
-  {open:'t-group',app:'메시지',w:'14:02',t:'체육교육과 2학년 32',b:'과대표 나카무라: 금요일 배구 실기 조 편성 올렸습니다 외 26개',bg:'linear-gradient(#6fdc8c,#30b356)',icon:I.msg},
+  {open:'k-group',app:'토키',w:'14:02',t:'체육교육과 2학년 (32)',b:'과대표 나카무라: 금요일 배구 실기 조 편성 올렸습니다 외 26개',bg:TALKBG,icon:I.talk},
   {open:'t-dad',app:'메시지',w:'어제',t:'아빠',b:'내일 엄마 보러 갈 거냐',bg:'linear-gradient(#6fdc8c,#30b356)',icon:I.msg},
  ],apps:{
   msgs:{html:listApp(
     chatRow({open:'t-ibara',av:blankAvatar('#c9c3d1'),n:'이바라',pv:'저 지금 옥상이에요',w:'16:48'})+
-    chatRow({open:'t-group',av:`<span style="width:100%;height:100%;display:grid;place-items:center;background:#8fb8e8">${I.group}</span>`,n:'체육교육과 2학년 32',pv:'금요일 배구 실기 조 편성 올렸습니다',w:'14:02',cnt:27})+
     chatRow({open:'t-dad',av:blankAvatar('#b8b2bc'),n:'아빠',pv:'내일 엄마 보러 갈 거냐',w:'10월 30일',cnt:2})+
     chatRow({open:'t-center',av:blankAvatar('#a5c9b5'),n:'코모레비 상담소',pv:'[안내] 다음 상담은 11월 2일(월) 13:00입니다.',w:'10월 26일'}))},
   't-ibara':{html:threadApp('이바라','msgs','내년 오늘 대답 꼭 해요'),onOpen:(v)=>{const t=v.querySelector('.thread');if(!t.innerHTML)t.innerHTML=threadHTML(junIbara,s=>s==='j','이바라',blankAvatar('#c9c3d1'));t.scrollTop=t.scrollHeight}},
@@ -1217,7 +1322,7 @@ const jun=makePhone({key:'jun',code:'0816',cls:'p-jun',time:'17:48',batt:'8',lab
   't-dad':{html:threadApp('아빠','msgs'),onOpen:v=>{const t=v.querySelector('.thread');if(!t.innerHTML)t.innerHTML=threadHTML(junDad,s=>s==='j','아빠',blankAvatar('#b8b2bc'));t.scrollTop=t.scrollHeight}},
   't-center':{html:threadApp('코모레비 상담소','msgs'),onOpen:v=>{const t=v.querySelector('.thread');if(!t.innerHTML)t.innerHTML=threadHTML(junCenter,s=>s==='j','코모레비 상담소',blankAvatar('#a5c9b5'));t.scrollTop=t.scrollHeight}},
   calls:{html:callsApp(),init:a=>initCalls(a,junCalls)},
-  ...junPhotos,...junAlarms,...searchApp,...contactApps,...junNoteApps,...healthApp,...shopApp,...musicApps,
+  ...junPhotos,...junAlarms,...searchApp,...contactApps,...talkApps,...junNoteApps,...healthApp,...shopApp,...musicApps,
   ...mkFavs([{n:'이바라'},{n:'아빠'}]),
   ...mkVM([{n:'아빠',w:'오늘',sub:'휴대전화',len:'0:42',unread:true,tx:'쥰아. 아빠다. ……오늘 엄마한테 다녀왔다. 꽃은 네 몫까지 사서 놓고 왔어. 다리는 괜찮냐. 바쁘면 안 와도 된다. 그래도 밥은 챙겨 먹고. ……그래. 끊는다.'}]),
   ...mkSettings('사자나미 쥰',junAvatar,{avgLabel:'일일 평균 · 이번 주',avg:'5시간 31분',delta:'지난주 대비 ↑ 24%',up:true,
