@@ -576,7 +576,11 @@ button{font-family:inherit;color:inherit}
 .tk-art small{color:#06c755;font-weight:600;font-size:12.5px}
 .tk-art h2{font-size:21px;line-height:1.35;margin:4px 0 6px}
 .tk-art em{font-style:normal;font-size:12.5px;color:var(--tksub)}
-.tk-aimg{height:170px;border-radius:10px;margin:14px 0}
+.tk-aimg{height:170px;border-radius:10px;margin:14px 0 6px}
+.art-cap{font-size:12px!important;line-height:1.4!important;color:var(--tksub,#8e8e93);margin:0 0 16px!important}
+.tk-art h4{font-size:17px;margin:20px 0 8px;line-height:1.4}
+.art-by{font-size:13px!important;color:var(--tksub,#8e8e93);margin-top:18px!important}
+.hs-rel{margin-top:26px;border-top:1px solid var(--line,#ddd);padding-top:12px;display:flex;flex-direction:column}.hs-rel>b{font-size:15px;margin-bottom:6px}.hs-rel button{border:0;background:none;text-align:left;padding:10px 0;border-bottom:.5px solid var(--line,#ddd);font-size:14.5px;color:inherit;cursor:pointer;font-family:inherit;line-height:1.4;display:flex;gap:8px;align-items:baseline}.hs-rel .hs-cat{flex-shrink:0}
 .tk-art p{font-size:16px;line-height:1.65;margin:0 0 12px}
 [data-app^="k-"]:not([data-app="k-article"]){background:var(--tkchat);color:var(--tkfg)}
 .tk-bar{display:flex;align-items:center;gap:6px;padding:4px 12px 8px;color:var(--tkfg)}
@@ -835,12 +839,108 @@ button{font-family:inherit;color:inherit}
 .toast{position:absolute;bottom:90px;left:50%;transform:translate(-50%,10px);background:rgba(40,40,44,.92);color:#fff;font-size:13px;padding:8px 16px;border-radius:18px;z-index:45;opacity:0;pointer-events:none;transition:opacity .2s,transform .2s;white-space:nowrap}
 .toast.on{opacity:1;transform:translate(-50%,0)}
 @media (prefers-reduced-motion: reduce){.appview,.noti,.toast{transition:none}}
+
+[data-app="keypad"]{display:flex;flex-direction:column}
+.kp{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;padding:0 0 18px}
+.kp-num{font-size:38px;font-weight:400;min-height:50px;letter-spacing:1px;text-align:center;padding:0 20px;font-variant-numeric:tabular-nums}.kp-num.long{font-size:31px;letter-spacing:0;white-space:nowrap}
+.kp-match{border:0;background:none;color:var(--accent);font-size:15px;min-height:24px;margin:2px 0 14px;cursor:pointer;font-family:inherit}.kp-match b{font-weight:600}.kp-match small{color:var(--sub)}
+.kp-match[hidden]{display:block!important;visibility:hidden}
+.kp-grid{display:grid;grid-template-columns:repeat(3,78px);gap:16px 26px;justify-items:center;align-items:center}
+.kp-k{width:78px;height:78px;border-radius:50%;border:0;background:rgba(128,128,128,.2);color:var(--fg,inherit);display:flex;flex-direction:column;align-items:center;justify-content:center;cursor:pointer;font-family:inherit;line-height:1}
+.kp-k:active{background:rgba(128,128,128,.45)}.kp-k b{font-size:34px;font-weight:400}.kp-k small{font-size:10px;font-weight:600;letter-spacing:2px;margin-top:2px}
+.kp-call{width:78px;height:78px;border-radius:50%;border:0;background:#34c759;display:grid;place-items:center;cursor:pointer}.kp-call svg{width:34px;height:34px}
+.kp-del{border:0;background:none;color:var(--sub);cursor:pointer;width:78px;height:78px;display:grid;place-items:center}.kp-del[hidden]{display:grid!important;visibility:hidden}
+.callscr{position:absolute;inset:0;z-index:30;background:linear-gradient(#4a4a50,#1c1c1f);color:#fff;display:flex;flex-direction:column;align-items:center;padding:110px 30px 70px;opacity:0;transition:opacity .25s}
+.callscr.on{opacity:1}
+.cs-top{text-align:center}.cs-top small{font-size:14px;opacity:.7}.cs-top h2{font-size:32px;font-weight:500;margin:4px 0 6px}.cs-st{font-size:16px;opacity:.75;margin:0}
+.cs-grid{margin-top:auto;display:grid;grid-template-columns:repeat(3,1fr);gap:24px 30px;font-size:12px;text-align:center;opacity:.9}
+.cs-grid span{display:flex;flex-direction:column;align-items:center;gap:7px}.cs-grid i{width:70px;height:70px;border-radius:50%;background:rgba(255,255,255,.18);display:block}
+.cs-end{margin-top:46px;width:74px;height:74px;border-radius:50%;border:0;background:#ff3b30;display:grid;place-items:center;cursor:pointer}.cs-end svg{transform:rotate(135deg);width:34px;height:34px}
+
+/* weather */
+[data-app="weather"]{background:linear-gradient(180deg,#34508f 0%,#6a6aa8 38%,#c98490 72%,#eea36f 100%);color:#fff}
+.wx{display:flex;flex-direction:column;height:100%}.wx .bar .back{color:#fff}
+.wx-body{flex:1;padding:0 16px 20px}
+.wx-hero{text-align:center;padding:4px 0 22px;text-shadow:0 1px 6px rgba(0,0,0,.15)}.wx-hero small{font-size:12px;font-weight:600;opacity:.85;letter-spacing:.5px}.wx-hero h2{font-size:32px;font-weight:500;margin:2px 0 0}
+.wx-now{font-size:96px;font-weight:200;line-height:1;margin:2px 0 4px;padding-left:24px}.wx-c{font-size:20px;opacity:.9}.wx-hl{font-size:18px;font-weight:500}
+.wx-card{background:rgba(30,30,70,.22);backdrop-filter:blur(14px);border-radius:16px;padding:12px 14px;margin-bottom:12px}
+.wx-note{font-size:14px;line-height:1.4;margin:0 0 10px;padding-bottom:10px;border-bottom:.5px solid rgba(255,255,255,.25)}
+.wx-hours{display:flex;gap:18px;overflow-x:auto;scrollbar-width:none}.wx-hours::-webkit-scrollbar{display:none}
+.wx-hours div{display:flex;flex-direction:column;align-items:center;gap:8px;flex-shrink:0;font-size:14px;font-weight:500}.wx-hours span{font-size:13px}.wx-hours .now span{font-weight:700}.wx-hours b{font-size:18px;font-weight:500}
+.wx-sec,.wx-th{font-size:12px;font-weight:600;opacity:.7;letter-spacing:.3px;padding-bottom:6px;text-transform:uppercase}
+.wx-sec{border-bottom:.5px solid rgba(255,255,255,.25)}
+.wx-day{display:grid;grid-template-columns:44px 46px 34px 1fr 34px;align-items:center;gap:8px;padding:8px 0;border-bottom:.5px solid rgba(255,255,255,.2);font-size:17px;font-weight:500}.wx-day:last-child{border-bottom:0}
+.wx-di{display:flex;flex-direction:column;align-items:center;line-height:1}.wx-di i{font-style:normal;font-size:11px;color:#9fdcff;font-weight:700}.wx-lo{opacity:.6;text-align:right}
+.wx-bar{height:5px;border-radius:3px;background:rgba(0,0,0,.18);position:relative}.wx-bar>span{position:absolute;top:0;bottom:0;border-radius:3px;background:linear-gradient(90deg,#8fd3ff,#ffd23f,#ff9f43)}
+.wx-bar em{position:absolute;top:-2px;width:9px;height:9px;border-radius:50%;background:#fff;border:2px solid rgba(0,0,0,.25);transform:translateX(-50%)}
+.wx-aq b{display:block;font-size:22px;font-weight:600;margin:2px 0 4px}.wx-aq small{font-size:13.5px;opacity:.9;display:block;margin-bottom:10px}
+.wx-aqbar{display:block;height:5px;border-radius:3px;background:linear-gradient(90deg,#34c759,#ffd60a,#ff9f0a,#ff3b30,#af52de);position:relative}.wx-aqbar em{position:absolute;top:-2px;width:9px;height:9px;border-radius:50%;background:#fff;transform:translateX(-50%)}
+.wx-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.wx-tile{background:rgba(30,30,70,.22);backdrop-filter:blur(14px);border-radius:16px;padding:12px 14px;min-height:140px;display:flex;flex-direction:column}
+.wx-tile b{font-size:28px;font-weight:500;margin:2px 0 auto}.wx-tile small{font-size:12.5px;line-height:1.35;opacity:.9;margin-top:10px}
+.wx-foot{text-align:center;font-size:12px;opacity:.7;margin:14px 0 4px}
+.wx-tabbar{display:flex;justify-content:space-between;align-items:center;padding:10px 22px 30px;background:rgba(30,30,70,.25);backdrop-filter:blur(14px);font-size:20px}
+.wx-dots{display:flex;gap:6px}.wx-dots i{width:7px;height:7px;border-radius:50%;background:rgba(255,255,255,.4)}.wx-dots i.on{background:#fff}
+/* shop */
+[data-app^="shop"]{display:flex;flex-direction:column;--sp:#ff5d7e}
+.sp-top{display:flex;align-items:center;gap:6px;padding:4px 10px 8px;min-height:44px}.sp-top .back{min-width:30px}
+.sp-logo{flex:1;font-size:21px;font-weight:800;color:var(--sp);letter-spacing:-.5px}.sp-logo.sm{font-size:17px;color:var(--fg);text-align:center;font-weight:600;padding-right:30px}
+.sp-ic{border:0;background:none;color:var(--fg);position:relative;cursor:pointer;width:34px;display:grid;place-items:center}
+.sp-cn{position:absolute;top:-4px;right:-2px;min-width:16px;height:16px;border-radius:8px;background:var(--sp);color:#fff;font-size:10.5px;font-style:normal;font-weight:700;display:grid;place-items:center;padding:0 4px}.sp-cn[hidden]{display:none}
+.sp-body{flex:1;padding:0 14px 20px}
+.sp-search{width:100%;display:flex;align-items:center;gap:8px;border:1.5px solid var(--sp);border-radius:10px;background:var(--bg);color:var(--sub);padding:9px 12px;font-size:14.5px;cursor:pointer;font-family:inherit}
+.sp-banner{width:100%;margin:12px 0;border:0;border-radius:14px;background:linear-gradient(120deg,#3a1f4f,#ff6a3d);color:#fff;display:flex;align-items:center;justify-content:space-between;padding:16px;text-align:left;cursor:pointer;font-family:inherit}
+.sp-banner span:first-child{display:flex;flex-direction:column;gap:4px}.sp-banner small{font-size:12px;opacity:.9}.sp-banner b{font-size:20px;line-height:1.25}.sp-banner em{font-style:normal;font-size:11.5px;opacity:.8}
+.sp-bimg{width:84px;height:84px;border-radius:14px;flex-shrink:0;box-shadow:0 4px 14px rgba(0,0,0,.25)}
+.sp-cats{display:grid;grid-template-columns:repeat(6,1fr);gap:4px;margin-bottom:6px}.sp-cats button{border:0;background:none;color:var(--fg);font-size:11.5px;display:flex;flex-direction:column;align-items:center;gap:4px;cursor:pointer;font-family:inherit}
+.sp-cats span{width:44px;height:44px;border-radius:14px;background:var(--card);display:grid;place-items:center;font-size:21px}
+.sp-sec{display:flex;align-items:baseline;justify-content:space-between;margin:18px 0 8px}.sp-sec b{font-size:17px}.sp-sec small{font-size:12px;color:var(--sp);font-weight:600}
+.sp-freq{width:100%;display:flex;align-items:center;gap:12px;border:0;background:var(--card);border-radius:12px;padding:10px;text-align:left;cursor:pointer;color:var(--fg);font-family:inherit}
+.sp-freq .sp-img{width:62px;height:62px;flex-shrink:0;border-radius:10px}.sp-freq>span:nth-child(2){flex:1;display:flex;flex-direction:column;gap:2px;min-width:0}.sp-freq b{font-size:14px}.sp-freq small{font-size:12px;color:var(--sub)}
+.sp-again{font-size:12px;font-weight:700;color:var(--sp);border:1px solid var(--sp);border-radius:14px;padding:5px 9px;flex-shrink:0}
+.sp-row{display:flex;gap:10px;overflow-x:auto;scrollbar-width:none;padding-bottom:4px}.sp-row::-webkit-scrollbar{display:none}.sp-row .sp-card{width:128px;flex-shrink:0}
+.sp-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px 10px}
+.sp-card{border:0;background:none;padding:0;text-align:left;display:flex;flex-direction:column;gap:4px;cursor:pointer;color:var(--fg);font-family:inherit}
+.sp-img{display:block;aspect-ratio:1;border-radius:12px;position:relative;border:.5px solid var(--line)}
+.sp-img i,.sp-hero i{position:absolute;left:6px;top:6px;font-style:normal;font-size:10.5px;font-weight:700;background:var(--sp);color:#fff;border-radius:6px;padding:2px 6px}
+.sp-n{font-size:13px;line-height:1.3;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.sp-pr{display:flex;align-items:baseline;gap:5px;flex-wrap:wrap}.sp-pr em{font-style:normal;color:var(--sp);font-weight:800;font-size:14px}.sp-pr b{font-size:15px;font-weight:800}.sp-pr s{font-size:12px;color:var(--sub)}
+.sp-rate{font-size:11.5px;color:#ff9f0a;font-weight:600}.sp-rate small{color:var(--sub);font-weight:400}
+.sp-foot{text-align:center;font-size:11.5px;color:var(--sub);margin-top:22px}
+.sp-tabs{display:flex;justify-content:space-around;padding:8px 6px 28px;border-top:.5px solid var(--line);background:var(--bg)}
+.sp-tabs button{border:0;background:none;display:flex;flex-direction:column;align-items:center;gap:3px;font-size:10.5px;color:var(--sub);cursor:pointer;position:relative;font-family:inherit}.sp-tabs button.on{color:var(--sp)}.sp-tabs .sp-cn{right:6px}
+.sp-hero{aspect-ratio:1.15;border-radius:16px;position:relative;border:.5px solid var(--line)}
+.sp-in small{color:var(--sub);font-size:12px}.sp-in h2{font-size:20px;line-height:1.3;margin:10px 0 4px}.sp-in>.sp-rate{display:block;margin-bottom:6px}.sp-in>.sp-pr b{font-size:24px}.sp-in>.sp-pr em{font-size:20px}
+.sp-bought{background:rgba(255,93,126,.12);color:var(--sp);font-size:13px;font-weight:600;border-radius:10px;padding:9px 11px;margin:12px 0 0}
+.sp-ship{margin-top:14px;border-top:.5px solid var(--line);border-bottom:.5px solid var(--line);padding:10px 0;display:flex;flex-direction:column;gap:5px}.sp-ship div{display:grid;grid-template-columns:56px 1fr;font-size:13.5px}.sp-ship span{color:var(--sub)}.sp-ship b{color:#30b356}
+.sp-desc{font-size:14.5px;line-height:1.6;margin:0 0 10px}
+.sp-spec{border-radius:10px;background:var(--card);padding:4px 12px}.sp-spec div{display:grid;grid-template-columns:80px 1fr;font-size:13.5px;padding:8px 0;border-bottom:.5px solid var(--line)}.sp-spec div:last-child{border:0}.sp-spec span:first-child{color:var(--sub)}
+.sp-rv{padding:10px 0;border-bottom:.5px solid var(--line)}.sp-rv div{display:flex;gap:8px;align-items:center;font-size:13px}.sp-rv div span{color:#ff9f0a;font-size:12px}.sp-rv p{margin:4px 0 0;font-size:14px;line-height:1.5}
+.sp-cta{display:flex;gap:8px;padding:10px 14px 30px;border-top:.5px solid var(--line);background:var(--bg)}.sp-cta button{flex:1;border-radius:12px;padding:14px;font-size:16px;font-weight:700;cursor:pointer;font-family:inherit}
+.sp-add{border:1.5px solid var(--sp);background:var(--bg);color:var(--sp)}.sp-now{border:0;background:var(--sp);color:#fff}
+.sp-empty{text-align:center;color:var(--sub);margin-top:80px}
+.sp-ci{display:flex;gap:12px;padding:12px 0;border-bottom:.5px solid var(--line)}.sp-cimg{width:78px;height:78px;border-radius:12px;border:.5px solid var(--line);flex-shrink:0;cursor:pointer}
+.sp-ci>div{display:flex;flex-direction:column;gap:3px;min-width:0}.sp-ci b{font-size:14.5px}.sp-ci small{font-size:12px;color:var(--sp);font-weight:600}.sp-q{font-size:12.5px;color:var(--sub)}
+.sp-sum{margin-top:14px;background:var(--card);border-radius:12px;padding:10px 14px}.sp-sum div{display:flex;justify-content:space-between;font-size:14px;padding:5px 0}.sp-sum .t{border-top:.5px solid var(--line);margin-top:4px;padding-top:9px}.sp-sum .t b{font-size:18px;color:var(--sp)}
+.sp-buy{width:100%;margin-top:14px;border:0;border-radius:12px;background:var(--sp);color:#fff;font-size:16px;font-weight:700;padding:15px;cursor:pointer;font-family:inherit}
+[data-app="shop-orders"] .ord{width:100%;background:none;border:0;border-bottom:.5px solid var(--line);color:var(--fg);cursor:pointer;font-family:inherit}
+/* search results */
+.hs-wx{width:100%;border:0;color:inherit;text-align:left;cursor:pointer;font-family:inherit}
+.hs-shop{padding:2px 0 4px}.hs-shop .sp-card{width:118px}
+.hs-res{padding:0 14px 20px}.hs-rtabs{display:flex;gap:16px;font-size:14px;color:var(--sub);border-bottom:.5px solid var(--line);padding:4px 2px 10px;margin-bottom:6px}.hs-rtabs b{color:var(--hs);border-bottom:2px solid var(--hs);padding-bottom:8px;margin-bottom:-11px}
+.hs-rsec{margin-top:10px}.hs-rsec .hs-sec{padding:6px 0}.hs-none{text-align:center;color:var(--sub);margin-top:60px;font-size:14.5px;line-height:1.6}.hs-none small{font-size:12px}
 </style>
 
 <div class="stage" id="stage"></div>
 <p class="hint" id="hint">홈 화면에서 앱을 눌러 들어가고, 화면 맨 아래 막대를 누르면 홈으로 돌아와요. 쥰 폰은 옆으로 넘기면 다음 화면이 있어요.<br>소설에 넣을 땐 링크 끝에 <code>#jun</code> 또는 <code>#ibara</code>를 붙이면 그 폰만 열려요.</p>
 
 <script>
+const NEWS={"swim": {"cat": "스포츠", "t": "현 수영 선수권 개막… 고교부 접영 100m 대회 신기록", "src": "켄신스포츠", "dt": "2026. 10. 29.", "w": "18:42", "cm": 342, "c": "linear-gradient(135deg,#1d6aa6,#7cc4e8)", "cap": "29일 현립 종합수영장에서 열린 고교부 남자 접영 100m 결승 출발 장면.", "body": "제58회 현 수영 선수권 대회가 29일 현립 종합수영장에서 개막한 가운데, 첫날 고교부 남자 접영 100m 결승에서 대회 신기록이 나왔다.\n미나미코 고교 2학년 미즈사와 렌은 결승에서 53초 62를 기록하며 1위로 터치패드를 찍었다. 4년 전 세워진 종전 기록(53초 88)을 0.26초 앞당긴 기록이다. 2위와의 차이는 1초 이상이었다.\n■ 4년 만에 깨진 기록\n종전 기록은 2022년 대회에서 당시 고교 2학년 선수가 세운 것이다. 이 선수는 같은 해 국가대표 선발전 결승 도중 부상을 입어 레이스를 마치지 못했고, 이후 선수 생활을 이어가지 못한 것으로 알려졌다.\n당시 경기를 지켜본 한 지도자는 “후반 25m에서 속도가 거의 떨어지지 않는 선수였다. 그 기록이 4년이나 버틴 이유가 있었다”고 돌아봤다.\n■ “기록보다 다음 레이스”\n미즈사와는 경기 후 인터뷰에서 “어릴 때 영상으로 보던 기록이라 실감이 나지 않는다. 기록보다 다음 레이스를 더 잘하고 싶다”고 말했다. 그는 31일 접영 50m와 계영 400m에도 출전한다.\n현 수영연맹은 이번 대회 고교부 참가 선수가 지난해보다 12% 늘었다고 밝혔다. 연맹 관계자는 “역 앞 실내 수영장 등 시설이 늘면서 저변이 넓어지고 있다”고 설명했다.\n대회는 다음 주 일요일인 11월 8일까지 열리며, 결승 경기는 매일 오후 4시부터 연맹 공식 채널에서 생중계된다.\n다카기 슌 기자"}, "halloween": {"cat": "지역", "t": "할로윈 앞둔 역 앞 번화가, 오후 6시부터 일부 도로 통제", "src": "오늘의 지역", "dt": "2026. 10. 31.", "w": "11:30", "cm": 128, "c": "linear-gradient(135deg,#ff9f43,#7a3b0f)", "cap": "30일 밤 사쿠라다이역 남쪽 출구 앞. 할로윈 장식을 단 가게들이 늘어서 있다.", "body": "할로윈 당일인 31일, 사쿠라다이역 남쪽 번화가 일대 도로가 오후 6시부터 다음 날 오전 1시까지 차량 통행이 제한된다.\n시는 30일 “지난해 할로윈 밤 역 남쪽 출구 앞에 한때 3천여 명이 몰려 보행로가 마비됐다”며 이같이 밝혔다. 통제 구간은 역 남쪽 출구에서 에키미나미 2초메 교차로까지 약 400m다.\n■ 안전 요원 40명 배치… 일부 버스 우회\n시와 경찰은 이자카야와 노래방이 몰려 있는 에키미나미 1·2초메에 안전 요원 40명을 배치한다. 혼잡이 심해지면 역 남쪽 출구를 일시적으로 출구 전용으로 바꾸고, 북쪽 출구로 입장을 유도할 계획이다.\n역앞로를 지나는 시내버스 3개 노선은 같은 시간 가와베 거리로 우회한다. 택시 승강장도 역 북쪽으로 임시 이전한다.\n■ 상인회 “대목이지만 걱정도”\n에키미나미 상인회는 회원 점포 60여 곳에 영업시간 연장 시 출입구 인원 관리를 요청했다. 한 이자카야 점주는 “1년 중 손님이 가장 많은 날이지만, 일손이 모자라 걱정”이라며 “요즘 독감 때문에 결근이 잦아 아르바이트생에게 대타를 부탁하고 있다”고 말했다.\n시는 길거리 음주와 분장 도구 투기 자제를 당부했다. 통제 구간 안에는 임시 쓰레기 수거함 20개가 설치된다.\n사토 미유키 기자"}, "sunset": {"cat": "날씨", "t": "오늘 해 질 무렵 맑음… “올가을 가장 붉은 노을 예상”", "src": "날씨온", "dt": "2026. 10. 31.", "w": "14:05", "cm": 57, "c": "linear-gradient(135deg,#4f437e,#ff7e8f,#ffb36b)", "cap": "지난해 11월 사쿠라 언덕에서 바라본 노을.", "body": "31일 오후 늦게부터 구름이 걷히면서 해 질 무렵 선명한 노을을 볼 수 있을 것으로 보인다.\n기상 당국에 따르면 이날 오후부터 대륙 고기압의 영향권에 들면서 하늘이 점차 맑아진다. 오전까지 내린 비로 대기 중 먼지가 씻겨 나가 노을빛이 평소보다 진하게 보일 가능성이 높다.\n■ 일몰 오후 4시 50분… 오후 4~5시가 절정\n사쿠라다이 일대 일몰 시각은 오후 4시 50분 전후다. 해가 지기 30분 전부터 해가 진 뒤 30분까지 하늘이 붉게 물들 것으로 예상된다.\n날씨온 예보관은 “서쪽 하늘이 트인 언덕이나 건물 옥상에서 보면 좋다”며 “구름이 높은 곳에 얇게 남아 있으면 분홍빛과 주황빛이 함께 나타날 수 있다”고 설명했다.\n■ 밤부터 기온 뚝… 내일은 흐리고 쌀쌀\n낮 최고기온은 19도까지 오르지만, 해가 진 뒤 빠르게 떨어져 밤에는 11도 안팎에 머물겠다. 바람도 다소 강해 체감온도는 더 낮다. 할로윈 행사 등으로 밤늦게 외출하는 경우 겉옷을 챙기는 것이 좋다.\n11월 1일 일요일은 오후부터 구름이 많아지고, 밤에는 곳곳에 약한 비가 내릴 전망이다.\n기상 캐스터 오노 하루카"}, "wage": {"cat": "경제", "t": "내년 최저임금 3.1% 인상… 아르바이트 시급 반영은 4월부터", "src": "경제나침반", "dt": "2026. 10. 31.", "w": "08:00", "cm": 891, "c": "linear-gradient(135deg,#2fbf9b,#164a45)", "cap": "역 앞 편의점에 붙은 아르바이트 모집 공고.", "body": "내년도 지역 최저임금이 시급 1,084엔에서 1,118엔으로 34엔(3.1%) 오른다.\n지역 최저임금 심의회는 30일 이같이 결정했다고 밝혔다. 인상 폭은 지난해(4.0%)보다 작고, 같은 기간 물가 상승률(3.4%)에도 못 미친다.\n■ 중소 사업장 “4월부터 반영”\n새 최저임금은 원칙적으로 1월부터 적용되지만, 종업원 10명 이하 사업장은 준비 기간을 거쳐 4월 1일부터 적용할 수 있다. 음식점과 편의점 아르바이트 상당수가 여기에 해당해, 실제 시급 인상은 봄이 돼서야 체감될 것으로 보인다.\n역 앞에서 이자카야를 운영하는 한 점주는 “재료비와 전기료가 다 올라 인건비까지 감당하기 쉽지 않다”면서도 “일 잘하는 아이들은 놓치고 싶지 않다”고 말했다.\n■ “두 탕 뛰어도 빠듯”\n아르바이트로 생활비를 마련하는 청년들은 인상 폭이 체감 물가를 따라가지 못한다고 호소한다. 주 5일, 두 곳에서 일한다는 20대 A씨는 “시간당 34엔 올라 봐야 한 달에 몇천 엔인데, 월세가 한 번 오르면 그대로 사라진다”고 말했다.\n노동 전문가들은 “최저임금 인상과 함께 청년 주거비와 의료비 지원을 함께 봐야 실질 소득이 늘어난다”고 지적했다.\n나카무라 겐 기자"}, "rent": {"cat": "생활", "t": "대학가 원룸 월세 1년 새 9% 올라… “관리비 인상분 전가”", "src": "오늘의 지역", "dt": "2026. 10. 31.", "w": "10:12", "cm": 204, "c": "linear-gradient(135deg,#6c6a72,#2c2b2f)", "cap": "가와베초 골목의 오래된 다세대 주택. 철제 외부 계단이 2층으로 이어진다.", "body": "사쿠라다이 대학가와 인근 가와베초 일대 원룸·다세대 주택 월세가 1년 새 평균 9% 오른 것으로 나타났다.\n지역 부동산 정보업체가 30일 발표한 자료에 따르면, 이 일대 전용면적 20㎡ 안팎 원룸의 평균 월세는 지난해 3만 2천 엔에서 올해 3만 4천 9백 엔으로 올랐다. 역에서 도보 15분 이상 떨어진 오래된 다세대 주택일수록 인상률이 높았다.\n■ “2주 전에 문자 한 통”\n집주인들은 관리비와 수리비 상승을 이유로 든다. 하지만 세입자들은 인상분이 충분한 설명 없이 그대로 떠넘겨지고 있다고 말한다.\n가와베초의 다세대 주택에 사는 20대 세입자는 “부득이하게 이번 달부터 올린다는 문자를 받은 게 전부”라며 “이사를 가려 해도 보증금과 이사 비용이 더 들어 그냥 내고 있다”고 했다.\n■ 시, 세입자 상담 창구 운영\n현행 규정상 임대료를 올리려면 계약 갱신 시점에 합의가 필요하며, 일방적인 통보만으로는 효력이 제한될 수 있다. 시 주택과는 평일 오전 9시부터 오후 5시까지 임대차 상담 창구를 운영하고 있다고 밝혔다.\n부동산업계는 역 앞 재개발과 신축 수영장 등 생활 시설이 들어서면서 이 지역 수요가 당분간 이어질 것으로 내다봤다.\n사토 미유키 기자"}, "counsel": {"cat": "건강", "t": "“마음의 감기, 혼자 버티지 마세요”… 청년 무료 상담 확대", "src": "헬스온", "dt": "2026. 10. 31.", "w": "13:30", "cm": 66, "c": "linear-gradient(135deg,#7fd3a0,#3c7f5a)", "cap": "시가 운영하는 지역 상담센터 대기실.", "body": "시가 운영하는 지역 상담센터들이 내년부터 청년 대상 무료 상담을 확대한다.\n시는 30일 만 19~34세 시민에게 지원하는 무료 심리 상담 횟수를 연 6회에서 12회로 늘린다고 밝혔다. 코모레비 상담소 등 시내 지정 상담센터 5곳에서 받을 수 있으며, 정신건강의학과 진료를 받고 있는 경우에도 함께 이용할 수 있다.\n■ 상담 신청 1년 새 40% 늘어\n올해 1~9월 시 상담센터를 찾은 청년은 1,870명으로, 지난해 같은 기간보다 40% 늘었다. 경제적 어려움과 진로 고민, 가족 문제가 주된 이유였다. 상담 대기 기간도 평균 2주에서 3주로 길어졌다.\n■ “감기처럼 가볍게 여기지는 말아야”\n‘우울증은 마음의 감기’라는 표현은 정신건강 치료에 대한 문턱을 낮추는 데 기여했다는 평가를 받는다. 다만 전문가들은 이 말이 오히려 증상을 가볍게 보게 만든다고 지적한다.\n한 정신건강의학과 전문의는 “감기와 달리 저절로 낫기를 기다리면 길어지는 경우가 많다”며 “약을 먹고 며칠 쉬면 끝나는 병이 아니라는 점을 알고, 꾸준히 도움을 받는 것이 중요하다”고 말했다.\n상담은 각 센터에 전화나 방문으로 예약할 수 있다. 위기 상황에서는 24시간 운영되는 지역 정신건강 위기상담 전화를 이용할 수 있다.\n이토 아야 기자"}, "coupon": {"cat": "IT", "t": "편의점 앱 쿠폰, 도시락 구매 횟수 따라 자동 지급", "src": "테크데일리", "dt": "2026. 10. 31.", "w": "07:40", "cm": 19, "c": "linear-gradient(135deg,#ff9f0a,#e0580b)", "cap": "매일편의점 앱의 ‘자주 산 상품’ 화면.", "body": "편의점 체인 매일편의점이 도시락 구매 횟수에 따라 음료 쿠폰을 자동으로 지급하는 서비스를 시작했다.\n앱 회원이 한 달에 도시락을 10회 이상 사면 다음 구매 때 쓸 수 있는 음료 쿠폰이 지급된다. 20회를 넘기면 도시락 1개 할인 쿠폰이 추가된다. 별도 신청 없이 결제 내역에 따라 자동으로 적용된다.\n■ 1인 가구 겨냥\n회사 측은 “도시락 구매 고객의 70% 이상이 1인 가구이고, 같은 고객이 같은 시간대에 반복 구매하는 경향이 뚜렷하다”며 “자주 오는 손님에게 혜택을 돌려주기 위한 것”이라고 설명했다.\n■ “내 식단이 다 보인다” 우려도\n일부 이용자들은 앱에 ‘이번 달 도시락 11회’처럼 구매 횟수가 그대로 표시되는 점이 불편하다는 반응이다. 한 대학생은 “내가 얼마나 끼니를 편의점으로 때우는지 숫자로 보니 좀 씁쓸했다”고 말했다.\n회사 측은 다음 달 업데이트부터 구매 횟수 표시를 끌 수 있게 하겠다고 밝혔다.\n오카다 리쿠 기자"}, "exam": {"cat": "교육", "t": "교원 임용 실기시험, 내년부터 수영 과목 비중 확대", "src": "에듀데일리", "dt": "2026. 10. 30.", "w": "08:40", "cm": 45, "c": "linear-gradient(135deg,#5856d6,#a29bfe)", "cap": "한 대학 체육교육과 학생들이 실내 수영장에서 실기 연습을 하고 있다.", "body": "체육 교원 임용 2차 실기시험에서 내년부터 수영 과목의 배점이 확대된다.\n현 교육청은 29일 ‘2027학년도 중등 체육 교사 임용시험 시행 계획’을 발표하고, 실기시험 총점 100점 중 수영 배점을 10점에서 20점으로 올린다고 밝혔다. 대신 체조 배점은 20점에서 10점으로 줄어든다.\n■ 자유형 50m에 ‘생존 수영’ 추가\n수영 평가는 기존 자유형 50m 기록 측정에 더해, 옷을 입은 채 3분간 물에 떠 있는 ‘생존 수영’ 시범이 새로 들어간다. 교육청은 “초·중학교 생존 수영 교육이 의무화되면서 교사의 지도 역량이 중요해졌다”고 배경을 설명했다.\n■ 수험생들 “준비 기간 부족”\n체육교육과 학생들 사이에서는 준비 기간이 1년밖에 안 된다는 불만이 나온다. 시립대학교 체육교육과의 한 3학년 학생은 “수영장 이용료가 만만치 않아 연습할 곳을 찾는 것부터 문제”라고 말했다.\n역 앞에 새로 문을 연 실내 수영장은 11월부터 화·목 저녁 성인 초급반을 신설하고, 체육교육과 재학생에게 할인 혜택을 주기로 했다.\n야마다 쇼 기자"}, "flu": {"cat": "건강", "t": "독감 유행 한 달 빨라… 음식점·편의점 “일손 비상”", "src": "헬스온", "dt": "2026. 10. 30.", "w": "17:50", "cm": 233, "c": "linear-gradient(135deg,#5ac8fa,#2c5a8c)", "cap": "시립병원 호흡기 진료소 앞 대기 줄.", "body": "인플루엔자(독감)가 예년보다 한 달가량 이르게 유행하고 있다.\n현 보건당국은 30일 도내 독감 의심 환자가 표본 의료기관당 12.4명으로 유행 기준(10명)을 넘어섰다며 유행 주의보를 발령했다. 지난해 주의보는 11월 말에 내려졌다.\n■ 20대 환자 가장 많아\n연령별로는 20대 환자가 가장 많았다. 보건당국은 “대학 축제와 할로윈 등 사람이 몰리는 행사가 이어지면서 확산 속도가 빨라졌다”고 분석했다.\n■ “한 명 빠지면 대타 구하기 전쟁”\n일손이 빠듯한 음식점과 편의점은 비상이 걸렸다. 역 남쪽의 한 이자카야 점주는 “이번 주에만 두 명이 독감으로 못 나왔다”며 “할로윈 주말이라 문을 닫을 수도 없어 남은 아이들한테 계속 부탁하고 있다. 미안할 따름”이라고 했다.\n■ 예방접종 서둘러야\n보건당국은 아직 예방접종을 하지 않았다면 서둘러 맞을 것을 권고했다. 발열과 기침이 있으면 출근이나 등교를 미루고, 해열제를 먹은 뒤에도 최소 이틀은 쉬는 것이 좋다.\n시립병원과 지역 의원 40곳에서 예방접종을 받을 수 있으며, 만 65세 이상과 임신부는 무료다.\n이토 아야 기자"}, "pool": {"cat": "지역", "t": "역 앞 실내 수영장 문 연 지 한 달… 무료 체험 1,200명 다녀가", "src": "오늘의 지역", "dt": "2026. 10. 27.", "w": "09:20", "cm": 31, "c": "linear-gradient(135deg,#30b0c7,#1d6aa6)", "cap": "사쿠라다이역 앞 실내 수영장. 흰 외벽이 역 광장에서도 보인다.", "body": "사쿠라다이역 앞에 새로 문을 연 실내 수영장이 개장 한 달을 맞았다.\n운영사에 따르면 9월 말 개장 이후 ‘오픈 기념 무료 체험’ 이용객은 약 1,200명으로 집계됐다. 이 가운데 20~30대가 절반을 넘었다.\n■ “친구와 함께라면 무료”\n특히 친구를 데려오면 2명 모두 무료로 이용할 수 있는 ‘2인 체험권’이 인기를 끌었다. 역 앞에서 나눠준 전단 체험권만 3천 장이 넘는다. 운영사 관계자는 “주말 오후에도 레인 여섯 개 중 두세 개만 차는 날이 많아, 처음 수영을 배우는 사람에게는 오히려 좋은 환경”이라고 말했다.\n■ 11월 성인 초급반 신설\n수영장은 11월부터 화·목 저녁 성인 초급반을 새로 연다. 11월 중 회원으로 등록하면 첫 달 이용료를 50% 할인해 준다.\n수영장 바로 옆 작은 공원에는 벤치와 자판기가 있어, 수영을 마친 이용객들이 머리를 말리며 쉬어 가는 모습도 자주 보인다. 시는 내년 봄 공원에 나무를 더 심고 그늘막을 설치할 계획이다.\n사토 미유키 기자"}, "candy": {"cat": "생활", "t": "할로윈 사탕 매출 30% 껑충… 올해도 ‘딸기맛’이 1위", "src": "트렌드픽", "dt": "2026. 10. 30.", "w": "12:15", "cm": 74, "c": "linear-gradient(135deg,#ff8fa6,#ff5a7d)", "cap": "편의점 계산대 옆에 진열된 할로윈 한정 사탕과 젤리.", "body": "할로윈을 앞두고 사탕과 젤리 판매가 크게 늘었다.\n편의점 3사의 10월 넷째 주 사탕류 매출은 전월 같은 기간보다 평균 30% 늘었다. 호박 모양 과자와 개별 포장 사탕이 계산대 옆 진열대를 채웠다.\n■ 맛 순위 딸기·포도·콜라\n맛별 판매 순위에서는 딸기맛이 3년 연속 1위를 지켰다. 2위는 포도맛, 3위는 콜라맛이었다. 한 제과업체 관계자는 “딸기맛은 아이부터 어른까지 거부감이 적어 나눠 주기용으로 가장 많이 팔린다”고 설명했다.\n■ 100개, 300개 ‘대용량’도 인기\n온라인에서는 100개, 300개짜리 대용량 사탕이 많이 팔렸다. 온라인 쇼핑몰 달콤상점에 따르면 ‘딸기맛 캔디 300입’ 판매량은 지난해보다 2배 늘었다. 회사 측은 “나눠 주려는 수요도 있지만, 혼자 두고 먹으려고 사는 단골이 꾸준하다”고 말했다.\n전문가들은 대용량 제품은 보관이 쉬운 만큼 하루 섭취량을 정해 두고 먹는 것이 좋다고 조언했다.\n모리 아키 기자"}, "light": {"cat": "지역", "t": "대학가~역 앞 가로등 120개 LED로 교체… “새벽 러너들 반겨”", "src": "오늘의 지역", "dt": "2026. 10. 28.", "w": "15:40", "cm": 22, "c": "linear-gradient(135deg,#ffd60a,#3a3a5a)", "cap": "새벽 시간 불이 켜진 대학로. 셔터를 내린 가게들 사이로 가로등이 이어진다.", "body": "사쿠라다이 대학가에서 역 앞까지 이어지는 대학로 일대 가로등 120개가 LED로 바뀐다.\n시는 다음 달부터 내년 2월까지 대학로와 역앞로 구간의 낡은 가로등을 차례로 교체한다고 28일 밝혔다. 새 가로등은 기존보다 밝기가 1.5배 높고, 전기 사용량은 40% 적다.\n■ 새벽에 달리는 사람 늘어\n최근 대학로는 새벽 시간 달리기를 하는 시민이 늘었다. 가게들이 셔터를 내린 새벽 4~6시에는 차량이 거의 없어 달리기 좋은 길로 꼽힌다. 다만 일부 구간은 가로등 간격이 넓어 어둡다는 민원이 꾸준히 들어왔다.\n대학가에서 매일 새벽 달린다는 한 대학생은 “24시간 편의점과 약국 간판 불빛만 보고 달리는 구간이 있었다”며 “밝아지면 훨씬 안심될 것 같다”고 말했다.\n■ 언덕길 계단에도 조명\n시는 대학가 뒤편 사쿠라 언덕으로 올라가는 언덕길과 계단에도 발밑 조명 30개를 새로 설치한다. 언덕 중턱에는 오래된 원룸 건물이 많아 밤길이 어둡다는 지적이 있었다.\n공사 기간에는 구간별로 보행로 일부가 통제될 수 있다.\n사토 미유키 기자"}, "univ": {"cat": "교육", "t": "시립대 체육교육과, 배구 실기 평가 11월 첫째 주 진행", "src": "시립대신문", "dt": "2026. 10. 26.", "w": "11:00", "cm": 8, "c": "linear-gradient(135deg,#5aa25a,#2c5a2c)", "cap": "시립대학교 제2체육관.", "body": "시립대학교 체육교육과의 2학기 구기 실기(배구) 평가가 11월 첫째 주에 진행된다.\n학과 학생회는 26일 조 편성 결과를 공지하고, 조별 연습을 위해 제2체육관 예약 시간을 평일 오후 5시 이후로 확대했다고 밝혔다.\n■ 2학년 32명, 4개 조\n평가 대상인 2학년 32명은 8명씩 4개 조로 나뉜다. 조별로 서브, 리시브, 토스, 경기 운영 능력을 평가받는다. 담당 교수는 “기술 점수보다 팀 안에서 소통하는 모습을 중요하게 보겠다”고 말했다.\n■ 중간고사 끝나자 바로 실기\n학생들 사이에서는 중간고사가 끝나자마자 실기 평가가 이어져 부담이 크다는 목소리도 나온다. 한 학생은 “조원끼리 시간을 맞추기가 쉽지 않다. 단톡방 공지에 답장 없는 사람을 찾는 게 제일 힘들다”고 웃었다.\n학생회는 이번 달 말까지 조원 변경 신청을 받는다.\n학생기자 오카모토 유이"}};
+function artHTML(n,extra){
+  const lines=n.body.split('\n'),by=lines.pop();
+  return `<small>${esc(n.cat)}</small><h2>${esc(n.t)}</h2><em>${esc(n.src)} · ${n.dt} ${n.w}${extra||''}</em><div class="tk-aimg" style="background:${n.c}"></div><p class="art-cap">${esc(n.cap||'')}</p>`+
+    lines.map(p=>p.startsWith('■')?`<h4>${esc(p.replace(/^■\s*/,''))}</h4>`:`<p>${esc(p)}</p>`).join('')+`<p class="art-by">${esc(by)}</p>`}
+const artWhen=n=>n.dt==='2026. 10. 31.'?n.w:n.dt.slice(6).replace(/\.$/,'');
 /* ================= icons ================= */
 const I={
  phone:'<svg width="28" height="28" viewBox="0 0 24 24" fill="#fff"><path d="M6.6 3.5c.6-.3 1.3 0 1.6.6l1.5 3.3c.3.6.1 1.2-.4 1.6l-1.6 1.2c.9 2 2.6 3.8 4.7 4.8l1.2-1.6c.4-.5 1.1-.7 1.6-.4l3.3 1.5c.6.3.9 1 .6 1.6l-.8 1.9c-.4.9-1.3 1.4-2.3 1.3C9.6 19.8 4.2 14.4 3.7 7.9c-.1-1 .4-1.9 1.3-2.3z"/></svg>',
@@ -1139,7 +1239,7 @@ function makePhone({key,cls,time,batt,label,homeHTML,apps,onHome,lock,code}){
   const status=scr.querySelector('.status'),icons=status.querySelector('.icons');
   const paintStatus=()=>{const c=getComputedStyle(status).color;icons.innerHTML=statusIcons(c).replace('BATT',batt)};
   let current=null;
-  const api={unit,scr,
+  const api={unit,scr,key,
     open(id,arg){
       if(api.passing){api.pendingOpen=[id,arg];return}
       if(!apps[id]){api.toast('권한이 없습니다');return}
@@ -1168,9 +1268,9 @@ function makePhone({key,cls,time,batt,label,homeHTML,apps,onHome,lock,code}){
     api.passing=true;pendingThen=then;entered='';paint();ps.hidden=false;ps.classList.remove('ok');
     setTimeout(()=>{lk.hidden=true},380)};
   const relock=()=>{api.passing=false;ps.hidden=true;api.locked=true;lk.hidden=false;lk.setAttribute('aria-hidden','false');requestAnimationFrame(()=>{lk.classList.remove('gone')})};
-  ps.querySelectorAll('.key').forEach(k=>k.onclick=()=>{if(entered.length>=4)return;entered+=k.dataset.k;paint();
-    if(entered.length===4){if(entered===code){ps.classList.add('ok');setTimeout(()=>{ps.hidden=true;finish(pendingThen);pendingThen=null},260)}
-      else{const box=ps.querySelector('.pdots');box.classList.add('shake');setTimeout(()=>{box.classList.remove('shake');entered='';paint()},450)}}});
+  ps.querySelectorAll('.key').forEach(k=>k.onclick=()=>{if(entered.length>=4)return;SND.tap();entered+=k.dataset.k;paint();
+    if(entered.length===4){if(entered===code){SND.unlock();ps.classList.add('ok');setTimeout(()=>{ps.hidden=true;finish(pendingThen);pendingThen=null},260)}
+      else{SND.err();const box=ps.querySelector('.pdots');box.classList.add('shake');setTimeout(()=>{box.classList.remove('shake');entered='';paint()},450)}}});
   pbtn.onclick=()=>{if(entered){entered=entered.slice(0,-1);paint()}else relock()};
   ps.querySelector('.pemg').onclick=()=>api.toast('권한이 없습니다');
   api.lockNotify=html=>{const box=lk.querySelector('.lock-notis');box.insertAdjacentHTML('afterbegin',html);const n=box.firstElementChild;n.classList.add('enter');requestAnimationFrame(()=>requestAnimationFrame(()=>n.classList.remove('enter')))};
@@ -1386,6 +1486,135 @@ const orders=[
  ['2024. 5. 3.','배송 완료'],['2023. 11. 20.','배송 완료'],['2023. 4. 1.','배송 완료'],['2022. 10. 2.','첫 주문'],
 ];
 const shopApp={shop:{html:`<div class="bar"><button type="button" class="back" data-back>${I.back}홈</button><div class="ttl">주문 내역</div></div><div class="scroll"><div class="shead"><span class="sth"></span><span><b>새콤달콤 딸기맛 캔디 (100입)</b><small>달콤상점 · ¥780</small><em>같은 상품을 ${orders.length}번 구매했어요</em></span></div>${orders.map(([d,st])=>`<div class="ord"><span>${d}</span><span class="${st==='첫 주문'?'first':''}">${st}</span></div>`).join('')}</div>`}};
+
+/* ---- weather app (Oct 31, 16:35, Sakuradai) ---- */
+const WXI={
+ sun:'<svg viewBox="0 0 24 24" width="26" height="26"><circle cx="12" cy="12" r="5" fill="#ffd23f"/><g stroke="#ffd23f" stroke-width="1.8" stroke-linecap="round"><path d="M12 2.5v2.5M12 19v2.5M2.5 12H5M19 12h2.5M5.3 5.3l1.8 1.8M16.9 16.9l1.8 1.8M5.3 18.7l1.8-1.8M16.9 7.1l1.8-1.8"/></g></svg>',
+ moon:'<svg viewBox="0 0 24 24" width="26" height="26"><path d="M15.5 3.5a8.5 8.5 0 1 0 5 13.6A7 7 0 0 1 15.5 3.5z" fill="#f2f2f7"/></svg>',
+ cloud:'<svg viewBox="0 0 24 24" width="26" height="26"><path d="M7 19h10.5a4 4 0 0 0 .3-8 6 6 0 0 0-11.4 1.6A3.3 3.3 0 0 0 7 19z" fill="#e9edf3"/></svg>',
+ cloudm:'<svg viewBox="0 0 24 24" width="26" height="26"><path d="M14 3a6 6 0 1 0 5.5 8.4A5 5 0 0 1 14 3z" fill="#f2f2f7"/><path d="M5.5 20h9a3.3 3.3 0 0 0 .2-6.6 5 5 0 0 0-9.5 1.3A2.7 2.7 0 0 0 5.5 20z" fill="#cfd6e0"/></svg>',
+ rain:'<svg viewBox="0 0 24 24" width="26" height="26"><path d="M7 15h10.5a3.7 3.7 0 0 0 .3-7.4 5.6 5.6 0 0 0-10.6 1.5A3 3 0 0 0 7 15z" fill="#e9edf3"/><g stroke="#5ac8fa" stroke-width="1.8" stroke-linecap="round"><path d="M8.5 17.5l-1 2.5M12.5 17.5l-1 2.5M16.5 17.5l-1 2.5"/></g></svg>',
+ set:'<svg viewBox="0 0 24 24" width="26" height="26"><path d="M5 16a7 7 0 0 1 14 0z" fill="#ffb347"/><path d="M2.5 16h19M12 4v4M9.5 6.5L12 4l2.5 2.5" stroke="#ffb347" stroke-width="1.8" stroke-linecap="round" fill="none" transform="rotate(180 12 6)"/><path d="M4 19.5h16" stroke="#fff" stroke-width="1.6" stroke-linecap="round" opacity=".7"/></svg>',
+};
+const WX={
+ hourly:[['지금','sun','19°'],['16:50','set','일몰'],['17시','sun','17°'],['18시','moon','15°'],['19시','moon','14°'],['20시','moon','13°'],['21시','moon','13°'],['22시','moon','12°'],['23시','cloudm','12°'],['0시','cloudm','11°'],['1시','cloudm','11°'],['2시','cloud','11°'],['3시','cloud','10°'],['4시','cloud','10°'],['5시','cloud','10°'],['6시','cloud','10°']],
+ daily:[['오늘','sun',11,19,0],['일','rain',10,16,60],['월','rain',9,13,80],['화','sun',8,15,0],['수','cloud',9,16,10],['목','sun',10,17,0],['금','sun',9,16,0],['토','cloud',10,15,20],['일','rain',11,14,70],['월','sun',8,14,0]],
+};
+const wxTile=(ic,t,big,sub,extra='')=>`<div class="wx-tile"><div class="wx-th">${ic} ${t}</div><b>${big}</b>${extra}<small>${sub}</small></div>`;
+const weatherApp=()=>{const mn=Math.min(...WX.daily.map(d=>d[2])),mx=Math.max(...WX.daily.map(d=>d[3])),pc=v=>((v-mn)/(mx-mn)*100).toFixed(1);
+ return {weather:{html:`<div class="wx">
+  <div class="bar"><button type="button" class="back keep" data-back>${I.back}홈</button></div>
+  <div class="scroll wx-body">
+   <div class="wx-hero"><small>현재 위치</small><h2>사쿠라다이</h2><div class="wx-now">19°</div><div class="wx-c">대체로 맑음</div><div class="wx-hl">최고 19° 최저 11°</div></div>
+   <div class="wx-card"><p class="wx-note">오후부터 맑음. 해 질 무렵(16:50) 노을이 선명하겠고, 해가 진 뒤 기온이 빠르게 떨어집니다. 돌풍 최대 6m/s.</p>
+    <div class="wx-hours">${WX.hourly.map(([t,ic,v])=>`<div class="${t==='지금'?'now':''}"><span>${t}</span>${WXI[ic]}<b>${v}</b></div>`).join('')}</div></div>
+   <div class="wx-card"><div class="wx-sec">10일간의 일기예보</div>
+    ${WX.daily.map(([d,ic,lo,hi,pr],i)=>`<div class="wx-day"><span class="wx-dn">${d}</span><span class="wx-di">${WXI[ic]}${pr?`<i>${pr}%</i>`:''}</span><span class="wx-lo">${lo}°</span><span class="wx-bar"><span style="left:${pc(lo)}%;right:${(100-pc(hi)).toFixed(1)}%">${i===0?`<em style="left:${((19-lo)/(hi-lo)*100).toFixed(0)}%"></em>`:''}</span></span><span class="wx-hi">${hi}°</span></div>`).join('')}</div>
+   <div class="wx-card wx-aq"><div class="wx-th">대기질</div><b>32 · 좋음</b><small>오전에 내린 비로 먼지가 씻겨 내려가 공기가 깨끗합니다.</small><span class="wx-aqbar"><em style="left:12%"></em></span></div>
+   <div class="wx-grid">
+    ${wxTile('☀','자외선 지수','2','낮음 · 남은 하루 동안 낮음')}
+    ${wxTile('◐','일몰','오후 4:50','일출: 오전 6:04')}
+    ${wxTile('≋','바람','4 m/s','북서풍 · 돌풍 6 m/s')}
+    ${wxTile('☂','강수량','3 mm','지난 24시간 · 내일 밤 비 예보')}
+    ${wxTile('🌡','체감 온도','18°','바람 때문에 실제보다 조금 쌀쌀하게 느껴집니다.')}
+    ${wxTile('💧','습도','52%','현재 이슬점은 9°입니다.')}
+    ${wxTile('👁','가시거리','20 km','시야가 아주 맑습니다.')}
+    ${wxTile('◎','기압','1018 hPa','천천히 오르는 중')}
+   </div>
+   <p class="wx-foot">사쿠라다이 날씨 · 날씨온 제공</p>
+  </div>
+  <div class="wx-tabbar"><span>⌖</span><span class="wx-dots"><i class="on"></i><i></i></span><span>☰</span></div>
+ </div>`}}};
+
+/* ---- shopping app: 달콤상점 ---- */
+const CANDY=(a,b,bg)=>`radial-gradient(circle at 30% 38%,${a} 0 13%,transparent 14%),radial-gradient(circle at 62% 56%,${b} 0 12%,transparent 13%),radial-gradient(circle at 40% 72%,${a} 0 10%,transparent 11%),radial-gradient(circle at 72% 28%,${b} 0 9%,transparent 10%),radial-gradient(circle at 78% 78%,${a} 0 8%,transparent 9%),${bg}`;
+const PRODUCTS=[
+ {id:'straw100',n:'새콤달콤 딸기맛 캔디 (100입)',p:780,img:CANDY('#ff5d7e','#ff9fb4','#fff0f3'),tag:'베스트',rate:4.8,rv:2314,k:'딸기 딸기맛 캔디 사탕 새콤달콤',
+  spec:[['중량','400g (1개 약 4g)'],['맛','딸기'],['포장','개별 포장'],['칼로리','1개당 15kcal'],['유통기한','제조일로부터 12개월']],
+  desc:'새콤한 딸기 파우더를 겉에 입힌 하드 캔디입니다. 개별 포장이라 가방이나 주머니에 넣고 다니기 좋아요.',
+  reviews:[['jun***','★★★★★','몇 년째 이것만 삽니다. 주머니에 늘 몇 개씩 넣고 다녀요.'],['mii***','★★★★★','개별 포장이라 나눠 주기 좋아요. 처음 보는 사람한테 줘도 부담 없음.'],['kot***','★★★★☆','단맛이 오래가요. 겉에 가루가 조금 묻어나요.']]},
+ {id:'straw300',n:'새콤달콤 딸기맛 캔디 (300입)',p:2180,sale:1744,img:CANDY('#ff4f74','#ffb3c3','#ffe5ec'),tag:'할로윈 한정 20%',rate:4.9,rv:871,k:'딸기 딸기맛 캔디 사탕 대용량 300 할로윈 새콤달콤 재주문',
+  spec:[['중량','1.2kg (1개 약 4g)'],['맛','딸기'],['포장','개별 포장 · 지퍼백'],['칼로리','1개당 15kcal'],['유통기한','제조일로부터 12개월']],
+  desc:'100입보다 개당 가격이 저렴한 대용량 구성입니다. 지퍼백 포장이라 오래 두고 드시기 좋아요. 10월 31일까지 할로윈 한정 20% 할인.',
+  reviews:[['sae***','★★★★★','생각보다 빨리 줄어요. 또 사야 할 것 같습니다.'],['hal***','★★★★★','나눠 주려고 샀는데 혼자 다 먹는 중.'],['nnn***','★★★★☆','양이 정말 많아요. 지퍼백이라 눅눅해지지 않음.']]},
+ {id:'grape100',n:'새콤달콤 포도맛 캔디 (100입)',p:780,img:CANDY('#8e5bd6','#c2a8e6','#f2ecfb'),rate:4.6,rv:1092,k:'포도 포도맛 캔디 사탕 새콤달콤',
+  spec:[['중량','400g'],['맛','포도'],['포장','개별 포장'],['칼로리','1개당 15kcal'],['유통기한','제조일로부터 12개월']],desc:'딸기맛과 같은 시리즈의 포도맛입니다. 진한 포도 향이 특징이에요.',
+  reviews:[['grp***','★★★★★','딸기맛이랑 섞어 두고 먹어요.'],['ume***','★★★★☆','향이 진해서 좋아요.']]},
+ {id:'lemon',n:'꿀 레몬 목캔디 (60입)',p:720,img:CANDY('#ffd23f','#ffe98a','#fffbe6'),tag:'감기 시즌 추천',rate:4.7,rv:640,k:'레몬 목캔디 사탕 캔디 감기 꿀',
+  spec:[['중량','240g'],['맛','꿀 레몬'],['포장','개별 포장'],['칼로리','1개당 14kcal'],['유통기한','제조일로부터 18개월']],desc:'꿀과 레몬, 허브 추출물을 넣은 목캔디입니다. 환절기에 많이 찾는 상품이에요.',
+  reviews:[['flu***','★★★★★','독감 돈다길래 쟁여 뒀어요.'],['sor***','★★★★☆','화하지 않고 부드러워요.']]},
+ {id:'pumpkin',n:'할로윈 호박 쿠키 (12개입)',p:680,sale:540,img:CANDY('#ff8a00','#ffb347','#fff2e0'),tag:'오늘까지',rate:4.5,rv:212,k:'할로윈 호박 쿠키 과자',
+  spec:[['중량','180g'],['맛','단호박 버터'],['포장','2개씩 소포장'],['칼로리','1개당 62kcal'],['유통기한','제조일로부터 6개월']],desc:'호박 모양 버터 쿠키입니다. 할로윈 시즌에만 판매해요.',
+  reviews:[['pmk***','★★★★★','모양이 귀여워서 회사에 돌렸어요.'],['ccc***','★★★★☆','생각보다 덜 달아요.']]},
+ {id:'milk',n:'진한 우유 사탕 (80입)',p:650,img:CANDY('#f5efe3','#fffaf0','#e9dfcc'),rate:4.6,rv:533,k:'우유 사탕 캔디 밀크',
+  spec:[['중량','320g'],['맛','우유'],['포장','개별 포장'],['칼로리','1개당 18kcal'],['유통기한','제조일로부터 12개월']],desc:'홋카이도산 우유를 넣어 진하고 부드러운 우유 사탕입니다.',
+  reviews:[['mlk***','★★★★★','어릴 때 먹던 맛이에요.']]},
+ {id:'cola',n:'콜라맛 젤리 (대용량 1kg)',p:1280,img:CANDY('#6b3a1e','#a0602e','#f3e6da'),rate:4.4,rv:388,k:'콜라 젤리 대용량 구미',
+  spec:[['중량','1kg'],['맛','콜라'],['포장','지퍼백'],['칼로리','100g당 330kcal'],['유통기한','제조일로부터 10개월']],desc:'쫄깃한 콜라맛 병 모양 젤리를 1kg 대용량으로 담았습니다.',
+  reviews:[['jel***','★★★★☆','양 많고 맛있어요. 금방 먹음.']]},
+ {id:'mix',n:'과일맛 캔디 믹스 (200입)',p:1480,img:CANDY('#ff5d7e','#5ac8fa','#f2f7ff'),rate:4.5,rv:420,k:'과일 믹스 캔디 사탕 대용량 딸기 포도 레몬',
+  spec:[['중량','800g'],['맛','딸기 · 포도 · 레몬 · 사과'],['포장','개별 포장'],['칼로리','1개당 15kcal'],['유통기한','제조일로부터 12개월']],desc:'인기 과일맛 4가지를 한 봉지에 담았어요.',
+  reviews:[['mix***','★★★★☆','딸기맛이 제일 먼저 없어져요.']]},
+];
+const PRD=Object.fromEntries(PRODUCTS.map(p=>[p.id,p]));
+const yenS=n=>'¥'+n.toLocaleString('en-US');
+const SHI={
+ cart:'<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="M3 4h2.5l2.2 11h10.6L20.5 7H6.3"/><circle cx="9.5" cy="19" r="1.4"/><circle cx="17" cy="19" r="1.4"/></svg>',
+ home:'<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="M4 11l8-7 8 7v9h-5v-6H9v6H4z"/></svg>',
+ list:'<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><rect x="5" y="3.5" width="14" height="17" rx="2"/><path d="M9 9h6M9 13h6M9 17h3"/></svg>',
+ me:'<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="9" r="4"/><path d="M4 20c1.5-4 4.5-5 8-5s6.5 1 8 5"/></svg>',
+};
+const priceHTML=p=>p.sale?`<span class="sp-pr"><em>${Math.round((1-p.sale/p.p)*100)}%</em><b>${yenS(p.sale)}</b><s>${yenS(p.p)}</s></span>`:`<span class="sp-pr"><b>${yenS(p.p)}</b></span>`;
+const pcard=(p,from='')=>`<button type="button" class="sp-card" data-open="shop-item" data-arg="${p.id}${from?'|'+from:''}"><span class="sp-img" style="background:${p.img}">${p.tag?`<i>${p.tag}</i>`:''}</span><span class="sp-n">${esc(p.n)}</span>${priceHTML(p)}<span class="sp-rate">★ ${p.rate} <small>(${p.rv.toLocaleString('en-US')})</small></span></button>`;
+function mkShop(cfg){
+ const tabs=on=>`<nav class="sp-tabs">${[['shop','홈',SHI.home],['shop-cart','장바구니',SHI.cart],['shop-orders','주문 내역',SHI.list],['','마이',SHI.me]].map(([k,l,ic])=>`<button type="button" class="${k===on?'on':''}" ${k?`data-open="${k}"`:'data-toast="로그인 정보가 없습니다"'}>${ic}${l}${k==='shop-cart'?'<i class="sp-cn"></i>':''}</button>`).join('')}</nav>`;
+ const cart=cfg.cart.map(c=>({...c}));
+ const paintCart=sc=>{const n=cart.reduce((a,c)=>a+c.q,0);sc.querySelectorAll('.sp-cn').forEach(e=>{e.textContent=n;e.hidden=!n});
+   const v=sc.querySelector('[data-app="shop-cart"] .sp-cartbox');if(!v)return;
+   if(!cart.length){v.innerHTML='<p class="sp-empty">장바구니가 비어 있어요</p>';return}
+   const sum=cart.reduce((a,c)=>{const p=PRD[c.id];return a+(p.sale||p.p)*c.q},0),ship=sum>=2000?0:350;
+   v.innerHTML=cart.map(c=>{const p=PRD[c.id];return `<div class="sp-ci"><button type="button" class="sp-cimg" style="background:${p.img}" data-open="shop-item" data-arg="${p.id}|shop-cart" aria-label="${esc(p.n)}"></button><div><b>${esc(p.n)}</b>${c.note?`<small>${esc(c.note)}</small>`:''}${priceHTML(p)}<span class="sp-q">수량 ${c.q}</span></div></div>`}).join('')+
+    `<div class="sp-sum"><div><span>상품 금액</span><span>${yenS(sum)}</span></div><div><span>배송비</span><span>${ship?yenS(ship):'무료'}</span></div><div class="t"><span>결제 예정 금액</span><b>${yenS(sum+ship)}</b></div></div><button type="button" class="sp-buy" data-toast="결제 수단을 확인할 수 없습니다">${yenS(sum+ship)} 주문하기</button>`};
+ return {
+  shop:{html:`<div class="sp-top"><button type="button" class="back keep" data-back>${I.back}</button><span class="sp-logo">달콤상점</span><button type="button" class="sp-ic" data-open="shop-cart" aria-label="장바구니">${SHI.cart}<i class="sp-cn"></i></button></div>
+   <div class="scroll sp-body">
+    <button type="button" class="sp-search" data-toast="검색어를 입력하세요">${I.search.replace('#fff','currentColor')}<span>사탕, 젤리, 과자 검색</span></button>
+    <button type="button" class="sp-banner" data-open="shop-item" data-arg="straw300"><span><small>🎃 할로윈 한정 · 오늘까지</small><b>딸기맛 캔디 300입<br>20% 할인</b><em>10/31 23:59 종료</em></span><span class="sp-bimg" style="background:${PRD.straw300.img}"></span></button>
+    <div class="sp-cats">${[['사탕','🍬'],['젤리','🍭'],['초콜릿','🍫'],['쿠키','🍪'],['대용량','📦'],['할로윈','🎃']].map(([l,e])=>`<button type="button" data-toast="${l} 카테고리 준비 중이에요"><span>${e}</span>${l}</button>`).join('')}</div>
+    <div class="sp-sec"><b>${cfg.freqTitle}</b></div>
+    ${cfg.freq.map(([id,txt])=>`<button type="button" class="sp-freq" data-open="shop-item" data-arg="${id}"><span class="sp-img" style="background:${PRD[id].img}"></span><span><b>${esc(PRD[id].n)}</b><small>${txt}</small>${priceHTML(PRD[id])}</span><span class="sp-again">다시 담기</span></button>`).join('')}
+    <div class="sp-sec"><b>할로윈 특가</b><small>오늘 23:59 종료</small></div>
+    <div class="sp-row">${['straw300','pumpkin','mix','cola'].map(id=>pcard(PRD[id])).join('')}</div>
+    <div class="sp-sec"><b>${cfg.who}님을 위한 추천</b></div>
+    <div class="sp-grid">${cfg.rec.map(id=>pcard(PRD[id])).join('')}</div>
+    <p class="sp-foot">달콤상점 · 2,000엔 이상 무료배송 · 오후 8시 전 주문 시 내일 도착</p>
+   </div>${tabs('shop')}`,init:api=>paintCart(api.scr)},
+  'shop-item':{html:`<div class="sp-top"><button type="button" class="back keep" data-back="shop">${I.back}</button><span class="sp-logo sm">상품 정보</span><button type="button" class="sp-ic" data-open="shop-cart" aria-label="장바구니">${SHI.cart}<i class="sp-cn"></i></button></div><div class="scroll sp-body sp-item"></div><div class="sp-cta"><button type="button" class="sp-add">장바구니 담기</button><button type="button" class="sp-now" data-toast="결제 수단을 확인할 수 없습니다">바로 구매</button></div>`,
+   onOpen:(v,arg,api)=>{const [id,from]=String(arg||'straw100').split('|'),p=PRD[id]||PRODUCTS[0];v.querySelector('.back').dataset.back=from||'shop';
+    if(from==='srch-q'){const sv=api.scr.querySelector('[data-app="srch-q"]');if(sv)sv._keep=true}
+    const bought=cfg.bought[p.id];
+    v.querySelector('.sp-item').innerHTML=`<div class="sp-hero" style="background:${p.img}">${p.tag?`<i>${p.tag}</i>`:''}</div>
+     <div class="sp-in"><small>달콤상점 공식</small><h2>${esc(p.n)}</h2><span class="sp-rate">★ ${p.rate} <small>리뷰 ${p.rv.toLocaleString('en-US')}개</small></span>${priceHTML(p)}
+     ${bought?`<p class="sp-bought">${bought}</p>`:''}
+     <div class="sp-ship"><div><span>배송</span><b>내일(일) 11/1 도착 예정</b></div><div><span></span><small>오후 8시 전 주문 시 · 2,000엔 이상 무료배송</small></div><div><span>포인트</span><small>구매 시 ${Math.round((p.sale||p.p)*0.01)}P 적립</small></div></div>
+     <div class="sp-sec"><b>상품 설명</b></div><p class="sp-desc">${esc(p.desc)}</p>
+     <div class="sp-spec">${p.spec.map(([a,b])=>`<div><span>${a}</span><span>${b}</span></div>`).join('')}</div>
+     <div class="sp-sec"><b>리뷰 ${p.rv.toLocaleString('en-US')}</b><small>★ ${p.rate}</small></div>
+     ${p.reviews.map(([u,st,t])=>`<div class="sp-rv"><div><b>${u}</b><span>${st}</span></div><p>${esc(t)}</p></div>`).join('')}</div>`;
+    v.querySelector('.sp-item').scrollTop=0;
+    v.querySelector('.sp-add').onclick=()=>{const c=cart.find(x=>x.id===p.id);if(c)c.q++;else cart.push({id:p.id,q:1});paintCart(api.scr);api.toast('장바구니에 담았어요')};
+    paintCart(api.scr)}},
+  'shop-cart':{html:`<div class="sp-top"><button type="button" class="back keep" data-back="shop">${I.back}</button><span class="sp-logo sm">장바구니</span><span class="sp-ic"></span></div><div class="scroll sp-body"><div class="sp-cartbox"></div></div>${tabs('shop-cart')}`,onOpen:(v,a,api)=>paintCart(api.scr)},
+  'shop-orders':{html:`<div class="sp-top"><button type="button" class="back keep" data-back="shop">${I.back}</button><span class="sp-logo sm">주문 내역</span><span class="sp-ic"></span></div><div class="scroll sp-body">
+    <div class="shead"><span class="sth" style="background:${PRD[cfg.orders.id].img}"></span><span><b>${esc(PRD[cfg.orders.id].n)}</b><small>달콤상점 · ${yenS(PRD[cfg.orders.id].p)}</small><em>${cfg.orders.note}</em></span></div>
+    ${cfg.orders.list.map(([d,st])=>`<button type="button" class="ord" data-open="shop-item" data-arg="${cfg.orders.id}|shop-orders"><span>${d}</span><span class="${st==='첫 주문'?'first':''}">${st}</span></button>`).join('')}</div>${tabs('shop-orders')}`},
+ };
+}
+const junShop=mkShop({who:'쥰',freqTitle:'자주 산 상품',freq:[['straw100',`${orders.length}번 구매 · 마지막 주문 10월 20일`]],rec:['grape100','lemon','milk','mix'],cart:[],
+  bought:{straw100:`이 상품을 ${orders.length}번 구매했어요 · 첫 주문 2022. 10. 2.`},orders:{id:'straw100',note:`같은 상품을 ${orders.length}번 구매했어요`,list:orders}});
+const ibShop=mkShop({who:'사에구사',freqTitle:'최근 구매한 상품',freq:[['straw300','9월 23일 주문 · 9월 25일 도착']],rec:['straw100','lemon','milk','grape100'],cart:[{id:'straw300',q:1,note:'할로윈 20% 할인 적용'}],
+  bought:{straw300:'9월 23일에 구매한 상품이에요 · 남은 수량을 확인해 보세요'},orders:{id:'straw300',note:'1번 구매했어요',list:[['2026. 9. 23.','배송 완료 · 9/25 도착']]}});
+
 const tracks=[['물보라','Lane 4'],['Take Your Mark','The Starters'],['48.2','Blue Hour'],['턴','파도소년'],['Underwater','Ellie Mare'],['마지막 50m','Lane 4'],['Gold','The Starters'],['다시, 출발대','파도소년']];
 /* ---- music app, modelled on a familiar streaming player ---- */
 const MU={
@@ -1506,8 +1735,9 @@ const TABI={
  favs:'<svg width="24" height="24" viewBox="0 0 24 24" stroke-width="1.8"><path d="M12 3l2.7 5.6 6.1.8-4.5 4.2 1.1 6-5.4-3-5.4 3 1.1-6-4.5-4.2 6.1-.8z"/></svg>',
  calls:'<svg width="24" height="24" viewBox="0 0 24 24" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2" stroke-linecap="round"/></svg>',
  contacts:'<svg width="24" height="24" viewBox="0 0 24 24" stroke-width="1.8"><circle cx="12" cy="9" r="4"/><path d="M4 20c1.5-4 4.5-5 8-5s6.5 1 8 5"/></svg>',
+ keypad:'<svg width="24" height="24" viewBox="0 0 24 24" stroke="none">'+[4,10,16].map(y=>[6,12,18].map(x=>`<circle cx="${x}" cy="${y}" r="2.1" fill="currentColor"/>`).join('')).join('')+'<circle cx="12" cy="21.5" r="2.1" fill="currentColor"/></svg>',
  vm:'<svg width="24" height="24" viewBox="0 0 24 24" stroke-width="1.8"><circle cx="7" cy="12" r="3.5"/><circle cx="17" cy="12" r="3.5"/><path d="M7 15.5h10"/></svg>'};
-const callTabs=on=>`<nav class="tabs">${[['favs','즐겨찾기'],['calls','최근 통화'],['contacts','연락처'],['vm','음성 사서함']].map(([k,l])=>`<button type="button" class="${k===on?'on':''}" data-open="${k}" data-arg="calls">${TABI[k]}${l}${k==='vm'||k==='calls'?`<span class="tbadge t-${k}"></span>`:''}</button>`).join('')}</nav>`;
+const callTabs=on=>`<nav class="tabs">${[['favs','즐겨찾기'],['calls','최근 통화'],['contacts','연락처'],['keypad','키패드'],['vm','음성 사서함']].map(([k,l])=>`<button type="button" class="${k===on?'on':''}" data-open="${k}" data-arg="calls">${TABI[k]}${l}${k==='vm'||k==='calls'?`<span class="tbadge t-${k}"></span>`:''}</button>`).join('')}</nav>`;
 const mkFavs=list=>({favs:{html:`<div class="bar"><button type="button" class="back" data-back>${I.back}홈</button></div><div class="big">즐겨찾기</div><div class="scroll">${list.map(f=>`<div class="call"><div class="av" style="overflow:hidden;padding:0">${f.av||initialAv(f.n)}</div><div class="main"><div class="who"><div class="nm">${f.n}</div><div class="sub">휴대전화</div></div><span style="color:var(--accent);display:flex">${I.info}</span></div></div>`).join('')}</div>${callTabs('favs')}`}});
 const mkVM=list=>({vm:{html:`<div class="bar"><button type="button" class="back" data-back>${I.back}홈</button></div><div class="big">음성 사서함</div><div class="scroll">${list.length?list.map(v=>`<div class="vm"><div class="vm-top"><span class="vm-dot ${v.unread?'on':''}"></span><b>${v.n}</b><span class="vm-w">${v.w}</span></div><div class="vm-sub">${v.sub} · ${v.len}</div><div class="vm-play"><span class="vm-btn"><svg width="12" height="14" viewBox="0 0 12 14"><path d="M1 1l10 6-10 6z" fill="currentColor"/></svg></span><span class="vm-bar"><i></i></span><span class="vm-t">-${v.len}</span></div><div class="vm-tx"><small>받아쓰기</small>${esc(v.tx)}</div></div>`).join(''):'<p class="empty">음성 메시지 없음</p>'}</div>${callTabs('vm')}`}});
 
@@ -1545,10 +1775,10 @@ const mkSettings=(name,av,cfg,st)=>{
 };
 const SS=t=>`<div class="ssec">${t}</div>`;
 const junSet={wifi:'Sakuradai-Heights_5G',bt:'켬',pages:{
- acct:{t:'계정',g:[[{l:'이름',v:'사자나미 쥰'},{l:'전화번호',v:'080-2207-1129'},{l:'이메일',v:'jun.sazanami@mailbox.jp'},{l:'생년월일',v:'2005. 8. 16.'}],[{l:'클라우드 저장 공간',v:'5GB 중 4.8GB 사용'},{l:'구독',v:'음악'}],[{l:'로그아웃'}]]},
+ acct:{t:'계정',g:[[{l:'이름',v:'사자나미 쥰'},{l:'전화번호',v:'080-2005-0816'},{l:'이메일',v:'jun.sazanami@mailbox.jp'},{l:'생년월일',v:'2005. 8. 16.'}],[{l:'클라우드 저장 공간',v:'5GB 중 4.8GB 사용'},{l:'구독',v:'음악'}],[{l:'로그아웃'}]]},
  wifi:{t:'Wi-Fi',g:[[{l:'Wi-Fi',sw:true}],[{l:'Sakuradai-Heights_5G',chk:1,d:'연결됨 · 보안'}],SS('네트워크'),[{l:'Univ-Free-WiFi',d:'보안 없음'},{l:'Comorebi_Guest'},{l:'aterm-3f2a1c-g'}]]},
  bt:{t:'블루투스',g:[[{l:'블루투스',sw:true}],SS('나의 기기'),[{l:'쥰의 이어폰',v:'연결됨'},{l:'체육관 스피커',v:'연결 안 됨'}]]},
- cell:{t:'셀룰러',g:[[{l:'셀룰러 데이터',sw:true},{l:'데이터 로밍',sw:false}],SS('현재 기간 · 18.4GB 사용'),[{l:'LIME',v:'6.2GB'},{l:'음악',v:'4.1GB'},{l:'hoshi',v:'2.0GB'},{l:'지도',v:'1.3GB'},{l:'건강',v:'0.2GB'}]]},
+ cell:{t:'셀룰러',g:[[{l:'셀룰러 데이터',sw:true},{l:'데이터 로밍',sw:false}],SS('현재 기간 · 18.4GB 사용'),[{l:'LIME',v:'6.2GB'},{l:'음악',v:'4.1GB'},{l:'Yaho',v:'2.0GB'},{l:'지도',v:'1.3GB'},{l:'건강',v:'0.2GB'}]]},
  noti:{t:'알림',g:[[{l:'미리보기 표시',v:'항상'},{l:'화면 공유',v:'알림 끔'}],SS('앱별 알림'),[{l:'LIME',v:'즉시, 배너',ic:'#06c755'},{l:'메시지',v:'즉시, 배너, 소리',ic:'#34c759'},{l:'전화',v:'즉시, 배너, 소리',ic:'#34c759'},{l:'캘린더',v:'즉시, 배너',ic:'#ff3b30'},{l:'건강',v:'끔',ic:'#ff2d55'}]]},
  sound:{t:'사운드 및 햅틱',g:[[{l:'무음 모드',sw:true}],[{l:'벨소리',v:'물결'},{l:'문자 알림음',v:'방울'},{l:'키보드 피드백',v:'햅틱'}],[{l:'무음 모드에서 진동',sw:true}]]},
  focus:{t:'집중 모드',g:[[{l:'방해금지 모드',v:'끔',ic:'#5856d6'},{l:'수면',v:'끔',ic:'#30b0c7'},{l:'운동',v:'끔',ic:'#34c759'}],[{l:'모든 기기에서 공유',sw:true}]],foot:'집중 모드를 켜면 알림이 조용해집니다.'},
@@ -1561,11 +1791,11 @@ const junSet={wifi:'Sakuradai-Heights_5G',bt:'켬',pages:{
  pass:{t:'암호',g:[[{l:'암호 끄기'},{l:'암호 변경'}],[{l:'암호 요구',v:'즉시'}],[{l:'데이터 지우기',sw:false,d:'암호를 10번 틀리면 모든 데이터를 지웁니다.'}]]},
 }};
 const ibSet={wifi:'연결 안 됨',bt:'끔',focus:'수면',pages:{
- acct:{t:'계정',g:[[{l:'이름',v:'사에구사 이바라'},{l:'전화번호',v:'090-3107-1218'},{l:'이메일',v:'saegusa.ibara@mailbox.jp'},{l:'생년월일',v:'2005. 11. 14.'}],[{l:'클라우드 저장 공간',v:'5GB 중 0.3GB 사용'},{l:'구독',v:'없음'}],[{l:'로그아웃'}]]},
+ acct:{t:'계정',g:[[{l:'이름',v:'사에구사 이바라'},{l:'전화번호',v:'080-2005-1114'},{l:'이메일',v:'saegusa.ibara@mailbox.jp'},{l:'생년월일',v:'2005. 11. 14.'}],[{l:'클라우드 저장 공간',v:'5GB 중 0.3GB 사용'},{l:'구독',v:'없음'}],[{l:'로그아웃'}]]},
  wifi:{t:'Wi-Fi',g:[[{l:'Wi-Fi',sw:true}],SS('네트워크'),[{l:'Sakuradai-Heights_5G',d:'보안'},{l:'Univ-Free-WiFi',d:'보안 없음'},{l:'aterm-3f2a1c-g'}]],foot:'저장된 네트워크: Kawabe-201 (집)'},
  bt:{t:'블루투스',g:[[{l:'블루투스',sw:false}]],foot:'블루투스가 꺼져 있습니다.'},
- cell:{t:'셀룰러',g:[[{l:'셀룰러 데이터',sw:true},{l:'데이터 로밍',sw:false}],SS('알뜰 요금제 · 3GB 중 2.7GB 사용'),[{l:'지도',v:'0.9GB'},{l:'hoshi',v:'0.8GB'},{l:'LIME',v:'0.6GB'},{l:'음악',v:'0.3GB'},{l:'메시지',v:'0.1GB'}]],foot:'데이터 사용량이 90%에 도달했습니다.'},
- noti:{t:'알림',g:[[{l:'미리보기 표시',v:'잠금 해제 시'}],SS('앱별 알림'),[{l:'새벽은행',v:'즉시, 배너',ic:'#2fbf9b'},{l:'캘린더',v:'즉시, 배너, 소리',ic:'#ff3b30'},{l:'메시지',v:'즉시, 배너',ic:'#34c759'},{l:'LIME',v:'즉시, 배너',ic:'#06c755'},{l:'hoshi',v:'끔',ic:'#ff0033'}]]},
+ cell:{t:'셀룰러',g:[[{l:'셀룰러 데이터',sw:true},{l:'데이터 로밍',sw:false}],SS('알뜰 요금제 · 3GB 중 2.7GB 사용'),[{l:'지도',v:'0.9GB'},{l:'Yaho',v:'0.8GB'},{l:'LIME',v:'0.6GB'},{l:'음악',v:'0.3GB'},{l:'메시지',v:'0.1GB'}]],foot:'데이터 사용량이 90%에 도달했습니다.'},
+ noti:{t:'알림',g:[[{l:'미리보기 표시',v:'잠금 해제 시'}],SS('앱별 알림'),[{l:'새벽은행',v:'즉시, 배너',ic:'#2fbf9b'},{l:'캘린더',v:'즉시, 배너, 소리',ic:'#ff3b30'},{l:'메시지',v:'즉시, 배너',ic:'#34c759'},{l:'LIME',v:'즉시, 배너',ic:'#06c755'},{l:'Yaho',v:'끔',ic:'#ff0033'}]]},
  sound:{t:'사운드 및 햅틱',g:[[{l:'무음 모드',sw:true}],[{l:'벨소리',v:'기본'},{l:'문자 알림음',v:'없음'},{l:'키보드 피드백',v:'끔'}],[{l:'무음 모드에서 진동',sw:true}]]},
  focus:{t:'집중 모드',g:[[{l:'방해금지 모드',v:'끔',ic:'#5856d6'},{l:'수면',v:'22:30–07:30',ic:'#30b0c7'},{l:'업무',v:'18:00–02:00 · 수, 금, 토',ic:'#ff9500'}]],foot:'수면 중에는 쥰에게 오는 메시지만 허용됩니다.'},
  gen:{t:'일반',g:[[{l:'정보',go:'about'},{l:'소프트웨어 업데이트',v:'최신 버전'}],[{l:'저장 공간',v:'128GB 중 30.7GB'},{l:'날짜 및 시간'},{l:'키보드'},{l:'언어 및 지역',v:'한국어'}]]},
@@ -1579,7 +1809,7 @@ const ibSet={wifi:'연결 안 됨',bt:'끔',focus:'수면',pages:{
 
 /* ---- maps ---- */
 /* ---- maps: one shared town, pannable, tappable ---- */
-I.hoshi='<svg width="34" height="34" viewBox="0 0 24 24"><text x="3.6" y="18" font-family="Arial Rounded MT Bold,Arial,sans-serif" font-weight="900" font-size="16" fill="#fff">h</text><path d="M17.4 4.2l1.05 2.15 2.35.33-1.7 1.65.4 2.35-2.1-1.1-2.1 1.1.4-2.35-1.7-1.65 2.35-.33z" fill="#fff"/></svg>';
+I.hoshi='<svg width="34" height="34" viewBox="0 0 24 24"><text x="3.6" y="18" font-family="Arial Rounded MT Bold,Arial,sans-serif" font-weight="900" font-size="16" fill="#fff">Y</text><path d="M17.4 4.2l1.05 2.15 2.35.33-1.7 1.65.4 2.35-2.1-1.1-2.1 1.1.4-2.35-1.7-1.65 2.35-.33z" fill="#fff"/></svg>';
 I.map2='<svg width="26" height="26" viewBox="0 0 24 24"><path d="M3 6l6-2 6 2 6-2v14l-6 2-6-2-6 2z" fill="#fff"/><path d="M9 4v14M15 6v14" stroke="#5aa25a" stroke-width="1.5"/><circle cx="15" cy="10" r="2.4" fill="#ff3b30"/></svg>';
 const XS=[0,160,300,420,560,700,840,1000],YS=[0,140,240,330,460,600,660,760,880,1000];
 const WORLD={
@@ -1769,11 +1999,11 @@ function mkTalk(cfg){
   <section class="tk-pane" data-pane="news" hidden>
    <div class="tk-top"><b>뉴스</b><span class="tk-icons">${TK.search}</span></div>
    <div class="tk-chips"><span class="on">주요</span><span>지역</span><span>연예</span><span>스포츠</span></div>
-   <div class="scroll">${cfg.news.map((n,i)=>`<button type="button" class="tk-nw" data-open="k-article" data-arg="${i}"><span><small>${esc(n.cat)}</small><b>${esc(n.t)}</b><em>${esc(n.src)} · ${n.w}</em></span><span class="tk-nth" style="background:${n.c}"></span></button>`).join('')}</div>
+   <div class="scroll">${cfg.news.map((n,i)=>`<button type="button" class="tk-nw" data-open="k-article" data-arg="${i}"><span><small>${esc(n.cat)}</small><b>${esc(n.t)}</b><em>${esc(n.src)} · ${artWhen(n)}</em></span><span class="tk-nth" style="background:${n.c}"></span></button>`).join('')}</div>
   </section>${tabs}`,
    init:api=>{const v=api.scr.querySelector('[data-app="talk"]');v.querySelectorAll('[data-tab]').forEach(b=>b.onclick=()=>{v.querySelectorAll('[data-tab]').forEach(x=>x.classList.toggle('on',x===b));v.querySelectorAll('.tk-pane').forEach(p=>p.hidden=p.dataset.pane!==b.dataset.tab)})}};
   apps['k-article']={html:`<div class="tk-bar"><button type="button" class="back" data-back="talk">${TK.back}</button><b>뉴스</b></div><div class="scroll tk-art"></div>`,
-   onOpen:(v,arg)=>{const [ix,bk]=String(arg||'0').split('|');const n=cfg.news[+ix||0];const b=v.querySelector('.back');b.dataset.back=bk||'talk';v.querySelector('.tk-art').innerHTML=`<small>${esc(n.cat)}</small><h2>${esc(n.t)}</h2><em>${esc(n.src)} · 2026. 10. 31. ${n.w}</em><div class="tk-aimg" style="background:${n.c}"></div>${n.body.split('\n').map(p=>`<p>${esc(p)}</p>`).join('')}`}};
+   onOpen:(v,arg)=>{const [ix,bk]=String(arg||'0').split('|');const n=cfg.news[+ix||0];const b=v.querySelector('.back');b.dataset.back=bk||'talk';v.querySelector('.tk-art').innerHTML=artHTML(n)}};
   cfg.rooms.forEach(r=>{
     const choice=!!r.tree;
     apps[r.id]={html:`<div class="tk-bar"><button type="button" class="back" data-back="talk">${TK.back}</button><b>${esc(r.n)}${r.c?` <span>(${r.c})</span>`:''}</b><span class="tk-icons">${TK.search}${TK.menu}</span></div>${r.banner?`<div class="tk-banner">${esc(r.banner)}</div>`:''}<div class="tk-thread"></div>${choice?'<div class="tk-choices"></div>':''}${r.noInput?`<div class="tk-input off">${esc(r.noInput)}</div>`:`<div class="tk-input"><span>+</span><div class="tk-field">메시지 입력</div></div>`}`,
@@ -1784,11 +2014,11 @@ function mkTalk(cfg){
        const show=nid=>{
          if(!nid){box.innerHTML='<button type="button" class="tk-end">대화가 끝났어요 · 처음부터 다시</button>';box.querySelector('button').onclick=()=>{arr=[...r.data];draw();show(r.tree.start)};return}
          box.innerHTML='<small>답장 고르기</small>'+r.tree[nid].map((c,i)=>`<button type="button" class="tk-ch" data-i="${i}">${esc(c.me[c.me.length-1])}</button>`).join('');
-         box.querySelectorAll('.tk-ch').forEach(b=>b.onclick=()=>{if(busy)return;busy=true;const c=r.tree[nid][+b.dataset.i];box.innerHTML='';
+         box.querySelectorAll('.tk-ch').forEach(b=>b.onclick=()=>{if(busy)return;busy=true;const c=r.tree[nid][+b.dataset.i];box.innerHTML='';SND.sent();
            c.me.forEach(t=>arr.push({s:'me',time:NOW,text:t}));draw();
            let k=0;const step=()=>{if(k>=c.reply.length){busy=false;show(c.next);return}
              th.insertAdjacentHTML('beforeend',typingRow);th.scrollTop=th.scrollHeight;
-             setTimeout(()=>{arr.push({s:'o',who:r.who,av:r.av,time:NOW,text:c.reply[k++]});draw();setTimeout(step,450)},1000)};
+             setTimeout(()=>{arr.push({s:'o',who:r.who,av:r.av,time:NOW,text:c.reply[k++]});SND.lime();draw();setTimeout(step,450)},1000)};
            setTimeout(step,600)})};
        apps[r.id]._draw=draw;show(r.tree.start)},
      onOpen:v=>{const th=v.querySelector('.tk-thread');if(r.tree){apps[r.id]._draw&&!th.innerHTML&&apps[r.id]._draw()}else if(!th.innerHTML)th.innerHTML=talkThreadHTML(r.data,r.c);th.scrollTop=th.scrollHeight;
@@ -1915,12 +2145,7 @@ const junTalk=mkTalk({
    {day:'2026년 10월 1일 목요일'},O('체육교육과 학생회','10:00','[공지] 2학기 실기 평가 일정 안내\n- 육상: 10/13(화)\n- 구기(배구): 11/6(금)\n자세한 사항은 학과 게시판을 확인해 주세요.',{av:sq('공','linear-gradient(#5aa25a,#3c7f3c)')}),
    {day:'2026년 10월 26일 월요일'},O('체육교육과 학생회','09:00','[공지] 배구 실기 조 편성 확정\n조별 연습은 제2체육관 예약 후 사용 바랍니다.',{av:sq('공','linear-gradient(#5aa25a,#3c7f3c)')})],noInput:'공식계정에는 답장할 수 없습니다'},
  ],
- news:[
-  {cat:'스포츠',t:'현 수영 선수권 개막… 고교부 접영 100m 대회 신기록',src:'켄신스포츠',w:'09:12',c:'linear-gradient(135deg,#1d6aa6,#7cc4e8)',body:'현 수영 선수권 대회가 개막한 가운데, 고교부 남자 접영 100m에서 대회 신기록이 나왔다.\n기존 기록은 4년 전 세워진 것으로, 당시 기록 보유자는 부상으로 국가대표 선발전 결승을 마치지 못한 바 있다.\n대회는 다음 주 일요일까지 시립 수영장에서 열린다.'},
-  {cat:'사회',t:'할로윈 앞둔 역 앞 번화가, 오후 6시부터 일부 도로 통제',src:'오늘의 지역',w:'11:30',c:'linear-gradient(135deg,#ff9f43,#7a3b0f)',body:'할로윈 당일 인파가 몰릴 것에 대비해 역 앞 번화가 일부 도로가 오후 6시부터 통제된다.\n시는 이자카야 밀집 지역에 안전 요원을 배치한다고 밝혔다.'},
-  {cat:'날씨',t:'오늘 해 질 무렵 맑음… “올가을 가장 붉은 노을 예상”',src:'날씨온',w:'14:05',c:'linear-gradient(135deg,#4f437e,#ff7e8f,#ffb36b)',body:'오늘 오후 늦게부터 구름이 걷히면서 해 질 무렵 선명한 노을을 볼 수 있을 것으로 보인다.\n일몰 시각은 오후 4시 50분 전후로 예상되며, 밤부터는 기온이 크게 떨어지겠다.'},
-  {cat:'교육',t:'교원 임용 실기시험, 내년부터 수영 과목 비중 확대',src:'에듀데일리',w:'08:40',c:'linear-gradient(135deg,#5856d6,#a29bfe)',body:'체육 교원 임용 실기시험에서 내년부터 수영 과목의 배점이 확대된다.\n교육청은 학교 수영 교육 강화를 이유로 들었다.'},
- ],
+ news:["swim", "halloween", "sunset", "exam", "light", "pool", "univ", "flu"].map(k=>NEWS[k]),
 });
 
 /* ===== Ibara's rooms ===== */
@@ -1989,12 +2214,7 @@ const ibTalk=mkTalk({
   {id:'k-pool',n:'역 앞 실내 수영장',official:true,av:sq('≈','linear-gradient(#30b0c7,#1d6aa6)'),pv:'11월 회원 등록 시 첫 달 50% 할인',w:'10. 30.',cnt:1,data:poolAds,noInput:'공식계정에는 답장할 수 없습니다'},
   {id:'k-fac',n:'햇살원 친구들',c:6,av:sq(I.group,'linear-gradient(#f2c14e,#e09a3e)'),pv:'감사합니다. 기억하고 있을 줄은 몰랐네요.',w:'2024. 11. 14.',data:facilityGroup},
  ],
- news:[
-  {cat:'경제',t:'내년 최저임금 3.1% 인상… 아르바이트 시급 반영은 4월부터',src:'경제나침반',w:'08:00',c:'linear-gradient(135deg,#2fbf9b,#164a45)',body:'내년도 최저임금이 3.1% 오른다.\n다만 상당수 사업장은 4월 이후에야 시급 인상을 반영할 것으로 보인다.'},
-  {cat:'생활',t:'대학가 원룸 월세 1년 새 9% 올라… “관리비 인상분 전가”',src:'오늘의 지역',w:'10:12',c:'linear-gradient(135deg,#6c6a72,#2c2b2f)',body:'대학가 원룸과 다세대 주택의 월세가 1년 새 평균 9% 올랐다.\n세입자들은 관리비 인상분이 그대로 월세에 반영되고 있다고 호소했다.'},
-  {cat:'건강',t:'“마음의 감기, 혼자 버티지 마세요”… 지역 상담센터 무료 상담 확대',src:'헬스온',w:'13:30',c:'linear-gradient(135deg,#7fd3a0,#3c7f5a)',body:'지역 상담센터들이 청년 대상 무료 상담을 확대한다.\n전문가들은 증상이 가벼울 때 도움을 받는 것이 회복에 중요하다고 조언했다.'},
-  {cat:'날씨',t:'오늘 해 질 무렵 맑음… “올가을 가장 붉은 노을 예상”',src:'날씨온',w:'14:05',c:'linear-gradient(135deg,#4f437e,#ff7e8f,#ffb36b)',body:'오늘 오후 늦게부터 구름이 걷히면서 해 질 무렵 선명한 노을을 볼 수 있을 것으로 보인다.\n일몰 시각은 오후 4시 50분 전후로 예상된다.'},
- ],
+ news:["wage", "rent", "counsel", "sunset", "flu", "coupon", "halloween", "candy"].map(k=>NEWS[k]),
 });
 const junAlarms=alarmsApp([
  {ap:'오전',t:'5:00',n:'훈련 · 매일',on:false},
@@ -2009,52 +2229,59 @@ const junSearches=[
  ['성인 수영 처음 물에 뜨는 법','10. 2.'],['우울증 마음의 감기 뜻','9. 21.'],['딸기맛 캔디 대용량','9. 22.'],
 ];
 /* ---- search portal ("hoshi"), Japanese-portal style ---- */
-const PORTAL_NEWS=[
- {cat:'지역',t:'할로윈 앞둔 역 앞 번화가, 오후 6시부터 일부 도로 통제',src:'오늘의 지역',w:'11:30',cm:128,body:'할로윈 당일 인파가 몰릴 것에 대비해 역 앞 번화가 일부 도로가 오후 6시부터 통제된다.\n시는 이자카야 밀집 지역에 안전 요원을 배치한다고 밝혔다.'},
- {cat:'스포츠',t:'현 수영 선수권 개막… 고교부 접영 100m 대회 신기록',src:'켄신스포츠',w:'09:12',cm:342,body:'현 수영 선수권 대회가 개막한 가운데, 고교부 남자 접영 100m에서 대회 신기록이 나왔다.\n기존 기록은 4년 전 세워진 것으로, 당시 기록 보유자는 부상으로 국가대표 선발전 결승을 마치지 못한 바 있다.'},
- {cat:'날씨',t:'오늘 해 질 무렵 맑음… “올가을 가장 붉은 노을 예상”',src:'날씨온',w:'14:05',cm:57,body:'오늘 오후 늦게부터 구름이 걷히면서 해 질 무렵 선명한 노을을 볼 수 있을 것으로 보인다.\n일몰 시각은 오후 4시 50분 전후로 예상되며, 밤부터는 기온이 크게 떨어지겠다.'},
- {cat:'경제',t:'내년 최저임금 3.1% 인상… 아르바이트 시급 반영은 4월부터',src:'경제나침반',w:'08:00',cm:891,body:'내년도 최저임금이 3.1% 오른다.\n다만 상당수 사업장은 4월 이후에야 시급 인상을 반영할 것으로 보인다.'},
- {cat:'생활',t:'대학가 원룸 월세 1년 새 9% 올라… “관리비 인상분 전가”',src:'오늘의 지역',w:'10:12',cm:204,body:'대학가 원룸과 다세대 주택의 월세가 1년 새 평균 9% 올랐다.\n세입자들은 관리비 인상분이 그대로 월세에 반영되고 있다고 호소했다.'},
- {cat:'건강',t:'“마음의 감기, 혼자 버티지 마세요”… 청년 무료 상담 확대',src:'헬스온',w:'13:30',cm:66,body:'지역 상담센터들이 청년 대상 무료 상담을 확대한다.\n전문가들은 증상이 가벼울 때 도움을 받는 것이 회복에 중요하다고 조언했다.'},
- {cat:'IT',t:'편의점 앱 쿠폰, 도시락 구매 횟수 따라 자동 지급',src:'테크데일리',w:'07:40',cm:19,body:'대형 편의점 체인이 도시락 구매 횟수에 따라 음료 쿠폰을 자동으로 지급하는 서비스를 시작했다.'},
- {cat:'교육',t:'교원 임용 실기시험, 내년부터 수영 과목 비중 확대',src:'에듀데일리',w:'08:40',cm:45,body:'체육 교원 임용 실기시험에서 내년부터 수영 과목의 배점이 확대된다.\n교육청은 학교 수영 교육 강화를 이유로 들었다.'},
-];
+const PORTAL_NEWS=["halloween", "swim", "sunset", "wage", "rent", "counsel", "flu", "candy", "pool", "light", "coupon", "exam", "univ"].map(k=>NEWS[k]);
 const TRENDS=['할로윈 역 앞 통제','현 수영 선수권','노을','딸기맛 캔디 할인','최저임금 3.1%','월세 인상','독감 유행','일몰 시간'];
 const HS={
- logo:'<span class="hs-logo">hoshi<i>★</i></span>',
+ logo:'<span class="hs-logo">Yaho<i>★</i></span>',
  mic:'<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5.5 11a6.5 6.5 0 0 0 13 0M12 17.5V21"/></svg>',
  bell:'<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M6 16V11a6 6 0 0 1 12 0v5l1.5 2h-15z"/><path d="M10 20a2 2 0 0 0 4 0"/></svg>',
  user:'<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="9" r="4"/><path d="M4 20c1.5-4 4.5-5 8-5s6.5 1 8 5"/></svg>',
 };
-const TOOLS=[['날씨','#ff9500','☀'],['노선','#34c759','⇄'],['지도','#30b0c7','⌖','map'],['쇼핑','#ff2d55','◫'],['쿠폰','#ff9f0a','%'],['운세','#af52de','✦'],['메일','#0a84ff','✉'],['더보기','#8e8e93','⋯']];
+const TOOLS=[['날씨','#ff9500','☀','weather'],['노선','#34c759','⇄'],['지도','#30b0c7','⌖','map'],['쇼핑','#ff2d55','◫','shop'],['쿠폰','#ff9f0a','%'],['운세','#af52de','✦'],['메일','#0a84ff','✉'],['더보기','#8e8e93','⋯']];
+
+function runSearch(v,q){
+  const box=v.querySelector('.sq'),hist=v.querySelector('.hs-hist'),res=v.querySelector('.hs-res');
+  box.textContent=q||'검색어를 입력하세요';box.classList.toggle('on',!!q);hist.hidden=!!q;res.hidden=!q;v.querySelector('.scroll').scrollTop=0;if(!q)return;
+  const toks=q.split(/\s+/).map(t=>t.replace(/(으로|에서|하는|하면|이란|은|는|이|가|을|를|의|법|뜻)$/,'')).filter(t=>t.length>=2);
+  const score=str=>toks.reduce((a,t)=>a+(str.includes(t)?1:0),0);
+  const prods=PRODUCTS.map(p=>[p,score(p.n+' '+p.k)]).filter(x=>x[1]).sort((a,b)=>b[1]-a[1]).slice(0,4).map(x=>x[0]);
+  const news=PORTAL_NEWS.map((n,i)=>[i,score(n.t+' '+n.body.slice(0,200))]).filter(x=>x[1]).sort((a,b)=>b[1]-a[1]).slice(0,3);
+  let h=`<div class="hs-rtabs"><b>전체</b><span>이미지</span><span>뉴스</span><span>쇼핑</span><span>지도</span></div>`;
+  if(prods.length)h+=`<div class="hs-rsec"><div class="hs-sec"><b>쇼핑</b><small>달콤상점 외</small></div><div class="sp-row">${prods.map(p=>pcard(p,'srch-q')).join('')}</div></div>`;
+  if(news.length)h+=`<div class="hs-rsec"><div class="hs-sec"><b>뉴스</b></div>${news.map(([i])=>`<button type="button" class="hs-nw" data-open="srch-art" data-arg="${i}"><span class="hs-cat">${PORTAL_NEWS[i].cat}</span><span class="hs-t">${esc(PORTAL_NEWS[i].t)}</span><span class="hs-cm">${esc(PORTAL_NEWS[i].src)}</span></button>`).join('')}</div>`;
+  if(!prods.length&&!news.length)h+=`<p class="hs-none">‘${esc(q)}’에 대한 검색 결과가 없습니다.<br><small>네트워크 연결이 불안정해 일부 결과를 불러오지 못했어요.</small></p>`;
+  res.innerHTML=h;
+}
 function mkSearch(list){
   const srow=([q,d])=>`<button type="button" class="srow" data-q="${esc(q)}"><span class="s-i">${I.hist}</span><span class="s-q">${q}</span><span class="s-d">${d}</span></button>`;
   return {
   search:{html:`<div class="hs-top">${HS.logo}<span class="hs-icons"><button type="button" data-toast="새 알림이 없습니다">${HS.bell}</button><button type="button" data-toast="권한이 없습니다">${HS.user}</button></span></div>
    <button type="button" class="hs-box" data-open="srch-q">${I.search.replace('#fff','currentColor')}<span>검색어를 입력하세요</span>${HS.mic}</button>
    <div class="scroll hs-body">
-    <div class="hs-wx"><div class="hs-wxl"><span class="hs-sun"></span><span><b>19°</b><small>/ 11°</small></span></div><div class="hs-wxr"><b>사쿠라다이 · 맑음</b><small>강수 10% · 해 질 무렵 16:50</small></div></div>
+    <button type="button" class="hs-wx" data-open="weather"><div class="hs-wxl"><span class="hs-sun"></span><span><b>19°</b><small>/ 11°</small></span></div><div class="hs-wxr"><b>사쿠라다이 · 맑음</b><small>강수 10% · 해 질 무렵 16:50</small></div></button>
     <div class="hs-tools">${TOOLS.map(([l,c,g,o])=>`<button type="button" ${o?`data-open="${o}"`:'data-toast="권한이 없습니다"'}><span style="background:${c}">${g}</span>${l}</button>`).join('')}</div>
     <div class="hs-card"><div class="hs-sec"><b>주요 뉴스</b><small>16:35 업데이트</small></div>
      ${PORTAL_NEWS.map((n,i)=>`<button type="button" class="hs-nw" data-open="srch-art" data-arg="${i}"><span class="hs-cat">${n.cat}</span><span class="hs-t">${esc(n.t)}${i<2?'<em>NEW</em>':''}</span><span class="hs-cm">댓글 ${n.cm}</span></button>`).join('')}</div>
+    <div class="hs-card"><div class="hs-sec"><b>Yaho! 쇼핑 · 오늘의 특가</b><small>달콤상점</small></div>
+     <div class="sp-row hs-shop">${['straw300','pumpkin','lemon','straw100'].map(id=>pcard(PRD[id],'search')).join('')}</div></div>
     <div class="hs-card"><div class="hs-sec"><b>실시간 검색</b><small>16:35 기준</small></div>
      <div class="hs-rank">${TRENDS.map((t,i)=>`<button type="button" data-open="srch-q" data-arg="${esc(t)}"><b>${i+1}</b>${esc(t)}</button>`).join('')}</div></div>
-    <p class="hs-foot">hoshi · 이용약관 · 개인정보 처리방침</p>
+    <p class="hs-foot">Yaho · 이용약관 · 개인정보 처리방침</p>
    </div>
    <nav class="hs-tabs"><button type="button" class="on">${I.search.replace('#fff','currentColor')}홈</button><button type="button" data-toast="권한이 없습니다"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="4" y="4" width="7" height="7" rx="2"/><rect x="13" y="4" width="7" height="7" rx="2"/><rect x="4" y="13" width="7" height="7" rx="2"/><rect x="13" y="13" width="7" height="7" rx="2"/></svg>도구</button><button type="button" data-toast="새 알림이 없습니다">${HS.bell}알림</button><button type="button" data-toast="권한이 없습니다">${HS.user}내 정보</button></nav>`},
   'srch-q':{html:`<div class="hs-qbar"><div class="hs-field">${I.search.replace('#fff','currentColor')}<span class="sq">검색어를 입력하세요</span><i class="caret"></i></div><button type="button" class="hs-cancel" data-back="search">취소</button></div>
-   <div class="scroll"><div class="s-h"><b>검색 기록</b><span>전체 삭제</span></div>${list.map(srow).join('')}</div>`,
-   init:api=>{const v=api.scr.querySelector('[data-app="srch-q"]'),box=v.querySelector('.sq');v.querySelectorAll('.srow').forEach(b=>b.onclick=()=>{box.textContent=b.dataset.q;box.classList.add('on')})},
-   onOpen:(v,arg)=>{const box=v.querySelector('.sq');if(arg&&arg!=='calls'){box.textContent=arg;box.classList.add('on')}else{box.textContent='검색어를 입력하세요';box.classList.remove('on')}}},
-  'srch-art':{html:`<div class="bar"><button type="button" class="back keep" data-back="search">${I.back}hoshi</button></div><div class="scroll tk-art hs-art"></div>`,
-   onOpen:(v,arg)=>{const n=PORTAL_NEWS[+arg||0];v.querySelector('.hs-art').innerHTML=`<small>${esc(n.cat)}</small><h2>${esc(n.t)}</h2><em>${esc(n.src)} · 2026. 10. 31. ${n.w} · 댓글 ${n.cm}</em>${n.body.split('\n').map(p=>`<p>${esc(p)}</p>`).join('')}`}},
+   <div class="scroll"><div class="hs-hist"><div class="s-h"><b>검색 기록</b><span>전체 삭제</span></div>${list.map(srow).join('')}</div><div class="hs-res" hidden></div></div>`,
+   init:api=>{const v=api.scr.querySelector('[data-app="srch-q"]');v.querySelectorAll('.srow').forEach(b=>b.onclick=()=>runSearch(v,b.dataset.q))},
+   onOpen:(v,arg)=>{if(v._keep){v._keep=false;return}if(arg&&arg!=='calls')runSearch(v,arg);else runSearch(v,'')}},
+  'srch-art':{html:`<div class="bar"><button type="button" class="back keep" data-back="search">${I.back}Yaho</button></div><div class="scroll tk-art hs-art"></div>`,
+   onOpen:(v,arg)=>{const ix=+arg||0,n=PORTAL_NEWS[ix];const rel=[1,2,3].map(d=>(ix+d)%PORTAL_NEWS.length);v.querySelector('.hs-art').innerHTML=artHTML(n,` · 댓글 ${n.cm}`)+`<div class="hs-rel"><b>함께 많이 본 뉴스</b>${rel.map(r=>`<button type="button" data-open="srch-art" data-arg="${r}"><span class="hs-cat">${esc(PORTAL_NEWS[r].cat)}</span>${esc(PORTAL_NEWS[r].t)}</button>`).join('')}</div>`;v.querySelector('.hs-art').scrollTop=0}},
   };
 }
 
 const searchApp=mkSearch(junSearches);
 const junContacts=[
  {n:'과대표 나카무라',ph:'090-4127-3390'},{n:'모리',ph:'080-2251-7714'},{n:'아빠',ph:'090-8812-0402'},
- {n:'이바라',ph:'090-3107-1218',memo:'편의점 도시락 금지시킬 것\n수영 다시 가기 (공짜일 때만 온다고 함)',log:[['9월 21일 20:05',"'사에구사 씨'로 저장"],['10월 3일 20:41',"이름 변경 · '사에구사 씨' → '이바라'"],['10월 17일 06:12','메모 추가']]},
+ {n:'이바라',ph:'080-2005-1114',memo:'편의점 도시락 금지시킬 것\n수영 다시 가기 (공짜일 때만 온다고 함)',log:[['9월 21일 20:05',"'사에구사 씨'로 저장"],['10월 3일 20:41',"이름 변경 · '사에구사 씨' → '이바라'"],['10월 17일 06:12','메모 추가']]},
  {n:'이토',ph:'090-6630-5148'},{n:'코모레비 상담소',ph:'03-5521-0480'},{n:'하야시',ph:'080-9904-2276'},
 ];
 const mkContacts=(list,meName,meAv,me={})=>({
@@ -2062,7 +2289,90 @@ const mkContacts=(list,meName,meAv,me={})=>({
  contact:{html:`<div class="bar"><button type="button" class="back" data-back="contacts">${I.back}연락처</button></div><div class="scroll ccard"></div>`,
   onOpen:(v,arg)=>{const c=arg==='me'?{n:meName,av:meAv,...me}:list[+arg||0];v.querySelector('.ccard').innerHTML=`<div class="c-top"><span class="av">${c.av||initialAv(c.n)}</span><h2>${c.n}</h2></div><div class="c-box"><small>휴대전화</small><span>${c.ph}</span></div>${c.bd?`<div class="c-box"><small>생일</small><span>${c.bd}</span></div>`:''}${c.rel?`<div class="c-box"><small>관계</small>${c.rel.map(([r,n])=>`<div class="c-log"><em>${r}</em>${n}</div>`).join('')}</div>`:''}${c.memo?`<div class="c-box"><small>메모</small><span style="white-space:pre-line">${esc(c.memo)}</span></div>`:''}${c.log?`<div class="c-box"><small>편집 기록</small>${c.log.map(([w,t])=>`<div class="c-log"><em>${w}</em>${t}</div>`).join('')}</div>`:''}`}},
 });
-const contactApps=mkContacts(junContacts,'사자나미 쥰',junAvatar,{ph:'080-2207-1129',bd:'2005년 8월 16일',rel:[['어머니','엄마'],['아버지','아빠']]});
+const contactApps=mkContacts(junContacts,'사자나미 쥰',junAvatar,{ph:'080-2005-0816',bd:'2005년 8월 16일',rel:[['어머니','엄마'],['아버지','아빠']]});
+
+/* ---- keypad + outgoing calls ---- */
+
+/* phone sounds, synthesized with Web Audio (no files) */
+const SND=(()=>{let ac=null;const ctx=()=>{try{ac=ac||new (window.AudioContext||window.webkitAudioContext)();if(ac.state==='suspended')ac.resume()}catch(e){ac=null}return ac};
+  const beep=(fs,t0,dur,vol=.12)=>{const a=ctx();if(!a)return;const g=a.createGain();g.gain.setValueAtTime(0,a.currentTime+t0);g.gain.linearRampToValueAtTime(vol,a.currentTime+t0+.015);g.gain.setValueAtTime(vol,a.currentTime+t0+dur-.02);g.gain.linearRampToValueAtTime(0,a.currentTime+t0+dur);g.connect(a.destination);
+    fs.forEach(f=>{const o=a.createOscillator();o.type='sine';o.frequency.value=f;o.connect(g);o.start(a.currentTime+t0);o.stop(a.currentTime+t0+dur+.02)})};
+  const DT={1:[697,1209],2:[697,1336],3:[697,1477],4:[770,1209],5:[770,1336],6:[770,1477],7:[852,1209],8:[852,1336],9:[852,1477],'*':[941,1209],0:[941,1336],'#':[941,1477]};
+  return {
+    key:k=>beep(DT[k]||[941,1336],0,.13,.09),
+    ring:()=>{let on=true,tm=null;const loop=()=>{if(!on)return;beep([440,480],0,1,.1);tm=setTimeout(loop,3000)};tm=setTimeout(loop,350);return ()=>{on=false;clearTimeout(tm)}},
+    hang:()=>{[0,.5,1].forEach(t=>beep([480,620],t,.25,.11))},
+    sit:()=>{[[950,0],[1400,.33],[1800,.66]].forEach(([f,t])=>beep([f],t,.3,.08))},
+    click:()=>beep([1200],0,.05,.06),
+    msgIn:()=>{beep([1175],0,.14,.1);beep([1568],.13,.32,.09)},
+    lime:()=>{const a=ctx();if(!a)return;const o=a.createOscillator(),g=a.createGain(),t=a.currentTime;o.type='triangle';o.frequency.setValueAtTime(620,t);o.frequency.exponentialRampToValueAtTime(980,t+.09);g.gain.setValueAtTime(0,t);g.gain.linearRampToValueAtTime(.13,t+.01);g.gain.exponentialRampToValueAtTime(.001,t+.18);o.connect(g);g.connect(a.destination);o.start(t);o.stop(t+.2)},
+    sent:()=>{const a=ctx();if(!a)return;const t=a.currentTime,len=.32,buf=a.createBuffer(1,a.sampleRate*len,a.sampleRate),d=buf.getChannelData(0);for(let i=0;i<d.length;i++)d[i]=Math.random()*2-1;
+      const src=a.createBufferSource(),f=a.createBiquadFilter(),g=a.createGain();src.buffer=buf;f.type='bandpass';f.Q.value=1.4;f.frequency.setValueAtTime(700,t);f.frequency.exponentialRampToValueAtTime(3800,t+len);
+      g.gain.setValueAtTime(0,t);g.gain.linearRampToValueAtTime(.16,t+.08);g.gain.exponentialRampToValueAtTime(.001,t+len);src.connect(f);f.connect(g);g.connect(a.destination);src.start(t)},
+    tap:()=>{const a=ctx();if(!a)return;const t=a.currentTime,buf=a.createBuffer(1,a.sampleRate*.03,a.sampleRate),d=buf.getChannelData(0);for(let i=0;i<d.length;i++)d[i]=(Math.random()*2-1)*(1-i/d.length);
+      const src=a.createBufferSource(),f=a.createBiquadFilter(),g=a.createGain();src.buffer=buf;f.type='highpass';f.frequency.value=1800;g.gain.value=.18;src.connect(f);f.connect(g);g.connect(a.destination);src.start(t)},
+    tick:()=>beep([1800],0,.025,.05),
+    unlock:()=>{beep([1500],0,.03,.06);beep([2100],.06,.035,.05)},
+    err:()=>{const a=ctx();if(!a)return;[0,.17].forEach(dt=>{const o=a.createOscillator(),g=a.createGain(),t=a.currentTime+dt;o.type='square';o.frequency.value=150;g.gain.setValueAtTime(.05,t);g.gain.exponentialRampToValueAtTime(.001,t+.13);o.connect(g);g.connect(a.destination);o.start(t);o.stop(t+.14)})},
+  }})();
+document.addEventListener('click',e=>{if(e.target.closest('.sw,[data-cc]'))SND.tick()},true);
+const KPL=['','ABC','DEF','GHI','JKL','MNO','PQRS','TUV','WXYZ'];
+const digitsOf=ph=>String(ph||'').replace(/\D/g,'');
+const fmtNum=d=>/^0[789]0/.test(d)?[d.slice(0,3),d.slice(3,7),d.slice(7)].filter(Boolean).join('-'):/^0/.test(d)?(d.length>=9?[d.slice(0,2),d.slice(2,6),d.slice(6)].join('-'):d):d.length>4&&d.length<=8?d.slice(0,4)+'-'+d.slice(4):d;
+const keypadApp=()=>`<div class="kp"><div class="kp-num"></div><button type="button" class="kp-match" hidden></button><div class="kp-grid">${['1','2','3','4','5','6','7','8','9','*','0','#'].map(k=>`<button type="button" class="kp-k" data-kp="${k}"><b>${k}</b><small>${k==='0'?'+':(k>='2'&&k<='9')?KPL[+k-1]:'&nbsp;'}</small></button>`).join('')}<span></span><button type="button" class="kp-call" aria-label="통화">${I.phone}</button><button type="button" class="kp-del" aria-label="지우기" hidden><svg width="30" height="22" viewBox="0 0 30 22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="M9 2h18a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H9L1 11z"/><path d="M14 7l8 8M22 7l-8 8" stroke-linecap="round"/></svg></button></div></div>${callTabs('keypad')}`;
+const CALL_REPLY={
+  jun:['바로 옆에 계시면서 전화는 왜 하십니까.','...또 왜 그러십니까. 할 말 있으면 그냥 하세요.','휴대전화 말고 옆을 보세요.'],
+  ibara:['바로 옆에 있는데 왜 전화해요? ㅋㅋ','또요? 할 말 있으면 그냥 말해요~','고개만 돌리면 되는데요 ㅋㅋ'],
+};
+const callCount={jun:0,ibara:0};
+function msgBanner(ph,openId,from,text){
+  SND.msgIn();
+  if(ph.locked){ph.lockNotify(lnoti({open:openId,app:'메시지',w:'지금',t:from,b:text,bg:'linear-gradient(#6fdc8c,#30b356)',icon:I.msg}));return}
+  const n=document.createElement('button');n.type='button';n.className='noti';n.setAttribute('aria-label',from+' 메시지 열기');
+  n.innerHTML=`<span class="ic" style="background:linear-gradient(#6fdc8c,#30b356)">${I.msg}</span><span class="ntx"><b>${esc(from)}<small>지금</small></b>${esc(text)}</span>`;
+  n.onclick=e=>{e.stopPropagation();n.remove();const r=ph.scr.querySelector(`.row-btn[data-open="${openId}"] .udot`);if(r)r.innerHTML='';ph.open(openId)};
+  ph.scr.appendChild(n);requestAnimationFrame(()=>requestAnimationFrame(()=>n.classList.add('on')));
+  setTimeout(()=>{n.classList.remove('on');setTimeout(()=>n.remove(),500)},5000);
+}
+function partnerReply(callerKey){
+  const isJun=callerKey==='jun',list=CALL_REPLY[callerKey],text=list[callCount[callerKey]++%list.length];
+  junIbara.push({s:isJun?'i':'j',time:'16:35',text});
+  const jt=jun.scr.querySelector('[data-app="t-ibara"] .thread');if(jt&&jt.innerHTML){jt.innerHTML=threadHTML(junIbara,s=>s==='j','이바라',blankAvatar('#c9c3d1'));jt.scrollTop=jt.scrollHeight}
+  const it=ibara.scr.querySelector('[data-app="t-jun"] .thread');if(it&&it.innerHTML){it.innerHTML=threadHTML(junIbara,s=>s==='i','쥰',junAvatar,'jun');it.scrollTop=it.scrollHeight}
+  const setRow=(ph,id,unread)=>{const r=ph.scr.querySelector(`.row-btn[data-open="${id}"]`);if(!r)return;r.querySelector('.pv').textContent=text;r.querySelector('.rt').firstChild.textContent='오후 4:35';if(unread){r.querySelector('.udot').innerHTML='<i class="cnt"></i>';r.dataset.cnt=1;ph.paintBadges&&ph.paintBadges()}};
+  if(isJun){setRow(jun,'t-ibara',true);setRow(ibara,'t-ibara')}else{setRow(ibara,'t-jun',true);setRow(jun,'t-ibara')}
+  msgBanner(isJun?jun:ibara,isJun?'t-ibara':'t-jun',isJun?'이바라':'쥰',text);
+}
+function initKeypad(api,list,callsData){
+  const v=api.scr.querySelector('[data-app="keypad"]'),num=v.querySelector('.kp-num'),match=v.querySelector('.kp-match'),del=v.querySelector('.kp-del');
+  let d='';
+  const paint=()=>{num.textContent=fmtNum(d);num.classList.toggle('long',d.length>=10);del.hidden=!d;
+    const hits=d.length>=2?list.filter(c=>digitsOf(c.ph).includes(d)).sort((a,b)=>digitsOf(b.ph).startsWith(d)-digitsOf(a.ph).startsWith(d)):[];
+    match.hidden=!hits.length;if(hits.length){const c=hits[0];match.dataset.ph=digitsOf(c.ph);match.innerHTML=`<b>${esc(c.n)}</b> ${fmtNum(digitsOf(c.ph))}${hits.length>1?` <small>외 ${hits.length-1}명</small>`:''}`}};
+  v.querySelectorAll('[data-kp]').forEach(b=>b.onclick=()=>{SND.key(b.dataset.kp);if(d.length<15){d+=b.dataset.kp;paint()}});
+  del.onclick=()=>{d=d.slice(0,-1);paint()};
+  match.onclick=()=>{d=match.dataset.ph;paint()};
+  v.querySelector('.kp-call').onclick=()=>{if(!d)return;const c=list.find(x=>digitsOf(x.ph)===d);placeCall(api,c,d,callsData)};
+  api._kpReset=()=>{d='';paint()};paint();
+}
+function placeCall(api,c,d,callsData){
+  const partner=api.key==='jun'?'이바라':'쥰',isPartner=c&&c.n===partner,sc=api.scr;
+  const ov=document.createElement('div');ov.className='callscr';
+  ov.innerHTML=`<div class="cs-top"><small>${c?'휴대전화':''}</small><h2>${esc(c?c.n:fmtNum(d))}</h2><p class="cs-st">발신 중…</p></div><div class="cs-grid">${['소리 끔','키패드','스피커','통화 추가','FaceTime','연락처'].map(l=>`<span><i></i>${l}</span>`).join('')}</div><button type="button" class="cs-end" aria-label="통화 종료">${I.phone}</button>`;
+  sc.appendChild(ov);requestAnimationFrame(()=>ov.classList.add('on'));
+  const st=ov.querySelector('.cs-st'),T=[];let done=false;let stopRing=c?SND.ring():()=>{};const end=()=>{stopRing();stopRing=()=>{};SND.hang()};
+  const close=(delay)=>{T.push(setTimeout(()=>{ov.classList.remove('on');setTimeout(()=>ov.remove(),300)},delay))};
+  const log=(sub)=>{if(!c)return;callsData.unshift({n:c.n,t:'out',sub:'휴대전화 · '+sub,w:'16:35'});const box=sc.querySelector('[data-app="calls"] .calls');if(box)box.innerHTML=callsHTML(callsData)};
+  ov.querySelector('.cs-end').onclick=()=>{if(done)return;done=true;T.forEach(clearTimeout);stopRing();SND.click();st.textContent='통화 종료';log('취소됨');close(500)};
+  if(!c){T.push(setTimeout(()=>{done=true;SND.sit();st.textContent='없는 번호입니다';T.push(setTimeout(()=>SND.hang(),1100));close(2400)},1300));return}
+  if(isPartner){
+    T.push(setTimeout(()=>{st.textContent='연결 중…'},1600));
+    T.push(setTimeout(()=>{done=true;end();st.textContent='상대방이 통화를 거절했습니다';log('연결 안 됨');close(1700)},4400));
+    T.push(setTimeout(()=>partnerReply(api.key),6800));
+  }else{
+    T.push(setTimeout(()=>{done=true;end();st.textContent='응답 없음';log('응답 없음');close(1700)},9500));
+  }
+}
 
 /* ================= JUN ================= */
 const timetable=[
@@ -2100,11 +2410,11 @@ const JCAL=(()=>{const k=mkCal(),{add,range}=k;
   add(9,21,{t:'첫 상담',n:'코모레비 상담소',tm:'13:00',c:JC.counsel});
   add(9,28,{t:'상담',n:'코모레비 상담소',tm:'13:00',c:JC.counsel});
   k.all['2026-10']=junEvents;
+  add(10,13,{t:'육상 실기 평가',n:'대운동장',tm:'13:00',c:JC.exam});
   range(10,19,23,{t:'중간고사',n:'2학기',tm:'하루 종일',c:JC.exam});
   add(11,2,{t:'상담',n:'코모레비 상담소',tm:'13:00',c:JC.counsel});
-  add(11,6,{t:'배구 실기 조 연습',n:'제2체육관 · 3조',tm:'15:00',c:JC.school});
+  add(11,6,{t:'구기 실기 평가 (배구)',n:'제2체육관 · 3조',tm:'15:00',c:JC.exam});
   add(11,20,{t:'학과 체육대회',n:'대운동장',tm:'10:00',c:JC.party});
-  add(12,11,{t:'구기 실기 시험 (배구)',n:'제2체육관',tm:'15:00',c:JC.exam});
   range(12,14,18,{t:'기말고사',n:'2학기',tm:'하루 종일',c:JC.exam});
   add(12,18,{t:'종강총회',n:'학과 · 장소 미정',tm:'19:00',c:JC.party});
   add(12,21,{t:'겨울방학 시작',n:'',tm:'하루 종일',c:JC.hol});
@@ -2137,7 +2447,7 @@ const junHome=`<div class="pages">
       ${icon('cal','캘린더','#fff',`<span style="display:flex;flex-direction:column;align-items:center;line-height:1"><small style="color:#ff3b30;font-size:9px;font-weight:700">토요일</small><b style="font-size:24px;color:#1d1a1f;font-weight:500">31</b></span>`)}
       ${icon('clock','시계','linear-gradient(#3b3a40,#151417)',I.clock)}
       ${icon('contacts','연락처','linear-gradient(#b9b5bd,#8d8892)',I.contacts)}
-      ${icon('search','hoshi','linear-gradient(#ff2a4d,#e60033)',I.hoshi)}
+      ${icon('search','Yaho','linear-gradient(#ff2a4d,#e60033)',I.hoshi)}
       ${icon('weather','날씨','linear-gradient(#4aa3ff,#7cc0ff)',I.weather)}
       ${icon('notes','메모','linear-gradient(#fff3b0,#ffe066)',I.note)}
       ${icon('health','건강','#fff',I.heart)}
@@ -2170,7 +2480,8 @@ const jun=makePhone({key:'jun',code:'0816',cls:'p-jun',time:'16:35',batt:'8',lab
   't-dad':{html:threadApp('아빠','msgs'),onOpen:v=>{const t=v.querySelector('.thread');if(!t.innerHTML)t.innerHTML=threadHTML(junDad,s=>s==='j','아빠',blankAvatar('#b8b2bc'));t.scrollTop=t.scrollHeight}},
   't-center':{html:threadApp('코모레비 상담소','msgs'),onOpen:v=>{const t=v.querySelector('.thread');if(!t.innerHTML)t.innerHTML=threadHTML(junCenter,s=>s==='j','코모레비 상담소',blankAvatar('#a5c9b5'));t.scrollTop=t.scrollHeight}},
   calls:{html:callsApp(),init:a=>initCalls(a,junCalls)},
-  ...junPhotos,...junAlarms,...searchApp,...contactApps,...junTalk,...junNoteApps,...healthApp,...shopApp,...junMusic,
+  keypad:{html:keypadApp(),init:a=>initKeypad(a,junContacts,junCalls)},
+  ...junPhotos,...junAlarms,...searchApp,...contactApps,...junTalk,...junNoteApps,...healthApp,...junShop,...weatherApp(),...junMusic,
   ...mkFavs([{n:'이바라'},{n:'아빠'}]),
   ...mkVM([{n:'아빠',w:'오늘',sub:'휴대전화',len:'0:42',unread:true,tx:'쥰아. 아빠다. ……오늘 엄마한테 다녀왔다. 꽃은 네 몫까지 사서 놓고 왔어. 다리는 괜찮냐. 바쁘면 안 와도 된다. 그래도 밥은 챙겨 먹고. ……그래. 끊는다.'}]),
   ...mkSettings('사자나미 쥰',junAvatar,junSet,{avgLabel:'일일 평균 · 이번 주',avg:'5시간 31분',delta:'지난주 대비 ↑ 24%',up:true,
@@ -2194,6 +2505,7 @@ const jun=makePhone({key:'jun',code:'0816',cls:'p-jun',time:'16:35',batt:'8',lab
   window.addEventListener('pointerup',e=>{if(x0===null)return;const dx=e.clientX-x0;x0=null;if(Math.abs(dx)>40){const i=Math.round(pg.scrollLeft/pg.clientWidth);go(Math.max(0,Math.min(1,i+(dx<0?1:-1))))}});
   pg.addEventListener('click',e=>{if(moved){e.stopPropagation();e.preventDefault();moved=false}},true);
 })();
+
 
 function initCalls(api,data){
   const v=api.scr.querySelector('[data-app="calls"]'),box=v.querySelector('.calls');
@@ -2286,7 +2598,7 @@ const ibWidget=`<button type="button" class="wid" data-open="cal" aria-label="�
   <div class="wev">${ibEvents[31].map(e=>`<div><i style="background:${e.c}"></i>${e.t}<small>${e.tm}</small></div>`).join('')}</div>
 </button>`;
 const FOLD_TALK=[['talk','LIME',TALKBG,I.talk,'<span class="badge">4</span>'],['contacts','연락처','linear-gradient(#b9b5bd,#8d8892)',I.contacts]];
-const FOLD_LIFE=[['bank','새벽은행','linear-gradient(#4fe0bb,#2fbf9b)',I.bank,'<span class="badge" data-badge>1</span>'],['map','지도','linear-gradient(#7ed7a0,#3fae6a)',I.map2],['search','hoshi','linear-gradient(#ff2a4d,#e60033)',I.hoshi]];
+const FOLD_LIFE=[['bank','새벽은행','linear-gradient(#4fe0bb,#2fbf9b)',I.bank,'<span class="badge" data-badge>1</span>'],['map','지도','linear-gradient(#7ed7a0,#3fae6a)',I.map2],['search','Yaho','linear-gradient(#ff2a4d,#e60033)',I.hoshi],['weather','날씨','linear-gradient(#4aa3ff,#7cc0ff)',I.weather],['shop','쇼핑','linear-gradient(#ffb340,#ff8a00)',I.bag]];
 const FOLD_TOOL=[['clock','시계','linear-gradient(#3b3a40,#151417)',I.clock],['cam','카메라','linear-gradient(#8a8890,#5f5d64)',I.cam],['set','설정','linear-gradient(#9a98a0,#6c6a72)',I.gear]];
 const folder=(id,name,items)=>`<button type="button" class="app folder" data-folder="${id}" aria-label="${name} 폴더 열기"><span class="ic fic">${items.slice(0,9).map(it=>`<span class="fmini" style="background:${it[2]}">${it[3]}</span>`).join('')}</span><span class="t">${name}</span><span class="badge fbadge" hidden></span></button>`;
 const folderOverlay=(id,name,items)=>`<div class="fold-ov" data-fold="${id}" hidden><div class="fold-box"><b class="fold-name">${name}</b><div class="fold-grid">${items.map(it=>icon(...it)).join('')}</div></div></div>`;
@@ -2309,6 +2621,11 @@ ${folderOverlay('f-talk','연락',FOLD_TALK)}${folderOverlay('f-life','생활',F
   ${icon('photos','사진','#fff',I.photo)}
 </div>
 <button type="button" class="noti" data-open="bank" data-arg="flash" aria-label="새벽은행 출금 알림 열기"><span class="ic" style="background:linear-gradient(#4fe0bb,#2fbf9b)">${I.bank}</span><span class="ntx"><b>새벽은행<small>지금</small></b>[출금] ${yen(1980)} 달콤상점<br><span style="opacity:.7">잔액 ${yen(END)}</span></span></button>`;
+const ibContacts=[
+   {n:'물류센터 담당',ph:'03-6812-4470'},{n:'병원',ph:'03-5590-2213'},{n:'사장님',ph:'090-2718-6630'},
+   {n:'쥰',av:junAvatar,ph:'080-2005-0816',memo:'딸기 사탕\n접영 지역 기록 보유 (본인 주장, 확인함)\n집 반대 방향',log:[['9월 21일 19:58',"'사자나미'로 저장"],['10월 3일 20:44',"이름 변경 · '사자나미' → '쥰'"],['10월 4일 13:10','메모 추가'],['10월 31일 16:30','메모 수정']]},
+   {n:'집주인',ph:'090-5531-0877'},{n:'코모레비 상담소',ph:'03-5521-0480'},
+  ];
 const ibara=makePhone({key:'ibara',code:'1114',lock:[{open:'k-teacher',app:'LIME',w:'15:44',t:'미즈노 선생님',b:'그리고 요즘은 어떻게 지내? 소식 들은 지 오래됐다.',bg:TALKBG,icon:I.talk}],cls:'p-ibara',time:'16:35',batt:'5',label:'이바라의 폰',homeHTML:ibHome,onHome:a=>{const n=a.scr.querySelector('.noti');if(n)n.classList.remove('on');a.paintFolders&&a.paintFolders()},apps:{
   msgs:{html:listApp(
     chatRow({open:'t-jun',av:junAvatar,n:'쥰',pv:'저 지금 옥상이에요',w:'15:20'})+
@@ -2320,17 +2637,14 @@ const ibara=makePhone({key:'ibara',code:'1114',lock:[{open:'k-teacher',app:'LIME
   't-land':{html:threadApp('집주인','msgs'),onOpen:v=>{const t=v.querySelector('.thread');if(!t.innerHTML)t.innerHTML=threadHTML(ibaraLandlord,s=>s==='me','집주인',blankAvatar('#55545a'))}},
   't-center':{html:threadApp('코모레비 상담소','msgs'),onOpen:v=>{const t=v.querySelector('.thread');if(!t.innerHTML)t.innerHTML=threadHTML(ibCenter,s=>s==='me','코모레비 상담소',blankAvatar('#3f5a52'));t.scrollTop=t.scrollHeight}},
   calls:{html:callsApp(),init:a=>initCalls(a,ibCalls)},
+  keypad:{html:keypadApp(),init:a=>initKeypad(a,ibContacts,ibCalls)},
   ...ibPhotos,...ibAlarms,...notesApps(ibNotes),...mkSearch([
    ['고백 대답 미루면 실례인가','10. 31.'],['딸기맛 캔디 대용량 재주문','10. 31.'],['할로윈 유래','10. 31.'],
    ['상대 생일 자연스럽게 묻는 법','10. 21.'],['숙취 빨리 깨는 법','10. 17.'],
    ['체육교육학과 졸업 후 진로','10. 5.'],['접영 지역 기록 사자나미','10. 4.'],['수영 힘 빼는 법 성인','10. 4.'],
    ['우울증 마음의 감기 뜻','9. 21.'],['코모레비 상담소 위치','9. 21.'],['집세 인상 통보 기간','9. 18.'],
-  ]),...mkContacts([
-   {n:'물류센터 담당',ph:'03-6812-4470'},{n:'병원',ph:'03-5590-2213'},{n:'사장님',ph:'090-2718-6630'},
-   {n:'쥰',av:junAvatar,ph:'080-2207-1129',memo:'딸기 사탕\n접영 지역 기록 보유 (본인 주장, 확인함)\n집 반대 방향',log:[['9월 21일 19:58',"'사자나미'로 저장"],['10월 3일 20:44',"이름 변경 · '사자나미' → '쥰'"],['10월 4일 13:10','메모 추가'],['10월 31일 16:30','메모 수정']]},
-   {n:'집주인',ph:'090-5531-0877'},{n:'코모레비 상담소',ph:'03-5521-0480'},
-  ],'사에구사 이바라',initialAv('사'),{ph:'090-3107-1218',bd:'2005년 11월 14일'}),
-  ...ibTalk,
+  ]),...mkContacts(ibContacts,'사에구사 이바라',initialAv('사'),{ph:'080-2005-1114',bd:'2005년 11월 14일'}),
+  ...ibTalk,...ibShop,...weatherApp(),
   ...ibMusic,
   ...mkFavs([{n:'쥰',av:junAvatar}]),
   ...mkVM([]),
@@ -2465,7 +2779,7 @@ setupPull(ibara,{carrier:'SAKURA 4G',time:'16:35',batt:'22%',wifi:true,bt:false,
 /* the reader can send Jun's unsent draft; Ibara's phone receives it (this viewer only, resets on reload) */
 (function(){
   const btn=jun.scr.querySelector('[data-app="t-ibara"] .sendb');if(!btn)return;
-  btn.onclick=()=>{
+  btn.onclick=()=>{SND.sent();
     const field=btn.closest('.field'),text=field.firstChild.textContent.trim();
     junIbara.push({s:'j',time:'16:35',text});
     field.classList.remove('draft');field.innerHTML='메시지<svg width="16" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5.5 11a6.5 6.5 0 0 0 13 0M12 17.5V21"/></svg>';
@@ -2475,7 +2789,7 @@ setupPull(ibara,{carrier:'SAKURA 4G',time:'16:35',batt:'22%',wifi:true,bt:false,
     if(it.innerHTML){it.innerHTML=threadHTML(junIbara,s=>s==='i','쥰',junAvatar,'jun');it.scrollTop=it.scrollHeight}
     const setRow=(ph,id,unread)=>{const r=ph.scr.querySelector(`.row-btn[data-open="${id}"]`);if(!r)return;r.querySelector('.pv').textContent=text;r.querySelector('.rt').firstChild.textContent='오후 4:35';if(unread){r.querySelector('.udot').innerHTML='<i class="cnt"></i>';r.dataset.cnt=1;ph.paintBadges&&ph.paintBadges()}};
     setRow(jun,'t-ibara');setRow(ibara,'t-jun',true);
-    setTimeout(()=>{
+    setTimeout(()=>{SND.msgIn();
       if(ibara.locked){ibara.lockNotify(lnoti({open:'t-jun',app:'메시지',w:'지금',t:'쥰',b:text,bg:'linear-gradient(#6fdc8c,#30b356)',icon:I.msg}));return}
       const n=document.createElement('button');n.type='button';n.className='noti';n.setAttribute('aria-label','쥰 메시지 열기');
       n.innerHTML=`<span class="ic" style="background:linear-gradient(#6fdc8c,#30b356)">${I.msg}</span><span class="ntx"><b>쥰<small>지금</small></b>${esc(text)}</span>`;
