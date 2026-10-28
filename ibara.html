@@ -73,7 +73,7 @@ button{font-family:inherit;color:inherit}
 .ttgrid .hd{text-align:center;color:#7a7080;font-weight:700}
 .ttgrid .hr{color:#9a90a0;font-size:8.5px;font-variant-numeric:tabular-nums;text-align:right;padding-right:2px}
 .cls{border-radius:6px;padding:3px 4px;line-height:1.2;overflow:hidden;color:#2a2430;display:flex;flex-direction:column;gap:1px}
-.cls b{font-weight:700;font-size:9.5px;word-break:keep-all}
+.cls b{font-weight:700;font-size:9.5px;word-break:keep-all;overflow-wrap:anywhere}
 .cls i{font-style:normal;font-size:8.5px;opacity:.7}
 
 /* widgets */
@@ -117,6 +117,7 @@ button{font-family:inherit;color:inherit}
 .back:focus-visible,.row-btn:focus-visible,.seg button:focus-visible,.d:focus-visible,.mtab:focus-visible{outline:2px solid var(--accent);outline-offset:1px}
 .bar .ttl{flex:1;font-weight:700;font-size:16px;text-align:center;margin-right:46px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .big{font-size:30px;font-weight:700;padding:2px 16px 8px;letter-spacing:-.5px}
+.calnav{border:0;background:none;color:var(--accent);font-size:30px;line-height:1;width:38px;height:34px;cursor:pointer;font-family:inherit}.calnav:disabled{opacity:.25;cursor:default}
 .scroll{flex:1;overflow-y:auto;scrollbar-width:none;min-height:0}
 .scroll::-webkit-scrollbar{display:none}
 
@@ -388,6 +389,7 @@ button{font-family:inherit;color:inherit}
 .srow2.prof{cursor:default}.srow2.prof span:last-child{margin-left:0;color:inherit;font-size:inherit;display:flex;flex-direction:column}
 .prof b{font-size:18px}.prof small{font-size:12.5px;color:var(--sub)}
 .pav{width:58px;height:58px;border-radius:50%;overflow:hidden;display:block;flex-shrink:0}
+.srow2.prof .pav .iav{display:grid;place-items:center;font-size:24px;color:#fff;margin:0}
 .stw{padding:4px 16px 30px;display:flex;flex-direction:column;gap:10px}
 .stc{background:var(--card);border-radius:12px;padding:12px 14px;display:flex;flex-direction:column;gap:6px}
 .stc>small{color:var(--sub);font-size:13px}.stc>b{font-size:30px;font-weight:700}
@@ -964,7 +966,7 @@ const ibaraBoss=[
  T('me','14:10','사장님, 염치없지만 이번 달도 좀 당겨 받을 수 있겠습니까.'),
  T('o','14:32','죄송할 거 없다. 보냈다'),
  T('o','14:32','병원은 다니냐'),
- T('me','14:40','아아, 다니고 있습니다. 2주에 한 번이요.'),
+ T('me','14:40','아아, 다니고 있습니다. 한 달에 한 번이요.'),
  T('o','14:41','밥도 먹고'),
  T('me','14:41','네, 챙겨 먹겠습니다. 사장님도 끼니 거르지 마세요.'),
  {day:'2026년 7월 24일 금요일'},
@@ -1079,24 +1081,38 @@ function callsHTML(list){
 }
 /* October 2026: the 1st is a Thursday */
 const wdOf=d=>(d+3)%7;
-function calendarInto(root,events,sel){
+function calendarInto(root,all,ym,sel){
+  ym=ym||{y:2026,m:10};const {y,m}=ym,events=all[y+'-'+m]||{},first=new Date(y,m-1,1).getDay(),days=new Date(y,m,0).getDate();
+  const isToday=d=>y===2026&&m===10&&d===31,wd=d=>(first+d-1)%7;
+  if(!sel||sel>days)sel=(y===2026&&m===10)?31:1;
+  root._cal={all,ym};root.querySelector('.big').textContent=m+'월';
+  root.querySelectorAll('[data-cm]').forEach(b=>b.disabled=(+b.dataset.cm<0?m===1:m===12));
   const g=root.querySelector('.grid'),ag=root.querySelector('.agenda');
-  let h='<span></span>'.repeat(4);
-  for(let d=1;d<=31;d++){
+  let h='<span></span>'.repeat(first);
+  for(let d=1;d<=days;d++){
     const dots=(events[d]||[]).filter((e,i,a)=>a.findIndex(z=>z.c===e.c)===i).slice(0,3).map(e=>`<i style="background:${e.c}"></i>`).join('');
-    h+=`<button type="button" class="d ${wdOf(d)===0?'sun':''} ${d===31?'today':''} ${d===sel?'sel':''}" data-d="${d}" aria-label="10월 ${d}일"><span class="n">${d}</span><span class="cdots">${dots}</span></button>`;
+    h+=`<button type="button" class="d ${wd(d)===0?'sun':''} ${isToday(d)?'today':''} ${d===sel?'sel':''}" data-d="${d}" aria-label="${m}월 ${d}일"><span class="n">${d}</span><span class="cdots">${dots}</span></button>`;
   }
   g.innerHTML=h;
-  g.querySelectorAll('.d').forEach(b=>b.onclick=()=>calendarInto(root,events,+b.dataset.d));
-  const list=events[sel]||[];
-  ag.innerHTML=`<div class="ag-date">10월 ${sel}일 ${WD[wdOf(sel)]}요일${sel===31?' · 할로윈':''}</div>`+(list.length?list.map(e=>`<div class="ev"><i style="background:${e.c}"></i><div><div class="et ${e.x?'x':''}">${e.t}</div><div class="nt">${e.n}</div></div><div class="tm">${e.tm}</div></div>`).join(''):'<p class="empty">일정 없음</p>');
+  g.querySelectorAll('.d').forEach(b=>b.onclick=()=>calendarInto(root,all,ym,+b.dataset.d));
+  const tk=e=>/^\d/.test(e.tm)?+e.tm.slice(0,2)*60+ +e.tm.slice(3,5):-1;const list=(events[sel]||[]).slice().sort((p,q)=>tk(p)-tk(q));
+  ag.innerHTML=`<div class="ag-date">${m}월 ${sel}일 ${WD[wd(sel)]}요일${isToday(sel)?' · 할로윈':''}</div>`+(list.length?list.map(e=>`<div class="ev"><i style="background:${e.c}"></i><div><div class="et ${e.x?'x':''}">${e.t}</div><div class="nt">${e.n}</div></div><div class="tm">${e.tm}</div></div>`).join(''):'<p class="empty">일정 없음</p>');
+  if(!root._calNav){root._calNav=1;
+    const go=dir=>{const c=root._cal;let mm=c.ym.m+dir;if(mm<1||mm>12)return;calendarInto(root,c.all,{y:c.ym.y,m:mm},0)};
+    root.querySelectorAll('[data-cm]').forEach(b=>b.onclick=()=>go(+b.dataset.cm));
+    let sx=null;g.addEventListener('pointerdown',e=>{sx=e.clientX});
+    g.addEventListener('pointerup',e=>{if(sx!==null&&Math.abs(e.clientX-sx)>45){go(e.clientX<sx?1:-1)}sx=null});
+  }
 }
+const mkCal=()=>{const all={};const add=(y,m,d,o)=>{const k=y+'-'+m;(all[k]=all[k]||{});(all[k][d]=all[k][d]||[]).push(o)};
+  const each=(m,fn)=>{const n=new Date(2026,m,0).getDate();for(let d=1;d<=n;d++)fn(d,new Date(2026,m-1,d).getDay())};
+  return {all,add:(m,d,o)=>add(2026,m,d,o),each,range:(m,d1,d2,o)=>{for(let d=d1;d<=d2;d++)add(2026,m,d,Object.assign({},o,{n:o.n+(d2>d1?` · ${d-d1+1}일차`:'')}))}}};
 function miniMonth(events){
   let h=WD.map(w=>`<span class="h">${w}</span>`).join('')+'<span></span>'.repeat(4);
   for(let d=1;d<=31;d++){const e=events[d];h+=`<span class="${d===31?'td':''} ${e&&d!==31?'dot':''}" ${e?`style="--dc:${e[0].c}"`:''}>${d}</span>`}
   return `<div class="mini">${h}</div>`;
 }
-const calendarApp=(title)=>`<div class="bar"><button type="button" class="back keep" data-back>${I.back}2026년</button></div><div class="big">${title}</div><div class="wk">${WD.map(w=>`<span>${w}</span>`).join('')}</div><div class="grid"></div><div class="agenda"></div>`;
+const calendarApp=(title)=>`<div class="bar"><button type="button" class="back keep" data-back>${I.back}2026년</button><span style="flex:1"></span><button type="button" class="calnav" data-cm="-1" aria-label="이전 달">‹</button><button type="button" class="calnav" data-cm="1" aria-label="다음 달">›</button></div><div class="big">${title}</div><div class="wk">${WD.map(w=>`<span>${w}</span>`).join('')}</div><div class="grid"></div><div class="agenda"></div>`;
 const callsApp=()=>`<div class="bar"><button type="button" class="back" data-back>${I.back}홈</button><div class="seg" role="group" aria-label="통화 필터"><button type="button" data-f="all" aria-pressed="true">전체</button><button type="button" data-f="miss" aria-pressed="false">부재중</button></div><span style="width:46px"></span></div><div class="big">최근 통화</div><div class="scroll calls"></div>
 ${callTabs('calls')}`;
 const icon=(id,label,bg,svg,extra='')=>`<button type="button" class="app" data-open="${id}" aria-label="${label}"><span class="ic" style="background:${bg}">${svg}</span><span class="t">${label}</span>${extra}</button>`;
@@ -1620,7 +1636,36 @@ function mapWorldSVG(cfg){
   ${cfg.me?(()=>{const p=WORLD.poi.find(q=>q.id===cfg.me);return `<g transform="translate(${p.x+24} ${p.y-16})"><g class="pin"><circle r="16" fill="#0a84ff" opacity=".18" class="mepulse"/><circle r="8" fill="#0a84ff" stroke="#fff" stroke-width="3"/></g></g>`})():''}
   </svg>`;
 }
-const ROUTES={'junhome>izakaya':'M360 70 C 380 110, 400 125, 420 140 L420 600 L560 600 L560 820 L630 820','junhome>pharmacy':'M360 70 C 380 110, 400 125, 420 140 L420 600 L560 600 L560 710 L675 710','pharmacy>junhome':'M675 710 L560 710 L560 600 L420 600 L420 140 C 400 125, 380 110, 360 70','junhome>pool':'M360 70 C 380 110, 400 125, 420 140 L420 600 L630 600 L630 530'};
+const ROUTES={'junhome>izakaya':'M360 70 C 380 110, 400 125, 420 140 L420 600 L560 600 L560 760 L630 760 L630 820','junhome>pharmacy':'M360 70 C 380 110, 400 125, 420 140 L420 600 L700 600 L700 712 L675 712','pharmacy>junhome':'M675 712 L700 712 L700 600 L420 600 L420 140 C 400 125, 380 110, 360 70','junhome>pool':'M360 70 C 380 110, 400 125, 420 140 L420 600 L630 600 L630 530'};
+
+const RX=[160,300,420,560,700,840],RY=[140,240,330,460,600,760,880],HILL='M360 70 C 380 110, 400 125, 420 140',HILLR='L420 140 C 400 125, 380 110, 360 70';
+function mapAccess(p){
+  if(p.id==='junhome')return [{x:420,y:140,d:0,n:[[420,140]]}];
+  const out=[],a=XS.findIndex((v,i)=>p.x>=v&&p.x<XS[i+1]),b=YS.findIndex((v,i)=>p.y>=v&&p.y<YS[i+1]);
+  const add=(x,y,d,ends)=>{const n=ends.filter(e=>e[0]!=null&&e[1]!=null);if(n.length)out.push({x,y,d,n})};
+  [XS[a],XS[a+1]].forEach(x=>{if(RX.includes(x))add(x,p.y,Math.abs(p.x-x),[[x,[...RY].reverse().find(y=>y<=p.y)],[x,RY.find(y=>y>=p.y)]])});
+  [YS[b],YS[b+1]].forEach(y=>{if(RY.includes(y))add(p.x,y,Math.abs(p.y-y),[[[...RX].reverse().find(x=>x<=p.x),y],[RX.find(x=>x>=p.x),y]])});
+  return out}
+function mapRoute(from,to){
+  const nodes=new Map(),k=(x,y)=>x+','+y,edge=(u,v)=>{if(u===v)return;(nodes.get(u)||nodes.set(u,[]).get(u)).push(v);(nodes.get(v)||nodes.set(v,[]).get(v)).push(u)};
+  const pos=new Map();const P=(x,y)=>{const id=k(x,y);pos.set(id,[x,y]);return id};
+  RX.forEach(x=>RY.forEach((y,j)=>{const id=P(x,y);if(j)edge(id,P(x,RY[j-1]))}));
+  RY.forEach(y=>RX.forEach((x,i)=>{if(i)edge(P(x,y),P(RX[i-1],y))}));
+  const A=mapAccess(from),B=mapAccess(to);pos.set('S',[from.x,from.y]);pos.set('T',[to.x,to.y]);
+  const cost=new Map();const ec=(u,v,c)=>cost.set(u+'>'+v,c).set(v+'>'+u,c);
+  A.forEach((a,i)=>{const id=P(a.x,a.y);if(!nodes.has(id))nodes.set(id,[]);edge('S',id);ec('S',id,a.d*3);a.n.forEach(e=>edge(id,P(e[0],e[1])));a.id=id});
+  B.forEach((b,i)=>{const id=P(b.x,b.y);if(!nodes.has(id))nodes.set(id,[]);edge('T',id);ec('T',id,b.d*3);b.n.forEach(e=>edge(id,P(e[0],e[1])));b.id=id});
+  A.forEach(a=>B.forEach(b=>{if(a.n.length===b.n.length&&a.n.every((e,i)=>e[0]===b.n[i][0]&&e[1]===b.n[i][1]))edge(a.id,b.id)}));
+  const dist=new Map([['S|',0]]),prev=new Map(),q=[['S','',0]];
+  while(q.length){q.sort((m,n)=>m[2]-n[2]);const [u,du,c]=q.shift();if(c>dist.get(u+'|'+du))continue;if(u==='T'){var endKey=u+'|'+du;break}
+    for(const v of nodes.get(u)||[]){const [ux,uy]=pos.get(u),[vx,vy]=pos.get(v);const cc=cost.get(u+'>'+v);
+      const dir=cc!=null?'':(uy===vy?'h':'v');const c2=c+(cc!=null?cc:Math.abs(ux-vx)+Math.abs(uy-vy))+(du&&dir&&du!==dir?40:0);
+      const key=v+'|'+dir;if(c2<(dist.get(key)??1e9)){dist.set(key,c2);prev.set(key,u+'|'+du);q.push([v,dir,c2])}}}
+  if(!endKey)return '';const pts=[];let cur=endKey;while(cur){pts.unshift(pos.get(cur.split('|')[0]));cur=prev.get(cur)}
+  const simp=pts.filter((p,i)=>i===0||i===pts.length-1||!((pts[i-1][0]===p[0]&&p[0]===pts[i+1][0])||(pts[i-1][1]===p[1]&&p[1]===pts[i+1][1])));
+  let d=from.id==='junhome'?HILL:'M'+simp[0].join(' ');const body=simp.slice(1,to.id==='junhome'?-1:undefined);
+  if(from.id==='junhome')body.shift();
+  d+=body.map(p=>' L'+p.join(' ')).join('');if(to.id==='junhome')d+=' '+HILLR;return d}
 function mkMap(cfg){
   const me=WORLD.poi.find(p=>p.id===cfg.me);
   return {map:{html:`<div class="mapv">${mapWorldSVG(cfg)}<div class="mzoom"><button type="button" data-z="1" aria-label="확대">+</button><button type="button" data-z="-1" aria-label="축소">−</button><button type="button" data-z="0" aria-label="내 위치"><svg width="16" height="16" viewBox="0 0 24 24" fill="#0a84ff"><path d="M3 11l18-8-8 18-2-8z"/></svg></button></div>
@@ -1637,7 +1682,7 @@ function mkMap(cfg){
     api._mapPaint=paint;
     const show=(name,cat,addr,p)=>{card.hidden=false;card.querySelector('b').textContent=name;card.querySelector('.mc-c').textContent=cat;
       const d=p?Math.round(Math.hypot(p.x-me.x,p.y-me.y)*2.4):0;card.querySelector('.mc-a').textContent=addr+(p&&p.id!==me.id?` · 도보 ${Math.max(1,Math.round(d/70))}분 (${d>=1000?(d/1000).toFixed(1)+'km':d+'m'})`:p?' · 현재 위치':'');
-      card.querySelector('.mc-go').onclick=()=>{if(!p)return;route.setAttribute('d',ROUTES[me.id+'>'+p.id]||`M${me.x} ${me.y} L420 140 L420 ${p.y<600?(p.y<330?330:600):600} L${p.x<420?p.x:(p.x<560?p.x:560)} ${p.y<600?(p.y<330?330:600):600} L${p.x<420||p.x<560?p.x:560} ${p.y} L${p.x} ${p.y}`)};
+      card.querySelector('.mc-go').onclick=()=>{if(!p)return;route.setAttribute('d',ROUTES[me.id+'>'+p.id]||mapRoute(me,p))};
       card.querySelector('.mc-save').hidden=!p;card.querySelector('.mc-call').hidden=!p;card.querySelector('.mc-go').hidden=!p||p.id===me.id;
       if(sheet.offsetHeight>300){sheet.style.height='240px'}};
     const goPoi=(id,withRoute)=>{const p=WORLD.poi.find(q=>q.id===id);if(!p)return;const r=svg.getBoundingClientRect();st.z=Math.max(st.z,1.4);st.cx=p.x;st.cy=p.y+(520/st.z)*((r.height||400)/(r.width||390))*.22;st.z=Math.max(st.z,1.2);paint();show(p.n,p.cat,p.addr,p);if(withRoute&&ROUTES[withRoute])route.setAttribute('d',ROUTES[withRoute]);else if(withRoute)card.querySelector('.mc-go').click();else route.setAttribute('d','')};
@@ -2022,11 +2067,11 @@ const contactApps=mkContacts(junContacts,'사자나미 쥰',junAvatar,{ph:'080-2
 /* ================= JUN ================= */
 const timetable=[
  // day(0=Mon), start, end (hours), name, room, color
- [0,9,10.5,'운동생리학','체육관 B201','#ffd6df'],[0,15,17,'체조 실기','제1체육관','#d9ecff'],
- [1,10,11.5,'교양: 철학의 이해','인문관 304','#ece4ff'],[1,13,14.5,'체육교육과정론','체육관 B105','#ffe9cc'],
+ [0,9,10.5,'운동역학','체육관 B201','#ffd6df'],[0,15,17,'구기 실기 (배구)','제2체육관','#d9ecff'],
+ [1,10,11.5,'철학의 이해','인문관 304','#ece4ff'],[1,13,14.5,'체육교육학개론','체육관 B105','#ffe9cc'],
  [2,9,10.5,'스포츠심리학','체육관 B203','#d7f3e3'],[2,13,16,'육상 실기','대운동장','#d9ecff'],
- [3,10.5,12,'운동역학','체육관 B201','#ffd6df'],[3,14,15.5,'체육교수법','교육관 210','#ffe9cc'],
- [4,12,13.5,'교양: 철학의 이해','인문관 304','#ece4ff'],[4,15,17,'구기 실기 (배구)','제2체육관','#d9ecff'],
+ [3,10.5,12,'운동역학','체육관 B201','#ffd6df'],[3,13,14.5,'체육교육학개론','체육관 B105','#ffe9cc'],
+ [4,12,13.5,'철학의 이해','인문관 304','#ece4ff'],[4,15,17,'구기 실기 (배구)','제2체육관','#d9ecff'],
 ];
 function ttHTML(){
   let h='<span></span>'+['월','화','수','목','금'].map(d=>`<span class="hd">${d}</span>`).join('');
@@ -2036,6 +2081,35 @@ function ttHTML(){
 }
 const junEvents={31:[{t:'엄마 기일',n:'매년 반복',tm:'하루 종일',c:'#8e8c93'}]};
 [5,12,19,26].forEach(d=>junEvents[d]=[{t:'상담',n:'코모레비 상담소',tm:'13:00',c:'#7fd3a0'}]);
+const JC={school:'#5a8dee',exam:'#ff6b6b',party:'#ffb347',counsel:'#7fd3a0',hol:'#8e8c93'};
+const JCAL=(()=>{const k=mkCal(),{add,range}=k;
+  add(1,1,{t:'신정',n:'공휴일',tm:'하루 종일',c:JC.hol});
+  range(2,10,12,{t:'1학기 수강신청',n:'학사 포털',tm:'10:00',c:JC.school});
+  add(3,2,{t:'1학기 개강',n:'체육교육과 2학년',tm:'하루 종일',c:JC.school});
+  add(3,6,{t:'개강총회',n:'학과 · 정문 앞 고깃집',tm:'18:30',c:JC.party});
+  range(3,27,28,{t:'과 MT',n:'1박 2일 · 학과 버스',tm:'하루 종일',c:JC.party});
+  range(4,20,24,{t:'중간고사',n:'1학기',tm:'하루 종일',c:JC.exam});
+  add(5,15,{t:'학과 체육대회',n:'대운동장 · 계주 출전',tm:'10:00',c:JC.party});
+  range(6,15,19,{t:'기말고사',n:'1학기',tm:'하루 종일',c:JC.exam});
+  add(6,19,{t:'종강총회',n:'학과 · 이자카야 2층',tm:'19:00',c:JC.party});
+  add(6,22,{t:'여름방학 시작',n:'',tm:'하루 종일',c:JC.hol});
+  range(8,17,19,{t:'2학기 수강신청',n:'학사 포털',tm:'10:00',c:JC.school});
+  add(9,1,{t:'2학기 개강',n:'체육교육과 2학년',tm:'하루 종일',c:JC.school});
+  add(9,4,{t:'개강총회',n:'학과 · 대학가 호프',tm:'18:30',c:JC.party});
+  range(9,11,12,{t:'가을 MT',n:'1박 2일 · 학과 버스',tm:'하루 종일',c:JC.party});
+  add(9,21,{t:'첫 상담',n:'코모레비 상담소',tm:'13:00',c:JC.counsel});
+  add(9,28,{t:'상담',n:'코모레비 상담소',tm:'13:00',c:JC.counsel});
+  k.all['2026-10']=junEvents;
+  range(10,19,23,{t:'중간고사',n:'2학기',tm:'하루 종일',c:JC.exam});
+  add(11,2,{t:'상담',n:'코모레비 상담소',tm:'13:00',c:JC.counsel});
+  add(11,6,{t:'배구 실기 조 연습',n:'제2체육관 · 3조',tm:'15:00',c:JC.school});
+  add(11,20,{t:'학과 체육대회',n:'대운동장',tm:'10:00',c:JC.party});
+  add(12,11,{t:'구기 실기 시험 (배구)',n:'제2체육관',tm:'15:00',c:JC.exam});
+  range(12,14,18,{t:'기말고사',n:'2학기',tm:'하루 종일',c:JC.exam});
+  add(12,18,{t:'종강총회',n:'학과 · 장소 미정',tm:'19:00',c:JC.party});
+  add(12,21,{t:'겨울방학 시작',n:'',tm:'하루 종일',c:JC.hol});
+  add(12,25,{t:'크리스마스',n:'공휴일',tm:'하루 종일',c:JC.hol});
+  return k.all})();
 const junCalls=[
  {n:'이바라',c:2,t:'miss',sub:'휴대전화',w:'15:22'},
  {n:'아빠',t:'miss',sub:'휴대전화 · 음성 메시지',w:'10:11'},
@@ -2106,7 +2180,7 @@ const jun=makePhone({key:'jun',code:'0816',cls:'p-jun',time:'16:35',batt:'8',lab
   ...mkMap({me:'junhome',
     favs:[{id:'junhome',n:'집',d:'대학가 뒤편',c:'#0a84ff',i:'⌂'},{id:'ibhome',n:'이바라네',d:'다세대 2층',c:'#ff2d55',i:'★'},{id:'gym2',n:'학교',d:'제2체육관',c:'#5856d6',i:'✎'},{id:'pool',n:'수영장',d:'역 앞',c:'#30b0c7',i:'≈'}],
     recent:[{id:'izakaya',n:'역 남쪽 이자카야',d:'도보 경로 · 2.1km · 10월 17일 04:49',c:'#ff9500',i:'↗',route:1},{id:'counsel',n:'코모레비 상담소',d:'10월 12일',c:'#8e8e93',i:'•'},{id:'pool',n:'역 앞 실내 수영장',d:'10월 3일',c:'#30b0c7',i:'≈'}]}),
-  cal:{html:calendarApp('10월'),onOpen:v=>calendarInto(v,junEvents,31)},
+  cal:{html:calendarApp('10월'),onOpen:v=>calendarInto(v,JCAL,{y:2026,m:10},31)},
 }});
 /* swipe pages on Jun's home */
 (function(){
@@ -2136,13 +2210,36 @@ const work={t:'알바',n:'이자카야',tm:'18:00–02:00',c:C.work};
 [5,12,19,26].forEach(d=>add(d,{t:'상담',n:'코모레비 상담소 · 4번 방',tm:'13:00',c:C.counsel}));
 add(2,{t:'정신과 진료',n:'2주 치 처방',tm:'11:00',c:C.clinic});add(2,work);
 add(3,{t:'수영장 무료 체험',n:'역 앞 · 쥰이랑',tm:'14:00',c:C.jun});
-add(10,{t:'월급일',n:'선지급분 차감',tm:'하루 종일',c:C.money});
+add(10,{t:'월급일',n:'가불분 차감',tm:'하루 종일',c:C.money});
 add(16,{t:'정신과 진료',n:'다음부터 한 달에 한 번',tm:'11:00',c:C.clinic});
 add(25,{t:'집세 납부',n:'9월부터 인상분 적용',tm:'하루 종일',c:C.money});
 add(30,{t:'정신과 진료',n:'31일로 옮김',tm:'11:00',c:C.clinic,x:true});
 add(30,{t:'대타',n:'독감 결근 · 사장님 부탁',tm:'14:00–02:00',c:C.work});
 add(31,{t:'정신과 진료',n:'약 떨어짐',tm:'14:30',c:C.clinic});
 add(31,{t:'옥상',n:'매년 반복 · 이 시간에',tm:'16:15',c:C.jun});
+const IBCAL=(()=>{const k=mkCal(),{add,each}=k;
+  for(let m=1;m<=12;m++){if(m===10)continue;
+    each(m,(d,w)=>{if(w===3||w===5||w===6)add(m,d,work);if(m>=9&&m<=11&&(w===2||w===4))add(m,d,{t:'물류센터 알바',n:'택배 분류 · 단기',tm:'10:00–16:00',c:'#6fa8dc'});if(m<=7&&(w===2||w===4)&&!(m===7&&d>=30))add(m,d,{t:'편의점 알바',n:'매일편의점 가와베점 · 오전',tm:'07:00–13:00',c:'#7cc0a8'})});
+    add(m,10,{t:'월급일',n:(m===5||m===7)?'가불분 차감':'이자카야',tm:'하루 종일',c:C.money});
+    add(m,25,{t:'집세 납부',n:m===9?'이번 달부터 인상':m>9?'인상분 포함':'월세',tm:'하루 종일',c:C.money});}
+  add(4,17,{t:'월급 가불',n:'사장님 · 병원비 얹어 주심',tm:'15:20',c:C.money});
+  add(6,18,{t:'월급 가불',n:'사장님',tm:'14:32',c:C.money});
+  add(9,18,{t:'월급 가불',n:'사장님',tm:'16:20',c:C.money});
+  add(7,30,{t:'편의점 마지막 근무',n:'점포 인력 감축',tm:'07:00–13:00',c:'#7cc0a8'});
+  add(8,5,{t:'면접',n:'역 앞 카페 · 결과 연락 없음',tm:'15:00',c:'#6fa8dc'});
+  add(8,19,{t:'면접',n:'대학가 PC방 야간 · 불합격',tm:'20:00',c:'#6fa8dc'});
+  add(8,27,{t:'면접',n:'물류센터 단기 · 9월부터 출근',tm:'10:00',c:'#6fa8dc'});
+  add(4,24,{t:'정신과 진료',n:'첫 진료 · 사장님 권유',tm:'11:00',c:C.clinic});
+  add(5,8,{t:'정신과 진료',n:'두 번째 · 2주 치 처방',tm:'11:00',c:C.clinic});
+  add(5,22,{t:'정신과 진료',n:'세 번째 · 다음부터 한 달 간격',tm:'11:00',c:C.clinic});
+  [[6,19],[7,17],[8,21]].forEach(([m,d])=>add(m,d,{t:'정신과 진료',n:'한 달 치 처방',tm:'11:00',c:C.clinic}));
+  add(9,18,{t:'정신과 진료',n:'2주 치 처방',tm:'11:00',c:C.clinic});
+  add(9,21,{t:'첫 상담',n:'코모레비 상담소 · 4번 방',tm:'13:00',c:C.counsel});
+  add(9,28,{t:'상담',n:'코모레비 상담소 · 4번 방',tm:'13:00',c:C.counsel});
+  add(11,2,{t:'상담',n:'코모레비 상담소 · 4번 방',tm:'13:00',c:C.counsel});
+  add(11,28,{t:'정신과 진료',n:'한 달 치 처방',tm:'14:30',c:C.clinic});
+  add(12,26,{t:'정신과 진료',n:'한 달 치 처방',tm:'14:30',c:C.clinic});
+  k.all['2026-10']=ibEvents;return k.all})();
 const ibCalls=[
  {n:'쥰',c:2,t:'out',sub:'휴대전화 · 연결 안 됨',w:'15:22'},
  {n:'사장님',t:'in',sub:'휴대전화 · 1분',w:'어제'},
@@ -2244,7 +2341,7 @@ const ibara=makePhone({key:'ibara',code:'1114',lock:[{open:'k-teacher',app:'LIME
   ...mkMap({me:'junhome',
     favs:[{id:'ibhome',n:'집',d:'가와베초',c:'#0a84ff',i:'⌂'},{id:'izakaya',n:'일',d:'역 남쪽 이자카야',c:'#ff9500',i:'♨'},{id:'counsel',n:'상담소',d:'코모레비',c:'#30b0c7',i:'•'},{id:'logi',n:'물류센터',d:'화 · 목',c:'#8e8e93',i:'▣'}],
     recent:[{id:'junhome',n:'대학가 뒤편 원룸',d:'10월 31일 15:24 · 미소약국에서 도보',c:'#ff2d55',i:'★',route:'pharmacy>junhome'},{id:'pharmacy',n:'미소약국',d:'10월 31일',c:'#8e8e93',i:'+'},{id:'clinic',n:'정신건강의학과',d:'10월 31일',c:'#8e8e93',i:'+'},{id:'pool',n:'역 앞 실내 수영장',d:'10월 3일',c:'#30b0c7',i:'≈'}]}),
-  cal:{html:calendarApp('10월'),onOpen:v=>calendarInto(v,ibEvents,31)},
+  cal:{html:calendarApp('10월'),onOpen:v=>calendarInto(v,IBCAL,{y:2026,m:10},31)},
   bank:{html:bankApp,
     init:a=>{const v=a.scr.querySelector('[data-app="bank"]');const set=m=>{v.querySelectorAll('.mtab').forEach(b=>b.setAttribute('aria-pressed',b.dataset.m===m));v.querySelector('.txlist').innerHTML=bankList(m)};v.querySelectorAll('.mtab').forEach(b=>b.onclick=()=>set(b.dataset.m));set('10')},
     onOpen:(v,arg,a)=>{a.scr.querySelector('.noti').classList.remove('on');const bd=a.scr.querySelector('[data-badge]');if(bd)bd.remove();
