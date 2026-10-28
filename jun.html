@@ -255,7 +255,7 @@ button{font-family:inherit;color:inherit}
 .ph-album{margin:18px 16px 0;width:calc(100% - 32px);border:0;border-radius:14px;background:var(--card);display:flex;gap:12px;align-items:center;padding:14px;text-align:left;cursor:pointer}
 .ph-album b{display:block;font-size:15px}.ph-album small{color:var(--sub);font-size:12.5px}
 .ph-lock{width:44px;height:44px;border-radius:10px;background:rgba(127,127,127,.2);display:grid;place-items:center;color:var(--sub)}
-.pv{flex:1;min-height:0;display:flex;flex-direction:column;gap:14px;padding:10px 0 40px;background:var(--bg)}
+.phv{flex:1;min-height:0;display:flex;flex-direction:column;gap:14px;padding:10px 0 40px;background:var(--bg)}
 .pv-img{width:100%;flex:1;min-height:0;max-width:100%;overflow:hidden}
 .pv-img img{object-fit:contain!important}
 .pv-cap{text-align:center;display:flex;flex-direction:column;gap:3px;font-size:14px}
@@ -711,9 +711,9 @@ button{font-family:inherit;color:inherit}
 .mcardx b{font-size:13.5px;font-weight:500;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.mcardx small{font-size:12.5px;color:var(--sub);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .ma{display:grid;place-items:center;width:100%;aspect-ratio:1;max-width:100%;border-radius:10px;box-shadow:0 4px 14px rgba(0,0,0,.15)}
 .mgrid{display:grid;grid-template-columns:1fr 1fr;gap:16px 14px;padding:0 18px 20px}.mgrid .mcardx{width:auto}
-.mlist{margin:0 18px;border-top:.5px solid var(--line)}
-.mlist button{width:100%;background:none;border:0;border-bottom:.5px solid var(--line);display:flex;align-items:center;gap:8px;padding:12px 2px;font-size:19px;color:var(--mu);cursor:pointer;text-align:left;font-family:inherit}
-.mlist button span{flex:1}.mlist button small{font-size:13px;color:var(--sub)}.mlist button i{font-style:normal;color:var(--sub)}
+.mulist{margin:0 18px;border-top:.5px solid var(--line)}
+.mulist button{width:100%;background:none;border:0;border-bottom:.5px solid var(--line);display:flex;align-items:center;gap:8px;padding:12px 2px;font-size:19px;color:var(--mu);cursor:pointer;text-align:left;font-family:inherit}
+.mulist button span{flex:1}.mulist button small{font-size:13px;color:var(--sub)}.mulist button i{font-style:normal;color:var(--sub)}
 .mhero{margin:6px 18px 0;border-radius:14px;padding:16px;color:#fff;display:flex;flex-direction:column;gap:2px;min-height:150px;justify-content:flex-end}
 .mhero small{font-size:11px;font-weight:700;opacity:.85;text-transform:uppercase}.mhero b{font-size:22px}.mhero span{font-size:13px;opacity:.85}
 .mcats{display:grid;grid-template-columns:1fr 1fr;gap:10px;padding:0 18px 20px}
@@ -1213,7 +1213,7 @@ function photosApp(phone,albums){
     const grid=Object.entries(groups).map(([m,ix])=>`${m?`<div class="ph-m">${m}</div>`:''}<div class="ph-grid" style="margin-top:4px">${ix.map(i=>`<button type="button" class="ph" data-open="pv-${key}" data-arg="${i}" aria-label="${al.items[i].when}">${ART[al.items[i].art]}</button>`).join('')}</div>`).join('');
     const extra=al.lockTile?`<button type="button" class="ph-album" data-open="${al.lockTile.open}"><span class="ph-lock">${I.lock}</span><span><b>${al.lockTile.title}</b><small>${al.lockTile.count}</small></span></button>`:'';
     apps[key]={html:`<div class="bar"><button type="button" class="back" data-back="${al.back||''}">${I.back}${al.backLabel||'홈'}</button><div class="ttl">${al.title}</div></div><div class="scroll ph-wrap">${al.note?`<p class="ph-note">${al.note}</p>`:''}${grid}${extra}</div>`};
-    apps['pv-'+key]={html:`<div class="bar"><button type="button" class="back" data-back="${key}">${I.back}${al.title}</button></div><div class="pv"><div class="pv-img"></div><div class="pv-cap"></div></div>`,
+    apps['pv-'+key]={html:`<div class="bar"><button type="button" class="back" data-back="${key}">${I.back}${al.title}</button></div><div class="phv"><div class="pv-img"></div><div class="pv-cap"></div></div>`,
       onOpen:(v,arg)=>{const p=al.items[+arg||0];v.querySelector('.pv-img').innerHTML=ART[p.art];v.querySelector('.pv-cap').innerHTML=`<b>${p.when}</b><span>${p.where}</span>`}};
   });
   return apps;
@@ -1408,13 +1408,13 @@ function mkMusic(cfg){
     <div class="msec2">최근 들은 스테이션</div><div class="mrow">${cfg.stations.map(card).join('')}</div>
    </div></section>
    <section class="mpane" data-mpane="lib" hidden><div class="scroll"><div class="mtitle">보관함</div>
-    <div class="mlist">${[['플레이리스트',cfg.playlists.length?'':'없음'],['아티스트',''],['앨범',''],['노래',''],['다운로드됨','']].map(([l,x])=>`<button type="button" ${l==='플레이리스트'&&cfg.playlists.length?'data-mlib="pl"':'data-toast="권한이 없습니다"'}><span>${l}</span><small>${x}</small><i>›</i></button>`).join('')}</div>
+    <div class="mulist">${[['플레이리스트',cfg.playlists.length?'':'없음'],['아티스트',''],['앨범',''],['노래',''],['다운로드됨','']].map(([l,x])=>`<button type="button" ${l==='플레이리스트'&&cfg.playlists.length?'data-mlib="pl"':'data-toast="권한이 없습니다"'}><span>${l}</span><small>${x}</small><i>›</i></button>`).join('')}</div>
     <div class="msec2">${cfg.playlists.length?'플레이리스트':'최근 추가된 항목'}</div>
     <div class="mgrid">${(cfg.playlists.length?cfg.playlists.map(p=>({t:p.t,s:p.last?'마지막 재생 '+p.last:p.s,art:p.art,pl:p.id})):cfg.added).map(card).join('')}</div>
    </div></section>
    <section class="mpane" data-mpane="search" hidden><div class="scroll"><div class="mtitle">검색</div>
     <div class="sbox">${MU.srch}<span>아티스트, 노래, 가사 등</span></div>
-    <div class="msec2">최근 검색</div><div class="mlist">${cfg.searches.map(q=>`<button type="button" data-toast="검색 결과를 불러올 수 없습니다"><span>${esc(q)}</span><i>›</i></button>`).join('')}</div>
+    <div class="msec2">최근 검색</div><div class="mulist">${cfg.searches.map(q=>`<button type="button" data-toast="검색 결과를 불러올 수 없습니다"><span>${esc(q)}</span><i>›</i></button>`).join('')}</div>
    </div></section>
    ${mini}${tabs}`,
    init:api=>{const v=api.scr.querySelector('[data-app="music"]');
