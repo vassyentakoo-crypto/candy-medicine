@@ -162,7 +162,6 @@ button{font-family:inherit;color:inherit}
 .msg.me.last .bub::after{right:-26px;width:26px;background:var(--tbg);border-bottom-left-radius:10px}
 .msg.them.last .bub::before{left:-7px;width:20px;background:var(--recv);border-bottom-right-radius:16px 14px}
 .msg.them.last .bub::after{left:-26px;width:26px;background:var(--tbg);border-bottom-right-radius:10px}
-.p-ibara .msg.jun{--recv:#43262f;--recvfg:#ffd2dc}
 .readst{align-self:flex-end;font-size:11px;color:var(--sub);margin:3px 2px 0}
 .readst b{font-weight:600}
 .card{border-radius:18px;overflow:hidden;width:230px;max-width:100%;font-size:13px;background:var(--recv);color:var(--recvfg)}
@@ -706,19 +705,19 @@ const junIbara=[
  T('j','11:09','다음에도 가는 거예요?'),
  T('i','11:15','공짜면요.'),
  {day:'2026년 10월 8일 목요일'},
- T('j','23:12','이바라 자요?'),
+ T('j','23:12','이바라, 자요?'),
  T('i','23:20','약 먹고 누웠습니다.'),
  T('j','23:20','그럼 얼른 자요'),
- T('i','23:21','쥰도요.'),
+ T('i','23:21','쥰이나 얼른 주무십시오. 내일 1교시라면서요.'),
  T('j','23:24','...네 잘 자요'),
  {day:'2026년 10월 13일 화요일'},
  T('j','16:40','오늘 실기 평가 끝났어요'),
- T('i','16:52','결과는요?'),
- T('j','16:52','A요 ㅎㅎ'),
+ T('i','16:52','결과는 어떻게 됐습니까?'),
+ T('j','16:52','A요. 당연하죠.'),
  T('i','16:53','축하드립니다. 사탕이라도 사드려야겠군요.'),
- T('j','16:53','300개짜리는 이바라 거잖아요'),
+ T('j','16:53','그 300개짜리요? 그거 이바라 거잖아요.'),
  T('i','16:55','아직 287개 남았습니다.'),
- T('j','16:55','그걸 세고 있어요??'),
+ T('j','16:55','그걸 세고 있었어요?'),
  {day:'2026년 10월 16일 금요일'},
  T('j','12:08','저 또 그 교수님 수업이에요. 진짜 지루해 죽겠어요'),
  T('i','12:09','그 넥타이 교수님 말입니까?'),
@@ -741,20 +740,20 @@ const junIbara=[
  {day:'2026년 10월 17일 토요일'},
  T('j','13:40','일어났어요?'),
  T('i','14:22','방금 일어났습니다. 어젯밤에 쥰이 데려다준 겁니까?'),
- T('j','14:23','네 업고 왔어요. 무거워서 죽는 줄'),
+ T('j','14:23','네, 업고 왔어요. 생각보다 가벼워서 놀랐거든요?'),
  T('i','14:25','신세를 졌습니다. 물은 마셨습니다.'),
  T('j','14:25','...기억 하나도 안 나요?'),
  T('i','14:31','드문드문 납니다.'),
  T('j','14:31','어디까지요?'),
  T('i','14:40','가로등 간격 얘기까지요.'),
  T('j','14:41','다행이네요 ㅋㅋ'),
- T('j','14:41','밥은 꼭 먹어요 도시락 말고'),
+ T('j','14:41','밥은 꼭 먹어요. 도시락 말고.'),
  {day:'2026년 10월 21일 수요일'},
  T('i','21:05','오늘 손님이 넥타이를 매고 왔는데 무늬가 열네 개였습니다.'),
  T('j','21:06','세어봤어요?ㅋㅋㅋ'),
  T('i','21:06','쥰 때문에 버릇이 됐습니다.'),
  {day:'2026년 10월 31일 토요일'},
- T('j','16:48','저 지금 옥상이에요'),
+ T('j','15:20','저 지금 옥상이에요'),
 ];
 const ibaraBoss=[
  {day:'2026년 4월 17일 금요일'},
@@ -907,7 +906,7 @@ const icon=(id,label,bg,svg,extra='')=>`<button type="button" class="app" data-o
 
 /* ================= lock screen ================= */
 const lnoti=(o)=>`<button type="button" class="lnoti" ${o.open?`data-uopen="${o.open}"`:''} ${o.arg?`data-arg="${o.arg}"`:''}><span class="ln-ic" style="background:${o.bg}">${o.icon}</span><span class="ln-tx"><span class="ln-h"><b>${o.t}</b><small>${o.w}</small></span><span class="ln-b">${esc(o.b)}</span></span></button>`;
-function lockHTML(notis){return `<div class="lock" aria-label="잠금 화면"><img class="lock-bg" src="${SUNSET}" alt=""><div class="lock-top"><svg width="18" height="20" viewBox="0 0 24 26" fill="none" stroke="#fff" stroke-width="2.2"><rect x="4" y="11" width="16" height="12" rx="3"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg><div class="lock-date">10월 31일 토요일</div><div class="lock-time">17:48</div></div><div class="lock-notis">${notis.map(lnoti).join('')}</div><div class="lock-bottom"><span class="qb" aria-hidden="true"><svg width="20" height="24" viewBox="0 0 20 24" fill="none" stroke="#fff" stroke-width="1.8" stroke-linejoin="round"><path d="M5 2h10v4l-2 4v11a1 1 0 0 1-1 1H8a1 1 0 0 1-1-1V10L5 6z"/><path d="M10 13v3" stroke-linecap="round"/></svg></span><button type="button" class="lock-hint">위로 쓸어올려 열기</button><span class="qb" aria-hidden="true"><svg width="24" height="20" viewBox="0 0 24 20" fill="none" stroke="#fff" stroke-width="1.8"><path d="M2 6h4l2-3h8l2 3h4v12H2z"/><circle cx="12" cy="11.5" r="4"/></svg></span></div></div>`}
+function lockHTML(notis){return `<div class="lock" aria-label="잠금 화면"><img class="lock-bg" src="${SUNSET}" alt=""><div class="lock-top"><svg width="18" height="20" viewBox="0 0 24 26" fill="none" stroke="#fff" stroke-width="2.2"><rect x="4" y="11" width="16" height="12" rx="3"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg><div class="lock-date">10월 31일 토요일</div><div class="lock-time">16:35</div></div><div class="lock-notis">${notis.map(lnoti).join('')}</div><div class="lock-bottom"><span class="qb" aria-hidden="true"><svg width="20" height="24" viewBox="0 0 20 24" fill="none" stroke="#fff" stroke-width="1.8" stroke-linejoin="round"><path d="M5 2h10v4l-2 4v11a1 1 0 0 1-1 1H8a1 1 0 0 1-1-1V10L5 6z"/><path d="M10 13v3" stroke-linecap="round"/></svg></span><button type="button" class="lock-hint">위로 쓸어올려 열기</button><span class="qb" aria-hidden="true"><svg width="24" height="20" viewBox="0 0 24 20" fill="none" stroke="#fff" stroke-width="1.8"><path d="M2 6h4l2-3h8l2 3h4v12H2z"/><circle cx="12" cy="11.5" r="4"/></svg></span></div></div>`}
 const KEYS=[['1',''],['2','ABC'],['3','DEF'],['4','GHI'],['5','JKL'],['6','MNO'],['7','PQRS'],['8','TUV'],['9','WXYZ'],null,['0',''],null];
 function passHTML(){return `<div class="pass" hidden><img class="lock-bg" src="${SUNSET}" alt=""><div class="pass-in"><div class="pass-t">암호 입력</div><div class="pdots"><i></i><i></i><i></i><i></i></div><div class="pad">${KEYS.map(k=>k?`<button type="button" class="key" data-k="${k[0]}"><b>${k[0]}</b><small>${k[1]}</small></button>`:'<span></span>').join('')}</div><div class="pass-foot"><button type="button" class="pemg">긴급</button><button type="button" class="pdel">취소</button></div></div></div>`}
 /* ================= phone factory ================= */
@@ -1038,7 +1037,7 @@ function alarmsApp(list){
 const ibNotes=[
  {t:'기분 좋았던 것',d:'10월 31일',body:'상담사가 물어본 것. 대답은 아직 안 함.\n\n- 딸기 사탕. 혀가 얼얼할 만큼 달다\n- 넥타이 무늬 열네 개\n- 물속에서는 흐릿하지 않았다\n- 300개 중 287개 남음 (10/13)\n- 누가 업어서 데려다줬다. 기억은 드문드문\n- 옥상. 해 지는 걸 끝까지 봤다\n\n적고 보니 전부 같은 사람이다.\n손해 보는 장사.'},
  {t:'사탕',d:'10월 31일',body:'300개 · 9/25 도착\n\n10/13 287\n10/31 241\n\n줄어드는 속도가 빨라짐.\n한 봉지 더 주문함.'},
- {t:'약',d:'10월 31일',body:'아침 3알\n저녁 2알 + 수면제\n\n10/30 밤 약 떨어짐\n10/31 아침 거름 → 진료 16:00\n이제 한 달에 한 번.'},
+ {t:'약',d:'10월 31일',body:'아침 3알\n저녁 2알 + 수면제\n\n10/30 밤 약 떨어짐\n10/31 아침 거름 → 진료 14:30\n이제 한 달에 한 번.'},
  {t:'이번 달',d:'10월 25일',body:'집세 ¥35,000 (3,000 인상)\n통신 ¥3,200\n공과금 ¥6,900\n진료비 + 약값 ¥5,390\n\n물류센터로 조금 메움.\n\n남는 거 없음.\n편의점 도시락은 경제적인 선택이다.'},
 ];
 const ibPhotos=photosApp('ibara',{photos:{title:'최근 항목',items:[
@@ -1046,8 +1045,8 @@ const ibPhotos=photosApp('ibara',{photos:{title:'최근 항목',items:[
  {art:'ib101dc4a',month:'',when:'2026년 9월 26일 토요일 16:52',where:'집 앞 골목'},
  {art:'ib2eb17df',month:'',when:'2026년 10월 16일 금요일 12:13',where:'편의점'},
  {art:'id2b6af2c',month:'',when:'2026년 10월 19일 월요일 12:41',where:'상담소 가는 길'},
- {art:'ifd4ede32',month:'',when:'2026년 10월 31일 토요일 16:45',where:'약국 앞'},
- {art:'photo',month:'',when:'2026년 10월 31일 토요일 17:21',where:'대학가 뒤편 원룸 옥상'},
+ {art:'ifd4ede32',month:'',when:'2026년 10월 31일 토요일 15:06',where:'약국 앞'},
+ {art:'photo',month:'',when:'2026년 10월 31일 토요일 16:20',where:'대학가 뒤편 원룸 옥상'},
 ],_old:[
  {art:'pillbag',month:'9월',when:'9월 18일 금요일 11:52',where:'정신건강의학과 앞'},
  {art:'capture',month:'9월',when:'9월 23일 수요일 11:41',where:'스크린샷'},
@@ -1074,7 +1073,7 @@ const junPhotos=photosApp('jun',{
   {art:'jac2eefb2',month:'10월',when:'2026년 10월 3일 토요일 14:02',where:'역 앞 실내 수영장'},
   {art:'j474899f9',month:'10월',when:'2026년 10월 9일 금요일 22:47',where:'동기들이랑'},
   {art:'j4ea4191e',month:'10월',when:'2026년 10월 30일 금요일 15:02',where:'제2체육관'},
-  {art:'photo',month:'10월',when:'10월 31일 토요일 17:22',where:'대학가 뒤편 원룸 옥상'},
+  {art:'photo',month:'10월',when:'10월 31일 토요일 16:21',where:'대학가 뒤편 원룸 옥상'},
  ],_old:[
   {art:'tie',month:'9월',when:'9월 29일 화요일 10:16',where:'인문관 304'},
   {art:'food',month:'10월',when:'10월 8일 목요일 12:40',where:'학생식당'},
@@ -1217,7 +1216,7 @@ const mkMap=cfg=>({map:{html:`<div class="mapv">${mapSVG(cfg.pins)}<button type=
 /* ---- green messenger app ("LIME"), both phones ---- */
 I.talk='<svg width="34" height="34" viewBox="0 0 24 24"><path d="M12 4.2c-4.9 0-8.8 3.1-8.8 7 0 3.4 3 6.3 7.1 6.9.4.1.6.4.5.8l-.3 1.6c-.1.4.3.7.7.5 2.6-1.3 6.9-4.1 8.6-6.6.6-.9.9-2 .9-3.2 0-3.9-3.9-7-8.7-7z" fill="#fff"/><g fill="#06c755"><circle cx="8.2" cy="11.3" r="1.15"/><circle cx="12" cy="11.3" r="1.15"/><circle cx="15.8" cy="11.3" r="1.15"/></g></svg>';
 const TALKBG='linear-gradient(#22d36c,#06b74c)';
-const NOW='17:48';
+const NOW='16:35';
 const isMine=s=>s==='j'||s==='me';
 const sq=(txt,bg)=>`<span class="iav" style="background:${bg}">${txt}</span>`;
 function talkThreadHTML(data,group){
@@ -1351,8 +1350,8 @@ const swimClub=[
  {day:'2022년 7월 24일 일요일'},
  O('하루토','18:30','다들 오늘 수고했다'),
  O('사쿠라','18:31','쥰 다리 괜찮아??'),
- M('19:02','괜찮아 ㅋㅋ'),
- M('19:02','다들 수고했어'),
+ M('19:02','괜찮아요 ㅋㅋ'),
+ M('19:02','다들 수고하셨어요'),
  O('코치님','20:10','사자나미, 오늘 끝까지 간 거 잊지 마라. 푹 쉬고.'),
  {day:'2022년 11월 2일 수요일'},
  O('사쿠라','09:12','쥰 힘내… 우리 다 기다릴게'),
@@ -1360,7 +1359,7 @@ const swimClub=[
  {day:'2023년 3월 1일 수요일'},
  O('하루토','14:00','졸업 축하한다 다들!!'),
  O('사쿠라','14:01','대학 가서도 수영하자!!'),
- M('15:22','졸업 축하해'),
+ M('15:22','다들 졸업 축하해요'),
  {day:'2026년 10월 24일 토요일'},
  O('사쿠라','20:11','다음 주 일요일 현 대회 나 나간다!!'),
  O('하루토','20:12','오 응원 간다'),
@@ -1379,30 +1378,30 @@ const junMoriTalk=[
  {day:'2026년 10월 13일 화요일'},
  O('모리','15:44','야 진짜 오늘 기록 뭐야'),
  O('모리','15:44','너 수영 다시 하냐?'),
- M('16:02','그냥 요즘 조금 다녀'),
+ M('16:02','다시 하는 건 아니고요. 그냥 요즘 좀 다니는 데가 있어서요.'),
  O('모리','16:03','오 누구랑?'),
- M('16:10','비밀'),
- O('모리','16:10','???'),
+ M('16:10','그건 비밀이거든요.'),
+ O('모리','16:10','??? 존댓말로 비밀이라니까 더 궁금하네'),
  {day:'2026년 10월 31일 토요일'},
  O('모리','11:06','쥰 할로윈 안 와?'),
  O('모리','13:41','야 답장 좀'),
 ];
 const moriTree={start:'a',
- a:[{me:['미안 오늘은 못 가'],reply:['왜?'],next:null},
-    {me:['나 오늘 선약 있어'],reply:['오 누구랑?'],next:'b'},
-    {me:['몇 시까지 가면 돼?'],reply:['8시! 역 앞 이자카야','분장 꼭 하고 와라 ㅋㅋ'],next:'c'}],
- b:[{me:['다음에 말해줄게'],reply:['와 뭐냐?','여친 생김?'],next:'b2'},
-    {me:['비밀'],reply:['너 요즘 비밀 왜 이렇게 많냐 ㅋㅋ','수영 같이 다닌다는 그 사람이지?'],next:'b3'}],
- b2:[{me:['아니거든'],reply:['ㅋㅋㅋ 반응 수상한데'],next:null},
-     {me:['...비슷한 거?'],reply:['헐','대박','사진 보여줘 사진'],next:'b4'}],
- b3:[{me:['...어떻게 알았어'],reply:['너 요즘 폰 보면서 웃잖아 ㅋㅋㅋ','다 티 나'],next:null},
-     {me:['아니야'],reply:['아니긴 뭐가 아니야 ㅋㅋ'],next:null}],
- b4:[{me:['싫어'],reply:['치사한 놈 ㅋㅋ 잘해봐라'],next:null},
-     {me:['나중에 직접 소개해줄게'],reply:['오 ㅋㅋㅋ 약속했다?'],next:null}],
- c:[{me:['...아 미안 역시 못 가겠다'],reply:['??? 뭐야 ㅋㅋㅋ','너 지금 어딘데'],next:'c2'},
-    {me:['분장은 안 해'],reply:['그럼 첫 잔은 니 돈 ㅋㅋ'],next:null}],
- c2:[{me:['옥상'],reply:['옥상?? 이 추운데?','누구랑 있구나 너'],next:null},
-     {me:['그냥 밖'],reply:['수상해… 내일 다 불어라'],next:null}],
+ a:[{me:['아, 미안해요. 오늘은 패스할게요.'],reply:['왜?'],next:null},
+    {me:['저 오늘 선약 있어서요.'],reply:['오 누구랑?'],next:'b'},
+    {me:['몇 시까지 가면 돼요?'],reply:['8시! 역 앞 이자카야','분장 꼭 하고 와라 ㅋㅋ'],next:'c'}],
+ b:[{me:['그건 다음에요, 다음에.'],reply:['와 뭐냐?','여친 생김?'],next:'b2'},
+    {me:['그것도 비밀이거든요.'],reply:['너 요즘 비밀 왜 이렇게 많냐 ㅋㅋ','수영 같이 다닌다는 그 사람이지?'],next:'b3'}],
+ b2:[{me:['아니거든요?'],reply:['ㅋㅋㅋ 반응 수상한데'],next:null},
+     {me:['...랄까, 비슷한 거요?'],reply:['헐','대박','사진 보여줘 사진'],next:'b4'}],
+ b3:[{me:['엑, 어떻게 알았어요?'],reply:['너 요즘 폰 보면서 웃잖아 ㅋㅋㅋ','다 티 나'],next:null},
+     {me:['아니라니까요.'],reply:['아니긴 뭐가 아니야 ㅋㅋ'],next:null}],
+ b4:[{me:['절대 싫거든요.'],reply:['치사한 놈 ㅋㅋ 잘해봐라'],next:null},
+     {me:['나중에요. 언젠가 직접 소개해줄게요.'],reply:['오 ㅋㅋㅋ 약속했다?'],next:null}],
+ c:[{me:['...아, 미안해요. 아무래도 오늘은 안 되겠어요.'],reply:['??? 뭐야 ㅋㅋㅋ','너 지금 어딘데'],next:'c2'},
+    {me:['분장은 절대 안 해요.'],reply:['그럼 첫 잔은 니 돈 ㅋㅋ'],next:null}],
+ c2:[{me:['옥상이요'],reply:['옥상?? 이 추운데?','누구랑 있구나 너'],next:null},
+     {me:['그냥 바람 좀 쐬는 중이에요.'],reply:['수상해… 내일 다 불어라'],next:null}],
 };
 const junTalk=mkTalk({
  home:{name:'사자나미 쥰',av:junAvatar,status:'',rec:{n:'사에구사 이바라',av:initialAv('사'),sub:'연락처에서 추천',toast:'아직 추가하지 않았어요'},
@@ -1439,31 +1438,31 @@ const teacherData=[
  M('12:30','네, 조심하겠습니다. 선생님도 감기 조심하세요.'),
  O('미즈노 선생님','12:41','ㅎㅎ 그래. 따뜻하게 입고 다니고.',{av:teacherAv}),
  {day:'2026년 10월 31일 토요일'},
- O('미즈노 선생님','16:58','이바라, 다음 달이 생일이지? 올해도 작은 케이크 보내려고 하는데 괜찮니?',{av:teacherAv}),
- O('미즈노 선생님','17:02','그리고 요즘은 어떻게 지내? 소식 들은 지 오래됐다.',{av:teacherAv}),
+ O('미즈노 선생님','15:40','이바라, 다음 달이 생일이지? 올해도 작은 케이크 보내려고 하는데 괜찮니?',{av:teacherAv}),
+ O('미즈노 선생님','15:44','그리고 요즘은 어떻게 지내? 소식 들은 지 오래됐다.',{av:teacherAv}),
 ];
 const teacherTree={start:'a',
  a:[{me:['매년 감사합니다. 올해도 잘 먹겠습니다.'],reply:['ㅎㅎ 그래.','주소는 그대로지?'],next:'k'},
     {me:['그럭저럭 지내고 있습니다.'],reply:['그럭저럭이면 다행이다.','밥은 잘 챙겨 먹고?'],next:'f'}],
  k:[{me:['네, 그대로입니다.'],reply:['...그래. 14일에 맞춰 보낼게.','밥 꼭 챙겨 먹고.'],next:null},
-    {me:['...올해는 두 개 보내주실 수 있습니까?'],reply:['어머, 두 개? ㅎㅎ','누구랑 먹으려고?'],next:'k2'}],
+    {me:['...혹시 올해는 두 개로 부탁드려도 되겠습니까?'],reply:['어머, 두 개? ㅎㅎ','누구랑 먹으려고?'],next:'k2'}],
  k2:[{me:['같이 먹을 사람이 생겨서요.'],reply:['이바라 입에서 그런 말이 나오다니','선생님 좀 울 것 같다'],next:'k3'},
      {me:['그건 비밀입니다.'],reply:['ㅎㅎ 알았어. 크게 두 개 보낼게.'],next:null}],
  k3:[{me:['우실 일까진 아닌 것 같습니다만···.'],reply:['ㅎㅎ 그래.','다음엔 그 사람이랑 같이 와.'],next:null}],
  f:[{me:['주로 편의점 도시락을 먹습니다.'],reply:['또 도시락이야!','케이크 보낼 때 반찬도 같이 넣을게.'],next:null},
-    {me:['요즘은 가끔 챙겨주는 사람이 있어서요.'],reply:['어머, 누가?'],next:'f2'}],
- f2:[{me:['...친구라고 해야 하나. 그런 사람이 생겼습니다.'],reply:['정말? 어떤 사람이야?'],next:'f3'},
+    {me:['요즘은 가끔 억지로 먹이는 사람이 있어서요.'],reply:['어머, 누가?'],next:'f2'}],
+ f2:[{me:['...친구, 라고 해야 할지. 그런 사람이 하나 생겼습니다.'],reply:['정말? 어떤 사람이야?'],next:'f3'},
      {me:['뭐, 아는 사람입니다.'],reply:['ㅎㅎ 그래. 그 아는 사람한테 고맙다고 전해줘.'],next:null}],
  f3:[{me:['늘 딸기 사탕을 들고 다니는 사람입니다.'],reply:['ㅎㅎ 좋은 사람이구나.','이바라 말투가 좀 달라졌다.'],next:null},
-     {me:['자신한테 수영을 가르쳐 줍니다.'],reply:['이바라가 수영을? 물 싫어했잖아.'],next:'f4'}],
- f4:[{me:['지금도 좋아하진 않습니다. 그런데 이상하게 가게 되네요.'],reply:['...그래.','다음에 꼭 데려와. 선생님도 보고 싶다.'],next:null}],
+     {me:['자신에게 수영을 가르쳐 주는 사람입니다. 진도는 형편없지만요.'],reply:['이바라가 수영을? 물 싫어했잖아.'],next:'f4'}],
+ f4:[{me:['지금도 좋아하진 않습니다. 그런데 이상하게 자꾸 가게 됩니다.'],reply:['...그래.','다음에 꼭 데려와. 선생님도 보고 싶다.'],next:null}],
 };
 const facilityGroup=[
  {day:'2019년 12월 25일 수요일'},
  O('렌','16:20','오늘 사진 누가 찍었어?? 단톡에 올려줘'),
  O('미오','16:22','나나 눈사람 앞에서 찍은 거 있어'),
  O('렌','16:23','이바라 웃는 사진 있냐 ㅋㅋㅋ'),
- M('16:40','그런 게 있을 리가요.'),
+ M('16:40','그런 게 있을 리가 없잖습니까.'),
  {day:'2023년 3월 15일 수요일'},
  O('소타','11:00','나 오늘 시설 나간다'),
  O('미오','11:02','다들 잘 살아라 진짜로'),
@@ -1487,7 +1486,7 @@ const ibTalk=mkTalk({
  home:{name:'사에구사 이바라',av:initialAv('사'),status:'',rec:{n:'쥰',av:junAvatar,sub:'연락처에서 추천',toast:'아직 추가하지 않았어요'},
   friends:[{n:'미즈노 선생님',av:teacherAv,s:'오늘도 수고했어요'},{n:'렌'},{n:'미오',s:'졸업했다!!'},{n:'소타'}],more:3},
  rooms:[
-  {id:'k-teacher',n:'미즈노 선생님',av:teacherAv,pv:'그리고 요즘은 어떻게 지내? 소식 들은 지 오래됐다.',w:'오후 5:02',cnt:2,data:teacherData,who:'미즈노 선생님',tree:teacherTree},
+  {id:'k-teacher',n:'미즈노 선생님',av:teacherAv,pv:'그리고 요즘은 어떻게 지내? 소식 들은 지 오래됐다.',w:'오후 3:44',cnt:2,data:teacherData,who:'미즈노 선생님',tree:teacherTree},
   {id:'k-cvs',n:'매일편의점',official:true,av:sq('매','linear-gradient(#ff9f0a,#e0580b)'),pv:'도시락 2개 구매 시 음료 1개 증정',w:'오전 9:00',cnt:1,data:cvsAds,noInput:'공식계정에는 답장할 수 없습니다'},
   {id:'k-pool',n:'역 앞 실내 수영장',official:true,av:sq('≈','linear-gradient(#30b0c7,#1d6aa6)'),pv:'11월 회원 등록 시 첫 달 50% 할인',w:'10. 30.',cnt:1,data:poolAds,noInput:'공식계정에는 답장할 수 없습니다'},
   {id:'k-fac',n:'햇살원 친구들',c:6,av:sq(I.group,'linear-gradient(#f2c14e,#e09a3e)'),pv:'감사합니다. 기억하고 있을 줄은 몰랐네요.',w:'2024. 11. 14.',data:facilityGroup},
@@ -1504,7 +1503,7 @@ const junAlarms=alarmsApp([
  {ap:'오전',t:'7:40',n:'1교시 · 월, 수',on:true},
  {ap:'오전',t:'9:00',n:'교양 · 화, 금',on:true},
  {ap:'오후',t:'12:20',n:'상담 · 월요일',on:true},
- {ap:'오후',t:'5:20',n:'옥상 · 매년 10월 31일',on:true},
+ {ap:'오후',t:'4:15',n:'옥상 · 매년 10월 31일',on:true},
 ]);
 const junSearches=[
  ['옥상 노을 시간 10월','10. 31.'],['할로윈 장난 문자','10. 31.'],['정신과 약 부작용 졸림','10. 18.'],['수면제 먹으면 아침에 몽롱함','10. 18.'],
@@ -1543,7 +1542,7 @@ function ttHTML(){
 const junEvents={31:[{t:'엄마 기일',n:'매년 반복',tm:'하루 종일',c:'#8e8c93'}]};
 [5,12,19,26].forEach(d=>junEvents[d]=[{t:'상담',n:'코모레비 상담소',tm:'13:00',c:'#7fd3a0'}]);
 const junCalls=[
- {n:'이바라',c:2,t:'miss',sub:'휴대전화',w:'16:50'},
+ {n:'이바라',c:2,t:'miss',sub:'휴대전화',w:'15:22'},
  {n:'아빠',t:'miss',sub:'휴대전화 · 음성 메시지',w:'10:11'},
  {n:'이바라',t:'out',sub:'휴대전화 · 18분',w:'10월 27일'},
  {n:'이바라',t:'in',sub:'휴대전화 · 3분',w:'10월 17일 04:47'},
@@ -1555,7 +1554,7 @@ const junCalls=[
 ];
 const junHome=`<div class="pages">
   <div class="page">
-    <div class="clock"><b>17:48</b><span>10월 31일 토요일</span></div>
+    <div class="clock"><b>16:35</b><span>10월 31일 토요일</span></div>
     ${ttHTML()}
   </div>
   <div class="page">
@@ -1588,13 +1587,13 @@ const junHome=`<div class="pages">
   ${icon('talk','LIME',TALKBG,I.talk,'<span class="badge">44</span>')}
   ${icon('photos','사진','#fff',I.photo)}
 </div>`;
-const jun=makePhone({key:'jun',code:'0816',cls:'p-jun',time:'17:48',batt:'8',label:'쥰의 폰',homeHTML:junHome,lock:[
-  {open:'calls',app:'전화',w:'16:50',t:'이바라',b:'부재중 전화 2통',bg:'linear-gradient(#5be07a,#2fbf55)',icon:I.phone},
+const jun=makePhone({key:'jun',code:'0816',cls:'p-jun',time:'16:35',batt:'8',label:'쥰의 폰',homeHTML:junHome,lock:[
+  {open:'calls',app:'전화',w:'15:22',t:'이바라',b:'부재중 전화 2통',bg:'linear-gradient(#5be07a,#2fbf55)',icon:I.phone},
   {open:'k-group',app:'LIME',w:'14:02',t:'체육교육과 2학년 (32)',b:'과대표 나카무라: 금요일 배구 실기 조 편성 올렸습니다 외 26개',bg:TALKBG,icon:I.talk},
   {open:'t-dad',app:'메시지',w:'어제',t:'아빠',b:'내일 엄마 보러 갈 거냐',bg:'linear-gradient(#6fdc8c,#30b356)',icon:I.msg},
  ],apps:{
   msgs:{html:listApp(
-    chatRow({open:'t-ibara',av:blankAvatar('#c9c3d1'),n:'이바라',pv:'저 지금 옥상이에요',w:'16:48'})+
+    chatRow({open:'t-ibara',av:blankAvatar('#c9c3d1'),n:'이바라',pv:'저 지금 옥상이에요',w:'15:20'})+
     chatRow({open:'t-dad',av:blankAvatar('#b8b2bc'),n:'아빠',pv:'내일 엄마 보러 갈 거냐',w:'10월 30일',cnt:2})+
     chatRow({open:'t-center',av:blankAvatar('#a5c9b5'),n:'코모레비 상담소',pv:'[안내] 다음 상담은 11월 2일(월) 13:00입니다.',w:'10월 26일'}))},
   't-ibara':{html:threadApp('이바라','msgs','내년 오늘 대답 꼭 해요'),onOpen:(v)=>{const t=v.querySelector('.thread');if(!t.innerHTML)t.innerHTML=threadHTML(junIbara,s=>s==='j','이바라',blankAvatar('#c9c3d1'));t.scrollTop=t.scrollHeight}},
@@ -1647,10 +1646,10 @@ add(16,{t:'정신과 진료',n:'다음부터 한 달에 한 번',tm:'11:00',c:C.
 add(25,{t:'집세 납부',n:'9월부터 인상분 적용',tm:'하루 종일',c:C.money});
 add(30,{t:'정신과 진료',n:'31일로 옮김',tm:'11:00',c:C.clinic,x:true});
 add(30,{t:'대타',n:'독감 결근 · 사장님 부탁',tm:'14:00–02:00',c:C.work});
-add(31,{t:'정신과 진료',n:'약 떨어짐',tm:'16:00',c:C.clinic});
-add(31,{t:'옥상',n:'매년 반복 · 이 시간에',tm:'17:20',c:C.jun});
+add(31,{t:'정신과 진료',n:'약 떨어짐',tm:'14:30',c:C.clinic});
+add(31,{t:'옥상',n:'매년 반복 · 이 시간에',tm:'16:15',c:C.jun});
 const ibCalls=[
- {n:'쥰',c:2,t:'out',sub:'휴대전화 · 연결 안 됨',w:'16:50'},
+ {n:'쥰',c:2,t:'out',sub:'휴대전화 · 연결 안 됨',w:'15:22'},
  {n:'사장님',t:'in',sub:'휴대전화 · 1분',w:'어제'},
  {n:'쥰',t:'in',sub:'휴대전화 · 18분',w:'10월 27일'},
  {n:'코모레비 상담소',t:'in',sub:'일반전화 · 1분',w:'10월 19일'},
@@ -1673,8 +1672,8 @@ const tx=[
  ['10/15','10:00','물류센터 단기 알바','급여 · 10월 전반',17200],['10/16','11:38','정신건강의학과','진료비',-2850],['10/17','15:03','편의점','이온음료',-260],
  ['10/21','12:13','편의점','',-540],['10/25','00:00','집세','자동이체 · 인상 반영',-35000],
  ['10/26','12:40','편의점','',-540],['10/27','00:00','통신요금','자동이체',-3200],['10/28','00:00','공과금','자동이체 · 전기 가스',-6900],['10/29','12:11','편의점','',-540],
- ['10/30','13:20','편의점','',-598],['10/31','16:31','정신건강의학과','진료비',-1430],['10/31','16:44','미소약국','한 달 치',-3960],
- ['10/31','17:46','달콤상점','온라인 결제',-1980],
+ ['10/30','13:20','편의점','',-598],['10/31','14:52','정신건강의학과','진료비',-1430],['10/31','15:05','미소약국','한 달 치',-3960],
+ ['10/31','16:34','달콤상점','온라인 결제',-1980],
 ];
 tx.sort((x,y)=>{const f=t=>{const [m,d]=t[0].split('/').map(Number);return m*100000+d*1000+parseInt(t[1].replace(':',''))};return f(x)-f(y)});
 const END=14286;let bal=END-tx.reduce((s,t)=>s+t[4],0);
@@ -1719,9 +1718,9 @@ const ibHome=`<div class="pages"><div class="page">
   ${icon('photos','사진','#fff',I.photo)}
 </div>
 <button type="button" class="noti" data-open="bank" data-arg="flash" aria-label="새벽은행 출금 알림 열기"><span class="ic" style="background:linear-gradient(#4fe0bb,#2fbf9b)">${I.bank}</span><span class="ntx"><b>새벽은행<small>지금</small></b>[출금] ${yen(1980)} 달콤상점<br><span style="opacity:.7">잔액 ${yen(END)}</span></span></button>`;
-const ibara=makePhone({key:'ibara',code:'1114',lock:[{open:'k-teacher',app:'LIME',w:'17:02',t:'미즈노 선생님',b:'그리고 요즘은 어떻게 지내? 소식 들은 지 오래됐다.',bg:TALKBG,icon:I.talk}],cls:'p-ibara',time:'17:48',batt:'5',label:'이바라의 폰',homeHTML:ibHome,onHome:a=>a.scr.querySelector('.noti').classList.remove('on'),apps:{
+const ibara=makePhone({key:'ibara',code:'1114',lock:[{open:'k-teacher',app:'LIME',w:'15:44',t:'미즈노 선생님',b:'그리고 요즘은 어떻게 지내? 소식 들은 지 오래됐다.',bg:TALKBG,icon:I.talk}],cls:'p-ibara',time:'16:35',batt:'5',label:'이바라의 폰',homeHTML:ibHome,onHome:a=>a.scr.querySelector('.noti').classList.remove('on'),apps:{
   msgs:{html:listApp(
-    chatRow({open:'t-jun',av:junAvatar,n:'쥰',pv:'저 지금 옥상이에요',w:'16:48'})+
+    chatRow({open:'t-jun',av:junAvatar,n:'쥰',pv:'저 지금 옥상이에요',w:'15:20'})+
     chatRow({open:'t-boss',av:blankAvatar('#55545a'),n:'사장님',pv:'오늘 고생했다. 푹 쉬어라',w:'02:14'})+
     chatRow({open:'t-center',av:blankAvatar('#3f5a52'),n:'코모레비 상담소',pv:'[안내] 다음 상담은 11월 2일(월) 13:00입니다.',w:'10월 26일'})+
     chatRow({open:'t-land',av:blankAvatar('#55545a'),n:'집주인',pv:'집주인입니다. 부득이하게 이번 달부터 집세를…',w:'9월 18일'}))},
@@ -1737,7 +1736,7 @@ const ibara=makePhone({key:'ibara',code:'1114',lock:[{open:'k-teacher',app:'LIME
    ['우울증 마음의 감기 뜻','9. 21.'],['코모레비 상담소 위치','9. 21.'],['집세 인상 통보 기간','9. 18.'],
   ]),...mkContacts([
    {n:'물류센터 담당',ph:'03-6812-4470'},{n:'병원',ph:'03-5590-2213'},{n:'사장님',ph:'090-2718-6630'},
-   {n:'쥰',av:junAvatar,ph:'080-2207-1129',memo:'딸기 사탕\n접영 지역 기록 보유 (본인 주장, 확인함)\n집 반대 방향',log:[['9월 21일 19:58',"'사자나미'로 저장"],['10월 3일 20:44',"이름 변경 · '사자나미' → '쥰'"],['10월 4일 13:10','메모 추가'],['10월 31일 17:52','메모 수정']]},
+   {n:'쥰',av:junAvatar,ph:'080-2207-1129',memo:'딸기 사탕\n접영 지역 기록 보유 (본인 주장, 확인함)\n집 반대 방향',log:[['9월 21일 19:58',"'사자나미'로 저장"],['10월 3일 20:44',"이름 변경 · '사자나미' → '쥰'"],['10월 4일 13:10','메모 추가'],['10월 31일 16:30','메모 수정']]},
    {n:'집주인',ph:'090-5531-0877'},{n:'코모레비 상담소',ph:'03-5521-0480'},
   ],'사에구사 이바라',initialAv('사'),{ph:'090-3107-1218',bd:'2005년 11월 14일'}),
   ...ibTalk,
@@ -1749,7 +1748,7 @@ const ibara=makePhone({key:'ibara',code:'1114',lock:[{open:'k-teacher',app:'LIME
     extra:[['가장 많이 연락한 사람','쥰'],['첫 사용','오전 7:31'],['화면 깨우기','일 평균 41회']]}),
   ...mkMap({pins:[{x:330,y:200,c:'#0a84ff',i:'⌂'},{x:120,y:120,c:'#ff9500',i:'♨'},{x:60,y:60,c:'#30b0c7',i:'•'},{x:200,y:60,c:'#8e8e93',i:'▣'},{x:170,y:230,c:'#ff2d55',i:'★'}],
     favs:[{n:'집',d:'다세대 2층',c:'#0a84ff',i:'⌂'},{n:'일',d:'역 남쪽 이자카야',c:'#ff9500',i:'♨'},{n:'상담소',d:'코모레비',c:'#30b0c7',i:'•'},{n:'물류센터',d:'화 · 목',c:'#8e8e93',i:'▣'}],
-    recent:[{n:'대학가 뒤편 원룸',d:'10월 31일 16:52',c:'#ff2d55',i:'★'},{n:'미소약국',d:'10월 31일',c:'#8e8e93',i:'+'},{n:'정신건강의학과',d:'10월 31일',c:'#8e8e93',i:'+'},{n:'역 앞 실내 수영장',d:'10월 3일',c:'#30b0c7',i:'≈'}]}),
+    recent:[{n:'대학가 뒤편 원룸',d:'10월 31일 15:24',c:'#ff2d55',i:'★'},{n:'미소약국',d:'10월 31일',c:'#8e8e93',i:'+'},{n:'정신건강의학과',d:'10월 31일',c:'#8e8e93',i:'+'},{n:'역 앞 실내 수영장',d:'10월 3일',c:'#30b0c7',i:'≈'}]}),
   cal:{html:calendarApp('10월'),onOpen:v=>calendarInto(v,ibEvents,31)},
   bank:{html:bankApp,
     init:a=>{const v=a.scr.querySelector('[data-app="bank"]');const set=m=>{v.querySelectorAll('.mtab').forEach(b=>b.setAttribute('aria-pressed',b.dataset.m===m));v.querySelector('.txlist').innerHTML=bankList(m)};v.querySelectorAll('.mtab').forEach(b=>b.onclick=()=>set(b.dataset.m));set('10')},
@@ -1790,13 +1789,13 @@ setupBadges(ibara,{missed:0,vm:0});
   const btn=jun.scr.querySelector('[data-app="t-ibara"] .sendb');if(!btn)return;
   btn.onclick=()=>{
     const field=btn.closest('.field'),text=field.firstChild.textContent.trim();
-    junIbara.push({s:'j',time:'17:48',text});
+    junIbara.push({s:'j',time:'16:35',text});
     field.classList.remove('draft');field.innerHTML='메시지<svg width="16" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5.5 11a6.5 6.5 0 0 0 13 0M12 17.5V21"/></svg>';
     const jt=jun.scr.querySelector('[data-app="t-ibara"] .thread');
-    jt.innerHTML=threadHTML(junIbara,s=>s==='j','이바라').replace(/<b>읽음<\/b> 오후 5:48/,'전송됨');jt.scrollTop=jt.scrollHeight;
+    jt.innerHTML=threadHTML(junIbara,s=>s==='j','이바라').replace(/<b>읽음<\/b> 오후 4:35/,'전송됨');jt.scrollTop=jt.scrollHeight;
     const it=ibara.scr.querySelector('[data-app="t-jun"] .thread');
     if(it.innerHTML){it.innerHTML=threadHTML(junIbara,s=>s==='i','쥰',junAvatar,'jun');it.scrollTop=it.scrollHeight}
-    const setRow=(ph,id,unread)=>{const r=ph.scr.querySelector(`.row-btn[data-open="${id}"]`);if(!r)return;r.querySelector('.pv').textContent=text;r.querySelector('.rt').firstChild.textContent='오후 5:48';if(unread){r.querySelector('.udot').innerHTML='<i class="cnt"></i>';r.dataset.cnt=1;ph.paintBadges&&ph.paintBadges()}};
+    const setRow=(ph,id,unread)=>{const r=ph.scr.querySelector(`.row-btn[data-open="${id}"]`);if(!r)return;r.querySelector('.pv').textContent=text;r.querySelector('.rt').firstChild.textContent='오후 4:35';if(unread){r.querySelector('.udot').innerHTML='<i class="cnt"></i>';r.dataset.cnt=1;ph.paintBadges&&ph.paintBadges()}};
     setRow(jun,'t-ibara');setRow(ibara,'t-jun',true);
     setTimeout(()=>{
       if(ibara.locked){ibara.lockNotify(lnoti({open:'t-jun',app:'메시지',w:'지금',t:'쥰',b:text,bg:'linear-gradient(#6fdc8c,#30b356)',icon:I.msg}));return}
