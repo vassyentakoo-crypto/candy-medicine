@@ -929,6 +929,58 @@ button{font-family:inherit;color:inherit}
 .hs-shop{padding:2px 0 4px}.hs-shop .sp-card{width:118px}
 .hs-res{padding:0 14px 20px}.hs-rtabs{display:flex;gap:16px;font-size:14px;color:var(--sub);border-bottom:.5px solid var(--line);padding:4px 2px 10px;margin-bottom:6px}.hs-rtabs b{color:var(--hs);border-bottom:2px solid var(--hs);padding-bottom:8px;margin-bottom:-11px}
 .hs-rsec{margin-top:10px}.hs-rsec .hs-sec{padding:6px 0}.hs-none{text-align:center;color:var(--sub);margin-top:60px;font-size:14.5px;line-height:1.6}.hs-none small{font-size:12px}
+
+/* search input + rich results */
+.sq-in{flex:1;min-width:0;border:0;outline:0;background:none;color:var(--fg);font-size:15px;font-family:inherit;padding:0;-webkit-appearance:none;appearance:none}
+.sq-in::placeholder{color:var(--sub)}.sq-in::-webkit-search-cancel-button{opacity:.5}
+.hs-site{width:100%;text-align:left;border:0;background:var(--cell);border-radius:12px;padding:12px 14px;margin:8px 0;display:flex;flex-direction:column;gap:3px;color:var(--fg);cursor:pointer;font-family:inherit}
+.hs-site small{color:#30b356;font-size:12px}.hs-site b{font-size:17px;color:#1a0dab}.p-ibara .hs-site b{color:#8ab4f8}.hs-site span{font-size:13.5px;color:var(--sub);line-height:1.4}
+.hs-site i{display:flex;gap:6px;margin-top:6px;font-style:normal}.hs-site em{font-style:normal;font-size:12px;border:1px solid var(--line);border-radius:14px;padding:4px 10px}
+.hs-place{width:100%;display:flex;align-items:center;gap:12px;text-align:left;border:0;background:var(--cell);border-radius:12px;padding:12px 14px;margin:8px 0;color:var(--fg);cursor:pointer;font-family:inherit}
+.hs-pin{width:36px;height:36px;border-radius:50%;color:#fff;display:grid;place-items:center;font-size:15px;flex-shrink:0}.hs-place>span:nth-child(2){flex:1;display:flex;flex-direction:column;gap:2px}.hs-place small{font-size:12px;color:var(--sub)}.hs-place em{font-style:normal;color:var(--accent);font-size:13px;font-weight:600}
+.hs-dt{display:block;font-size:11.5px;color:var(--sub);margin-top:2px}
+.hs-qa{width:100%;text-align:left;border:0;border-bottom:.5px solid var(--line);background:none;padding:10px 2px;display:flex;flex-direction:column;gap:4px;color:var(--fg);cursor:pointer;font-family:inherit}.hs-qa b{font-size:14.5px;line-height:1.35}.hs-qa span{font-size:13px;color:var(--sub);line-height:1.4}.hs-qa small{font-size:11.5px;color:var(--sub)}
+/* mini websites */
+[data-app^="web-"]{display:flex;flex-direction:column;background:#fff;color:#1d1d1f}
+.wb-bar{display:flex;align-items:center;gap:6px;padding:4px 10px 8px;background:#f2f2f7;border-bottom:.5px solid #d8d8dc}.wb-bar .back{color:#007aff}
+.wb-url{flex:1;background:#e3e3e8;border-radius:10px;padding:7px 10px;font-size:13px;color:#3a3a3c;text-align:center;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.wb-x{border:0;background:none;color:#007aff;font-size:15px;font-weight:600;cursor:pointer;font-family:inherit}
+.wb{flex:1;padding-bottom:20px}
+.wb-head{padding:14px 16px 10px;display:flex;flex-direction:column;gap:2px}.wb-head b{font-size:21px;letter-spacing:-.3px}.wb-head span{font-size:12.5px;color:#6e6e73}
+.wb-head.u b{color:#1b3f8b}.wb-head.s b{color:#e08a00}
+.wb-tabs{display:flex;gap:2px;padding:0 10px;border-bottom:1px solid #e5e5ea;overflow-x:auto;scrollbar-width:none}.wb-tabs button{border:0;background:none;padding:10px 10px;font-size:14px;color:#6e6e73;cursor:pointer;white-space:nowrap;font-family:inherit;border-bottom:2px solid transparent}
+.wb-univ .wb-tabs button.on{color:#1b3f8b;border-color:#1b3f8b;font-weight:700}.wb-sun .wb-tabs button.on{color:#e08a00;border-color:#e08a00;font-weight:700}
+.wb-hero{margin:12px 14px;border-radius:14px;padding:22px 18px;color:#fff;display:flex;flex-direction:column;gap:6px}.wb-hero b{font-size:22px;line-height:1.3}.wb-hero small{opacity:.8;font-size:12px}
+.wb-hero.u{background:linear-gradient(120deg,#1b3f8b,#3f7bd6 60%,#5ac8fa)}.wb-hero.s{background:linear-gradient(120deg,#ffb347,#ffcf6b 60%,#ffe9a8);color:#5a3a00}
+.wb section{padding:0 14px}
+.wb-n{border-bottom:1px solid #ececf0}.wb-n summary{list-style:none;padding:12px 2px;cursor:pointer;display:flex;flex-direction:column;gap:4px}.wb-n summary::-webkit-details-marker{display:none}
+.wb-n summary span{font-size:15px;font-weight:600;line-height:1.35}.wb-n summary small{font-size:12px;color:#8e8e93}
+.wb-n summary em{font-style:normal;font-size:11px;font-weight:700;border-radius:5px;padding:1px 6px;align-self:flex-start;background:#e5e5ea;color:#3a3a3c}.wb-n summary em.red{background:#ff3b30;color:#fff}.wb-n summary em.new{background:#34c759;color:#fff}
+.wb-nb{background:#f6f6f8;border-radius:10px;padding:10px 12px;margin:0 0 12px}.wb-nb p{margin:0 0 6px;font-size:14px;line-height:1.55}.wb-nb p:last-child{margin:0}
+.wb-cal div{display:flex;gap:14px;padding:12px 2px;border-bottom:1px solid #ececf0;font-size:14.5px}.wb-cal b{width:76px;color:#1b3f8b;font-variant-numeric:tabular-nums}
+.wb-txt p{font-size:14.5px;line-height:1.65;margin:10px 2px}.wb-q{background:#fff6e0;border-radius:10px;padding:12px;color:#7a5200}
+.wb-foot{margin:24px 14px 0;padding-top:14px;border-top:1px solid #ececf0;font-size:12px;color:#8e8e93;line-height:1.6}
+/* bank home */
+[data-app="bank"]{display:flex;flex-direction:column}
+.bk-top{display:flex;align-items:center;gap:6px;padding:4px 12px 8px;min-height:44px}.bk-logo{flex:1;font-size:20px;font-weight:800;color:var(--bk,#1f6f63);letter-spacing:-.5px}.p-ibara .bk-logo{color:#2fbf9b}
+.bk-ic{border:0;background:none;color:var(--fg);cursor:pointer}
+.bk-body{flex:1;padding:0 14px 24px}
+.bk-acct{border-radius:20px;padding:18px;background:linear-gradient(140deg,#1f6f63,#164a45);color:#fff;box-shadow:0 8px 24px rgba(0,0,0,.25)}
+.bk-ah{display:flex;justify-content:space-between;align-items:flex-start}.bk-ah>span:first-child{display:flex;flex-direction:column;gap:2px}.bk-ah b{font-size:15px}.bk-ah small{font-size:12px;opacity:.75}.bk-main{font-size:11px;font-weight:700;background:rgba(255,255,255,.18);border-radius:8px;padding:3px 8px}
+.bk-bal{font-size:32px;font-weight:700;margin:16px 0 14px;font-variant-numeric:tabular-nums;letter-spacing:-.5px}
+.bk-btns{display:flex;gap:8px}.bk-btns button{flex:1;border:0;border-radius:12px;padding:11px;background:rgba(255,255,255,.17);color:#fff;font-size:14px;font-weight:600;cursor:pointer;font-family:inherit}.bk-btns button:last-child{background:#fff;color:#164a45}
+.bk-quick{display:grid;grid-template-columns:repeat(4,1fr);gap:12px 4px;margin:18px 0 6px}.bk-quick button{border:0;background:none;color:var(--fg);font-size:12px;display:flex;flex-direction:column;align-items:center;gap:6px;cursor:pointer;font-family:inherit}
+.bk-quick span{width:48px;height:48px;border-radius:15px;background:var(--card);display:grid;place-items:center;color:#2fbf9b}
+.bk-card{background:var(--card);border-radius:16px;padding:12px 14px;margin-top:12px}
+.bk-sec{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:4px}.bk-sec b{font-size:16px}.bk-sec button{border:0;background:none;color:var(--sub);font-size:13px;cursor:pointer;font-family:inherit}.bk-sec small{color:var(--sub);font-size:12.5px}
+.bk-r{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:9px 0;border-top:.5px solid var(--line);font-size:14px;font-variant-numeric:tabular-nums}.bk-r>span:first-child{display:flex;flex-direction:column;gap:2px;min-width:0}.bk-r b{font-weight:600;font-size:14.5px}.bk-r small{font-size:12px;color:var(--sub)}.bk-r .in{color:#2fbf9b;font-weight:600}
+.bk-cc{display:flex;gap:12px;align-items:center;padding:8px 0 10px}.bk-cc>span:last-child{display:flex;flex-direction:column;gap:2px}.bk-cc b{font-size:14.5px}.bk-cc small{font-size:12px;color:var(--sub)}
+.bk-plate{width:84px;height:54px;border-radius:8px;background:linear-gradient(135deg,#2fbf9b,#14524a);color:#fff;position:relative;flex-shrink:0;box-shadow:0 3px 8px rgba(0,0,0,.3)}.bk-plate i{position:absolute;left:7px;top:5px;font-style:normal;font-size:10px;font-weight:800}.bk-plate em{position:absolute;right:7px;top:6px;font-style:normal;font-size:7.5px;opacity:.8;letter-spacing:.5px}.bk-plate small{position:absolute;left:7px;bottom:5px;font-size:9px!important;color:#fff!important;opacity:.9}
+.bk-warn{margin:8px 0 2px;font-size:12.5px;line-height:1.45;color:#ff9f0a;background:rgba(255,159,10,.1);border-radius:10px;padding:8px 10px}
+.bk-promo{width:100%;margin-top:12px;border:0;border-radius:16px;padding:14px 16px;display:flex;justify-content:space-between;align-items:center;text-align:left;cursor:pointer;color:#fff;font-family:inherit}
+.bk-promo span{display:flex;flex-direction:column;gap:3px}.bk-promo small{font-size:11.5px;opacity:.85;font-weight:600}.bk-promo b{font-size:16px}.bk-promo em{font-style:normal;font-size:12px;opacity:.8}.bk-promo i{font-style:normal;font-size:30px}
+.bk-promo.a{background:linear-gradient(120deg,#3b3a9e,#6a5acd)}.bk-promo.b{background:linear-gradient(120deg,#1f8a5a,#4fd18b)}
+.bk-foot{text-align:center;font-size:11.5px;color:var(--sub);margin-top:18px}
 </style>
 
 <div class="stage" id="stage"></div>
@@ -936,9 +988,10 @@ button{font-family:inherit;color:inherit}
 
 <script>
 const NEWS={"swim": {"cat": "스포츠", "t": "현 수영 선수권 개막… 고교부 접영 100m 대회 신기록", "src": "켄신스포츠", "dt": "2026. 10. 29.", "w": "18:42", "cm": 342, "c": "linear-gradient(135deg,#1d6aa6,#7cc4e8)", "cap": "29일 현립 종합수영장에서 열린 고교부 남자 접영 100m 결승 출발 장면.", "body": "제58회 현 수영 선수권 대회가 29일 현립 종합수영장에서 개막한 가운데, 첫날 고교부 남자 접영 100m 결승에서 대회 신기록이 나왔다.\n미나미코 고교 2학년 미즈사와 렌은 결승에서 53초 62를 기록하며 1위로 터치패드를 찍었다. 4년 전 세워진 종전 기록(53초 88)을 0.26초 앞당긴 기록이다. 2위와의 차이는 1초 이상이었다.\n■ 4년 만에 깨진 기록\n종전 기록은 2022년 대회에서 당시 고교 2학년 선수가 세운 것이다. 이 선수는 같은 해 국가대표 선발전 결승 도중 부상을 입어 레이스를 마치지 못했고, 이후 선수 생활을 이어가지 못한 것으로 알려졌다.\n당시 경기를 지켜본 한 지도자는 “후반 25m에서 속도가 거의 떨어지지 않는 선수였다. 그 기록이 4년이나 버틴 이유가 있었다”고 돌아봤다.\n■ “기록보다 다음 레이스”\n미즈사와는 경기 후 인터뷰에서 “어릴 때 영상으로 보던 기록이라 실감이 나지 않는다. 기록보다 다음 레이스를 더 잘하고 싶다”고 말했다. 그는 31일 접영 50m와 계영 400m에도 출전한다.\n현 수영연맹은 이번 대회 고교부 참가 선수가 지난해보다 12% 늘었다고 밝혔다. 연맹 관계자는 “역 앞 실내 수영장 등 시설이 늘면서 저변이 넓어지고 있다”고 설명했다.\n대회는 다음 주 일요일인 11월 8일까지 열리며, 결승 경기는 매일 오후 4시부터 연맹 공식 채널에서 생중계된다.\n다카기 슌 기자"}, "halloween": {"cat": "지역", "t": "할로윈 앞둔 역 앞 번화가, 오후 6시부터 일부 도로 통제", "src": "오늘의 지역", "dt": "2026. 10. 31.", "w": "11:30", "cm": 128, "c": "linear-gradient(135deg,#ff9f43,#7a3b0f)", "cap": "30일 밤 사쿠라다이역 남쪽 출구 앞. 할로윈 장식을 단 가게들이 늘어서 있다.", "body": "할로윈 당일인 31일, 사쿠라다이역 남쪽 번화가 일대 도로가 오후 6시부터 다음 날 오전 1시까지 차량 통행이 제한된다.\n시는 30일 “지난해 할로윈 밤 역 남쪽 출구 앞에 한때 3천여 명이 몰려 보행로가 마비됐다”며 이같이 밝혔다. 통제 구간은 역 남쪽 출구에서 에키미나미 2초메 교차로까지 약 400m다.\n■ 안전 요원 40명 배치… 일부 버스 우회\n시와 경찰은 이자카야와 노래방이 몰려 있는 에키미나미 1·2초메에 안전 요원 40명을 배치한다. 혼잡이 심해지면 역 남쪽 출구를 일시적으로 출구 전용으로 바꾸고, 북쪽 출구로 입장을 유도할 계획이다.\n역앞로를 지나는 시내버스 3개 노선은 같은 시간 가와베 거리로 우회한다. 택시 승강장도 역 북쪽으로 임시 이전한다.\n■ 상인회 “대목이지만 걱정도”\n에키미나미 상인회는 회원 점포 60여 곳에 영업시간 연장 시 출입구 인원 관리를 요청했다. 한 이자카야 점주는 “1년 중 손님이 가장 많은 날이지만, 일손이 모자라 걱정”이라며 “요즘 독감 때문에 결근이 잦아 아르바이트생에게 대타를 부탁하고 있다”고 말했다.\n시는 길거리 음주와 분장 도구 투기 자제를 당부했다. 통제 구간 안에는 임시 쓰레기 수거함 20개가 설치된다.\n사토 미유키 기자"}, "sunset": {"cat": "날씨", "t": "오늘 해 질 무렵 맑음… “올가을 가장 붉은 노을 예상”", "src": "날씨온", "dt": "2026. 10. 31.", "w": "14:05", "cm": 57, "c": "linear-gradient(135deg,#4f437e,#ff7e8f,#ffb36b)", "cap": "지난해 11월 사쿠라 언덕에서 바라본 노을.", "body": "31일 오후 늦게부터 구름이 걷히면서 해 질 무렵 선명한 노을을 볼 수 있을 것으로 보인다.\n기상 당국에 따르면 이날 오후부터 대륙 고기압의 영향권에 들면서 하늘이 점차 맑아진다. 오전까지 내린 비로 대기 중 먼지가 씻겨 나가 노을빛이 평소보다 진하게 보일 가능성이 높다.\n■ 일몰 오후 4시 50분… 오후 4~5시가 절정\n사쿠라다이 일대 일몰 시각은 오후 4시 50분 전후다. 해가 지기 30분 전부터 해가 진 뒤 30분까지 하늘이 붉게 물들 것으로 예상된다.\n날씨온 예보관은 “서쪽 하늘이 트인 언덕이나 건물 옥상에서 보면 좋다”며 “구름이 높은 곳에 얇게 남아 있으면 분홍빛과 주황빛이 함께 나타날 수 있다”고 설명했다.\n■ 밤부터 기온 뚝… 내일은 흐리고 쌀쌀\n낮 최고기온은 19도까지 오르지만, 해가 진 뒤 빠르게 떨어져 밤에는 11도 안팎에 머물겠다. 바람도 다소 강해 체감온도는 더 낮다. 할로윈 행사 등으로 밤늦게 외출하는 경우 겉옷을 챙기는 것이 좋다.\n11월 1일 일요일은 오후부터 구름이 많아지고, 밤에는 곳곳에 약한 비가 내릴 전망이다.\n기상 캐스터 오노 하루카"}, "wage": {"cat": "경제", "t": "내년 최저임금 3.1% 인상… 아르바이트 시급 반영은 4월부터", "src": "경제나침반", "dt": "2026. 10. 31.", "w": "08:00", "cm": 891, "c": "linear-gradient(135deg,#2fbf9b,#164a45)", "cap": "역 앞 편의점에 붙은 아르바이트 모집 공고.", "body": "내년도 지역 최저임금이 시급 1,084엔에서 1,118엔으로 34엔(3.1%) 오른다.\n지역 최저임금 심의회는 30일 이같이 결정했다고 밝혔다. 인상 폭은 지난해(4.0%)보다 작고, 같은 기간 물가 상승률(3.4%)에도 못 미친다.\n■ 중소 사업장 “4월부터 반영”\n새 최저임금은 원칙적으로 1월부터 적용되지만, 종업원 10명 이하 사업장은 준비 기간을 거쳐 4월 1일부터 적용할 수 있다. 음식점과 편의점 아르바이트 상당수가 여기에 해당해, 실제 시급 인상은 봄이 돼서야 체감될 것으로 보인다.\n역 앞에서 이자카야를 운영하는 한 점주는 “재료비와 전기료가 다 올라 인건비까지 감당하기 쉽지 않다”면서도 “일 잘하는 아이들은 놓치고 싶지 않다”고 말했다.\n■ “두 탕 뛰어도 빠듯”\n아르바이트로 생활비를 마련하는 청년들은 인상 폭이 체감 물가를 따라가지 못한다고 호소한다. 주 5일, 두 곳에서 일한다는 20대 A씨는 “시간당 34엔 올라 봐야 한 달에 몇천 엔인데, 월세가 한 번 오르면 그대로 사라진다”고 말했다.\n노동 전문가들은 “최저임금 인상과 함께 청년 주거비와 의료비 지원을 함께 봐야 실질 소득이 늘어난다”고 지적했다.\n나카무라 겐 기자"}, "rent": {"cat": "생활", "t": "대학가 원룸 월세 1년 새 9% 올라… “관리비 인상분 전가”", "src": "오늘의 지역", "dt": "2026. 10. 31.", "w": "10:12", "cm": 204, "c": "linear-gradient(135deg,#6c6a72,#2c2b2f)", "cap": "가와베초 골목의 오래된 다세대 주택. 철제 외부 계단이 2층으로 이어진다.", "body": "사쿠라다이 대학가와 인근 가와베초 일대 원룸·다세대 주택 월세가 1년 새 평균 9% 오른 것으로 나타났다.\n지역 부동산 정보업체가 30일 발표한 자료에 따르면, 이 일대 전용면적 20㎡ 안팎 원룸의 평균 월세는 지난해 3만 2천 엔에서 올해 3만 4천 9백 엔으로 올랐다. 역에서 도보 15분 이상 떨어진 오래된 다세대 주택일수록 인상률이 높았다.\n■ “2주 전에 문자 한 통”\n집주인들은 관리비와 수리비 상승을 이유로 든다. 하지만 세입자들은 인상분이 충분한 설명 없이 그대로 떠넘겨지고 있다고 말한다.\n가와베초의 다세대 주택에 사는 20대 세입자는 “부득이하게 이번 달부터 올린다는 문자를 받은 게 전부”라며 “이사를 가려 해도 보증금과 이사 비용이 더 들어 그냥 내고 있다”고 했다.\n■ 시, 세입자 상담 창구 운영\n현행 규정상 임대료를 올리려면 계약 갱신 시점에 합의가 필요하며, 일방적인 통보만으로는 효력이 제한될 수 있다. 시 주택과는 평일 오전 9시부터 오후 5시까지 임대차 상담 창구를 운영하고 있다고 밝혔다.\n부동산업계는 역 앞 재개발과 신축 수영장 등 생활 시설이 들어서면서 이 지역 수요가 당분간 이어질 것으로 내다봤다.\n사토 미유키 기자"}, "counsel": {"cat": "건강", "t": "“마음의 감기, 혼자 버티지 마세요”… 청년 무료 상담 확대", "src": "헬스온", "dt": "2026. 10. 31.", "w": "13:30", "cm": 66, "c": "linear-gradient(135deg,#7fd3a0,#3c7f5a)", "cap": "시가 운영하는 지역 상담센터 대기실.", "body": "시가 운영하는 지역 상담센터들이 내년부터 청년 대상 무료 상담을 확대한다.\n시는 30일 만 19~34세 시민에게 지원하는 무료 심리 상담 횟수를 연 6회에서 12회로 늘린다고 밝혔다. 코모레비 상담소 등 시내 지정 상담센터 5곳에서 받을 수 있으며, 정신건강의학과 진료를 받고 있는 경우에도 함께 이용할 수 있다.\n■ 상담 신청 1년 새 40% 늘어\n올해 1~9월 시 상담센터를 찾은 청년은 1,870명으로, 지난해 같은 기간보다 40% 늘었다. 경제적 어려움과 진로 고민, 가족 문제가 주된 이유였다. 상담 대기 기간도 평균 2주에서 3주로 길어졌다.\n■ “감기처럼 가볍게 여기지는 말아야”\n‘우울증은 마음의 감기’라는 표현은 정신건강 치료에 대한 문턱을 낮추는 데 기여했다는 평가를 받는다. 다만 전문가들은 이 말이 오히려 증상을 가볍게 보게 만든다고 지적한다.\n한 정신건강의학과 전문의는 “감기와 달리 저절로 낫기를 기다리면 길어지는 경우가 많다”며 “약을 먹고 며칠 쉬면 끝나는 병이 아니라는 점을 알고, 꾸준히 도움을 받는 것이 중요하다”고 말했다.\n상담은 각 센터에 전화나 방문으로 예약할 수 있다. 위기 상황에서는 24시간 운영되는 지역 정신건강 위기상담 전화를 이용할 수 있다.\n이토 아야 기자"}, "coupon": {"cat": "IT", "t": "편의점 앱 쿠폰, 도시락 구매 횟수 따라 자동 지급", "src": "테크데일리", "dt": "2026. 10. 31.", "w": "07:40", "cm": 19, "c": "linear-gradient(135deg,#ff9f0a,#e0580b)", "cap": "매일편의점 앱의 ‘자주 산 상품’ 화면.", "body": "편의점 체인 매일편의점이 도시락 구매 횟수에 따라 음료 쿠폰을 자동으로 지급하는 서비스를 시작했다.\n앱 회원이 한 달에 도시락을 10회 이상 사면 다음 구매 때 쓸 수 있는 음료 쿠폰이 지급된다. 20회를 넘기면 도시락 1개 할인 쿠폰이 추가된다. 별도 신청 없이 결제 내역에 따라 자동으로 적용된다.\n■ 1인 가구 겨냥\n회사 측은 “도시락 구매 고객의 70% 이상이 1인 가구이고, 같은 고객이 같은 시간대에 반복 구매하는 경향이 뚜렷하다”며 “자주 오는 손님에게 혜택을 돌려주기 위한 것”이라고 설명했다.\n■ “내 식단이 다 보인다” 우려도\n일부 이용자들은 앱에 ‘이번 달 도시락 11회’처럼 구매 횟수가 그대로 표시되는 점이 불편하다는 반응이다. 한 대학생은 “내가 얼마나 끼니를 편의점으로 때우는지 숫자로 보니 좀 씁쓸했다”고 말했다.\n회사 측은 다음 달 업데이트부터 구매 횟수 표시를 끌 수 있게 하겠다고 밝혔다.\n오카다 리쿠 기자"}, "exam": {"cat": "교육", "t": "교원 임용 실기시험, 내년부터 수영 과목 비중 확대", "src": "에듀데일리", "dt": "2026. 10. 30.", "w": "08:40", "cm": 45, "c": "linear-gradient(135deg,#5856d6,#a29bfe)", "cap": "한 대학 체육교육과 학생들이 실내 수영장에서 실기 연습을 하고 있다.", "body": "체육 교원 임용 2차 실기시험에서 내년부터 수영 과목의 배점이 확대된다.\n현 교육청은 29일 ‘2027학년도 중등 체육 교사 임용시험 시행 계획’을 발표하고, 실기시험 총점 100점 중 수영 배점을 10점에서 20점으로 올린다고 밝혔다. 대신 체조 배점은 20점에서 10점으로 줄어든다.\n■ 자유형 50m에 ‘생존 수영’ 추가\n수영 평가는 기존 자유형 50m 기록 측정에 더해, 옷을 입은 채 3분간 물에 떠 있는 ‘생존 수영’ 시범이 새로 들어간다. 교육청은 “초·중학교 생존 수영 교육이 의무화되면서 교사의 지도 역량이 중요해졌다”고 배경을 설명했다.\n■ 수험생들 “준비 기간 부족”\n체육교육과 학생들 사이에서는 준비 기간이 1년밖에 안 된다는 불만이 나온다. 시립대학교 체육교육과의 한 3학년 학생은 “수영장 이용료가 만만치 않아 연습할 곳을 찾는 것부터 문제”라고 말했다.\n역 앞에 새로 문을 연 실내 수영장은 11월부터 화·목 저녁 성인 초급반을 신설하고, 체육교육과 재학생에게 할인 혜택을 주기로 했다.\n야마다 쇼 기자"}, "flu": {"cat": "건강", "t": "독감 유행 한 달 빨라… 음식점·편의점 “일손 비상”", "src": "헬스온", "dt": "2026. 10. 30.", "w": "17:50", "cm": 233, "c": "linear-gradient(135deg,#5ac8fa,#2c5a8c)", "cap": "시립병원 호흡기 진료소 앞 대기 줄.", "body": "인플루엔자(독감)가 예년보다 한 달가량 이르게 유행하고 있다.\n현 보건당국은 30일 도내 독감 의심 환자가 표본 의료기관당 12.4명으로 유행 기준(10명)을 넘어섰다며 유행 주의보를 발령했다. 지난해 주의보는 11월 말에 내려졌다.\n■ 20대 환자 가장 많아\n연령별로는 20대 환자가 가장 많았다. 보건당국은 “대학 축제와 할로윈 등 사람이 몰리는 행사가 이어지면서 확산 속도가 빨라졌다”고 분석했다.\n■ “한 명 빠지면 대타 구하기 전쟁”\n일손이 빠듯한 음식점과 편의점은 비상이 걸렸다. 역 남쪽의 한 이자카야 점주는 “이번 주에만 두 명이 독감으로 못 나왔다”며 “할로윈 주말이라 문을 닫을 수도 없어 남은 아이들한테 계속 부탁하고 있다. 미안할 따름”이라고 했다.\n■ 예방접종 서둘러야\n보건당국은 아직 예방접종을 하지 않았다면 서둘러 맞을 것을 권고했다. 발열과 기침이 있으면 출근이나 등교를 미루고, 해열제를 먹은 뒤에도 최소 이틀은 쉬는 것이 좋다.\n시립병원과 지역 의원 40곳에서 예방접종을 받을 수 있으며, 만 65세 이상과 임신부는 무료다.\n이토 아야 기자"}, "pool": {"cat": "지역", "t": "역 앞 실내 수영장 문 연 지 한 달… 무료 체험 1,200명 다녀가", "src": "오늘의 지역", "dt": "2026. 10. 27.", "w": "09:20", "cm": 31, "c": "linear-gradient(135deg,#30b0c7,#1d6aa6)", "cap": "사쿠라다이역 앞 실내 수영장. 흰 외벽이 역 광장에서도 보인다.", "body": "사쿠라다이역 앞에 새로 문을 연 실내 수영장이 개장 한 달을 맞았다.\n운영사에 따르면 9월 말 개장 이후 ‘오픈 기념 무료 체험’ 이용객은 약 1,200명으로 집계됐다. 이 가운데 20~30대가 절반을 넘었다.\n■ “친구와 함께라면 무료”\n특히 친구를 데려오면 2명 모두 무료로 이용할 수 있는 ‘2인 체험권’이 인기를 끌었다. 역 앞에서 나눠준 전단 체험권만 3천 장이 넘는다. 운영사 관계자는 “주말 오후에도 레인 여섯 개 중 두세 개만 차는 날이 많아, 처음 수영을 배우는 사람에게는 오히려 좋은 환경”이라고 말했다.\n■ 11월 성인 초급반 신설\n수영장은 11월부터 화·목 저녁 성인 초급반을 새로 연다. 11월 중 회원으로 등록하면 첫 달 이용료를 50% 할인해 준다.\n수영장 바로 옆 작은 공원에는 벤치와 자판기가 있어, 수영을 마친 이용객들이 머리를 말리며 쉬어 가는 모습도 자주 보인다. 시는 내년 봄 공원에 나무를 더 심고 그늘막을 설치할 계획이다.\n사토 미유키 기자"}, "candy": {"cat": "생활", "t": "할로윈 사탕 매출 30% 껑충… 올해도 ‘딸기맛’이 1위", "src": "트렌드픽", "dt": "2026. 10. 30.", "w": "12:15", "cm": 74, "c": "linear-gradient(135deg,#ff8fa6,#ff5a7d)", "cap": "편의점 계산대 옆에 진열된 할로윈 한정 사탕과 젤리.", "body": "할로윈을 앞두고 사탕과 젤리 판매가 크게 늘었다.\n편의점 3사의 10월 넷째 주 사탕류 매출은 전월 같은 기간보다 평균 30% 늘었다. 호박 모양 과자와 개별 포장 사탕이 계산대 옆 진열대를 채웠다.\n■ 맛 순위 딸기·포도·콜라\n맛별 판매 순위에서는 딸기맛이 3년 연속 1위를 지켰다. 2위는 포도맛, 3위는 콜라맛이었다. 한 제과업체 관계자는 “딸기맛은 아이부터 어른까지 거부감이 적어 나눠 주기용으로 가장 많이 팔린다”고 설명했다.\n■ 100개, 300개 ‘대용량’도 인기\n온라인에서는 100개, 300개짜리 대용량 사탕이 많이 팔렸다. 온라인 쇼핑몰 달콤상점에 따르면 ‘딸기맛 캔디 300입’ 판매량은 지난해보다 2배 늘었다. 회사 측은 “나눠 주려는 수요도 있지만, 혼자 두고 먹으려고 사는 단골이 꾸준하다”고 말했다.\n전문가들은 대용량 제품은 보관이 쉬운 만큼 하루 섭취량을 정해 두고 먹는 것이 좋다고 조언했다.\n모리 아키 기자"}, "light": {"cat": "지역", "t": "대학가~역 앞 가로등 120개 LED로 교체… “새벽 러너들 반겨”", "src": "오늘의 지역", "dt": "2026. 10. 28.", "w": "15:40", "cm": 22, "c": "linear-gradient(135deg,#ffd60a,#3a3a5a)", "cap": "새벽 시간 불이 켜진 대학로. 셔터를 내린 가게들 사이로 가로등이 이어진다.", "body": "사쿠라다이 대학가에서 역 앞까지 이어지는 대학로 일대 가로등 120개가 LED로 바뀐다.\n시는 다음 달부터 내년 2월까지 대학로와 역앞로 구간의 낡은 가로등을 차례로 교체한다고 28일 밝혔다. 새 가로등은 기존보다 밝기가 1.5배 높고, 전기 사용량은 40% 적다.\n■ 새벽에 달리는 사람 늘어\n최근 대학로는 새벽 시간 달리기를 하는 시민이 늘었다. 가게들이 셔터를 내린 새벽 4~6시에는 차량이 거의 없어 달리기 좋은 길로 꼽힌다. 다만 일부 구간은 가로등 간격이 넓어 어둡다는 민원이 꾸준히 들어왔다.\n대학가에서 매일 새벽 달린다는 한 대학생은 “24시간 편의점과 약국 간판 불빛만 보고 달리는 구간이 있었다”며 “밝아지면 훨씬 안심될 것 같다”고 말했다.\n■ 언덕길 계단에도 조명\n시는 대학가 뒤편 사쿠라 언덕으로 올라가는 언덕길과 계단에도 발밑 조명 30개를 새로 설치한다. 언덕 중턱에는 오래된 원룸 건물이 많아 밤길이 어둡다는 지적이 있었다.\n공사 기간에는 구간별로 보행로 일부가 통제될 수 있다.\n사토 미유키 기자"}, "univ": {"cat": "교육", "t": "시립대 체육교육과, 배구 실기 평가 11월 첫째 주 진행", "src": "시립대신문", "dt": "2026. 10. 26.", "w": "11:00", "cm": 8, "c": "linear-gradient(135deg,#5aa25a,#2c5a2c)", "cap": "시립대학교 제2체육관.", "body": "시립대학교 체육교육과의 2학기 구기 실기(배구) 평가가 11월 첫째 주에 진행된다.\n학과 학생회는 26일 조 편성 결과를 공지하고, 조별 연습을 위해 제2체육관 예약 시간을 평일 오후 5시 이후로 확대했다고 밝혔다.\n■ 2학년 32명, 4개 조\n평가 대상인 2학년 32명은 8명씩 4개 조로 나뉜다. 조별로 서브, 리시브, 토스, 경기 운영 능력을 평가받는다. 담당 교수는 “기술 점수보다 팀 안에서 소통하는 모습을 중요하게 보겠다”고 말했다.\n■ 중간고사 끝나자 바로 실기\n학생들 사이에서는 중간고사가 끝나자마자 실기 평가가 이어져 부담이 크다는 목소리도 나온다. 한 학생은 “조원끼리 시간을 맞추기가 쉽지 않다. 단톡방 공지에 답장 없는 사람을 찾는 게 제일 힘들다”고 웃었다.\n학생회는 이번 달 말까지 조원 변경 신청을 받는다.\n학생기자 오카모토 유이"}};
+Object.assign(NEWS,{"med": {"cat": "건강", "t": "항우울제·수면제 복용 초기 졸림… “대부분 2~4주면 적응, 임의 중단은 금물”", "src": "헬스온", "dt": "2026. 10. 18.", "w": "09:10", "cm": 41, "k": "정신과 약 부작용 졸림 수면제 몽롱 아침 항우울제", "c": "linear-gradient(135deg,#b49cf0,#5a4a8c)", "cap": "약국에서 처방약을 받고 있는 환자.", "body": "정신건강의학과 약을 처음 먹기 시작한 환자들이 가장 많이 호소하는 부작용은 ‘졸림’과 ‘아침에 머리가 멍한 느낌’이다.\n전문의들은 이런 증상이 대부분 복용 초기에 나타났다가 2~4주 안에 줄어든다고 설명한다. 몸이 약에 적응하는 과정이라는 것이다.\n■ 수면제 다음 날 ‘몽롱함’, 복용 시간 조절로 줄일 수 있어\n수면제를 먹은 다음 날 아침까지 몽롱하다면 잠자리에 들기 직전에 먹는지, 충분히 잘 시간(7시간 이상)이 남았을 때 먹는지 확인하는 것이 좋다. 새벽에 깨서 추가로 먹는 것은 다음 날 졸림을 크게 늘린다.\n■ “괜찮아졌다고 끊으면 다시 나빠질 수도”\n가장 위험한 것은 증상이 나아졌다고, 혹은 부작용이 불편하다고 약을 임의로 끊는 것이다. 한 정신건강의학과 전문의는 “갑자기 끊으면 불면, 불안, 어지럼증 같은 금단 증상이 오거나 우울 증상이 다시 나빠질 수 있다”며 “불편한 점은 다음 진료 때 꼭 말해 달라”고 당부했다.\n약이 떨어졌는데 진료일까지 며칠이 남았다면, 병원에 전화해 진료를 앞당기는 것이 좋다.\n이토 아야 기자"}, "hangover": {"cat": "생활", "t": "숙취 빨리 깨는 법, 해장국보다 ‘물’이 먼저… 전문가가 말하는 아침 루틴", "src": "트렌드픽", "dt": "2026. 10. 17.", "w": "07:30", "cm": 118, "k": "술 깨는 법 물 숙취 빨리 해장 이온음료", "c": "linear-gradient(135deg,#5ac8fa,#1d6aa6)", "cap": "편의점 음료 진열대.", "body": "금요일 밤 회식 다음 날, 숙취를 빨리 깨는 방법을 찾는 사람이 많다. 전문가들은 가장 먼저 할 일로 ‘물 마시기’를 꼽는다.\n알코올은 이뇨 작용을 일으켜 몸의 수분을 빼앗는다. 두통과 갈증, 무기력함의 상당 부분이 탈수 때문이다.\n■ 물 → 이온음료 → 가벼운 식사\n일어나자마자 물을 한두 잔 마시고, 속이 울렁거리면 이온음료를 조금씩 나눠 마시는 것이 좋다. 속이 진정되면 죽이나 바나나처럼 부담 없는 음식으로 당분을 채운다.\n■ 사우나·진한 커피는 피해야\n땀을 빼면 술이 빨리 깬다는 말은 사실이 아니다. 오히려 탈수를 악화시킬 수 있다. 진한 커피도 이뇨 작용이 있어 물을 충분히 마신 뒤에 마시는 편이 낫다.\n무엇보다 확실한 방법은 충분한 휴식이다. 전날 밤 집까지 데려다준 사람이 있다면, 고맙다는 연락도 잊지 말자.\n모리 아키 기자"}, "dosirak": {"cat": "건강", "t": "편의점 도시락 매일 먹으면?… 나트륨 하루 권장량 절반 훌쩍", "src": "헬스온", "dt": "2026. 10. 16.", "w": "12:05", "cm": 207, "k": "편의점 도시락 매일 먹으면 나트륨 영양", "c": "linear-gradient(135deg,#ff9f0a,#c45a00)", "cap": "편의점 도시락 진열대.", "body": "혼자 사는 청년들이 가장 자주 찾는 한 끼는 편의점 도시락이다. 그렇다면 매일 먹어도 괜찮을까.\n소비자단체가 시중 편의점 도시락 30종을 분석한 결과, 1개당 나트륨은 평균 1,380mg으로 하루 권장량(2,000mg)의 69%에 달했다. 반면 채소와 단백질은 부족한 경우가 많았다.\n■ “하루 한 번이면 괜찮지만, 세 끼는 곤란”\n영양 전문가들은 하루 한 끼 정도라면 큰 문제는 없지만, 매 끼니를 편의점 도시락으로 해결하면 나트륨 과다와 영양 불균형이 쌓인다고 경고한다. 국물이 있는 컵라면을 함께 먹는 경우 나트륨은 하루 권장량을 훌쩍 넘긴다.\n■ 조금만 바꿔도 달라진다\n샐러드나 삶은 달걀, 우유를 하나 더하고, 반찬 국물은 남기는 것만으로도 균형이 나아진다. 일주일에 몇 번이라도 누군가와 제대로 된 밥을 먹는 것도 방법이다.\n오카다 리쿠 기자"}, "banchan": {"cat": "생활", "t": "자취생 10분 반찬 5가지… 달걀말이부터 두부조림까지", "src": "트렌드픽", "dt": "2026. 10. 16.", "w": "18:40", "cm": 64, "k": "혼자 사는 사람 쉬운 반찬 자취 요리 레시피", "c": "linear-gradient(135deg,#ffd60a,#ff9f0a)", "cap": "프라이팬 하나로 만든 자취 반찬.", "body": "혼자 사는 사람에게 반찬 만들기는 늘 귀찮은 일이다. 재료를 사면 남고, 시간도 없다. 프라이팬 하나, 10분이면 되는 반찬 다섯 가지를 모았다.\n■ 1. 달걀말이\n달걀 3개에 소금 한 꼬집, 대파를 조금 넣어 약불에서 말아 준다. 냉장고에서 사흘은 간다.\n■ 2. 두부조림\n두부를 도톰하게 썰어 굽고, 간장·설탕·물을 1:1:2로 넣어 졸인다.\n■ 3. 어묵볶음\n어묵을 썰어 기름에 볶다가 간장과 물엿을 한 바퀴씩 두른다.\n■ 4. 감자채볶음\n감자를 가늘게 채 썰어 물에 한 번 헹군 뒤 볶는다. 소금만으로 충분하다.\n■ 5. 시금치무침\n데친 시금치에 참기름, 소금, 깨를 넣고 무친다.\n처음엔 한 가지씩만 만들어도 된다. 누군가에게 해 주고 싶은 사람이 생기면, 요리는 금방 는다.\n모리 아키 기자"}, "swimlearn": {"cat": "스포츠", "t": "성인 초보 수영, “힘 빼야 뜬다”… 물에 뜨는 법 3단계", "src": "켄신스포츠", "dt": "2026. 10. 2.", "w": "10:20", "cm": 55, "k": "성인 수영 처음 물에 뜨는 법 힘 빼는 법 초보", "c": "linear-gradient(135deg,#30b0c7,#1d6aa6)", "cap": "실내 수영장 초급 레인.", "body": "성인이 되어 처음 수영을 배우는 사람들이 가장 먼저 부딪히는 벽은 ‘물에 뜨는 것’이다. 수영 지도자들은 “뜨지 못하는 사람의 대부분은 몸에 힘이 너무 들어가 있다”고 입을 모은다.\n■ 1단계: 숨 참고 엎드려 뜨기\n벽을 잡고 숨을 크게 들이마신 뒤, 얼굴을 물에 넣고 팔다리를 쭉 편다. 폐에 공기가 차 있으면 몸은 저절로 뜬다.\n■ 2단계: 등 대고 누워 뜨기\n턱을 살짝 들고 귀까지 물에 담근 채 하늘을 본다. 엉덩이가 가라앉으면 배를 조금 내밀면 된다. 옆에서 누군가 등을 받쳐 주면 훨씬 쉽다.\n■ 3단계: 힘 빼고 발차기\n발차기는 무릎이 아니라 허벅지에서 시작한다. 세게 찰수록 오히려 가라앉으니 작고 빠르게 찬다.\n한 지도자는 “물을 무서워하는 성인은 처음부터 잘하려고 애쓰기보다, 믿을 만한 사람과 함께 물에 들어가는 것이 가장 큰 도움이 된다”고 말했다.\n다카기 슌 기자"}, "hwOrigin": {"cat": "문화", "t": "할로윈, 어디서 시작됐을까… 켈트족 ‘삼하인’ 축제에서 사탕 받기까지", "src": "오늘의 지역", "dt": "2026. 10. 31.", "w": "08:30", "cm": 33, "k": "할로윈 유래 핼러윈 삼하인", "c": "linear-gradient(135deg,#ff8a00,#3a1f4f)", "cap": "호박 등불(잭오랜턴).", "body": "10월 31일 할로윈은 고대 켈트족의 축제 ‘삼하인(Samhain)’에서 유래했다는 것이 정설이다.\n켈트족은 11월 1일을 한 해의 시작으로 여겼다. 그 전날 밤에는 이승과 저승의 경계가 흐려져 죽은 사람들의 영혼이 돌아온다고 믿었다. 사람들은 영혼에게 해를 입지 않도록 무서운 가면을 쓰고, 집 앞에 음식을 놓아두었다.\n■ ‘모든 성인의 날’ 전야\n이후 기독교가 퍼지면서 11월 1일은 ‘모든 성인의 날(All Hallows’ Day)’이 됐고, 그 전날 밤을 뜻하는 ‘All Hallows’ Eve’가 줄어 ‘할로윈’이 됐다.\n■ 순무에서 호박으로, 음식에서 사탕으로\n아일랜드에서는 순무를 파서 등불을 만들었는데, 이민자들이 미국으로 건너가면서 구하기 쉬운 호박으로 바뀌었다. 집집마다 음식을 얻으러 다니던 풍습은 아이들이 “Trick or Treat”을 외치며 사탕을 받는 문화로 자리 잡았다.\n죽은 이를 기억하는 날이었다는 점에서, 할로윈은 원래 꽤 조용한 밤이었던 셈이다.\n사토 미유키 기자"}, "record2022": {"cat": "스포츠", "t": "고교 2학년 사자나미 쥰, 접영 100m 53초 88… 대회 신기록", "src": "켄신스포츠", "dt": "2022. 6. 12.", "w": "19:05", "cm": 96, "k": "접영 지역 기록 사자나미 쥰 신기록 고교", "c": "linear-gradient(135deg,#0a84ff,#1d3f6e)", "cap": "고교부 남자 접영 100m 결승. 사자나미 쥰(가운데 레인)이 마지막 25m를 치고 나가고 있다.", "body": "제54회 현 수영 선수권 대회 고교부 남자 접영 100m 결승에서 2학년 사자나미 쥰이 53초 88로 대회 신기록을 세웠다.\n사자나미는 50m 턴을 3위로 돈 뒤 후반 25m에서 속도를 끌어올려 2위를 0.9초 차로 따돌렸다. 종전 기록을 0.4초 앞당긴 기록이다.\n■ “후반 25m가 무기”\n지도 코치는 “50m 이후에 오히려 빨라지는 선수는 드물다. 마지막까지 자세가 무너지지 않는다”고 평가했다. 사자나미는 어릴 때부터 매일 새벽 5시 훈련을 빠지지 않은 것으로 알려졌다.\n■ 국가대표 선발전 출전권 획득\n이 기록으로 사자나미는 올가을 열리는 국가대표 선발전 출전권을 얻었다. 그는 경기 후 “기록보다 엄마가 관중석에 와 있어서 좋았다”며 짧게 웃었다.\n현 수영연맹 관계자는 “앞으로 몇 년은 깨지기 어려운 기록”이라고 말했다.\n다카기 슌 기자"}, "career": {"cat": "교육", "t": "체육교육과 졸업 후 진로, 임용만 있는 게 아니다… 생활체육·재활·스포츠산업까지", "src": "에듀데일리", "dt": "2026. 10. 5.", "w": "08:20", "cm": 37, "k": "체육교육학과 체육교육과 졸업 후 진로 임용 취업", "c": "linear-gradient(135deg,#5856d6,#2c2a6e)", "cap": "대학 체육관에서 수업 중인 체육교육과 학생들.", "body": "체육교육과 학생 대부분은 체육 교사를 꿈꾸며 입학한다. 하지만 실제 졸업생의 진로는 훨씬 다양하다.\n교육청 자료에 따르면 최근 3년간 체육교육과 졸업생 중 임용시험에 합격해 교사가 된 비율은 약 23%였다.\n■ 생활체육 지도자·수영 강사\n가장 많은 졸업생이 선택하는 길은 생활체육 분야다. 지자체 체육센터와 수영장, 피트니스 센터의 강사로 일한다. 특히 새로 생기는 실내 수영장이 늘면서 수영 지도 자격을 가진 졸업생의 수요가 높다.\n■ 재활·스포츠 산업으로\n대학원에 진학해 운동처방, 재활 트레이닝을 전공하거나 스포츠 용품, 구단 프런트 등 스포츠 산업으로 가는 경우도 적지 않다.\n한 대학 체육교육과 교수는 “운동선수 출신 학생들은 다치거나 그만둔 경험 때문에 진로를 좁게 보는 경우가 많다”며 “자신이 겪은 일이 오히려 누군가를 가르칠 때 가장 큰 자산이 된다”고 말했다.\n야마다 쇼 기자"}, "cold": {"cat": "지식", "t": "‘우울증은 마음의 감기’라는 말, 무슨 뜻인가요?", "src": "Yaho! 지식", "dt": "2026. 9. 21.", "w": "22:14", "cm": 12, "k": "우울증 마음의 감기 뜻 의미", "c": "", "cap": "", "body": "질문: 상담소 광고판에 ‘우울증은 마음의 감기입니다’라고 쓰여 있던데 정확히 무슨 뜻인가요? 금방 낫는다는 뜻인가요?\n■ 답변 1 · 채택된 답변\n누구나 걸릴 수 있다는 뜻으로 많이 씁니다. 감기처럼 특별한 사람만 걸리는 게 아니니까 부끄러워하지 말고 병원에 가라는 의미예요.\n■ 답변 2\n다만 ‘금방 낫는다’는 뜻은 아니에요. 감기도 무리하면 오래가듯이, 우울증도 제대로 쉬고 치료받아야 나아요. 약 먹고 며칠 자면 끝나는 병이 아니라는 점은 꼭 알아 두셨으면 합니다.\n■ 답변 3\n제 경험으로는, 감기라는 말이 위로가 될 때도 있고 서운할 때도 있었어요. 그래도 옆에서 “감기엔 단 거 먹는 거래” 하면서 사탕 하나 건네주는 사람이 있으면 좀 낫더라고요.\nYaho! 지식 답변은 개인의 의견이며 전문가의 진단을 대신하지 않습니다."}, "prank": {"cat": "지식", "t": "할로윈 장난 문자 뭐 보내면 좋을까요? 너무 무섭지 않은 걸로", "src": "Yaho! 지식", "dt": "2026. 10. 30.", "w": "23:41", "cm": 8, "k": "할로윈 장난 문자 추천", "c": "", "cap": "", "body": "질문: 내일 할로윈인데 친한 사람한테 장난 문자 보내고 싶어요. 너무 무섭거나 선 넘지 않는 걸로 추천해 주세요.\n■ 답변 1 · 채택된 답변\n“Trick or Treat? 사탕 안 주면 장난칠 거예요” 정도가 무난해요. 진짜 사탕을 들고 찾아가면 더 좋고요.\n■ 답변 2\n“지금 뒤에 누가 있어요” 같은 건 상대가 혼자 있을 때 보내면 진짜 무서워해요. 상대 상황을 먼저 생각하세요.\n■ 답변 3\n장난 문자보다, 평소에 못 했던 말을 할로윈 핑계 삼아 보내는 사람도 많아요. 대답은 내년에 들어도 되니까요.\nYaho! 지식 답변은 개인의 의견입니다."}, "confess": {"cat": "지식", "t": "고백 대답을 미루면 실례인가요?", "src": "Yaho! 지식", "dt": "2025. 12. 3.", "w": "01:12", "cm": 31, "k": "고백 대답 미루면 실례 보류", "c": "", "cap": "", "body": "질문: 고백을 받았는데 바로 대답을 못 하겠어요. 싫은 건 아닌데 제가 지금 누군가를 만나도 되는 상태인지 모르겠습니다. 대답을 미루면 실례인가요?\n■ 답변 1 · 채택된 답변\n실례 아니에요. 오히려 대충 대답하는 게 더 실례예요. 다만 “생각해 볼게” 하고 아무 말 없이 시간을 끄는 것보다, 언제쯤 대답하겠다고 말해 주는 게 상대에게 덜 힘들어요.\n■ 답변 2\n상대가 기다리겠다고 했다면 그 말을 믿어도 돼요. 대신 기다리는 동안에도 평소처럼 연락하고 지내면 상대도 불안해하지 않아요.\n■ 답변 3\n‘지금 누군가를 만나도 되는 상태인지 모르겠다’는 고민을 상대에게 그대로 말해 보세요. 그것도 하나의 대답이에요.\nYaho! 지식 답변은 개인의 의견입니다."}, "bday": {"cat": "지식", "t": "상대 생일 자연스럽게 묻는 법 있을까요?", "src": "Yaho! 지식", "dt": "2026. 4. 9.", "w": "20:30", "cm": 19, "k": "상대 생일 자연스럽게 묻는 법 생일", "c": "", "cap": "", "body": "질문: 친해진 지 얼마 안 된 사람 생일을 알고 싶은데, 대놓고 물어보기가 좀 그래요.\n■ 답변 1 · 채택된 답변\n자기 생일 얘기를 먼저 하는 게 제일 자연스러워요. “저 8월생이에요, 그쪽은요?” 하면 대부분 대답해 줘요.\n■ 답변 2\n별자리나 띠 얘기로 돌려서 묻는 방법도 있어요. 근데 솔직히 그냥 “생일 언제예요? 챙겨 주고 싶어서요” 하는 게 제일 좋아요.\n■ 답변 3\n연락처에 생일이 저장돼 있으면 메신저 앱에서 알려 주기도 해요. 그래도 직접 물어보는 게 더 기억에 남아요.\nYaho! 지식 답변은 개인의 의견입니다."}, "rentq": {"cat": "지식", "t": "집세 인상, 며칠 전에 알려줘야 하나요? 문자로 통보받았어요", "src": "Yaho! 지식", "dt": "2026. 9. 18.", "w": "21:05", "cm": 14, "k": "집세 인상 통보 기간 월세 집주인", "c": "", "cap": "", "body": "질문: 오늘 집주인한테 “부득이하게 이번 달부터 집세를 올리게 됐다”는 문자를 받았어요. 계약 기간 중인데 이렇게 바로 올려도 되나요?\n■ 답변 1 · 채택된 답변\n계약 기간 중에는 원칙적으로 세입자가 동의해야 올릴 수 있어요. 일방적인 문자 통보만으로는 효력이 제한될 수 있습니다. 시 주택과 임대차 상담 창구(평일 9시~17시)에 먼저 물어보세요.\n■ 답변 2\n법적으로 다툴 수는 있지만, 현실적으로는 이사 비용 때문에 그냥 내는 분들이 많아요. 인상 폭이 크면 분할 적용을 요청해 보는 것도 방법입니다.\n■ 답변 3\n문자는 꼭 캡처해 두세요. 나중에 필요할 수 있어요.\nYaho! 지식 답변은 개인의 의견이며 법률 자문을 대신하지 않습니다."}, "sunsetq": {"cat": "지식", "t": "10월 노을 몇 시쯤 보러 가면 되나요? 옥상에서 보려고요", "src": "Yaho! 지식", "dt": "2026. 10. 12.", "w": "18:02", "cm": 6, "k": "옥상 노을 시간 10월 일몰", "c": "", "cap": "", "body": "질문: 10월 말에 옥상에서 노을을 보고 싶은데 몇 시쯤 올라가면 될까요?\n■ 답변 1 · 채택된 답변\n10월 말이면 일몰이 오후 4시 50분 전후예요. 노을은 해 지기 30분 전부터 지고 나서 30분까지가 제일 예쁘니까 4시 20분쯤 올라가면 딱 좋아요.\n■ 답변 2\n서쪽이 트인 곳이어야 해요. 언덕 위 건물 옥상이면 최고고요. 바람이 차니까 겉옷 챙기세요.\n■ 답변 3\n누구랑 같이 볼 거면 미리 시간 말해 두세요. 해는 기다려 주지 않아요.\nYaho! 지식 답변은 개인의 의견입니다."}});
 function artHTML(n,extra){
   const lines=n.body.split('\n'),by=lines.pop();
-  return `<small>${esc(n.cat)}</small><h2>${esc(n.t)}</h2><em>${esc(n.src)} · ${n.dt} ${n.w}${extra||''}</em><div class="tk-aimg" style="background:${n.c}"></div><p class="art-cap">${esc(n.cap||'')}</p>`+
+  return `<small>${esc(n.cat)}</small><h2>${esc(n.t)}</h2><em>${esc(n.src)} · ${n.dt} ${n.w}${extra||''}</em>${n.c?`<div class="tk-aimg" style="background:${n.c}"></div><p class="art-cap">${esc(n.cap||'')}</p>`:'<div style="height:12px"></div>'}`+
     lines.map(p=>p.startsWith('■')?`<h4>${esc(p.replace(/^■\s*/,''))}</h4>`:`<p>${esc(p)}</p>`).join('')+`<p class="art-by">${esc(by)}</p>`}
 const artWhen=n=>n.dt==='2026. 10. 31.'?n.w:n.dt.slice(6).replace(/\.$/,'');
 /* ================= icons ================= */
@@ -1502,7 +1555,7 @@ const WX={
 };
 const wxTile=(ic,t,big,sub,extra='')=>`<div class="wx-tile"><div class="wx-th">${ic} ${t}</div><b>${big}</b>${extra}<small>${sub}</small></div>`;
 const weatherApp=()=>{const mn=Math.min(...WX.daily.map(d=>d[2])),mx=Math.max(...WX.daily.map(d=>d[3])),pc=v=>((v-mn)/(mx-mn)*100).toFixed(1);
- return {weather:{html:`<div class="wx">
+ return {weather:{onOpen:(v,a,api)=>{const st=api.unit.querySelector('.status');if(st)st.style.setProperty('--sb','#fff')},html:`<div class="wx">
   <div class="bar"><button type="button" class="back keep" data-back>${I.back}홈</button></div>
   <div class="scroll wx-body">
    <div class="wx-hero"><small>현재 위치</small><h2>사쿠라다이</h2><div class="wx-now">19°</div><div class="wx-c">대체로 맑음</div><div class="wx-hl">최고 19° 최저 11°</div></div>
@@ -1533,7 +1586,7 @@ const PRODUCTS=[
   spec:[['중량','400g (1개 약 4g)'],['맛','딸기'],['포장','개별 포장'],['칼로리','1개당 15kcal'],['유통기한','제조일로부터 12개월']],
   desc:'새콤한 딸기 파우더를 겉에 입힌 하드 캔디입니다. 개별 포장이라 가방이나 주머니에 넣고 다니기 좋아요.',
   reviews:[['jun***','★★★★★','몇 년째 이것만 삽니다. 주머니에 늘 몇 개씩 넣고 다녀요.'],['mii***','★★★★★','개별 포장이라 나눠 주기 좋아요. 처음 보는 사람한테 줘도 부담 없음.'],['kot***','★★★★☆','단맛이 오래가요. 겉에 가루가 조금 묻어나요.']]},
- {id:'straw300',n:'새콤달콤 딸기맛 캔디 (300입)',p:2180,sale:1744,img:CANDY('#ff4f74','#ffb3c3','#ffe5ec'),tag:'할로윈 한정 20%',rate:4.9,rv:871,k:'딸기 딸기맛 캔디 사탕 대용량 300 할로윈 새콤달콤 재주문',
+ {id:'straw300',n:'새콤달콤 딸기맛 캔디 (300입)',p:2480,sale:1980,img:CANDY('#ff4f74','#ffb3c3','#ffe5ec'),tag:'할로윈 한정 20%',rate:4.9,rv:871,k:'딸기 딸기맛 캔디 사탕 대용량 300 할로윈 새콤달콤 재주문',
   spec:[['중량','1.2kg (1개 약 4g)'],['맛','딸기'],['포장','개별 포장 · 지퍼백'],['칼로리','1개당 15kcal'],['유통기한','제조일로부터 12개월']],
   desc:'100입보다 개당 가격이 저렴한 대용량 구성입니다. 지퍼백 포장이라 오래 두고 드시기 좋아요. 10월 31일까지 할로윈 한정 20% 할인.',
   reviews:[['sae***','★★★★★','생각보다 빨리 줄어요. 또 사야 할 것 같습니다.'],['hal***','★★★★★','나눠 주려고 샀는데 혼자 다 먹는 중.'],['nnn***','★★★★☆','양이 정말 많아요. 지퍼백이라 눅눅해지지 않음.']]},
@@ -1612,8 +1665,8 @@ function mkShop(cfg){
 }
 const junShop=mkShop({who:'쥰',freqTitle:'자주 산 상품',freq:[['straw100',`${orders.length}번 구매 · 마지막 주문 10월 20일`]],rec:['grape100','lemon','milk','mix'],cart:[],
   bought:{straw100:`이 상품을 ${orders.length}번 구매했어요 · 첫 주문 2022. 10. 2.`},orders:{id:'straw100',note:`같은 상품을 ${orders.length}번 구매했어요`,list:orders}});
-const ibShop=mkShop({who:'사에구사',freqTitle:'최근 구매한 상품',freq:[['straw300','9월 23일 주문 · 9월 25일 도착']],rec:['straw100','lemon','milk','grape100'],cart:[{id:'straw300',q:1,note:'할로윈 20% 할인 적용'}],
-  bought:{straw300:'9월 23일에 구매한 상품이에요 · 남은 수량을 확인해 보세요'},orders:{id:'straw300',note:'1번 구매했어요',list:[['2026. 9. 23.','배송 완료 · 9/25 도착']]}});
+const ibShop=mkShop({who:'사에구사',freqTitle:'최근 구매한 상품',freq:[['straw300','오늘 16:34 주문 · 배송 준비 중']],rec:['straw100','lemon','milk','grape100'],cart:[],
+  bought:{straw300:'오늘 16:34에 주문했어요 · 내일(11/1) 도착 예정'},orders:{id:'straw300',note:'2번 구매했어요',list:[['2026. 10. 31. 16:34','결제 완료 · 배송 준비 중'],['2026. 9. 23.','배송 완료 · 9/25 도착']]}});
 
 const tracks=[['물보라','Lane 4'],['Take Your Mark','The Starters'],['48.2','Blue Hour'],['턴','파도소년'],['Underwater','Ellie Mare'],['마지막 50m','Lane 4'],['Gold','The Starters'],['다시, 출발대','파도소년']];
 /* ---- music app, modelled on a familiar streaming player ---- */
@@ -1916,6 +1969,7 @@ function mkMap(cfg){
       card.querySelector('.mc-save').hidden=!p;card.querySelector('.mc-call').hidden=!p;card.querySelector('.mc-go').hidden=!p||p.id===me.id;
       if(sheet.offsetHeight>300){sheet.style.height='240px'}};
     const goPoi=(id,withRoute)=>{const p=WORLD.poi.find(q=>q.id===id);if(!p)return;const r=svg.getBoundingClientRect();st.z=Math.max(st.z,1.4);st.cx=p.x;st.cy=p.y+(520/st.z)*((r.height||400)/(r.width||390))*.22;st.z=Math.max(st.z,1.2);paint();show(p.n,p.cat,p.addr,p);if(withRoute&&ROUTES[withRoute])route.setAttribute('d',ROUTES[withRoute]);else if(withRoute)card.querySelector('.mc-go').click();else route.setAttribute('d','')};
+    api._mapGo=id=>goPoi(id);
     card.querySelector('.mc-x').onclick=()=>{card.hidden=true;route.setAttribute('d','')};
     v.querySelectorAll('[data-z]').forEach(b=>b.onclick=()=>{const z=+b.dataset.z;if(z===0){st.cx=me.x+60;st.cy=me.y+260;st.z=1.4}else st.z=Math.max(.6,Math.min(3,st.z*(z>0?1.4:1/1.4)));paint()});
     v.querySelectorAll('[data-go]').forEach(b=>b.onclick=()=>goPoi(b.dataset.go,!!b.dataset.route));
@@ -1938,7 +1992,7 @@ function mkMap(cfg){
       if(g){goPoi(g.dataset.poi)}else if(b){const i=b.dataset.b;if(i.startsWith('p:')){goPoi(i.slice(2))}else{const B=BLDS[+i];v.querySelectorAll('.bld.sel').forEach(x=>x.classList.remove('sel'));b.classList.add('sel');show(B.n,'건물','사쿠라다이 일대',null)}}});
     svg.addEventListener('wheel',e=>{e.preventDefault();st.z=Math.max(.6,Math.min(3,st.z*(e.deltaY<0?1.15:1/1.15)));paint()},{passive:false});
   },
-  onOpen:(v,arg,api)=>{requestAnimationFrame(()=>api._mapPaint&&api._mapPaint())}}};
+  onOpen:(v,arg,api)=>{requestAnimationFrame(()=>{api._mapPaint&&api._mapPaint();if(arg&&api._mapGo&&WORLD.poi.some(p=>p.id===arg))api._mapGo(arg)})}}};
 }
 
 /* ---- green messenger app ("LIME"), both phones ---- */
@@ -1958,7 +2012,7 @@ function talkThreadHTML(data,group){
     const rd=me&&!m.unread?(group?`<em>읽음 ${m.read||group}</em>`:'<em>읽음</em>'):'';
     const t=`<span class="tk-meta">${rd}${showTime?ampm(m.time):''}</span>`;
     let bub;
-    if(m.card)bub=`<${m.card.open?`button type="button" data-open="k-article" data-arg="${m.card.open}"`:'div'} class="tk-card">${m.card.img?`<div class="tk-cimg" style="background:${m.card.img}">${m.card.icon||''}</div>`:''}<div class="tk-cb"><b>${esc(m.card.t)}</b>${m.card.d?`<span>${esc(m.card.d)}</span>`:''}${m.card.btn?`<i>${esc(m.card.btn)}</i>`:''}</div></${m.card.open?'button':'div'}>`;
+    if(m.card)bub=`<${m.card.go?`button type="button" data-open="${m.card.go}" data-arg="${m.card.arg||''}"`:m.card.open?`button type="button" data-open="k-article" data-arg="${m.card.open}"`:'div'} class="tk-card">${m.card.img?`<div class="tk-cimg" style="background:${m.card.img}">${m.card.icon||''}</div>`:''}<div class="tk-cb"><b>${esc(m.card.t)}</b>${m.card.d?`<span>${esc(m.card.d)}</span>`:''}${m.card.btn?`<i>${esc(m.card.btn)}</i>`:''}</div></${m.card.go||m.card.open?'button':'div'}>`;
     else bub=`<div class="tk-bub">${esc(m.text).replace(/@(\S+ \S+)/,'<b>@$1</b>')}</div>`;
     if(me)h+=`<div class="tk-row me ${first?'first':''}">${t}${bub}</div>`;
     else h+=`<div class="tk-row ${first?'first':''}"><span class="tk-av">${first?(m.av||initialAv((m.who||'?').replace(/^과대표\s*/,''))):''}</span><div class="tk-col">${first?`<span class="tk-name">${esc(m.who||'')}</span>`:''}<div class="tk-line">${bub}${t}</div></div></div>`;
@@ -2098,9 +2152,9 @@ const swimClub=[
 ];
 const sweetAds=[
  {day:'2026년 10월 20일 화요일'},
- O('달콤상점','14:00','',{av:sq('달','linear-gradient(#ff8fa6,#ff5a7d)'),card:{t:'주문하신 상품이 발송되었습니다',d:'새콤달콤 딸기맛 캔디 (100입) · 1개',btn:'배송 조회'}}),
+ O('달콤상점','14:00','',{av:sq('달','linear-gradient(#ff8fa6,#ff5a7d)'),card:{go:'shop-orders',t:'주문하신 상품이 발송되었습니다',d:'새콤달콤 딸기맛 캔디 (100입) · 1개',btn:'배송 조회'}}),
  {day:'2026년 10월 31일 토요일'},
- O('달콤상점','10:00','',{av:sq('달','linear-gradient(#ff8fa6,#ff5a7d)'),card:{t:'🎃 할로윈 한정 오늘까지! 딸기맛 캔디 300입 20% 할인',d:'자주 구매하신 상품이 할인 중이에요',img:'radial-gradient(circle at 30% 45%,#ff7d9a 0 16px,transparent 17px),radial-gradient(circle at 58% 60%,#ff9fb4 0 14px,transparent 15px),radial-gradient(circle at 75% 35%,#ff6a8a 0 12px,transparent 13px),#ffe6ec',btn:'지금 보러 가기'}}),
+ O('달콤상점','10:00','',{av:sq('달','linear-gradient(#ff8fa6,#ff5a7d)'),card:{go:'shop-item',arg:'straw300|k-sweet',t:'🎃 할로윈 한정 오늘까지! 딸기맛 캔디 300입 20% 할인',d:'자주 구매하신 상품이 할인 중이에요',img:'radial-gradient(circle at 30% 45%,#ff7d9a 0 16px,transparent 17px),radial-gradient(circle at 58% 60%,#ff9fb4 0 14px,transparent 15px),radial-gradient(circle at 75% 35%,#ff6a8a 0 12px,transparent 13px),#ffe6ec',btn:'지금 보러 가기'}}),
 ];
 const junMoriTalk=[
  {day:'2026년 10월 13일 화요일'},
@@ -2239,17 +2293,87 @@ const HS={
 };
 const TOOLS=[['날씨','#ff9500','☀','weather'],['노선','#34c759','⇄'],['지도','#30b0c7','⌖','map'],['쇼핑','#ff2d55','◫','shop'],['쿠폰','#ff9f0a','%'],['운세','#af52de','✦'],['메일','#0a84ff','✉'],['더보기','#8e8e93','⋯']];
 
+
+/* ---- mini websites reachable from Yaho search ---- */
+const webBar=(url)=>`<div class="wb-bar"><button type="button" class="back keep" data-back="srch-q">${I.back}</button><span class="wb-url">🔒 ${url}</span><button type="button" class="wb-x" data-back="srch-q">완료</button></div>`;
+const notice=(o)=>`<details class="wb-n"><summary>${o.tag?`<em class="${o.tagc||''}">${o.tag}</em>`:''}<span>${esc(o.t)}</span><small>${o.d} · 조회 ${o.v}</small></summary><div class="wb-nb">${o.b.split('\n').map(p=>`<p>${esc(p)}</p>`).join('')}</div></details>`;
+const UNIV={
+ dept:[
+  {tag:'필독',tagc:'red',t:'2학기 구기 실기(배구) 평가 조 편성 및 일정 안내',d:'2026.10.26',v:412,b:'일시: 11월 6일(금) 15:00~17:00\n장소: 제2체육관\n조 편성: 1~4조(조별 8명) · 명단은 학과 게시판 및 학생회 공지 참고\n평가 항목: 서브, 리시브, 토스, 경기 운영(조별 미니 게임)\n복장: 운동복, 실내 전용 운동화 필수\n결석 시 사유서를 학과 사무실로 제출하세요. 사유서 없이 결석하면 0점 처리됩니다.'},
+  {t:'제2체육관 학생 대관 시간 변경 안내',d:'2026.10.26',v:188,b:'실기 평가 준비를 위해 11월 6일까지 평일 17:00 이후 제2체육관 학생 대관을 허용합니다.\n대관은 학과 사무실에서 하루 전까지 신청하세요. 사용 후 네트와 공은 반드시 정리해 주세요.'},
+  {t:'2학기 중간고사 시간표 공지',d:'2026.10.12',v:530,b:'기간: 10월 19일(월) ~ 23일(금)\n10/19(월) 09:00 운동역학 · 체육관 B201\n10/20(화) 10:00 철학의 이해 · 인문관 304\n10/20(화) 13:00 체육교육학개론 · 체육관 B105\n10/21(수) 09:00 스포츠심리학 · 체육관 B203\n시험 시작 10분 전까지 입실하세요.'},
+  {t:'육상 실기 평가 안내',d:'2026.10.01',v:297,b:'일시: 10월 13일(화) 13:00\n장소: 대운동장\n종목: 100m, 멀리뛰기, 1,500m\n우천 시 10월 15일(목)로 연기됩니다.'},
+  {t:'교육봉사 활동 신청 안내 (3학년 대상)',d:'2026.09.24',v:141,b:'겨울방학 교육봉사(지역 초등학교 체육 수업 보조) 신청을 받습니다.\n신청 기간: 9월 24일 ~ 10월 8일 · 학과 사무실 방문 신청'},
+  {t:'체육교육과 가을 MT 안내',d:'2026.08.28',v:356,b:'일정: 9월 11일(금) ~ 12일(토), 1박 2일\n출발: 9/11 13:00 정문 앞 학과 버스\n회비: 8,000엔 (학생회 계좌로 9/4 개강총회 때까지)\n참석 여부는 단톡방 공지에 답장해 주세요.'},
+ ],
+ schol:[
+  {tag:'NEW',tagc:'new',t:'2027학년도 1학기 성적우수 장학생 선발 안내',d:'2026.10.28',v:96,b:'대상: 직전 학기 평점 3.5 이상 재학생\n신청 기간: 11월 2일(월) ~ 13일(금)\n제출 서류: 신청서, 성적증명서\n학과 사무실로 제출하세요.'},
+  {t:'교내 근로장학생 추가 모집 (체육시설 관리)',d:'2026.10.20',v:204,b:'근무지: 제1·제2체육관\n근무 시간: 평일 17:00~21:00 중 주 2회\n시급: 1,084엔\n체육교육과 재학생 우대'},
+  {t:'운동선수 출신 재학생 특별 장학 안내',d:'2026.09.15',v:77,b:'고교 시절 운동선수로 활동했으나 부상 등으로 선수 생활을 그만둔 재학생을 위한 장학금입니다.\n지원 금액: 학기당 등록금의 30%\n담당 교수 추천 또는 본인 신청 가능 · 상담은 학과장실로 연락 주세요.'},
+  {t:'시 장학재단 지역인재 장학금 신청',d:'2026.10.05',v:163,b:'대상: 시내 거주 대학생\n신청: 시 장학재단 홈페이지 · 10월 30일 마감'},
+  {t:'국가 학자금 지원 2차 신청 안내',d:'2026.09.01',v:240,b:'신청 기간: 9월 1일 ~ 9월 30일\n학자금 지원 포털에서 신청하세요.'},
+ ],
+ cal:[['10.19~23','2학기 중간고사'],['11.06','구기 실기(배구) 평가'],['11.20','학과 체육대회 · 대운동장'],['12.14~18','2학기 기말고사'],['12.18','종강총회'],['12.21','겨울방학 시작']],
+ prof:[['다카하시 겐지','운동역학 · 학과장'],['오노 미사키','스포츠심리학'],['마츠다 료','체육교육학 · 교육과정'],['이시카와 준코','육상 · 구기 실기']],
+};
+const SUN={
+ news:[
+  {tag:'모집',tagc:'new',t:'11월 김장 나눔의 날 자원봉사자 모집',d:'2026.10.27',v:58,b:'일시: 11월 21일(토) 10:00~15:00\n장소: 햇살원 본관 마당\n아이들과 함께 김치를 담가 이웃과 나눕니다. 퇴소한 졸업생 여러분도 언제든 환영해요.'},
+  {t:'할로윈 파티를 도와주신 이웃 상점들께 감사드립니다',d:'2026.10.30',v:41,b:'올해도 동네 상점들에서 사탕과 과자를 보내 주셨습니다. 아이들이 직접 만든 호박 등불로 본관을 꾸몄어요.\n보내 주신 마음, 아이들이 오래 기억할 거예요.'},
+  {t:'퇴소 청년 자립지원 상담 상시 운영',d:'2026.09.01',v:132,b:'햇살원을 떠난 청년이라면 누구나 상담받을 수 있습니다.\n생활비, 주거, 진로, 병원 이용, 마음 건강까지 무엇이든 괜찮아요.\n평일 10:00~18:00 · 자립지원 담당 미즈노 선생님\n“연락이 오랜만이어도 괜찮습니다. 반가울 뿐이에요.”'},
+  {t:'2026 가을 운동회 사진',d:'2026.10.12',v:87,b:'10월 10일 가을 운동회 사진을 갤러리에 올렸습니다. 이어달리기에서 초등부가 중등부를 이겼어요!'},
+  {t:'졸업생 홈커밍 데이 안내',d:'2026.10.05',v:66,b:'일시: 12월 19일(토) 17:00\n햇살원을 거쳐 간 모든 졸업생을 초대합니다. 식사 준비를 위해 12월 10일까지 연락 부탁드려요.'},
+ ],
+};
+const webUniv=()=>`${webBar('pe.shiritsu-u.ac.jp')}<div class="scroll wb wb-univ">
+  <div class="wb-head u"><b>시립대학교</b><span>사범대학 · 체육교육과</span></div>
+  <div class="wb-tabs" role="tablist">${[['n','학과 공지'],['s','장학'],['c','학사일정'],['a','학과 소개']].map(([k,l],i)=>`<button type="button" data-wt="${k}" class="${i?'':'on'}">${l}</button>`).join('')}</div>
+  <div class="wb-hero u"><b>몸으로 배우고,<br>사람을 가르친다.</b><small>Department of Physical Education</small></div>
+  <section data-ws="n">${UNIV.dept.map(notice).join('')}</section>
+  <section data-ws="s" hidden>${UNIV.schol.map(notice).join('')}</section>
+  <section data-ws="c" hidden><div class="wb-cal">${UNIV.cal.map(([d,t])=>`<div><b>${d}</b><span>${t}</span></div>`).join('')}</div></section>
+  <section data-ws="a" hidden><div class="wb-txt"><p>체육교육과는 1968년 개설된 시립대학교 사범대학의 학과로, 중등 체육 교사와 생활체육 지도자를 길러 냅니다.</p><p>학년별 정원 32명 · 사쿠라다이 캠퍼스 체육관(제1·제2체육관, 대운동장, 실내 체육관 B동)</p><p><b>교수진</b></p>${UNIV.prof.map(([n,f])=>`<p>${n} 교수 · ${f}</p>`).join('')}</div></section>
+  <div class="wb-foot">시립대학교 체육교육과 · 사쿠라다이 1-1 체육관 B동 2층<br>학과 사무실 03-5521-2210 · 평일 09:00~17:00</div>
+ </div>`;
+const webSun=()=>`${webBar('www.hessal.or.jp')}<div class="scroll wb wb-sun">
+  <div class="wb-head s"><b>☀ 햇살원</b><span>사회복지법인 햇살원 · 아동양육시설</span></div>
+  <div class="wb-tabs">${[['n','소식'],['a','햇살원 소개'],['j','자립지원'],['h','후원 안내']].map(([k,l],i)=>`<button type="button" data-wt="${k}" class="${i?'':'on'}">${l}</button>`).join('')}</div>
+  <div class="wb-hero s"><b>햇살처럼 따뜻한 집</b><small>since 1972</small></div>
+  <section data-ws="n">${SUN.news.map(notice).join('')}</section>
+  <section data-ws="a" hidden><div class="wb-txt"><p>햇살원은 1972년 문을 연 아동양육시설입니다. 지금은 만 2세부터 18세까지 아이들 31명이 네 개의 작은 집에 나뉘어 함께 살고 있어요.</p><p>아이들이 이곳을 떠난 뒤에도 언제든 돌아올 수 있는 ‘집’이 되는 것, 그게 햇살원의 가장 큰 목표입니다.</p><p><b>오시는 길</b><br>미도리가오카 2-9 · 미도리가오카역 북쪽 출구에서 도보 8분</p></div></section>
+  <section data-ws="j" hidden><div class="wb-txt"><p><b>퇴소 청년 자립지원</b></p><p>· 자립정착금 및 생활비 긴급 지원</p><p>· 주거 상담, 보증인 연결</p><p>· 진학·취업 상담, 장학금 안내</p><p>· 병원·상담 기관 연계 (마음 건강 포함)</p><p>평일 10:00~18:00 · 자립지원 담당 미즈노 선생님<br>☎ 03-6620-1972</p><p class="wb-q">“잘 지내고 있지 않아도 연락해도 돼요.”</p></div></section>
+  <section data-ws="h" hidden><div class="wb-txt"><p><b>정기 후원</b> 매달 1,000엔부터 아이들의 식비와 학용품에 쓰입니다.</p><p><b>물품 후원</b> 겨울 이불, 운동화, 문구류를 받고 있어요.</p><p>후원 계좌: 새벽은행 햇살원후원회</p></div></section>
+  <div class="wb-foot">사회복지법인 햇살원 · 미도리가오카 2-9<br>☎ 03-6620-1972 · 대표 메일 hello@hessal.or.jp</div>
+ </div>`;
+const webInit=id=>api=>{const v=api.scr.querySelector(`[data-app="${id}"]`);v.querySelectorAll('[data-wt]').forEach(b=>b.onclick=()=>{v.querySelectorAll('[data-wt]').forEach(x=>x.classList.toggle('on',x===b));v.querySelectorAll('[data-ws]').forEach(s=>s.hidden=s.dataset.ws!==b.dataset.wt)})};
+const webApps={
+ 'web-univ':{html:webUniv(),init:webInit('web-univ'),onOpen:(v,a,api)=>{const sv=api.scr.querySelector('[data-app="srch-q"]');if(sv)sv._keep=true;const st=api.unit.querySelector('.status');if(st)st.style.setProperty('--sb','#1d1d1f')}},
+ 'web-sun':{html:webSun(),init:webInit('web-sun'),onOpen:(v,a,api)=>{const sv=api.scr.querySelector('[data-app="srch-q"]');if(sv)sv._keep=true;const st=api.unit.querySelector('.status');if(st)st.style.setProperty('--sb','#1d1d1f')}},
+};
+const SITES=[
+ {re:/시립대|시립 대|체육교육|shiritsu/i,open:'web-univ',t:'시립대학교 체육교육과',url:'pe.shiritsu-u.ac.jp',d:'시립대학교 사범대학 체육교육과 · 학과 공지, 장학 공지, 학사일정, 교수진 안내.',sub:['학과 공지','장학','학사일정']},
+ {re:/햇살원|햇살 원/,open:'web-sun',t:'햇살원 | 사회복지법인 햇살원',url:'www.hessal.or.jp',d:'1972년 문을 연 아동양육시설 햇살원입니다. 소식, 자립지원, 후원 안내.',sub:['소식','자립지원','후원 안내']},
+ {re:/달콤상점|딸기맛 캔디|캔디 대용량/,open:'shop',t:'달콤상점 - 사탕·젤리 전문 쇼핑몰',url:'dalkom.shop',d:'딸기맛 캔디부터 대용량 젤리까지. 2,000엔 이상 무료배송.',sub:['할로윈 특가','베스트','주문 내역']},
+];
+
 function runSearch(v,q){
-  const box=v.querySelector('.sq'),hist=v.querySelector('.hs-hist'),res=v.querySelector('.hs-res');
-  box.textContent=q||'검색어를 입력하세요';box.classList.toggle('on',!!q);hist.hidden=!!q;res.hidden=!q;v.querySelector('.scroll').scrollTop=0;if(!q)return;
-  const toks=q.split(/\s+/).map(t=>t.replace(/(으로|에서|하는|하면|이란|은|는|이|가|을|를|의|법|뜻)$/,'')).filter(t=>t.length>=2);
-  const score=str=>toks.reduce((a,t)=>a+(str.includes(t)?1:0),0);
-  const prods=PRODUCTS.map(p=>[p,score(p.n+' '+p.k)]).filter(x=>x[1]).sort((a,b)=>b[1]-a[1]).slice(0,4).map(x=>x[0]);
-  const news=PORTAL_NEWS.map((n,i)=>[i,score(n.t+' '+n.body.slice(0,200))]).filter(x=>x[1]).sort((a,b)=>b[1]-a[1]).slice(0,3);
+  const inp=v.querySelector('.sq-in'),hist=v.querySelector('.hs-hist'),res=v.querySelector('.hs-res');
+  inp.value=q||'';hist.hidden=!!q;res.hidden=!q;v.querySelector('.scroll').scrollTop=0;if(!q)return;
+  const toks=q.split(/\s+/).map(t=>t.length>=3?t.replace(/(으로|에서|하는|하면|이란|은|는|이|가|을|를|의|법|뜻|요)$/,''):t).filter(t=>t.length>=2);
+  const score=(str,body='')=>toks.reduce((a,t)=>a+(str.includes(t)?2:body.includes(t)?1:0),0);
+  const sites=SITES.filter(x=>x.re.test(q));
+  const places=WORLD.poi.filter(p=>toks.some(t=>p.n.includes(t)&&t.length>=2)||(p.n.length>=3&&q.includes(p.n.split(' ')[0])&&p.n.split(' ')[0].length>=3)).slice(0,2);
+  const shopQ=/캔디|사탕|젤리|쿠키|과자|달콤|대용량|목캔디|초콜릿/.test(q);
+  const prods=shopQ?PRODUCTS.map(p=>[p,score(p.n+' '+p.k)]).filter(x=>x[1]).sort((a,b)=>b[1]-a[1]).slice(0,4).map(x=>x[0]):[];
+  const all=Object.entries(NEWS).map(([k,n])=>[k,n,score(n.t+' '+(n.k||''),n.body)+((n.k||'').includes(q)?4:0)]).filter(x=>x[2]>=2).sort((a,b)=>b[2]-a[2]);
+  const grp=arr=>{const top=arr.length?arr[0][2]:0;return arr.filter(x=>x[2]>=Math.max(2,Math.min(top*.5,4)))};const news=grp(all.filter(x=>x[1].cat!=='지식')).slice(0,4),qa=grp(all.filter(x=>x[1].cat==='지식')).slice(0,3);
   let h=`<div class="hs-rtabs"><b>전체</b><span>이미지</span><span>뉴스</span><span>쇼핑</span><span>지도</span></div>`;
+  sites.forEach(x=>{h+=`<button type="button" class="hs-site" data-open="${x.open}"><small>${x.url}</small><b>${esc(x.t)}</b><span>${esc(x.d)}</span><i>${x.sub.map(t=>`<em>${t}</em>`).join('')}</i></button>`});
+  places.forEach(p=>{h+=`<button type="button" class="hs-place" data-open="map" data-arg="${p.id}"><span class="hs-pin" style="background:${p.c}">${p.i}</span><span><b>${esc(p.n)}</b><small>${esc(p.cat)}</small><small>${esc(p.addr)}</small></span><em>지도</em></button>`});
   if(prods.length)h+=`<div class="hs-rsec"><div class="hs-sec"><b>쇼핑</b><small>달콤상점 외</small></div><div class="sp-row">${prods.map(p=>pcard(p,'srch-q')).join('')}</div></div>`;
-  if(news.length)h+=`<div class="hs-rsec"><div class="hs-sec"><b>뉴스</b></div>${news.map(([i])=>`<button type="button" class="hs-nw" data-open="srch-art" data-arg="${i}"><span class="hs-cat">${PORTAL_NEWS[i].cat}</span><span class="hs-t">${esc(PORTAL_NEWS[i].t)}</span><span class="hs-cm">${esc(PORTAL_NEWS[i].src)}</span></button>`).join('')}</div>`;
-  if(!prods.length&&!news.length)h+=`<p class="hs-none">‘${esc(q)}’에 대한 검색 결과가 없습니다.<br><small>네트워크 연결이 불안정해 일부 결과를 불러오지 못했어요.</small></p>`;
+  if(news.length)h+=`<div class="hs-rsec"><div class="hs-sec"><b>뉴스</b></div>${news.map(([k,n])=>`<button type="button" class="hs-nw" data-open="srch-art" data-arg="${k}"><span class="hs-cat">${n.cat}</span><span class="hs-t">${esc(n.t)}<small class="hs-dt">${esc(n.src)} · ${n.dt.slice(0,-1)}</small></span></button>`).join('')}</div>`;
+  if(qa.length)h+=`<div class="hs-rsec"><div class="hs-sec"><b>Yaho! 지식</b></div>${qa.map(([k,n])=>`<button type="button" class="hs-qa" data-open="srch-art" data-arg="${k}"><b>Q. ${esc(n.t)}</b><span>${esc((n.body.split('\n').find(l=>l&&!l.startsWith('질문')&&!l.startsWith('■'))||'').slice(0,70))}…</span><small>답변 ${n.body.split('■').length-1} · ${n.dt.slice(0,-1)}</small></button>`).join('')}</div>`;
+  if(!sites.length&&!places.length&&!prods.length&&!news.length&&!qa.length)h+=`<p class="hs-none">‘${esc(q)}’에 대한 검색 결과가 없습니다.<br><small>철자를 확인하거나 다른 검색어를 입력해 보세요.</small></p>`;
   res.innerHTML=h;
 }
 function mkSearch(list){
@@ -2269,13 +2393,15 @@ function mkSearch(list){
     <p class="hs-foot">Yaho · 이용약관 · 개인정보 처리방침</p>
    </div>
    <nav class="hs-tabs"><button type="button" class="on">${I.search.replace('#fff','currentColor')}홈</button><button type="button" data-toast="권한이 없습니다"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="4" y="4" width="7" height="7" rx="2"/><rect x="13" y="4" width="7" height="7" rx="2"/><rect x="4" y="13" width="7" height="7" rx="2"/><rect x="13" y="13" width="7" height="7" rx="2"/></svg>도구</button><button type="button" data-toast="새 알림이 없습니다">${HS.bell}알림</button><button type="button" data-toast="권한이 없습니다">${HS.user}내 정보</button></nav>`},
-  'srch-q':{html:`<div class="hs-qbar"><div class="hs-field">${I.search.replace('#fff','currentColor')}<span class="sq">검색어를 입력하세요</span><i class="caret"></i></div><button type="button" class="hs-cancel" data-back="search">취소</button></div>
+  'srch-q':{html:`<div class="hs-qbar"><div class="hs-field">${I.search.replace('#fff','currentColor')}<input class="sq-in" type="search" enterkeyhint="search" autocomplete="off" placeholder="검색어를 입력하세요" aria-label="검색어"></div><button type="button" class="hs-cancel" data-back="search">취소</button></div>
    <div class="scroll"><div class="hs-hist"><div class="s-h"><b>검색 기록</b><span>전체 삭제</span></div>${list.map(srow).join('')}</div><div class="hs-res" hidden></div></div>`,
-   init:api=>{const v=api.scr.querySelector('[data-app="srch-q"]');v.querySelectorAll('.srow').forEach(b=>b.onclick=()=>runSearch(v,b.dataset.q))},
-   onOpen:(v,arg)=>{if(v._keep){v._keep=false;return}if(arg&&arg!=='calls')runSearch(v,arg);else runSearch(v,'')}},
+   init:api=>{const v=api.scr.querySelector('[data-app="srch-q"]'),inp=v.querySelector('.sq-in');v.querySelectorAll('.srow').forEach(b=>b.onclick=()=>runSearch(v,b.dataset.q));
+     inp.addEventListener('keydown',e=>{if(e.key==='Enter'){e.preventDefault();runSearch(v,inp.value.trim());inp.blur()}});inp.addEventListener('input',()=>{if(!inp.value.trim())runSearch(v,'')})},
+   onOpen:(v,arg)=>{if(v._keep){v._keep=false;return}if(arg&&arg!=='calls')runSearch(v,arg);else{runSearch(v,'');setTimeout(()=>{try{v.querySelector('.sq-in').focus({preventScroll:true})}catch(e){}},350)}}},
   'srch-art':{html:`<div class="bar"><button type="button" class="back keep" data-back="search">${I.back}Yaho</button></div><div class="scroll tk-art hs-art"></div>`,
-   onOpen:(v,arg)=>{const ix=+arg||0,n=PORTAL_NEWS[ix];const rel=[1,2,3].map(d=>(ix+d)%PORTAL_NEWS.length);v.querySelector('.hs-art').innerHTML=artHTML(n,` · 댓글 ${n.cm}`)+`<div class="hs-rel"><b>함께 많이 본 뉴스</b>${rel.map(r=>`<button type="button" data-open="srch-art" data-arg="${r}"><span class="hs-cat">${esc(PORTAL_NEWS[r].cat)}</span>${esc(PORTAL_NEWS[r].t)}</button>`).join('')}</div>`;v.querySelector('.hs-art').scrollTop=0}},
-  };
+   onOpen:(v,arg,api)=>{const key=String(arg||'');const bk=v.querySelector('.back');if(NEWS[key]&&!PORTAL_NEWS.includes(NEWS[key])){bk.dataset.back='srch-q';const sv=api.scr.querySelector('[data-app="srch-q"]');if(sv)sv._keep=true}else bk.dataset.back='search';
+     const ix=NEWS[key]?Math.max(0,PORTAL_NEWS.indexOf(NEWS[key])):(+arg||0),n=NEWS[key]||PORTAL_NEWS[ix];const rel=[1,2,3].map(d=>(ix+d)%PORTAL_NEWS.length);v.querySelector('.hs-art').innerHTML=artHTML(n,` · 댓글 ${n.cm}`)+`<div class="hs-rel"><b>함께 많이 본 뉴스</b>${rel.map(r=>`<button type="button" data-open="srch-art" data-arg="${r}"><span class="hs-cat">${esc(PORTAL_NEWS[r].cat)}</span>${esc(PORTAL_NEWS[r].t)}</button>`).join('')}</div>`;v.querySelector('.hs-art').scrollTop=0}},
+  ...webApps};
 }
 
 const searchApp=mkSearch(junSearches);
@@ -2589,6 +2715,46 @@ function bankList(month){
     h+=`<div class="tx" ${i===0&&month==='10'?'data-newest':''}><div class="ti"><div class="tn">${t.n}</div><div class="ts">${t.tm==='00:00'?'':t.tm+' · '}${t.memo||'체크카드'}</div></div><div class="ta ${t.a>0?'in':''}"><b>${t.a>0?'+':'−'}${yen(t.a)}</b><small>잔액 ${yen(t.b)}</small></div></div>`});
   return h;
 }
+
+const BKI={
+ send:'<svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h15M13 6l6 6-6 6"/></svg>',
+ list:'<svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M8 7h11M8 12h11M8 17h11"/><circle cx="4.5" cy="7" r="1"/><circle cx="4.5" cy="12" r="1"/><circle cx="4.5" cy="17" r="1"/></svg>',
+ card:'<svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5.5" width="18" height="13" rx="2.5"/><path d="M3 10h18"/></svg>',
+ auto:'<svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M20 12a8 8 0 1 1-2.3-5.6M20 4v4h-4"/></svg>',
+ bill:'<svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="M6 3h12v18l-3-2-3 2-3-2-3 2z"/><path d="M9 8h6M9 12h6" stroke-linecap="round"/></svg>',
+ save:'<svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="M5 10a7 6 0 0 1 13-2h2v4l-2 1v3h-3v2h-3v-2H9v2H6v-3a6 6 0 0 1-1-5z"/></svg>',
+ fx:'<svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M4 8h13l-3-3M20 16H7l3 3"/></svg>',
+ more:'<svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor"><circle cx="6" cy="12" r="1.8"/><circle cx="12" cy="12" r="1.8"/><circle cx="18" cy="12" r="1.8"/></svg>',
+ bell:'<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M6 16V11a6 6 0 0 1 12 0v5l1.5 2h-15z"/><path d="M10 20a2 2 0 0 0 4 0"/></svg>',
+};
+const octSpend=txs.filter(t=>t.d.startsWith('10/')&&t.a<0&&!/자동이체/.test(t.memo)).reduce((a,t)=>a-t.a,0);
+const bankHome=`<div class="bk-top"><button type="button" class="back keep" data-back>${I.back}</button><span class="bk-logo">새벽은행</span><button type="button" class="bk-ic" data-toast="새 알림이 없습니다">${BKI.bell}</button></div>
+<div class="scroll bk-body">
+ <div class="bk-acct">
+  <div class="bk-ah"><span><b>새벽 보통예금</b><small>입출금 · 새벽 301-2276-1114</small></span><span class="bk-main">주계좌</span></div>
+  <div class="bk-bal">${yen(END)}</div>
+  <div class="bk-btns"><button type="button" data-toast="권한이 없습니다">이체</button><button type="button" data-open="bank-tx">입출금 내역</button></div>
+ </div>
+ <div class="bk-quick">${[['이체',BKI.send,'','권한이 없습니다'],['입출금 내역',BKI.list,'bank-tx'],['카드',BKI.card,'','카드 관리 화면은 준비 중입니다'],['자동이체',BKI.auto,'','자동이체 3건 등록됨'],['공과금',BKI.bill,'','이번 달 공과금 납부 완료'],['적금',BKI.save,'','가입한 적금 상품이 없습니다'],['환전',BKI.fx,'','권한이 없습니다'],['전체',BKI.more,'','권한이 없습니다']].map(([l,ic,o,t])=>`<button type="button" ${o?`data-open="${o}"`:`data-toast="${t}"`}><span>${ic}</span>${l}</button>`).join('')}</div>
+ <div class="bk-card"><div class="bk-sec"><b>최근 거래</b><button type="button" data-open="bank-tx">전체 보기 ›</button></div>
+  ${txs.slice(0,3).map(t=>`<div class="bk-r"><span><b>${t.n}</b><small>${t.d.replace('/','월 ')}일 ${t.tm==='00:00'?'':t.tm}</small></span><span class="${t.a>0?'in':''}">${t.a>0?'+':'−'}${yen(t.a)}</span></div>`).join('')}</div>
+ <div class="bk-card"><div class="bk-sec"><b>내 카드</b><button type="button" data-toast="카드 관리 화면은 준비 중입니다">관리 ›</button></div>
+  <div class="bk-cc"><span class="bk-plate"><i>새벽</i><em>CHECK</em><small>•••• 1114</small></span><span><b>새벽 체크카드</b><small>연결 계좌 · 새벽 보통예금</small><small>10월 사용 ${yen(octSpend)}</small></span></div>
+  <div class="bk-r"><span><b>후불 교통 결제일</b><small>매월 15일 · 보통예금 자동 출금</small></span><span>11월 15일 · ${yen(0)}</span></div>
+  <div class="bk-r"><span><b>체크카드 캐시백</b><small>편의점 이용 3% · 다음 달 10일 지급</small></span><span class="in">+${yen(Math.round(octSpend*0.012))}</span></div>
+ </div>
+ <div class="bk-card"><div class="bk-sec"><b>출금 예정</b><small>11월</small></div>
+  ${[['11월 25일','집세','자동이체 · 보통예금',35000],['11월 27일','통신요금','자동이체',3200],['11월 28일','공과금','전기 · 가스 (예상)',6900]].map(([d,n,s,a])=>`<div class="bk-r"><span><b>${n}</b><small>${d} · ${s}</small></span><span>−${yen(a)}</span></div>`).join('')}
+  <p class="bk-warn">현재 잔액으로는 11월 출금 예정액(${yen(45100)})이 부족할 수 있어요. 11월 10일 급여 입금 후 출금됩니다.</p>
+ </div>
+ <button type="button" class="bk-promo a" data-toast="심사 조건을 확인해 주세요"><span><small>카드 발급</small><b>새벽 신용카드, 첫 카드도 OK</b><em>사회초년생 · 아르바이트 소득 증빙 가능</em></span><i>💳</i></button>
+ <button type="button" class="bk-promo b" data-toast="가입 조건을 확인해 주세요"><span><small>청년 적금</small><b>매달 1,000엔부터, 최대 연 5%</b><em>만 19~34세 · 시 청년 지원 연계</em></span><i>🌱</i></button>
+ <p class="bk-foot">새벽은행 · 예금자 보호 대상 상품 · 고객센터 0120-552-114</p>
+</div>`;
+const bankTxView=`<div class="bar"><button type="button" class="back keep" data-back="bank">${I.back}새벽은행</button><div class="ttl">입출금 내역</div></div>
+<div class="scroll"><div class="acct"><small>새벽 보통예금 · 입출금</small><b>${yen(END)}</b><div class="btns"><button type="button" data-toast="권한이 없습니다">이체</button><button type="button" data-toast="권한이 없습니다">계좌 관리</button></div></div>
+<div class="mtabs"><button type="button" class="mtab" data-m="10" aria-pressed="true">10월</button><button type="button" class="mtab" data-m="9" aria-pressed="false">9월</button></div><div class="txlist"></div></div>`;
+
 const bankApp=`<div class="bar"><button type="button" class="back" data-back>${I.back}홈</button><div class="ttl">새벽은행</div></div>
 <div class="scroll"><div class="acct"><small>새벽 보통예금 · 입출금</small><b>${yen(END)}</b><div class="btns"><button type="button" data-toast="권한이 없습니다">이체</button><button type="button" data-toast="권한이 없습니다">계좌 관리</button></div></div>
 <div class="mtabs"><button type="button" class="mtab" data-m="10" aria-pressed="true">10월</button><button type="button" class="mtab" data-m="9" aria-pressed="false">9월</button></div><div class="txlist"></div></div>`;
@@ -2656,10 +2822,11 @@ const ibara=makePhone({key:'ibara',code:'1114',lock:[{open:'k-teacher',app:'LIME
     favs:[{id:'ibhome',n:'집',d:'가와베초',c:'#0a84ff',i:'⌂'},{id:'izakaya',n:'일',d:'역 남쪽 이자카야',c:'#ff9500',i:'♨'},{id:'counsel',n:'상담소',d:'코모레비',c:'#30b0c7',i:'•'},{id:'logi',n:'물류센터',d:'화 · 목',c:'#8e8e93',i:'▣'}],
     recent:[{id:'junhome',n:'대학가 뒤편 원룸',d:'10월 31일 15:24 · 미소약국에서 도보',c:'#ff2d55',i:'★',route:'pharmacy>junhome'},{id:'pharmacy',n:'미소약국',d:'10월 31일',c:'#8e8e93',i:'+'},{id:'clinic',n:'정신건강의학과',d:'10월 31일',c:'#8e8e93',i:'+'},{id:'pool',n:'역 앞 실내 수영장',d:'10월 3일',c:'#30b0c7',i:'≈'}]}),
   cal:{html:calendarApp('10월'),onOpen:v=>calendarInto(v,IBCAL,{y:2026,m:10},31)},
-  bank:{html:bankApp,
-    init:a=>{const v=a.scr.querySelector('[data-app="bank"]');const set=m=>{v.querySelectorAll('.mtab').forEach(b=>b.setAttribute('aria-pressed',b.dataset.m===m));v.querySelector('.txlist').innerHTML=bankList(m)};v.querySelectorAll('.mtab').forEach(b=>b.onclick=()=>set(b.dataset.m));set('10')},
-    onOpen:(v,arg,a)=>{a.scr.querySelector('.noti').classList.remove('on');const bd=a.scr.querySelector('[data-badge]');if(bd)bd.remove();
-      if(arg==='flash'){v.querySelector('.mtab[data-m="10"]').click();v.querySelector('.scroll').scrollTop=0;const r=v.querySelector('[data-newest]');if(r){r.classList.add('flash');setTimeout(()=>r.classList.remove('flash'),1600)}}}},
+  bank:{html:bankHome,
+    onOpen:(v,arg,a)=>{const n=a.scr.querySelector('.noti');if(n)n.classList.remove('on');const bd=a.scr.querySelector('[data-badge]');if(bd)bd.remove();if(arg==='flash')setTimeout(()=>a.open('bank-tx','flash'),0)}},
+  'bank-tx':{html:bankTxView,
+    init:a=>{const v=a.scr.querySelector('[data-app="bank-tx"]');const set=m=>{v.querySelectorAll('.mtab').forEach(b=>b.setAttribute('aria-pressed',b.dataset.m===m));v.querySelector('.txlist').innerHTML=bankList(m)};v.querySelectorAll('.mtab').forEach(b=>b.onclick=()=>set(b.dataset.m));set('10')},
+    onOpen:(v,arg)=>{if(arg==='flash'){v.querySelector('.mtab[data-m="10"]').click();v.querySelector('.scroll').scrollTop=0;const r=v.querySelector('[data-newest]');if(r){r.classList.add('flash');setTimeout(()=>r.classList.remove('flash'),1600)}}}},
 }});
 
 /* ================= mount ================= */
